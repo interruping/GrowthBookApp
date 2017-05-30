@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -1396,7 +1396,7 @@
                     "endOffset": 6230
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/colors.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1415,7 +1415,7 @@
                     "endOffset": 6277
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/colors.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1434,7 +1434,7 @@
                     "endOffset": 6328
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/colors.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -4968,7 +4968,7 @@
                     "endOffset": 43783
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -4987,7 +4987,7 @@
                     "endOffset": 43826
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -5006,7 +5006,7 @@
                     "endOffset": 43864
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -5025,7 +5025,7 @@
                     "endOffset": 43905
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -5044,7 +5044,7 @@
                     "endOffset": 43955
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -5063,7 +5063,7 @@
                     "endOffset": 43991
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -5082,7 +5082,7 @@
                     "endOffset": 44032
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -5101,7 +5101,7 @@
                     "endOffset": 44070
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -5120,7 +5120,7 @@
                     "endOffset": 44118
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/strings.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -5254,7 +5254,7 @@
                     "endOffset": 44913
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/styles.xml",
+                    "file": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
