@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urls>
+	<description>url of book.dju.ac.kr</description>
+    <url>
+        <breif>Base</breif>
+        <domain>https://book.dju.ac.kr/</domain>
+    </url>
+        <url>
+                <breif>News</breif>
+                <domain>https://book.dju.ac.kr/ds6_1.html</domain>
+        </url>
+        <url>
+                <breif>Login</breif>
+                <domain>https://book.dju.ac.kr/ds5_1.html</domain>
+        </url>
+        <url>
+                <breif>Event</breif>
+                <domain>https://book.dju.ac.kr/ds19_1.html</domain>
+        </url>
+        <url>
+                <breif>AuthURL</breif>
+                <domain>https://book.dju.ac.kr/duri/member/m_login2.php</domain>
+        </url>
+        <url>
+                <breif>AuthSubURL</breif>
+                <domain>https://libweb.dju.ac.kr/users/tjul/go/gobtsusercheck.aspx</domain>
+        </url>
+
+        <url>
+                <breif>Mileage</breif>
+                <domain>https://book.dju.ac.kr/ds2_3.html</domain>
+        </url>
+        <url>
+                <breif>OneByOneBoard</breif>
+                <domain>https://book.dju.ac.kr/ds6_3.html</domain>
+        </url>
+
+</urls>

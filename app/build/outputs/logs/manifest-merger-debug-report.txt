@@ -1,0 +1,97 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:4:5-78
+	android:name
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:4:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:6:5-21:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /Users/geonyounglim/.android/build-cache/604ae13de91a28c1dd3fd1343e95f085a8cad7e8/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/geonyounglim/.android/build-cache/e6e2cb5180b3f77028fe3e79b527fa4af4bfd6a5/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/geonyounglim/.android/build-cache/078efcacf5fc1aad7d35494ac3a331ba1a38c0c5/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/geonyounglim/.android/build-cache/5d000f401e3f9cd3a7092b0f312476cc93d35310/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/geonyounglim/.android/build-cache/08b9ae84366e0c016649ce7df3afec5e182abaab/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/geonyounglim/.android/build-cache/00473c190badbb0efd7f176cf71739ec82a4c7d1/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/geonyounglim/.android/build-cache/2ed0aff3e9d66faf0ce99e23c3bc80b4bee65bb6/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /Users/geonyounglim/.android/build-cache/c69c12993d740b841aa79919d115b1b18f0e2fc5/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/geonyounglim/.android/build-cache/0a8b45ee12fc2b5d934ba41d6c81129b21f3b40b/output/AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:9:9-41
+	android:supportsRtl
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:11:9-35
+	android:roundIcon
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:10:9-54
+	android:allowBackup
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:7:9-35
+	android:icon
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:8:9-43
+	android:theme
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:12:9-40
+activity#kr.ac.dju.growthbookapp.MainActivity
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:13:9-20:20
+	android:configChanges
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:14:19-65
+	android:name
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:13:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] /Users/geonyounglim/.android/build-cache/604ae13de91a28c1dd3fd1343e95f085a8cad7e8/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/geonyounglim/.android/build-cache/e6e2cb5180b3f77028fe3e79b527fa4af4bfd6a5/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/geonyounglim/.android/build-cache/078efcacf5fc1aad7d35494ac3a331ba1a38c0c5/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/geonyounglim/.android/build-cache/5d000f401e3f9cd3a7092b0f312476cc93d35310/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/geonyounglim/.android/build-cache/08b9ae84366e0c016649ce7df3afec5e182abaab/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/geonyounglim/.android/build-cache/00473c190badbb0efd7f176cf71739ec82a4c7d1/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/geonyounglim/.android/build-cache/2ed0aff3e9d66faf0ce99e23c3bc80b4bee65bb6/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] /Users/geonyounglim/.android/build-cache/c69c12993d740b841aa79919d115b1b18f0e2fc5/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/geonyounglim/.android/build-cache/0a8b45ee12fc2b5d934ba41d6c81129b21f3b40b/output/AndroidManifest.xml:5:5-7:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] /Users/geonyounglim/.android/build-cache/604ae13de91a28c1dd3fd1343e95f085a8cad7e8/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/geonyounglim/.android/build-cache/e6e2cb5180b3f77028fe3e79b527fa4af4bfd6a5/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/geonyounglim/.android/build-cache/078efcacf5fc1aad7d35494ac3a331ba1a38c0c5/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/geonyounglim/.android/build-cache/5d000f401e3f9cd3a7092b0f312476cc93d35310/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/geonyounglim/.android/build-cache/08b9ae84366e0c016649ce7df3afec5e182abaab/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/geonyounglim/.android/build-cache/00473c190badbb0efd7f176cf71739ec82a4c7d1/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/geonyounglim/.android/build-cache/2ed0aff3e9d66faf0ce99e23c3bc80b4bee65bb6/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] /Users/geonyounglim/.android/build-cache/c69c12993d740b841aa79919d115b1b18f0e2fc5/output/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/AndroidManifest.xml:26:9-47

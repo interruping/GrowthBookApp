@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GrowthBookApp</string>
+    <string name="menu">메뉴</string>
+    <string name="login">사용자 인증</string>
+    <string name="login_desc">로그인이 필요합니다</string>
+    <string name="news">공지사항</string>
+    <string name="event">이벤트</string>
+    <string name="mileage">마일리지</string>
+    <string name="one_by_one">1대 1 게시판</string>
+    <string name="booklist">도서 인증</string>
+</resources>
