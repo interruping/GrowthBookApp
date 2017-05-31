@@ -24,11 +24,19 @@ import com.dju.book.*;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
 import java.sql.BatchUpdateException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by geonyounglim on 2017. 5. 30..
@@ -52,7 +60,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         _rootView = super.onCreateView(inflater, container, savedInstanceState);
 
         _loginBtn = (Button)_rootView.findViewById(R.id.login_button);
-        _loginBtn.setEnabled(false);
+        //_loginBtn.setEnabled(false);
         _loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,59 +71,59 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         _idInput =(EditText) _rootView.findViewById(R.id.id_input);
         _pwInput =(EditText) _rootView.findViewById(R.id.pw_input);
 
-        _idInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                int pwLen = _pwInput.getText().toString().length();
-
-                if ( pwLen == 0 ){
-                    _loginBtn.setEnabled(false);
-                    return;
-                }
-                if ( start == 0 && count==0 && after==1 ){
-                    _loginBtn.setEnabled(true);
-                } else if ( start == 0 && count==1 && after==0) {
-                    _loginBtn.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        _pwInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                int idLen = _idInput.getText().toString().length();
-
-                if ( idLen == 0 ){
-                    _loginBtn.setEnabled(false);
-                    return;
-                }
-
-                if ( start == 0 && count==0 && after==1 ){
-
-                    _loginBtn.setEnabled(true);
-                } else if ( start == 0 && count==1 && after==0) {
-                    _loginBtn.setEnabled(false);
-                }
-
-
-                return;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+//        _idInput.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//                int pwLen = _pwInput.getText().toString().length();
+//
+//                if ( pwLen == 0 ){
+//                    _loginBtn.setEnabled(false);
+//                    return;
+//                }
+//                if ( start == 0 && count==0 && after==1 ){
+//                    _loginBtn.setEnabled(true);
+//                } else if ( start == 0 && count==1 && after==0) {
+//                    _loginBtn.setEnabled(false);
+//                }
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//        _pwInput.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//                int idLen = _idInput.getText().toString().length();
+//
+//                if ( idLen == 0 ){
+//                    _loginBtn.setEnabled(false);
+//                    return;
+//                }
+//
+//                if ( start == 0 && count==0 && after==1 ){
+//
+//                    _loginBtn.setEnabled(true);
+//                } else if ( start == 0 && count==1 && after==0) {
+//                    _loginBtn.setEnabled(false);
+//                }
+//
+//
+//                return;
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+//            @Override
+//            public void afterTextChanged(Editable s) {}
+//        });
 
         setWithCommonNavigationBar(getResources().getString(R.string.login),(View v)->{
             MainActivity ma = (MainActivity)this.getActivity();
@@ -153,16 +161,31 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
     }
 
+    private void _loginFailAlarm() {
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
+            Toast toast = Toast.makeText(getActivity().getApplicationContext(), "로그인 실패.", Toast.LENGTH_SHORT);
+            toast.show();
+            _loginRequested = false;
+
+        });
+
+    }
+
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
         Handler mainHandler = new Handler(getActivity().getMainLooper());
+
+
+
 
         if ( _loginRequested == true ){
 
             BookServerDataParser parser = new BookServerDataParser(s);
 
             Element body =parser.getBody();
-            Element topNavi = body.getElementById("topnavi");
+            Element topNavi = body.getElementsByClass("topnavi").get(0);
+
             if( topNavi != null){
                 if (topNavi.html().contains("로그아웃") == true ){
                     mainHandler.post(()->{
@@ -175,15 +198,10 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
                     return;
                 } else {
-                    Toast toast = Toast.makeText(getActivity().getApplicationContext(), "로그인 실패.", Toast.LENGTH_SHORT);
-                    toast.show();
-                    _loginRequested = false;
+                    _loginFailAlarm();
                 }
             } else {
-
-                Toast toast = Toast.makeText(getActivity().getApplicationContext(), "로그인 실패.", Toast.LENGTH_SHORT);
-                toast.show();
-                _loginRequested = false;
+                _loginFailAlarm();
             }
             return;
         }
@@ -194,7 +212,27 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         Map<String, String> headerParams = new HashMap<String, String>();
 
-        headerParams.put("Cookie", map.get("Set-Cookie"));
+        String raw_cookie = map.get("Set-Cookie");
+
+        Pattern ptDESID2 = Pattern.compile("(DESID2)=[0-9a-f]{10,}[;]");
+        Pattern ptDESKEY2 = Pattern.compile("(DESKEY2)=[0-9a-f]{10,}[;]");
+        Matcher mtID = ptDESID2.matcher(raw_cookie);
+        Matcher mtKEY = ptDESKEY2.matcher(raw_cookie);
+
+        String cookie = "";
+
+        if(mtID.find() && mtKEY.find() ){
+            cookie += mtID.group(0);
+            cookie += " ";
+            cookie += mtKEY.group(0);
+        } else {
+            _loginFailAlarm();
+            return;
+        }
+        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+        cs.setCookie(cookie);
+
+        headerParams.put("Cookie", cookie);
         headerParams.put("Referer", "https://book.dju.ac.kr/ds19_1.html");
         loginCheckRequest.setPrefixHeaderFields(headerParams);
         loginCheckRequest.setCallBackListener(this);
@@ -204,7 +242,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         mainHandler.post(() -> {
             try{
-                loginCheckRequest.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/index.html"), new HashMap<String,String>());
+                loginCheckRequest.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html"), new HashMap<String,String>());
             } catch( Exception e) {
 
             }
