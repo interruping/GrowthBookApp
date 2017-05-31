@@ -21,6 +21,8 @@ import android.widget.Toast;
 
 import com.dju.book.*;
 
+import org.jsoup.nodes.Element;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.BatchUpdateException;
@@ -38,10 +40,11 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
     private Button _loginBtn;
     private EditText _idInput;
     private EditText _pwInput;
-
+    private boolean _loginRequested;
 
     public LoginFragment() {
         super(R.layout.fragment_login, R.id.root_constraint);
+        _loginRequested = false;
     }
     @Nullable
     @Override
@@ -133,7 +136,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         Map<String, String> headers = new HashMap<String, String>();
         headers.put("Referer", "https://book.dju.ac.kr/ds19_1.html");
 
-        con._prefixHeaderFields(headers);
+        con.setPrefixHeaderFields(headers);
         Map<String, String> params = new HashMap<String, String>();
         params.put("c", "member_login");
         params.put("url", "");
@@ -142,8 +145,6 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         params.put("user_pass", _pwInput.getText().toString());
 
         try {
-
-
             con.sendRequest(HttpConn.Method.POST, new URL("https://book.dju.ac.kr/duri/member.php"), params);
         } catch(Exception e) {
             e.printStackTrace();
@@ -155,27 +156,64 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
         Handler mainHandler = new Handler(getActivity().getMainLooper());
-        if( s.contains("../index.html") == false ){
-            mainHandler.post(() -> {
+
+        if ( _loginRequested == true ){
+
+            BookServerDataParser parser = new BookServerDataParser(s);
+
+            Element body =parser.getBody();
+            Element topNavi = body.getElementById("topnavi");
+            if( topNavi != null){
+                if (topNavi.html().contains("로그아웃") == true ){
+                    mainHandler.post(()->{
+                        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+                        cs.setCookie(map.get("Set-Cookie"));
+                        MainActivity ma = (MainActivity)getActivity();
+                        ma.loginComplete();
+
+                    });
+
+                    return;
+                } else {
+                    Toast toast = Toast.makeText(getActivity().getApplicationContext(), "로그인 실패.", Toast.LENGTH_SHORT);
+                    toast.show();
+                    _loginRequested = false;
+                }
+            } else {
 
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), "로그인 실패.", Toast.LENGTH_SHORT);
                 toast.show();
-                return;
-            });
+                _loginRequested = false;
+            }
+            return;
         }
 
 
 
-        mainHandler.post(()->{
-            HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-            if( s.contains("../index.html") ){
+        HttpConn loginCheckRequest = new HttpConn();
+
+        Map<String, String> headerParams = new HashMap<String, String>();
+
+        headerParams.put("Cookie", map.get("Set-Cookie"));
+        headerParams.put("Referer", "https://book.dju.ac.kr/ds19_1.html");
+        loginCheckRequest.setPrefixHeaderFields(headerParams);
+        loginCheckRequest.setCallBackListener(this);
+        _loginRequested = true;
+
+
+
+        mainHandler.post(() -> {
+            try{
+                loginCheckRequest.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/index.html"), new HashMap<String,String>());
+            } catch( Exception e) {
 
             }
-            cs.setCookie(map.get("Set-Cookie"));
-            MainActivity ma = (MainActivity)getActivity();
 
-            ma.loginComplete();
+            return;
         });
+
+
+
     }
 
     @Override
