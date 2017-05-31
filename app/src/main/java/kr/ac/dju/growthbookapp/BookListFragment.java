@@ -2,6 +2,12 @@ package kr.ac.dju.growthbookapp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +35,54 @@ public class BookListFragment extends NavigationBarFragment {
         }, (View v)->{
 
         });
+        TabLayout tableLayout = (TabLayout)_rootView.findViewById(R.id.tl_tabs);
+        ViewPager viewPager = (ViewPager)_rootView.findViewById(R.id.vp_pager);
+        Fragment[] arrFragments = new Fragment[3];
+        arrFragments[0] =new UnapprovedBookFragment();
+        arrFragments[1] = new ApproveBookFragment();
+        arrFragments[2] = new ApprovedBookFragment();
+
+        AppCompatActivity pa = (AppCompatActivity)getActivity();
+        MyPagerAdapter adapter = new MyPagerAdapter(pa.getSupportFragmentManager(), arrFragments);
+        viewPager.setAdapter(adapter);
+        tableLayout.setupWithViewPager(viewPager);
         return _rootView;
+    }
+
+
+
+    private class MyPagerAdapter extends FragmentPagerAdapter {
+
+        private  Fragment[] arrFragments;
+
+        public MyPagerAdapter(FragmentManager fm, Fragment[] arrFragments) {
+            super(fm);
+            this.arrFragments = arrFragments;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return arrFragments[position];
+        }
+
+        @Override
+        public int getCount() {
+            return arrFragments.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            switch(position){
+                case 0:
+                    return "독서인증도서";
+                case 1:
+                    return "인증신청도서";
+                case 2:
+                    return "인증완료도서";
+                default:
+                    return "";
+            }
+        }
     }
 }
