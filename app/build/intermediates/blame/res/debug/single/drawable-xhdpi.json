@@ -1,66 +1,34 @@
 [
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\booklist_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\booklist_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\booklist_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\booklist_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\event_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\event_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\event_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\event_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\one_by_one_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\one_by_one_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\one_by_one_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\one_by_one_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\menu_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\menu_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\menu_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\menu_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/login_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/login_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\news_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\news_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/mileage_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/mileage_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\mileage_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\mileage_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\news_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\news_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\login_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\login_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/search_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/search_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\mileage_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\mileage_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\login_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\login_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/event_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/event_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/news_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/news_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\search_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\search_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/menu_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/menu_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/booklist_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/booklist_icon.png"
-    },
-    {
-        "merged": "/Users/geonyounglim/Downloads/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xhdpi/one_by_one_icon.png",
-        "source": "/Users/geonyounglim/Downloads/GrowthBookApp/app/src/main/res/drawable-xhdpi/one_by_one_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\search_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xhdpi\\search_icon.png"
     }
 ]

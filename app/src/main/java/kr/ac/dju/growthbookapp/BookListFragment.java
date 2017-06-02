@@ -6,11 +6,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.dju.book.HttpConn;
 
 /**
  * Created by geonyounglim on 2017. 5. 31..
@@ -35,8 +38,12 @@ public class BookListFragment extends NavigationBarFragment {
         }, (View v)->{
 
         });
+
         TabLayout tableLayout = (TabLayout)_rootView.findViewById(R.id.tl_tabs);
+        tableLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
+
         ViewPager viewPager = (ViewPager)_rootView.findViewById(R.id.vp_pager);
+
         Fragment[] arrFragments = new Fragment[3];
         arrFragments[0] =new UnapprovedBookFragment();
         arrFragments[1] = new ApproveBookFragment();
@@ -46,6 +53,9 @@ public class BookListFragment extends NavigationBarFragment {
         MyPagerAdapter adapter = new MyPagerAdapter(pa.getSupportFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
         tableLayout.setupWithViewPager(viewPager);
+
+        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+        System.out.println("쿠키값입니다. :" +cs.getCookie());
         return _rootView;
     }
 

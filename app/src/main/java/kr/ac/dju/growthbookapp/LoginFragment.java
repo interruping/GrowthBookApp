@@ -189,8 +189,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
             if( topNavi != null){
                 if (topNavi.html().contains("로그아웃") == true ){
                     mainHandler.post(()->{
-                        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-                        cs.setCookie(map.get("Set-Cookie"));
+
                         MainActivity ma = (MainActivity)getActivity();
                         ma.loginComplete();
 

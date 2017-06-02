@@ -34,7 +34,7 @@ public class UnapprovedBookFragment extends Fragment {
         String cookie = cs.getCookie();
         Map<String,String> headers = new HashMap<String,String>();
         headers.put("Cookie",cookie);
-        
+
 
         return inflater.inflate(R.layout.fragment_unapproved_book, container, false);
 
