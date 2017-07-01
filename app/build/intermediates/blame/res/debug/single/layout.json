@@ -36,6 +36,10 @@
         "source": "C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\layout\\abc_search_view.xml"
     },
     {
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_detailbooklist.xml",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\layout\\fragment_detailbooklist.xml"
+    },
+    {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
         "source": "C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\layout\\abc_list_menu_item_icon.xml"
     },
@@ -70,6 +74,10 @@
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\unprovedbook_item.xml",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\layout\\unprovedbook_item.xml"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
