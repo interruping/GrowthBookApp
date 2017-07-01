@@ -79,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.layout.fragment_book_list:
                 fragmentTransaction.replace(R.id.front_side_container, new BookListFragment());
+                break;
+            case R.layout.fragment_book_event:
+                fragmentTransaction.replace(R.id.front_side_container, new BookEventFragment());
+                break;
+            case R.layout.fragment_one_by_one:
+                fragmentTransaction.replace(R.id.front_side_container, new OneByOneFragment());
+                break;
         }
         fragmentTransaction.commit();
         _frontSideContainer.animate().setListener(null).translationX(0).withLayer();

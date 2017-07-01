@@ -34,9 +34,9 @@ public class BackMenuFragment extends Fragment implements AdapterView.OnItemClic
 
         adapter.addItem( R.layout.fragment_news,ContextCompat.getDrawable(getActivity().getApplicationContext()
                 ,R.drawable.news_icon), getResources().getString(R.string.news));
-        adapter.addItem( 0, ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.event_icon), getResources().getString(R.string.event));
+        adapter.addItem( R.layout.fragment_book_event, ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.event_icon), getResources().getString(R.string.event));
         adapter.addItem( 0,ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.mileage_icon), getResources().getString(R.string.mileage));
-        adapter.addItem( 0,ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.one_by_one_icon), getResources().getString(R.string.one_by_one));
+        adapter.addItem( R.layout.fragment_one_by_one,ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.one_by_one_icon), getResources().getString(R.string.one_by_one));
         adapter.addItem( R.layout.fragment_book_list,ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.booklist_icon), getResources().getString(R.string.booklist));
 
         _menuListView.setOnItemClickListener(this);

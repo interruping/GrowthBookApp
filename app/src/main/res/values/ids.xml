@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="navigation_fragment_search_edit_text_bar" />
+    <item type="id" name="navigation_fragment_navigation_bar" />
+    <item type="id" name="navigation_fragment_dummy_view_for_elevation" />
+</resources>

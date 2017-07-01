@@ -626,6 +626,9 @@
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
+    <item name="navigation_fragment_dummy_view_for_elevation" type="id"/>
+    <item name="navigation_fragment_navigation_bar" type="id"/>
+    <item name="navigation_fragment_search_edit_text_bar" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="split_action_bar" type="id"/>
@@ -677,6 +680,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">GrowthBookApp</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="book_event">이벤트</string>
     <string name="booklist">도서 인증</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
