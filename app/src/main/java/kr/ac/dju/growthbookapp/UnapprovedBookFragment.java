@@ -49,7 +49,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View result = inflater.inflate(R.layout.fragment_unapproved_book, container, false);
-
+    //ff
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         String cookie = cs.getCookie();
