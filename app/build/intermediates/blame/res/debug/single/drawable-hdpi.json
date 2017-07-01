@@ -4,12 +4,20 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/mileage_icon.png"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/silver_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/silver_rank.png"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/close_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/close_icon.png"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/login_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/login_icon.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/diamond_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/diamond_rank.png"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/back_button.png",
@@ -36,11 +44,23 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/menu_icon.png"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/titanium_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/titanium_rank.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/gold_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/gold_rank.png"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/event_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/event_icon.png"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/booklist_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/booklist_icon.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/bronze_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/bronze_rank.png"
     }
 ]

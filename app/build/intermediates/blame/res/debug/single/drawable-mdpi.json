@@ -16,6 +16,10 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/booklist_icon.png"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/gold_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/gold_rank.png"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/close_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/close_icon.png"
     },
@@ -36,11 +40,27 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/detail_arrow.png"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/silver_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/silver_rank.png"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/mileage_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/mileage_icon.png"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/diamond_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/diamond_rank.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/bronze_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/bronze_rank.png"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/event_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/event_icon.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-mdpi/titanium_rank.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-mdpi/titanium_rank.png"
     }
 ]
