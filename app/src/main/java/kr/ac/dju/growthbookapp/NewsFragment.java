@@ -58,6 +58,8 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
     private boolean _initialRefresh;
     private boolean _isLoading;
 
+    private boolean _is_refresh;
+
     private Set<Integer> _pageSet;
     private Set<Integer> _searchPageSet;
 
@@ -89,6 +91,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
         _maxPage = 0;
         _currentPage = 1;
         _isLoading = false;
+        _is_refresh = false;
 
         _pageSet = new HashSet<Integer>();
         _newsRecyclerView = (RecyclerView) result.findViewById(R.id.news_recyclerview);
@@ -115,6 +118,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
                 if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                     if ( _isLoading == false){
                         _swipeRefreshLayout.setRefreshing(true);
+                        _is_refresh = false;
                         onRefresh();
                     }
 
@@ -142,10 +146,22 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
     @Override
     public void onRefresh() {
 
+
+        if ( _is_refresh == true ){
+            _currentPage = 1;
+            _maxPage = 0;
+            _adapter.setState(new ArrayList<>());
+            _pageSet.clear();
+
+        }
+
         if ( _pageSet.contains(Integer.valueOf(_currentPage)) == true ) {
             _swipeRefreshLayout.setRefreshing(false);
+            _is_refresh = true;
             return;
         }
+
+
 
         _isLoading = true;
         HttpConn conn = new HttpConn();
@@ -158,6 +174,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
         } catch (Exception e) {
 
         }
+        _is_refresh = true;
 
     }
 

@@ -626,6 +626,7 @@
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
+    <item name="navigation_fragment_block_view" type="id"/>
     <item name="navigation_fragment_dummy_view_for_elevation" type="id"/>
     <item name="navigation_fragment_navigation_bar" type="id"/>
     <item name="navigation_fragment_search_edit_text_bar" type="id"/>
@@ -692,6 +693,7 @@
     <string name="mileage">마일리지</string>
     <string name="news">공지사항</string>
     <string name="one_by_one">1대 1 게시판</string>
+    <string name="one_by_one_write_question">질문 쓰기</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -712,6 +714,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_color</item>
+        <!--<item name="android:textColor">@color/colorPrimary</item>-->
+        <!--<item name="android:textColorHint">@color/colorPrimary</item>-->
+        <!--<item name="android:textColorHighlight">@color/colorPrimary</item>-->
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>

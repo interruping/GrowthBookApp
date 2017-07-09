@@ -1,6 +1,9 @@
 package kr.ac.dju.growthbookapp;
 
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.StateListAnimator;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -21,12 +24,16 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import static kr.ac.dju.growthbookapp.R.drawable.ripple_effect;
 
 /**
  * Created by geonyounglim on 2017. 5. 28..
@@ -45,6 +52,7 @@ public class NavigationBarFragment extends Fragment {
     private EditText _searchInput;
 
     private View _rootView;
+    private View _blockView;
     private View _leftAcc;
     private View _midAcc;
     private View _rightAcc;
@@ -165,20 +173,31 @@ public class NavigationBarFragment extends Fragment {
         addRightAccessoryToNavigatonBar(searchBtn);
     }
 
+    @Override
+    public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
+
+       if ( nextAnim == R.animator.slide_in_right ){
+           _blockView.setClickable(false);
+       }
+
+        return null;
+    }
+
     public void pushFragmentTo(int srcFrame, Fragment target , Bundle args) {
+        _blockView.setClickable(true);
+
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-
-
         ft.setCustomAnimations(R.animator.slide_in_left,
                 R.animator.slide_out_right, R.animator.slide_in_right,  R.animator.slide_out_left);
+
         target.setArguments(args);
+
         ft.hide(this);
         ft.add(srcFrame, target);
         ft.addToBackStack(null);
         ft.commit();
-    }
 
+    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -205,7 +224,7 @@ public class NavigationBarFragment extends Fragment {
         _navigationBar.setOrientation(LinearLayout.HORIZONTAL);
         _navigationBar.setBaselineAligned(false);
         _navigationBar.setWeightSum(6f);
-        _navigationBar.setElevation(20);
+        _navigationBar.setElevation(5);
 
         LinearLayout.LayoutParams searchTextFieldParams = new LinearLayout.LayoutParams(0, (int)(BAR_DEFAULT_HEIGHT_DP * density) );
 
@@ -255,15 +274,24 @@ public class NavigationBarFragment extends Fragment {
             }});
         _searchBar.addView(_searchInput);
 
+        _blockView = new View(getActivity());
+        ConstraintLayout.LayoutParams blockViewParams = new ConstraintLayout.LayoutParams(0,0);
+        _blockView.setLayoutParams(blockViewParams);
+        _blockView.setBackgroundColor(Color.TRANSPARENT);
+        _blockView.setElevation(100.0f);
+        _blockView.setClickable(false);
+
+
         ConstraintLayout con = (ConstraintLayout)_rootView.findViewById(_rootConstraintLayoutId);
 
 
         _navigationBar.setId(R.id.navigation_fragment_navigation_bar);
         _searchBar.setId(R.id.navigation_fragment_search_edit_text_bar);
+        _blockView.setId(R.id.navigation_fragment_block_view);
 
         con.addView(_searchBar);
         con.addView(_navigationBar);
-
+        con.addView(_blockView);
 
         ConstraintSet set = new ConstraintSet();
         set.clone(con);
@@ -274,6 +302,10 @@ public class NavigationBarFragment extends Fragment {
         set.connect(_navigationBar.getId(), ConstraintSet.START, con.getId(), ConstraintSet.START );
         set.connect(_navigationBar.getId(), ConstraintSet.END, con.getId(), ConstraintSet.END );
 
+        set.connect(_blockView.getId(), ConstraintSet.TOP, con.getId(), ConstraintSet.TOP);
+        set.connect(_blockView.getId(), ConstraintSet.START, con.getId(), ConstraintSet.START );
+        set.connect(_blockView.getId(), ConstraintSet.END, con.getId(), ConstraintSet.END );
+        set.connect(_blockView.getId(), ConstraintSet.BOTTOM, con.getId(), ConstraintSet.BOTTOM);
         set.applyTo(con);
 
         con.bringChildToFront(_searchBar);
@@ -306,8 +338,12 @@ public class NavigationBarFragment extends Fragment {
 
             }
         });
+
+
+
         return _rootView;
     }
+
 
     public void activeSearch() {
         if(_searchBarEventListener != null) _searchBarEventListener.searchBarWillActive();
@@ -323,7 +359,7 @@ public class NavigationBarFragment extends Fragment {
             @Override
             public void onAnimationEnd(Animator animation) {
                 _navigationBar.setElevation(0);
-                _searchBar.setElevation(20f);
+                _searchBar.setElevation(5f);
                 _searchInput.animate().setListener(null).translationX(0).withLayer();
                 _searchInput.setFocusable(true);
                 _searchInput.setFocusableInTouchMode(true);
@@ -363,7 +399,7 @@ public class NavigationBarFragment extends Fragment {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                _navigationBar.setElevation(20f);
+                _navigationBar.setElevation(5f);
                 _searchBar.setElevation(0f);
                 _leftAcc.animate().setListener(null).translationX(0).withLayer();
                 _midAcc.animate().setListener(null).translationX(0).withLayer();
