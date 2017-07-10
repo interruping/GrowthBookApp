@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/.android/build-cache/826805cf2fe9741b5e9a1abd25da730bd9876a0d/output/res/values/values.xml",
+                    "file": "C:\\Users\\dodrn\\.android\\build-cache\\29c38705e65a883c47d75bab674cdbc42e2263c6\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

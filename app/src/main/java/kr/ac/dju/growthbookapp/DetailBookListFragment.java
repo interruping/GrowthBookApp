@@ -7,7 +7,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -41,9 +43,17 @@ public class DetailBookListFragment extends NavigationBarFragment {
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        System.out.println(">>>>>>>>>>>>>>디테일");
+        System.out.println(">>>>>>>>>>>>>>디테일");
+        System.out.println(">>>>>>>>>>>>>>디테일");
+        System.out.println(">>>>>>>>>>>>>>디테일");
+        System.out.println(">>>>>>>>>>>>>>디테일");
+        System.out.println(">>>>>>>>>>>>>>디테일");
+
         _rootView = super.onCreateView(inflater, container, savedInstanceState);
         _rootView.setBackgroundColor(Color.WHITE);
-        setWithCommonNavigationBar(getResources().getString(R.string.booklist),(View v)->{
+        Bundle args = getArguments();
+        setWithCommonNavigationBar(args.getString("title"),(View v)->{
 
             MainActivity ma = (MainActivity)this.getActivity();
             ma.toggleMenu();
@@ -51,7 +61,10 @@ public class DetailBookListFragment extends NavigationBarFragment {
 
         });
 
+        setBackButton((View v)->{
 
+            getFragmentManager().popBackStack();
+        });
 
         TabLayout tableLayout = (TabLayout)_rootView.findViewById(R.id.tl_tabs);
         tableLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
@@ -59,22 +72,20 @@ public class DetailBookListFragment extends NavigationBarFragment {
         ViewPager viewPager = (ViewPager)_rootView.findViewById(R.id.vp_pager);
 
         Fragment[] arrFragments = new Fragment[3];
-        arrFragments[0] =new UnapprovedBookFragment();
-        arrFragments[1] = new ApproveBookFragment();
-        arrFragments[2] = new ApprovedBookFragment();
 
         AppCompatActivity pa = (AppCompatActivity)getActivity();
         DetailBookListFragment.MyPagerAdapter adapter = new DetailBookListFragment.MyPagerAdapter(pa.getSupportFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(2);
+        adapter.notifyDataSetChanged();
         tableLayout.setupWithViewPager(viewPager);
 
+
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-        System.out.println("쿠키값입니다. :" +cs.getCookie());
+        //System.out.println("쿠키값입니다. :" +cs.getCookie());
         GetKey();
         GetUrl();
-        GetDataApprove(arrFragments[1]);
-        GetDataApproved(arrFragments[2]);
-        GetDataUnapprove(arrFragments[0]);
+
 
         return _rootView;
     }
@@ -88,7 +99,7 @@ public class DetailBookListFragment extends NavigationBarFragment {
     public void GetDataApproved(Fragment ft) {
 
         Bundle senddata = new Bundle();
-        senddata.putSerializable("HashMap", (Serializable) unapproved);
+        senddata.putSerializable("HashMap", (Serializable) approved);
         senddata.putString("url",url);
         ft.setArguments(senddata);
     }
@@ -109,65 +120,68 @@ public class DetailBookListFragment extends NavigationBarFragment {
 
     public void GetUrl() {
 
-        if (key.equals("01")) {
+        if (key.equals("1")) {
 
             unapproved.put("tab", "1");
             unapproved.put("litem", "");
 
-            approve.put("tap", "2");
+            approve.put("tab", "2");
             approve.put("litem", "");
 
-            approved.put("tap", "3");
+            approved.put("tab", "3");
             approved.put("litem", "");
             url = "https://book.dju.ac.kr/ds2_11.html";
         }
         else{
-            unapproved.put("tap","1");
-            approve.put("tap","2");
-            approved.put("tap","3");
+            unapproved.put("tab","1");
+            approve.put("tab","2");
+            approved.put("tab","3");
             url = "https://book.dju.ac.kr/ds2_2.html";
-            if(key.equals("02")){
-                unapproved.put("Iitem","9");
-                approve.put("Iitem","9");
-                approved.put("Iitem","9");
+            if(key.equals("2")){
+                unapproved.put("litem","9");
+                approve.put("litem","9");
+                approved.put("litem","9");
             }
-            if(key.equals("03")){
-                unapproved.put("Iitem","3");
-                approve.put("Iitem","3");
-                approved.put("Iitem","3");
+            if(key.equals("3")){
+                unapproved.put("litem","3");
+                approve.put("litem","3");
+                approved.put("litem","3");
             }
-            if(key.equals("04")){
-                unapproved.put("Iitem","2");
-                approve.put("Iitem","2");
-                approved.put("Iitem","2");
+            if(key.equals("4")){
+                unapproved.put("litem","2");
+                approve.put("litem","2");
+                approved.put("litem","2");
             }
-            if(key.equals("05")){
-                unapproved.put("Iitem","5");
-                approve.put("Iitem","5");
-                approved.put("Iitem","5");
+            if(key.equals("5")){
+                unapproved.put("litem","5");
+                approve.put("litem","5");
+                approved.put("litem","5");
             }
-            if(key.equals("06")){
-                unapproved.put("Iitem","7");
-                approve.put("Iitem","7");
-                approved.put("Iitem","7");
+            if(key.equals("6")){
+                unapproved.put("litem","7");
+                approve.put("litem","7");
+                approved.put("litem","7");
             }
-            if(key.equals("07")){
-                unapproved.put("Iitem","10");
-                approve.put("Iitem","10");
-                approved.put("Iitem","10");
+            if(key.equals("7")){
+                unapproved.put("litem","10");
+                approve.put("litem","10");
+                approved.put("litem","10");
             }
-            if(key.equals("08")){
-                unapproved.put("Iitem","6");
-                approve.put("Iitem","6");
-                approved.put("Iitem","6");
+            if(key.equals("8")){
+                unapproved.put("litem","6");
+                approve.put("litem","6");
+                approved.put("litem","6");
             }
 
         }
     }
 
-    private class MyPagerAdapter extends FragmentPagerAdapter {
+    private class MyPagerAdapter extends FragmentStatePagerAdapter{
 
         private  Fragment[] arrFragments;
+
+
+
 
         public MyPagerAdapter(FragmentManager fm, Fragment[] arrFragments) {
             super(fm);
@@ -175,8 +189,9 @@ public class DetailBookListFragment extends NavigationBarFragment {
         }
 
         @Override
-        public Fragment getItem(int position) {
-            return arrFragments[position];
+        public int getItemPosition(Object object) {
+
+            return POSITION_NONE;
         }
 
         @Override
@@ -198,5 +213,32 @@ public class DetailBookListFragment extends NavigationBarFragment {
                     return "";
             }
         }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0: {
+                    arrFragments[0] = new UnapprovedBookFragment();
+                    GetDataUnapprove(arrFragments[0]);
+                    return arrFragments[0];}
+                case 1:{
+                    arrFragments[1] = new ApproveBookFragment();
+                    GetDataApprove( arrFragments[1]);
+                    return  arrFragments[1];}
+                case 2:{
+                    arrFragments[2] = new ApprovedBookFragment();
+                    GetDataApproved(arrFragments[2]);
+                    return arrFragments[2];}
+                default:
+                    return null;
+                }
+
+            }
+        }
+
+
+
     }
-}
+
+
+

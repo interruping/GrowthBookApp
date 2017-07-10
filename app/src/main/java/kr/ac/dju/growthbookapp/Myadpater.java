@@ -4,12 +4,18 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -19,19 +25,35 @@ import java.util.ArrayList;
  * Created by dodrn on 2017-06-28.
  */
 
-public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> {
+public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implements View.OnClickListener{
     private ArrayList<BookListData> bookListDatas = new ArrayList<BookListData>();
     private Context mContext;
+    private View.OnClickListener _onClickListener;
+    private int item_Position;
     public Myadpater(ArrayList<BookListData> bookdata, Context mcontext){
         bookListDatas = bookdata;
         mContext = mcontext;
     }
 
+    public int getItem_Position(){
+        return item_Position;
+    }
+
+
+    public Context getContext() {
+        return mContext;
+    }
+
+    public ArrayList<BookListData>  getBookLIstDatas(){
+        return bookListDatas;
+    }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.unprovedbook_item,parent,false);
         View container = v.findViewById(R.id.unprovedbook_item_container);
+        Button applyButton = (Button)v.findViewById(R.id.apply_button);
+        applyButton.setOnClickListener(this);
         ViewHolder holder = new ViewHolder(container);
         return holder;
     }
@@ -39,6 +61,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
+        setItemPosition(position);
         holder.author2.setText(bookListDatas.get(position).GetBookAuthor());
         holder.authpass2.setText(bookListDatas.get(position).GetAuthPoint());
         holder.booklist2.setText(bookListDatas.get(position).GetBookList());
@@ -46,23 +69,41 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> {
         holder.passpoint2.setText(bookListDatas.get(position).GetPassPoint());
         holder.bookname.setText(bookListDatas.get(position).GetBookSubject());
         holder.bookdays.setText(bookListDatas.get(position).GetBookDday());
-        new DownloadImageTask(holder.bookImg).execute(bookListDatas.get(position).GetBookSrc());
+
+       Picasso.with(mContext)
+               .load(bookListDatas.get(position).GetBookSrc())
+
+               .into(holder.bookImg);
 
 
     }
 
-    public void addItem(BookListData data){
-        bookListDatas.add(data);
-    }
     @Override
     public int getItemCount() {
         return bookListDatas.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public void setOnClickListener(View.OnClickListener listener){
+        _onClickListener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        _onClickListener.onClick(v);
+    }
+
+    public void setItemPosition(int itemPosition) {
+        item_Position = itemPosition;
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView bookImg;
         TextView bookname,author2,company2,booklist2,passpoint2,authpass2,bookdays;
+        int position;
 
+        public int getposition(){
+            return position;
+        }
         public ViewHolder(View view) {
             super(view);
 
@@ -77,35 +118,12 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> {
 
 
         }
+
+        @Override
+        public void onClick(View v) {
+            position = getAdapterPosition();
+            Log.i("",String.valueOf(position));}
     }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
 
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-
-                HttpURLConnection conn = (HttpURLConnection)(new java.net.URL(urldisplay)).openConnection();
-                InputStream in = conn.getInputStream();
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                mIcon11 = BitmapFactory.decodeStream(in);
-
-                System.out.println();
-            } catch (Exception e) {
-                //Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
     }
-}

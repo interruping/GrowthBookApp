@@ -12,6 +12,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.dju.book.HttpConn;
 import com.dju.book.BookServerDataParser;
@@ -29,15 +32,16 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener{
+public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, View.OnClickListener {
     private Map<String,String> headers;
-    private Map<String,String> params = new HashMap<String,String>();
+    private Map<String,String> paramss = new HashMap<String,String>();
     private String url="";
     private int maxPage =0;
     private int nowPage = 2;
     private boolean pass =true;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private Myadpater mAdapter;
+    private int Recyclerposition;
     private ArrayList<BookListData>  bookArrayList = new ArrayList<BookListData>();
     public UnapprovedBookFragment() {
         // Required empty public constructor
@@ -49,7 +53,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View result = inflater.inflate(R.layout.fragment_unapproved_book, container, false);
-    //ff
+
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         String cookie = cs.getCookie();
@@ -59,9 +63,9 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         headers.put("Cookie", cookie);
         con.setPrefixHeaderFields(headers);
         GetUrl();
-        params.put("page","1");
+        paramss.put("page","1");
               try {
-                  con.sendRequest(HttpConn.Method.GET, new URL(url), params);
+                con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
              } catch (Exception e) {
                   e.printStackTrace();
                   System.out.println("ERROR:" + e.toString());
@@ -81,7 +85,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                         if((visibleItemCount + passVisiblesItems) >=totalItemCount){
                            if(getPassCard() == true)
                             if(nowPage <=maxPage) {
-                                params.put("page", String.valueOf(nowPage));
+                                paramss.put("page", String.valueOf(nowPage));
                                 onRefresh(nowPage);
                                 nowPage++;
 
@@ -105,10 +109,10 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                         headers.put("Cookie", cookie);
                         con.setPrefixHeaderFields(headers);
 
-                        params.put("page", String.valueOf(page));
+                        paramss.put("page", String.valueOf(page));
 
                         try {
-                            con.sendRequest(HttpConn.Method.GET, new URL(url), params);
+                            con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
                         } catch (Exception e) {
                             e.printStackTrace();
                             System.out.println("ERROR:" + e.toString());
@@ -117,9 +121,9 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                     }
                 });
                 mAdapter = new Myadpater(bookArrayList, this.getActivity());
+                mAdapter.setOnClickListener(this);
                 mRecyclerView.setAdapter(mAdapter);
                 mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
 
         return result;
     }
@@ -130,7 +134,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
     public void GetUrl() {
         url = getArguments().getString("url");
-        params = (HashMap<String, String>)getArguments().getSerializable("HashMap");
+        paramss = (HashMap<String, String>)getArguments().getSerializable("HashMap");
 
     }
 
@@ -158,13 +162,13 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             String bookname = booknames.first().text();
 
             //책 이미지 추출 코드
-//            lis = body.getElementsByClass("mentor_li_img img_div");
-//            li = lis.
             Element img = booklist.getElementsByTag("img").first();
             String booksrc = img.attr("src");
-            booksrc = booksrc.replaceFirst(".","");
-            booksrc = "https://book.dju.ac.kr"+booksrc;
-            System.out.println("이미지 url: " + booksrc);
+            if(booksrc.indexOf("http") == -1){
+
+                booksrc = booksrc.replaceFirst(".", "");
+                booksrc = "https://book.dju.ac.kr" + booksrc;
+            }
 
             // 책 저자 추출 코드
             lis = booklist.select("li.mentor_li_content");
@@ -222,4 +226,12 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     public void requestTimeout(HttpConn httpConn) {
 
     }
+
+    @Override
+    public void onClick(View v) {
+//        Toast.makeText(getContext(),mAdapter.ViewHolder.class., Toast.LENGTH_SHORT).show();
+    }
+
+
+
 }

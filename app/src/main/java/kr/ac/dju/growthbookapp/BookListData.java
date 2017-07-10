@@ -47,4 +47,5 @@ public class BookListData{
         return auth_point;
     }
 
+
 }

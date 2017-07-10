@@ -2,8 +2,10 @@ package kr.ac.dju.growthbookapp;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -27,6 +30,7 @@ public class BookListFragment extends NavigationBarFragment {
         super(R.layout.fragment_book_list, R.id.root_constraint);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -50,79 +54,82 @@ public class BookListFragment extends NavigationBarFragment {
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 parent.getItemAtPosition(position);
                                                 DetailBookListFragment page1 = new DetailBookListFragment();
-                                                switch(position)
-                                                {
-                                                    case 0: {
-                                                              String number = "01";
-                                                              Bundle numbers = new Bundle();
-                                                              numbers.putString("key", number);
-                                                              page1.setArguments(numbers);
-                                                        break;
-
-                                                    }
-                                                    case 1: {
-                                                        String number = "02";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                    }
-                                                    case 2: {
-                                                        String number = "03";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                    }
-                                                    case 3: {
-                                                        String number = "04";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                        }
-
-                                                    case 4: {
-                                                        String number = "05";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                    }
-                                                    case 5: {
-                                                        String number = "06";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                    }
-                                                    case 6: {
-                                                        String number = "07";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                    }
-                                                    case 7: {
-                                                        String number = "08";
-                                                        Bundle numbers = new Bundle();
-                                                        numbers.putString("key", number);
-                                                        page1.setArguments(numbers);
-                                                        break;
-                                                    }
-                                                    default:
-                                                        break;
 
 
-                                                }
+//                                                switch(position)
+//                                                {
+//                                                    case 0: {
+//                                                              String number = "01";
+//                                                              Bundle numbers = new Bundle();
+//                                                              numbers.putString("key", number);
+//                                                              page1.setArguments(numbers);
+//                                                        break;
+//
+//                                                    }
+//                                                    case 1: {
+//                                                        String number = "02";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                    }
+//                                                    case 2: {
+//                                                        String number = "03";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                    }
+//                                                    case 3: {
+//                                                        String number = "04";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                        }
+//
+//                                                    case 4: {
+//                                                        String number = "05";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                    }
+//                                                    case 5: {
+//                                                        String number = "06";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                    }
+//                                                    case 6: {
+//                                                        String number = "07";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                    }
+//                                                    case 7: {
+//                                                        String number = "08";
+//                                                        Bundle numbers = new Bundle();
+//                                                        numbers.putString("key", number);
+//                                                        page1.setArguments(numbers);
+//                                                        break;
+//                                                    }
+//                                                    default:
+//                                                        break;
+//
+//
+//                                                }
+                                                Bundle numbers = new Bundle();
+                                                numbers.putString("key", String.valueOf(position+1));
+                                                numbers.putString("title",booklist[position]);
+                                                pushFragmentTo(R.id.front_side_container, page1, numbers);
 
-                                                FragmentManager fragmentManager = getFragmentManager();
-                                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                                fragmentTransaction.add(R.id.front_side_container, page1);
-                                                fragmentTransaction.addToBackStack(null);
-                                                fragmentTransaction.commit();
                                             }
-                                        });
+
+
+        });
 
         return _rootView;
     }
