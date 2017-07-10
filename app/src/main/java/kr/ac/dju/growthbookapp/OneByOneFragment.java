@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -79,7 +80,7 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         _pageSet = new HashSet<Integer>();
 
         _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.one_by_one_swiperefreshlayout);
-        _swipeRefreshLayout.setColorSchemeColors(0xFF61BD6D, 0xFF41A85F);
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         _swipeRefreshLayout.setOnRefreshListener(this);
         _swipeRefreshLayout.setRefreshing(true);
 

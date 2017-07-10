@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -99,7 +100,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
         _swipeRefreshLayout.setOnRefreshListener(this);
         _swipeRefreshLayout.setRefreshing(true);
 
-        _swipeRefreshLayout.setColorSchemeColors(0xFF61BD6D, 0xFF41A85F);
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         _adapter = new NewsRecyclerViewAdapter();
         _adapter.setOnArticleListener(this);
 
@@ -117,9 +118,13 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
 
                 if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                     if ( _isLoading == false){
-                        _swipeRefreshLayout.setRefreshing(true);
+
                         _is_refresh = false;
                         onRefresh();
+
+
+                        showAlertView(AlertType.UNKNOWNERROR,String.valueOf(_currentPage) + "페이지 로딩 에러","어플을 종료합니다.","확인", null);
+
                     }
 
                 }
@@ -226,13 +231,26 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
             }
 
         }
-
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Handler mainHandler = new Handler(getActivity().getMainLooper());
         mainHandler.post(()->{
+
+            _adapter.removeLoadingProgressItem();
+            _adapter.notifyDataSetChanged();
            for( NewsArticle article : toAdds){
                _adapter.addItem(article);
            }
+
+           if ( _maxPage  > _currentPage  ){
+               _adapter.addItem(_adapter.getLoadingProgressItem());
+               _newsRecyclerView.scrollToPosition(_adapter.getItemCount()+1);
+           }
            _pageSet.add(Integer.valueOf(_currentPage));
+
 
             _currentPage = _currentPage + 1 > _maxPage ? _currentPage : _currentPage+1;
             _isLoading = false;

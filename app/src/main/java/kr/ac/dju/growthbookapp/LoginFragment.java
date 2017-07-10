@@ -132,7 +132,10 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         });
 
-
+        MainActivity ma = (MainActivity)this.getActivity();
+        if ( ma.isNeedAlertLogin() == true ){
+            showAlertView(AlertType.WARNING, "로그인이 필요합니다.", "초기 비밀번호 주민번호 뒷자리", "확인", null);
+        }
 
         return _rootView;
     }

@@ -4,9 +4,14 @@ import android.animation.Animator;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
@@ -22,15 +27,16 @@ public class MainActivity extends AppCompatActivity {
 
     private Boolean _slideToggle;
     private FrameLayout _frontSideContainer;
-
+    private int _returnFragement;
     private Map<Integer, Fragment> _fragments;
+    private boolean _isNeedAlertLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-
+        _isNeedAlertLogin = false;
         _slideToggle = false;
         _frontSideContainer = (FrameLayout)findViewById(R.id.front_side_container);
         _frontSideContainer.setClipToPadding(false);
@@ -54,10 +60,82 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public class LayoutSize {
+        public float width;
+        public float height;
+    }
+
+    public LayoutSize getMainActivityLayoutSize(){
+
+        LayoutSize result = new LayoutSize();
+        ConstraintLayout maRootLayout = (ConstraintLayout)findViewById(R.id.main_activity_root);
+        float width = maRootLayout.getMeasuredWidth();
+        float height = maRootLayout.getMeasuredHeight();
+        result.width = width;
+        result.height = height;
+
+        return result;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            refreshMenuPosition();
+            return;
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            refreshMenuPosition();
+            return;
+        }
+    }
+
+    public static float convertPixelsToDp(float px, Context context){
+
+        Resources resources = context.getResources();
+
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+
+        float dp = px / (metrics.densityDpi / 160f);
+
+        return dp;
+
+    }
+
+    public void refreshMenuPosition () {
+        if (_slideToggle == true) {
+            _frontSideContainer.setX((float)((getMainActivityLayoutSize().height)*0.7));
+        }
+    }
+
+
     public void toggleMenu() {
         if (_slideToggle == false) {
 
-            _frontSideContainer.animate().setListener(null).translationX(700).withLayer();
+
+            _frontSideContainer.animate().setListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    BackMenuFragment backMenuFragment = (BackMenuFragment)getFragmentManager().findFragmentById(R.id.back_side_fragment);
+                    backMenuFragment.activeItemClick();
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+
+                }
+            }).translationX((float)((getMainActivityLayoutSize().width)*0.7)).withLayer();
             _slideToggle = true;
         } else {
 
@@ -93,7 +171,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public boolean isNeedAlertLogin() {
+        if ( _isNeedAlertLogin == true ) {
+            _isNeedAlertLogin = false;
+            return true;
+        }
+        return false;
+    }
+
     public void switchFrontFragment(int targetId){
+
+        boolean isLogin = HttpConn.CookieStorage.sharedStorage().getCookie().length() == 0 ? false : true;
+
+
         _frontSideContainer.animate().setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -102,7 +192,22 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                _replaceFragment(targetId);
+
+                switch ( targetId ) {
+                    case R.layout.fragment_mileage:
+                    case R.layout.fragment_one_by_one:
+                    case R.layout.fragment_book_list:
+                        if ( isLogin == false ){
+                            _isNeedAlertLogin = true;
+                            _replaceFragment(R.layout.fragment_login);
+                        } else {
+                            _replaceFragment(targetId);
+                        }
+                        break;
+                    default:
+                        _replaceFragment(targetId);
+                        break;
+                }
             }
 
             @Override
