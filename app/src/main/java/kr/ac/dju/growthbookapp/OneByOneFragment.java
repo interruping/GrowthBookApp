@@ -1,5 +1,8 @@
 package kr.ac.dju.growthbookapp;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,21 +49,34 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
     }
     public class OneByOneRecycleViewAdapter extends NewsRecyclerViewAdapter {}
 
-    private RecyclerView _oneByOneRecyclerView;
-    private OneByOneRecycleViewAdapter _adapter;
-    private SwipeRefreshLayout _swipeRefreshLayout;
-    private RecyclerView.OnScrollListener _scrollListener;
-
-    private int _maxPage;
-    private int _currentPage;
-
-    private boolean _isLoading;
-
-    private Set<Integer> _pageSet;
-
     public OneByOneFragment() {
         super(R.layout.fragment_one_by_one, R.id.root_constraint);
     }
+
+    private final int DETAIL_FRAGMENT_CODE = 0xDEADBEEF;
+    public static final String DETAIL_RETURN = "DETAIL_RETURL";
+
+    private RecyclerView _newsRecyclerView;
+
+    private NewsRecyclerViewAdapter _adapter;
+    private RecyclerView.OnScrollListener _scrollListener;
+
+    private NewsRecyclerViewAdapter _searchAdapter;
+
+    private SwipeRefreshLayout _swipeRefreshLayout;
+
+    private int _maxPage;
+    private int _currentPage;
+    private boolean _initialRefresh;
+    private boolean _isLoading;
+
+    private boolean _is_refresh;
+
+    private Set<Integer> _pageSet;
+    private Set<Integer> _searchPageSet;
+
+    private List<NewsArticle> _backupStatus;
+    private int _backupCurrentPage, _backupMaxPage;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -77,26 +93,21 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         _maxPage = 0;
         _currentPage = 1;
         _isLoading = false;
-        _pageSet = new HashSet<Integer>();
+        _is_refresh = false;
 
+        _pageSet = new HashSet<Integer>();
+        _newsRecyclerView = (RecyclerView) result.findViewById(R.id.one_by_one_recyclerview);
         _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.one_by_one_swiperefreshlayout);
-        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         _swipeRefreshLayout.setOnRefreshListener(this);
         _swipeRefreshLayout.setRefreshing(true);
 
-        _oneByOneRecyclerView = (RecyclerView) result.findViewById(R.id.one_by_one_recyclerview);
-
-        _adapter = new OneByOneRecycleViewAdapter();
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
+        _adapter = new NewsRecyclerViewAdapter();
         _adapter.setOnArticleListener(this);
-
-        LinearLayoutManager layoutManger = new LinearLayoutManager(getActivity());
-        layoutManger.setOrientation(LinearLayout.VERTICAL);
-
-        _oneByOneRecyclerView.setLayoutManager(layoutManger);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        _oneByOneRecyclerView.setLayoutManager(layoutManager);
+        _newsRecyclerView.setLayoutManager(layoutManager);
 
         _scrollListener = new RecyclerView.OnScrollListener() {
             @Override
@@ -108,8 +119,9 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
 
                 if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                     if ( _isLoading == false){
-                        _swipeRefreshLayout.setRefreshing(true);
+                        _is_refresh = false;
                         onRefresh();
+
                     }
 
                 }
@@ -117,12 +129,11 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         };
 
 
-       _oneByOneRecyclerView.addOnScrollListener(_scrollListener);
+        _newsRecyclerView.addOnScrollListener(_scrollListener);
 
-
-
-        _oneByOneRecyclerView.setAdapter(_adapter);
-        _oneByOneRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        _newsRecyclerView.setAdapter(_adapter);
+        //_newsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        _newsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         ImageButton writeButton = (ImageButton)result.findViewById(R.id.write_button);
         AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
@@ -140,32 +151,39 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
 
     @Override
     public void onRefresh() {
+        if ( _is_refresh == true ){
+
+            _currentPage = 1;
+            _maxPage = 0;
+            _adapter.setState(new ArrayList<>());
+            _adapter.notifyDataSetChanged();
+            _pageSet.clear();
+
+        }
+
         if ( _pageSet.contains(Integer.valueOf(_currentPage)) == true ) {
             _swipeRefreshLayout.setRefreshing(false);
+            _is_refresh = true;
             return;
         }
 
+
+
         _isLoading = true;
-
         HttpConn conn = new HttpConn();
-
         conn.setUserAgent("GBApp");
         conn.setCallBackListener(this);
-        HttpConn.CookieStorage storage = HttpConn.CookieStorage.sharedStorage();
-
-        Map<String, String> header = new HashMap<String,String>();
-        header.put("Cookie", storage.getCookie());
-
+        Map<String,String> headers = new HashMap<String,String>();
+        headers.put("Cookie", HttpConn.CookieStorage.sharedStorage().getCookie());
+        conn.setPrefixHeaderFields(headers);
         Map<String, String> params = new HashMap<String, String>();
         params.put("page", String.valueOf(_currentPage));
-
-        conn.setPrefixHeaderFields(header);
         try {
             conn.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds6_3.html"), params);
-        } catch (Exception e ){
+        } catch (Exception e) {
 
         }
-
+        _is_refresh = true;
 
     }
 
@@ -174,13 +192,17 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         Bundle args = new Bundle();
         args.putString("title", title);
         args.putString("url", url);
-
-        pushFragmentTo(R.id.front_side_container, new NewsAricleDetailFragment(), args);
+        Fragment toRead = new OneByOneDetailFragment();
+        toRead.setTargetFragment(this, DETAIL_FRAGMENT_CODE);
+        pushFragmentTo(R.id.front_side_container, toRead, args);
     }
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-        BookServerDataParser parser = new BookServerDataParser(s);
+
+        //boolean isPage = href.matches("/ds6_3\\.html\\?db=ds6_3&SK=&SN=&kind3=&idx=&page=[0-9]*");
+
+        BookServerDataParser parser= new BookServerDataParser(s);
         Element body = parser.getBody();
         Elements subBody = body.getElementsByClass("sub_body");
 
@@ -193,7 +215,6 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         for ( Element anchor: anchors ){
             int maxPage = 0;
             String href = anchor.attr("href");
-            ///ds6_3.html?db=ds6_3&SK=&SN=&kind3=&idx=&page=2
             boolean isPage = href.matches("/ds6_3\\.html\\?db=ds6_3&SK=&SN=&kind3=&idx=&page=[0-9]*");
 
             if ( isPage ){
@@ -204,15 +225,14 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
             }
 
         }
-
-        for (Element item : items) {
-            if (item.text().matches("[(][0-9]*[)]") == true) {
+        for ( Element item : items) {
+            if( item.text().matches("[(][0-9]*[)]") == true){
                 Element parent = item.parent();
                 Element achor = parent.getElementsByTag("a").get(0);
                 String title = achor.text();
                 String url = achor.attr("href");
 
-                if (parent.tagName().equals("div")) {
+                if ( parent.tagName().equals("div")){
                     parent = parent.parent();
                 }
 
@@ -220,26 +240,39 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
                 String author = parent.nextElementSibling().nextElementSibling().text();
                 String date = parent.nextElementSibling().nextElementSibling().nextElementSibling().nextElementSibling().text();
 
-                if (id.equals("[공지]") == true) {
-                    id = Integer.toString(0x7FFFFFFF);
-                }
+//                if(id.equals("[공지]")==true){
+//                    id = Integer.toString(0x7FFFFFFF);
+//                }
                 toAdds.add(new OneByOneItem(Integer.parseInt(id), title, url, author, date));
             }
 
         }
-
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Handler mainHandler = new Handler(getActivity().getMainLooper());
-        mainHandler.post(() -> {
-            for (OneByOneItem oneByOneItem : toAdds) {
-                _adapter.addItem(oneByOneItem);
+        mainHandler.post(()->{
+            _adapter.removeLoadingProgressItem();
+            _adapter.notifyDataSetChanged();
+            for( NewsArticle article : toAdds){
+                _adapter.addItem(article);
+            }
+
+            if ( _maxPage  > _currentPage  ){
+                _adapter.addItem(_adapter.getLoadingProgressItem());
+                _newsRecyclerView.scrollToPosition(_adapter.getItemCount()+1);
             }
             _pageSet.add(Integer.valueOf(_currentPage));
 
+
             _currentPage = _currentPage + 1 > _maxPage ? _currentPage : _currentPage+1;
             _isLoading = false;
-            //_isLoading = false;
             _swipeRefreshLayout.setRefreshing(false);
         });
+
+
     }
 
     @Override
@@ -250,5 +283,17 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
     @Override
     public void requestTimeout(HttpConn httpConn) {
         _isLoading = false;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == DETAIL_FRAGMENT_CODE && resultCode == Activity.RESULT_OK) {
+            if(data != null) {
+                String value = data.getStringExtra(DETAIL_RETURN);
+                if(value != null) {
+                    onRefresh();
+                }
+            }
+        }
     }
 }

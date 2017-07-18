@@ -192,6 +192,10 @@
         "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/layout/design_text_input_password_icon.xml"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/layout/fragment_auto_login.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/layout/fragment_auto_login.xml"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
         "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/layout/design_navigation_item_subheader.xml"
     },
@@ -262,6 +266,10 @@
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/layout/fragment_one_by_one_detail.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/layout/fragment_one_by_one_detail.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/layout/fragment_one_by_one.xml",

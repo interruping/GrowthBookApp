@@ -118,12 +118,8 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
 
                 if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                     if ( _isLoading == false){
-
                         _is_refresh = false;
                         onRefresh();
-
-
-                        showAlertView(AlertType.UNKNOWNERROR,String.valueOf(_currentPage) + "페이지 로딩 에러","어플을 종료합니다.","확인", null);
 
                     }
 
@@ -153,9 +149,11 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
 
 
         if ( _is_refresh == true ){
+
             _currentPage = 1;
             _maxPage = 0;
             _adapter.setState(new ArrayList<>());
+            _adapter.notifyDataSetChanged();
             _pageSet.clear();
 
         }
@@ -238,7 +236,6 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
         }
         Handler mainHandler = new Handler(getActivity().getMainLooper());
         mainHandler.post(()->{
-
             _adapter.removeLoadingProgressItem();
             _adapter.notifyDataSetChanged();
            for( NewsArticle article : toAdds){
@@ -269,6 +266,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
 
     @Override
     public void requestTimeout(HttpConn httpConn) {
+
         _isLoading = false;
     }
 
@@ -366,6 +364,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
 
                 Handler mainHandler = new Handler(getActivity().getMainLooper());
                 mainHandler.post(()->{
+                    openScreen();
                     if( toAdds.size() == 0 ){
                         _searchAdapter.setState(new ArrayList<NewsArticle>());
                         _searchAdapter.addItem(new NewsArticle(404, "일치하는 항목이 없습니다", "", "", ""));
@@ -382,12 +381,14 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
             @Override
             public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
                 _isLoading = false;
+
             }
 
             @Override
             public void requestTimeout(HttpConn httpConn) {
 
                 _isLoading = false;
+
             }
         });
         Map<String, String> params = new HashMap<String, String>();

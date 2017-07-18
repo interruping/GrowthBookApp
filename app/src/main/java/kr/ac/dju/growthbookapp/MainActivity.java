@@ -18,6 +18,8 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 
 import com.dju.book.*;
+import com.tsengvn.typekit.Typekit;
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,17 +29,27 @@ public class MainActivity extends AppCompatActivity {
 
     private Boolean _slideToggle;
     private FrameLayout _frontSideContainer;
-    private int _returnFragement;
+    private BackMenuFragment _backMenuFragment;
+    private int _returnFragment;
     private Map<Integer, Fragment> _fragments;
     private boolean _isNeedAlertLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Typekit.getInstance().addNormal(Typekit.createFromAsset(this, "fonts/NotoSansKR-DemiLight-Hestia.otf"))
+        .addBold(Typekit.createFromAsset(this,"fonts/NotoSansKR-Bold-Hestia.otf"));
+
+
+
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        _returnFragment = R.layout.fragment_news;
         _isNeedAlertLogin = false;
         _slideToggle = false;
+        _backMenuFragment = (BackMenuFragment)getFragmentManager().findFragmentById(R.id.back_side_fragment);
         _frontSideContainer = (FrameLayout)findViewById(R.id.front_side_container);
         _frontSideContainer.setClipToPadding(false);
         _frontSideContainer.setBackgroundColor(Color.WHITE);
@@ -45,9 +57,18 @@ public class MainActivity extends AppCompatActivity {
 
         _fragments = new HashMap<Integer, Fragment>();
 
+        Fragment initFragment = null;
+        UserInfoSafeStorage safe = new UserInfoSafeStorage(this);
+        if ( safe.isSafeUsed() ){
+            initFragment = new AutoLoginFragment();
+        } else {
+            initFragment = new NewsFragment();
+        }
+
+
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.add(R.id.front_side_container, new NewsFragment());
+        fragmentTransaction.add(R.id.front_side_container, initFragment);
         fragmentTransaction.commit();
 
         FrameLayout frmLyt = (FrameLayout) findViewById(R.id.front_side_container);
@@ -58,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
     }
 
     public class LayoutSize {
@@ -158,6 +183,9 @@ public class MainActivity extends AppCompatActivity {
             case R.layout.fragment_book_list:
                 fragmentTransaction.replace(R.id.front_side_container, new BookListFragment());
                 break;
+            case R.layout.fragment_mileage:
+                fragmentTransaction.replace(R.id.front_side_container, new MileageFragment());
+                break;
             case R.layout.fragment_book_event:
                 fragmentTransaction.replace(R.id.front_side_container, new BookEventFragment());
                 break;
@@ -192,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                if ( targetId != R.layout.fragment_login ){
+                    _returnFragment = targetId;
+                }
 
                 switch ( targetId ) {
                     case R.layout.fragment_mileage:
@@ -222,8 +253,19 @@ public class MainActivity extends AppCompatActivity {
         }).translationX(_frontSideContainer.getWidth()).withLayer();
     }
 
+    public void returnPrevLogin () {
+        _backMenuFragment.changeToLogout();
+        if ( _returnFragment == 0)
+            return;
+
+        int toReturn = _returnFragment;
+        _returnFragment = 0;
+        switchFrontFragment(toReturn);
+    }
+
     public void loginComplete() {
-        switchFrontFragment(R.layout.fragment_news);
+        _backMenuFragment.changeToLogout();
+        switchFrontFragment(R.layout.fragment_mileage);
     }
 
 }
