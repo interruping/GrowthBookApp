@@ -18,9 +18,8 @@
         android:layout_marginBottom="0dp"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         android:layout_marginTop="0dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.054">
 
 
     </android.support.v4.widget.SwipeRefreshLayout>
@@ -35,11 +34,19 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/mileage_swiperefreshlayout"
+        app:layout_constraintRight_toRightOf="@+id/mileage_swiperefreshlayout"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.158"
         app:srcCompat="@drawable/bronze_rank"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="133dp" />
+        app:layout_constraintHorizontal_bias="0.166" />
 
 
 </kr.ac.dju.growthbookapp.NavigationBaseLayout>

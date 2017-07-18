@@ -1,6 +1,9 @@
 package kr.ac.dju.growthbookapp;
 
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.StateListAnimator;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -21,12 +24,17 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import static kr.ac.dju.growthbookapp.R.drawable.ripple_effect;
 
 /**
  * Created by geonyounglim on 2017. 5. 28..
@@ -45,6 +53,7 @@ public class NavigationBarFragment extends Fragment {
     private EditText _searchInput;
 
     private View _rootView;
+    private ConstraintLayout _blockView;
     private View _leftAcc;
     private View _midAcc;
     private View _rightAcc;
@@ -165,20 +174,31 @@ public class NavigationBarFragment extends Fragment {
         addRightAccessoryToNavigatonBar(searchBtn);
     }
 
+    @Override
+    public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
+
+       if ( nextAnim == R.animator.slide_in_right ){
+           _blockView.setClickable(false);
+       }
+
+        return null;
+    }
+
     public void pushFragmentTo(int srcFrame, Fragment target , Bundle args) {
+        _blockView.setClickable(true);
+
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-
-
         ft.setCustomAnimations(R.animator.slide_in_left,
                 R.animator.slide_out_right, R.animator.slide_in_right,  R.animator.slide_out_left);
+
         target.setArguments(args);
+
         ft.hide(this);
         ft.add(srcFrame, target);
         ft.addToBackStack(null);
         ft.commit();
-    }
 
+    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -194,29 +214,24 @@ public class NavigationBarFragment extends Fragment {
         });
 
         _navigationBar = new LinearLayout(getActivity());
-        _navigationBar.setBackgroundResource(R.color.colorPrimary);
+        _navigationBar.setBackgroundResource(R.color.colorPrimaryDark);
 
         float density = _rootView.getResources().getDisplayMetrics().density;
 
-        LinearLayout.LayoutParams navigationBarParams = new LinearLayout.LayoutParams(0, (int)(BAR_DEFAULT_HEIGHT_DP * density) );
-
+        LinearLayout.LayoutParams navigationBarParams = new LinearLayout.LayoutParams(0, (int)(BAR_DEFAULT_HEIGHT_DP * density));
         _navigationBar.setPadding(0, 0, 0, 0);
         _navigationBar.setLayoutParams(navigationBarParams);
         _navigationBar.setOrientation(LinearLayout.HORIZONTAL);
         _navigationBar.setBaselineAligned(false);
         _navigationBar.setWeightSum(6f);
-        _navigationBar.setElevation(20);
+        _navigationBar.setElevation(5);
 
         LinearLayout.LayoutParams searchTextFieldParams = new LinearLayout.LayoutParams(0, (int)(BAR_DEFAULT_HEIGHT_DP * density) );
-
         _searchBar  = new LinearLayout(getActivity());
-        _searchBar.setBackgroundResource(R.color.colorPrimary);
+        _searchBar.setBackgroundResource(R.color.colorPrimaryDark);
         _searchBar.setLayoutParams(searchTextFieldParams);
         _searchBar.setOrientation(LinearLayout.HORIZONTAL);
         _searchBar.setWeightSum(10f);
-
-
-
 
         LinearLayout.LayoutParams searchInputParam = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT);
         searchInputParam.weight = 10f;
@@ -236,6 +251,7 @@ public class NavigationBarFragment extends Fragment {
         _searchInput.setFocusable(false);
         _searchInput.setFocusableInTouchMode(false);
         _searchInput.setCompoundDrawablesWithIntrinsicBounds(R.drawable.search_icon, 0, R.drawable.close_icon, 0);
+
         _searchInput.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -253,17 +269,28 @@ public class NavigationBarFragment extends Fragment {
                 }
                 return false;
             }});
+
         _searchBar.addView(_searchInput);
+
+        _blockView = new ConstraintLayout(getActivity());
+        ConstraintLayout.LayoutParams blockViewParams = new ConstraintLayout.LayoutParams(0,0);
+        _blockView.setLayoutParams(blockViewParams);
+        _blockView.setBackgroundColor(Color.BLACK);
+        _blockView.setAlpha(0f);
+        _blockView.setElevation(100.0f);
+        _blockView.setClickable(false);
+
 
         ConstraintLayout con = (ConstraintLayout)_rootView.findViewById(_rootConstraintLayoutId);
 
 
         _navigationBar.setId(R.id.navigation_fragment_navigation_bar);
         _searchBar.setId(R.id.navigation_fragment_search_edit_text_bar);
+        _blockView.setId(R.id.navigation_fragment_block_view);
 
         con.addView(_searchBar);
         con.addView(_navigationBar);
-
+        con.addView(_blockView);
 
         ConstraintSet set = new ConstraintSet();
         set.clone(con);
@@ -274,6 +301,10 @@ public class NavigationBarFragment extends Fragment {
         set.connect(_navigationBar.getId(), ConstraintSet.START, con.getId(), ConstraintSet.START );
         set.connect(_navigationBar.getId(), ConstraintSet.END, con.getId(), ConstraintSet.END );
 
+        set.connect(_blockView.getId(), ConstraintSet.TOP, con.getId(), ConstraintSet.TOP);
+        set.connect(_blockView.getId(), ConstraintSet.START, con.getId(), ConstraintSet.START );
+        set.connect(_blockView.getId(), ConstraintSet.END, con.getId(), ConstraintSet.END );
+        set.connect(_blockView.getId(), ConstraintSet.BOTTOM, con.getId(), ConstraintSet.BOTTOM);
         set.applyTo(con);
 
         con.bringChildToFront(_searchBar);
@@ -306,8 +337,12 @@ public class NavigationBarFragment extends Fragment {
 
             }
         });
+
+
+
         return _rootView;
     }
+
 
     public void activeSearch() {
         if(_searchBarEventListener != null) _searchBarEventListener.searchBarWillActive();
@@ -323,7 +358,7 @@ public class NavigationBarFragment extends Fragment {
             @Override
             public void onAnimationEnd(Animator animation) {
                 _navigationBar.setElevation(0);
-                _searchBar.setElevation(20f);
+                _searchBar.setElevation(5f);
                 _searchInput.animate().setListener(null).translationX(0).withLayer();
                 _searchInput.setFocusable(true);
                 _searchInput.setFocusableInTouchMode(true);
@@ -363,7 +398,7 @@ public class NavigationBarFragment extends Fragment {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                _navigationBar.setElevation(20f);
+                _navigationBar.setElevation(5f);
                 _searchBar.setElevation(0f);
                 _leftAcc.animate().setListener(null).translationX(0).withLayer();
                 _midAcc.animate().setListener(null).translationX(0).withLayer();
@@ -395,5 +430,127 @@ public class NavigationBarFragment extends Fragment {
         public void searchBarUnfocesed();
 
     }
+    public enum AlertType {
+        WARNING, ERROR, UNKNOWNERROR, INFO, FAIL
+    }
 
+    public interface AlertViewConfirmListener {
+        public void alertViewConfirmed(AlertType type, String title, String description );
+    }
+
+    public void showAlertView (AlertType type, String title, String description, String buttonString, @Nullable AlertViewConfirmListener listener ) {
+        ConstraintLayout alertView = (ConstraintLayout)getActivity().getLayoutInflater().inflate(R.layout.alert_view, null);
+
+        ImageView imageView = (ImageView) alertView.findViewById(R.id.alert_image);
+        TextView alertTitleView = (TextView) alertView.findViewById(R.id.alert_title);
+        TextView alertDescriptionView = (TextView) alertView.findViewById(R.id.alert_description);
+        Button confirmBotton = (Button) alertView.findViewById(R.id.confirm_button);
+        alertTitleView.setText(title);
+        alertDescriptionView.setText(description);
+
+        switch ( type ){
+            case WARNING:
+                alertTitleView.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorHighLight));
+                imageView.setImageResource(R.drawable.warning);
+                break;
+            case ERROR:
+                alertTitleView.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorStrongHighLight));
+                imageView.setImageResource(R.drawable.error_icon);
+                break;
+            case UNKNOWNERROR:
+                alertTitleView.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorStrongHighLight));
+                imageView.setImageResource(R.drawable.unknown_error_icon);
+                break;
+            case INFO:
+                alertTitleView.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
+                imageView.setImageResource(R.drawable.info_icon);
+                break;
+            case FAIL:
+                alertTitleView.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorStrongHighLight));
+                imageView.setImageResource(R.drawable.fail_icon);
+                break;
+
+        }
+
+        _blockView.setClickable(true);
+        _blockView.animate().setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                _blockView.animate().setListener(null);
+
+                ConstraintLayout con = (ConstraintLayout)_rootView.findViewById(_rootConstraintLayoutId);
+                ConstraintSet set = new ConstraintSet();
+                alertView.setVisibility(View.INVISIBLE);
+                alertView.setElevation(200.0f);
+
+                Button confirmButton = (Button)alertView.findViewById(R.id.confirm_button);
+                confirmButton.setText(buttonString);
+
+                con.addView(alertView);
+                set.clone(con);
+                set.connect(alertView.getId(), ConstraintSet.TOP, con.getId(), ConstraintSet.TOP );
+                set.connect(alertView.getId(), ConstraintSet.START, con.getId(), ConstraintSet.START );
+                set.connect(alertView.getId(), ConstraintSet.END, con.getId(), ConstraintSet.END );
+                set.connect(alertView.getId(), ConstraintSet.BOTTOM, con.getId(), ConstraintSet.BOTTOM);
+                set.applyTo(con);
+                alertView.setY(2000f);
+                alertView.animate().setListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        alertView.setVisibility(View.VISIBLE);
+                        confirmBotton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                _removeAlertView(alertView,listener,type,title,description);
+
+                            }
+                        });
+                    }
+                    @Override
+                    public void onAnimationEnd(Animator animation) { }
+                    @Override
+                    public void onAnimationCancel(Animator animation) { }
+                    @Override
+                    public void onAnimationRepeat(Animator animation) { }
+                }).translationY(0).withLayer();
+            }
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+        }).alpha(0.6f);
+
+        //_blockView.addView(alertView);
+
+
+    }
+
+    private void _removeAlertView(ConstraintLayout alertView, @Nullable AlertViewConfirmListener listener, AlertType type, String title, String description) {
+
+        ConstraintLayout con = (ConstraintLayout) _rootView.findViewById(_rootConstraintLayoutId);
+        con.removeView(alertView);
+        _blockView.animate().setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) { }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                _blockView.setClickable(false);
+                if (listener != null) {
+                    listener.alertViewConfirmed(type, title, description);
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) { }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) { }
+        }).alpha(0f).withLayer();
+    }
 }

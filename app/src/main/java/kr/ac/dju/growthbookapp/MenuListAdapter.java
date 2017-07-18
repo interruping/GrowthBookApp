@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 public class MenuListAdapter extends BaseAdapter {
     private ArrayList<MenuItem>  _container;
+    private Context _context;
 
     public MenuListAdapter() {
         _container = new ArrayList<MenuItem>();
@@ -41,11 +43,11 @@ public class MenuListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final int pos = position;
-        final Context context = parent.getContext();
+        _context = parent.getContext();
 
 
         if ( convertView == null ){
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.menu_item, parent, false);
 
         }
@@ -57,12 +59,9 @@ public class MenuListAdapter extends BaseAdapter {
         MenuItem item = _container.get(position);
 
         menuIcon.setImageDrawable(item.getMenuIcon());
-        menuIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        menuIcon.setPadding(0, 10,10,10);
 
         menuString.setText(item.getMenuString());
         menuString.setTextSize(TypedValue.COMPLEX_UNIT_SP,15);
-        menuString.setTextColor(0xFFFFFFFF);
         menuString.setGravity(Gravity.CENTER_VERTICAL| Gravity.LEFT);
 
         return convertView;
@@ -72,6 +71,30 @@ public class MenuListAdapter extends BaseAdapter {
         MenuItem menuItem = new MenuItem(id, icon, title);
 
         _container.add(menuItem);
+    }
+
+    public View getViewByPosition(int pos, ListView listView) {
+        final int firstListItemPosition = listView.getFirstVisiblePosition();
+        final int lastListItemPosition = firstListItemPosition + listView.getChildCount() - 1;
+
+        if (pos < firstListItemPosition || pos > lastListItemPosition ) {
+            return listView.getAdapter().getView(pos, null, listView);
+        } else {
+            final int childIndex = pos - firstListItemPosition;
+            return listView.getChildAt(childIndex);
+        }
+    }
+    public void removeAllHightLight(ListView listView) {
+        int len = _container.size();
+        TextView dummy = new TextView(_context);
+
+        for (int i = 0; i < len; i++){
+            View item = getViewByPosition(i,listView);
+            View highLightLine = item.findViewById(R.id.highlight_line);
+            TextView textView = (TextView)item.findViewById(R.id.menu_string);
+            highLightLine.setVisibility(View.INVISIBLE);
+            textView.setTextColor(dummy.getTextColors());
+        }
     }
 
 
