@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:weightSum="5"
+
     android:orientation="vertical">
 
 <LinearLayout
@@ -59,25 +61,29 @@
         android:weightSum="5">
 
         <TextView
-            android:id="@+id/D_weekend"
+            android:id="@+id/D_days"
+            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="2" />
 
         <TextView
-            android:id="@+id/D_days"
+            android:id="@+id/D_time"
+            android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="30dp" />
 
         <TextView
-            android:id="@+id/D_time"
+            android:id="@+id/D_weekend"
+            android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="30dp" />
 
         <TextView
             android:id="@+id/Time_limit"
+            android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="30dp" />
@@ -134,9 +140,12 @@
         <TextView
             android:id="@+id/Note"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:layout_weight="3"
-            android:gravity="center"
+            android:scrollHorizontally="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
             />
 
         <TextView

@@ -13,6 +13,10 @@ public class BookListData{
     private String book_Dday;
     private String pass_point;
     private String auth_point;
+    private String midx;
+    private String mquestion;
+    private String mdnum;
+    private String mvalue;
 
     public BookListData(String name, String src, String bookauthor, String list, String company, String day, String pass, String autho)
     {
@@ -25,6 +29,18 @@ public class BookListData{
         pass_point = pass;
         auth_point = autho;
     }
+    public void setApplyAttr(String idx, String question, String dnum, String value){
+        midx = idx;
+        mquestion = question;
+        mdnum = dnum;
+        mvalue = value;
+
+    }
+
+    public String GetIdx () { return midx;}
+    public String GetQuestion() {return mquestion;}
+    public String GetDnum () {return mdnum;}
+    public String Getvalue () {return mvalue;}
     public String GetBookSubject()
     {
        return book_name;

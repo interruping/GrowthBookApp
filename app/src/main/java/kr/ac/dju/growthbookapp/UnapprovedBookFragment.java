@@ -12,9 +12,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.ProgressBar;
+
 
 import com.dju.book.HttpConn;
 import com.dju.book.BookServerDataParser;
@@ -32,17 +31,20 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, View.OnClickListener {
+public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner{
     private Map<String,String> headers;
     private Map<String,String> paramss = new HashMap<String,String>();
+//    private Map<String,String> param = new HashMap<~>();
     private String url="";
     private int maxPage =0;
     private int nowPage = 2;
     private boolean pass =true;
     private RecyclerView mRecyclerView;
     private Myadpater mAdapter;
-    private int Recyclerposition;
+
     private ArrayList<BookListData>  bookArrayList = new ArrayList<BookListData>();
+
+    private DetailBookListFragment _parent;
     public UnapprovedBookFragment() {
         // Required empty public constructor
 
@@ -75,6 +77,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                 mRecyclerView.setHasFixedSize(true);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
                 mRecyclerView.setLayoutManager(layoutManager);
+
                 mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                     @Override
                     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -85,6 +88,8 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                         if((visibleItemCount + passVisiblesItems) >=totalItemCount){
                            if(getPassCard() == true)
                             if(nowPage <=maxPage) {
+
+
                                 paramss.put("page", String.valueOf(nowPage));
                                 onRefresh(nowPage);
                                 nowPage++;
@@ -117,15 +122,22 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                             e.printStackTrace();
                             System.out.println("ERROR:" + e.toString());
                         }
-
                     }
                 });
                 mAdapter = new Myadpater(bookArrayList, this.getActivity());
+                mAdapter.setmButton("apply");
                 mAdapter.setOnClickListener(this);
+                mAdapter.settingForUnapproved();
                 mRecyclerView.setAdapter(mAdapter);
+                
                 mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         return result;
+    }
+
+    public void setParentDetailFragment(DetailBookListFragment parent)
+    {
+        _parent = parent;
     }
 
     private void setPassCard(boolean ok) {
@@ -201,8 +213,25 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             Element booklog = booklogs.first();
             String bookList = booklog.text();
 
+            // apply button 코드
+            lis = booklist.select("li.mentor_li_content");
+             li = lis.first();
+            Elements applys = li.getElementsByClass("menter_li_div_title");
+            Element apply = applys.first();
+            Elements buttons = apply.getElementsByTag("img");
+            Element button = buttons.first();
+            String idx =button.attr("idx");
+            String question = button.attr("question");
+            String dnum = button.attr("dnum");
+            Elements values = body.getElementsByClass("window2");
+            Element value = values.first();
+            Element val = value.nextElementSibling();
+            String va = val.attr("value");
 
-            temp.add(new BookListData(bookname, booksrc,authorin,bookList,bookcompany, bookday,passpoint,authpoint));
+            BookListData  data = new BookListData(bookname, booksrc,authorin,bookList,bookcompany, bookday,passpoint,authpoint);
+            data.setApplyAttr(idx,question,dnum,va);
+
+            temp.add(data);
         }
 
         Handler mainHandler = new Handler(getActivity().getMainLooper());
@@ -228,10 +257,19 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     }
 
     @Override
-    public void onClick(View v) {
-//        Toast.makeText(getContext(),mAdapter.ViewHolder.class., Toast.LENGTH_SHORT).show();
+    public void applyButtonOnClicked(int position) {
+        String dnum = bookArrayList.get(position).GetDnum();
+        if(Integer.parseInt(dnum) < 20 ) {
+            _parent.showAlertView(NavigationBarFragment.AlertType.INFO, "신청 할 수 없습니다.", "아직 출제가 되지 않았습니다.", "확인",null);
+            return;
+        }
+
+            String title = bookArrayList.get(position).GetBookSubject();
+            String idx = bookArrayList.get(position).GetIdx();
+            String question = bookArrayList.get(position).GetQuestion();
+            String value = bookArrayList.get(position).Getvalue();
+
+            _parent.transToTestSubmitDetail(title, idx,value,question);
+        }
     }
 
-
-
-}

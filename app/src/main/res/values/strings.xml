@@ -10,6 +10,20 @@
     <string name="booklist">도서 인증</string>
     <string name="book_event">이벤트</string>
     <string name="one_by_one_write_question">질문 쓰기</string>
+    <string name="matters_that_require_attention"> 1. 시험신청 1회에 1책만 응시할 수 있습니다.
+        \n\n 2. 시험은 학기중 주 5일 오후 4시에 개설됩니다.
+           (방학 중 시험요일과 시간이 변동되니 공지사항 참조)
+        \n\n 3. 시험장소: 도서관 3층 코알라랩실 / 시험시간:
+        \n   오전 11시10분, 오후4시10분(학기 중)
+        \n\n 4. 시험문제는 문제은행에서 랜덤출제로
+        \n   20문항이며, 도서별 포인트점수와 Pass점수가
+        \n   다르니, 시험 신청시 확인하기 바랍니다.
+        \n\n 5.부득이한 사정으로 시험을 취소할 시, 반드시
+        \n   독서역량홈페이지 접속하여 취소하여야 합니다.
+        \n\n 시험취소는 시험 3일전 까지 가능합니다.
+        \n\n패널티 부과 - 시험신청 후 취소: -5점 / 시험당일 무단결시: -10점
+        \n\n 6. 대리시험등 부정행위 적발 시 당사자의 모든
+        \n   인증석적을 무효로 합니다."</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

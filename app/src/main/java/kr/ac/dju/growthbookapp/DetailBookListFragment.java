@@ -27,16 +27,18 @@ import java.util.Map;
  */
 
 public class DetailBookListFragment extends NavigationBarFragment {
-
+    private Map<String,String> applyattr = new HashMap<>();
     private Map<String, String> unapproved = new HashMap<String, String>();
     private Map<String, String> approve = new HashMap<String, String>();
     private Map<String, String> approved = new HashMap<String, String>();
     private String url="";
     private View _rootView;
     private  String key="";
+    private String device;
+    private DetailBookListFragment _self;
     public DetailBookListFragment(){
         super(R.layout.fragment_detailbooklist, R.id.root_constraint);
-
+        _self = this;
     }
 
 
@@ -101,6 +103,7 @@ public class DetailBookListFragment extends NavigationBarFragment {
         Bundle senddata = new Bundle();
         senddata.putSerializable("HashMap", (Serializable) approved);
         senddata.putString("url",url);
+        senddata.putString("device",device);
         ft.setArguments(senddata);
     }
 
@@ -176,6 +179,25 @@ public class DetailBookListFragment extends NavigationBarFragment {
         }
     }
 
+    public void transToTestSubmitDetail(String title, String no, String loginId, String question){
+        ApproveBookAuthTestSubmitDetail temp = new ApproveBookAuthTestSubmitDetail();
+        Bundle params = new Bundle();
+
+        applyattr.put("cmd","search");
+        applyattr.put("no", no);
+        applyattr.put("id", loginId);
+        applyattr.put("question", question);
+        params.putString("title",title);
+        params.putString("value", loginId);
+        params.putSerializable("HashMap", (Serializable) applyattr);
+        temp.setArguments(params);
+        pushFragmentTo(R.id.front_side_container, new ApproveBookAuthTestSubmitDetail(), params);
+
+    }
+    public void showError(String title, String desc){
+        showAlertView(AlertType.INFO, title, desc, "확인", null);
+    }
+
     private class MyPagerAdapter extends FragmentStatePagerAdapter{
 
         private  Fragment[] arrFragments;
@@ -219,6 +241,9 @@ public class DetailBookListFragment extends NavigationBarFragment {
             switch (position){
                 case 0: {
                     arrFragments[0] = new UnapprovedBookFragment();
+
+                    UnapprovedBookFragment tmp = (UnapprovedBookFragment)arrFragments[0];
+                    tmp.setParentDetailFragment(_self);
                     GetDataUnapprove(arrFragments[0]);
                     return arrFragments[0];}
                 case 1:{

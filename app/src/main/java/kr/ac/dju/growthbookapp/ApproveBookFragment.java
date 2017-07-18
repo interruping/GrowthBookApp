@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.dju.book.BookServerDataParser;
@@ -40,6 +41,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mdAdapter;
     private ArrayList<BookListData> bookArrayList = new ArrayList<>();
+
     public ApproveBookFragment() {
         // Required empty public constructor
     }
@@ -131,6 +133,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
     public void GetUrl() {
         url = getArguments().getString("url");
         params= (HashMap<String, String>) getArguments().getSerializable("HashMap");
+
     }
 
     @Override
@@ -212,7 +215,21 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             Elements contexts = ul.getElementsByTag("li");
             Element context = contexts.get(1);
             String context_book = context.text();
-            temp.add(new ApproveBookListData(bookname, booksrc, authorin, bookList, bookcompany, bookday, passpoint, authpoint,ddays,appdays,context_book));
+
+            //취소 값 idx
+
+            Element ecancle_button = contexts.get(2);
+            Elements mcancle_button = ecancle_button.getElementsByTag("img");
+            Element mcancle_button1 = mcancle_button.first();
+            String cancle_button;
+
+            if(mcancle_button1 == null){
+                cancle_button = null;
+            }
+            else{
+                cancle_button = mcancle_button1.attr("idx");
+            }
+            temp.add(new ApproveBookListData(bookname, booksrc, authorin, bookList, bookcompany, bookday, passpoint, authpoint,ddays,appdays,context_book, cancle_button));
         }
 
         Handler mainHandler = new Handler(getActivity().getMainLooper());
@@ -240,14 +257,18 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
         private String _dDay;
         private String _requestDate;
         private String _additionalContent;
+        private String _cancleButton;
 
-
-        public ApproveBookListData(String name, String src, String bookauthor, String list, String company, String day, String pass, String autho, String dDay, String requestDate, String additionalContent) {
+        public ApproveBookListData(String name, String src, String bookauthor, String list, String company, String day, String pass,
+                                   String autho, String dDay, String requestDate, String additionalContent, String cancle) {
             super(name, src, bookauthor, list, company, day, pass, autho);
             _dDay = dDay;
             _requestDate = requestDate;
             _additionalContent = additionalContent;
-
+            _cancleButton = cancle;
+        }
+        public String get_cancleButton() {
+            return _cancleButton;
         }
 
         public String Get_dDay(){
@@ -265,8 +286,9 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
         }
     }
 
-    public class ApproveMyadapter extends Myadpater{
+    public class ApproveMyadapter extends Myadpater implements HttpConn.CallbackListener{
 
+        private  ApproveMyadapter _self = this;
         public ApproveMyadapter(ArrayList<BookListData> bookdata, Context mcontext) {
             super(bookdata, mcontext);
         }
@@ -301,6 +323,41 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             Picasso.with(getContext())
                     .load(arrayList.get(position).GetBookSrc())
                     .into(holder.bookImg);
+
+            if(((ApproveBookListData) arrayList.get(position)).get_cancleButton() == null){
+                exHolder.getButtons().setVisibility(View.GONE);
+            }
+            else {
+                exHolder.getButtons().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String idx = ((ApproveBookListData) arrayList.get(position)).get_cancleButton();
+                        String cmd = "del";
+
+                        params.put("no",idx);
+                        params.put("cmd",cmd);
+
+                        HttpConn con = new HttpConn();
+                        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+                        String cookie = cs.getCookie();
+                        con.setCallBackListener(_self);
+                        con.setUserAgent("DJUAPP");
+                        headers = new HashMap<String, String>();
+                        headers.put("Cookie", cookie);
+                        con.setPrefixHeaderFields(headers);
+                        GetUrl();
+
+                        try {
+                            con.sendRequest(HttpConn.Method.GET, new URL(url), params);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.out.println("ERROR:" + e.toString());
+                        }
+
+
+                    }
+                });
+            }
         }
 
         @Override
@@ -308,17 +365,38 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             return getBookLIstDatas().size();
         }
 
+        @Override
+        public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+        }
+
+        @Override
+        public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+        }
+
+        @Override
+        public void requestTimeout(HttpConn httpConn) {
+
+        }
     }
 
     public static class ApproveViewHolder extends Myadpater.ViewHolder{
-
-        TextView D_day,approve_day,context;
-
+        View _root;
+        TextView D_day, approve_day, context;
+        Button cancle_Button;
         public ApproveViewHolder(View view) {
             super(view);
+            _root = view;
             D_day = (TextView)view.findViewById(R.id.D_dayInfo);
             approve_day = (TextView)view.findViewById(R.id.Approve_dayInfo);
             context = (TextView)view.findViewById(R.id.Context_Info);
+
+
+        }
+        public Button getButtons () {
+            cancle_Button = (Button)_root.findViewById(R.id.cancle_button);
+            return cancle_Button;
         }
 
 
