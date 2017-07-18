@@ -1,10 +1,16 @@
 package kr.ac.dju.growthbookapp;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -13,15 +19,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.dju.book.*;
 
+import org.json.JSONObject;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -42,14 +53,15 @@ import java.util.regex.Pattern;
  * Created by geonyounglim on 2017. 5. 30..
  */
 
-public class LoginFragment extends NavigationBarFragment implements HttpConn.CallbackListener {
+public class LoginFragment extends NavigationBarFragment implements HttpConn.CallbackListener, CompoundButton.OnCheckedChangeListener {
 
     private View _rootView;
     private Button _loginBtn;
     private EditText _idInput;
     private EditText _pwInput;
     private boolean _loginRequested;
-
+    private Switch _autoLoginSwitch;
+    private String _encryptKey;
     public LoginFragment() {
         super(R.layout.fragment_login, R.id.root_constraint);
         _loginRequested = false;
@@ -64,66 +76,80 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         _loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                challengeAuth();
+                challengeAuthPre();
             }
         });
 
         _idInput =(EditText) _rootView.findViewById(R.id.id_input);
         _pwInput =(EditText) _rootView.findViewById(R.id.pw_input);
+        _autoLoginSwitch = (Switch) _rootView.findViewById(R.id.auto_login);
+        _autoLoginSwitch.setOnCheckedChangeListener(this);
+        _loginBtn.setEnabled(false);
+        UserInfoSafeStorage safe = new UserInfoSafeStorage(getActivity());
+        if (safe.isSafeUsed() == true) {
+            _autoLoginSwitch.setOnCheckedChangeListener(null);
+            _autoLoginSwitch.setChecked(true);
+            _autoLoginSwitch.setText("자동 로그인 켜짐");
+            _autoLoginSwitch.setOnCheckedChangeListener(this);
+        } else if ( safe.isSafeUsed() == false ){
+            _autoLoginSwitch.setChecked(false);
+            _autoLoginSwitch.setText("자동 로그인 꺼짐");
+        }
 
-//        _idInput.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//                int pwLen = _pwInput.getText().toString().length();
-//
-//                if ( pwLen == 0 ){
-//                    _loginBtn.setEnabled(false);
-//                    return;
-//                }
-//                if ( start == 0 && count==0 && after==1 ){
-//                    _loginBtn.setEnabled(true);
-//                } else if ( start == 0 && count==1 && after==0) {
-//                    _loginBtn.setEnabled(false);
-//                }
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//        _pwInput.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//                int idLen = _idInput.getText().toString().length();
-//
-//                if ( idLen == 0 ){
-//                    _loginBtn.setEnabled(false);
-//                    return;
-//                }
-//
-//                if ( start == 0 && count==0 && after==1 ){
-//
-//                    _loginBtn.setEnabled(true);
-//                } else if ( start == 0 && count==1 && after==0) {
-//                    _loginBtn.setEnabled(false);
-//                }
-//
-//
-//                return;
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-//            @Override
-//            public void afterTextChanged(Editable s) {}
-//        });
+
+        _idInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                int pwLen = _pwInput.getText().toString().length();
+
+                if ( pwLen == 0 ){
+                    _loginBtn.setEnabled(false);
+                    return;
+                }
+                if ( start == 0 && count==0 && after==1 ){
+                    _loginBtn.setEnabled(true);
+                } else if ( start == 0 && count==1 && after==0) {
+                    _loginBtn.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        _pwInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                int idLen = _idInput.getText().toString().length();
+
+                if ( idLen == 0 ){
+                    _loginBtn.setEnabled(false);
+                    return;
+                }
+
+                if ( start == 0 && count==0 && after==1 ){
+
+                    _loginBtn.setEnabled(true);
+                } else if ( start == 0 && count==1 && after==0) {
+                    _loginBtn.setEnabled(false);
+                }
+
+
+                return;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
 
         setWithCommonNavigationBar(getResources().getString(R.string.login),(View v)->{
             MainActivity ma = (MainActivity)this.getActivity();
@@ -139,7 +165,61 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         return _rootView;
     }
+    public void challengeAuthPre() {
+        //https://libweb.dju.ac.kr/users/tjul/go/gobtsusercheck.aspx
+        HttpConn con = new HttpConn();
 
+        con.setCallBackListener(new HttpConn.CallbackListener() {
+            @Override
+            public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+                BookServerDataParser parser = new BookServerDataParser(s);
+                Element body = parser.getBody();
+
+                Elements inputs = body.getElementsByTag("input");
+
+                if (inputs.size() > 0 ){
+                    for ( Element input : inputs ){
+                        if ( input.attr("name").equals("login_check") ){
+                            String isOk = input.attr("value");
+
+                            if ( isOk.equals("1") ){
+                                challengeAuth();
+                            } else if ( isOk.equals("0") ) {
+                                showAlertView(AlertType.INFO, "로그인 실패", "아이디 혹은 비밀번호를 확인하세요.", "확인", null);
+                            } //if
+                        } //if
+                    } //for
+                } else { // else of inputs.size() > 0
+
+                }
+            }
+
+            @Override
+            public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+            }
+
+            @Override
+            public void requestTimeout(HttpConn httpConn) {
+
+            }
+        });
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put("Referer", "https://book.dju.ac.kr/ds19_1.html");
+
+        con.setPrefixHeaderFields(headers);
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("txtID", _idInput.getText().toString());
+        params.put("txtPW", _pwInput.getText().toString());
+
+        try {
+            con.sendRequest(HttpConn.Method.GET, new URL("https://libweb.dju.ac.kr/users/tjul/go/gobtsusercheck.aspx"), params);
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR:" + e.toString());
+        }
+
+    }
     public void challengeAuth() {
         HttpConn con = new HttpConn();
 
@@ -158,8 +238,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         try {
             con.sendRequest(HttpConn.Method.POST, new URL("https://book.dju.ac.kr/duri/member.php"), params);
         } catch(Exception e) {
-            e.printStackTrace();
-            System.out.println("ERROR:" + e.toString());
+
         }
 
     }
@@ -167,20 +246,27 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
     private void _loginFailAlarm() {
         Handler mainHandler = new Handler(getActivity().getMainLooper());
         mainHandler.post(()->{
-            Toast toast = Toast.makeText(getActivity().getApplicationContext(), "로그인 실패.", Toast.LENGTH_SHORT);
-            toast.show();
+            showAlertView(AlertType.INFO, "로그인 실패", "웹 서버 에러 관리자에게 문의하세요.", "확인", null);
             _loginRequested = false;
 
         });
 
     }
 
+    private void _autoLoginCheck() {
+        if ( _autoLoginSwitch.isChecked() == true){
+            UserInfoSafeStorage safe = new UserInfoSafeStorage(getActivity());
+            UserInfoSafeStorage.UserInfo user = new UserInfoSafeStorage.UserInfo();
+            user.id = _idInput.getText().toString();
+            user.pw = _pwInput.getText().toString();
+            safe.setKey(_encryptKey);
+            safe.put(user);
+
+        }
+    }
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
         Handler mainHandler = new Handler(getActivity().getMainLooper());
-
-
-
 
         if ( _loginRequested == true ){
 
@@ -192,9 +278,11 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
             if( topNavi != null){
                 if (topNavi.html().contains("로그아웃") == true ){
                     mainHandler.post(()->{
-
+                        _autoLoginCheck();
                         MainActivity ma = (MainActivity)getActivity();
-                        ma.loginComplete();
+                        //ma.loginComplete();
+                        ma.returnPrevLogin();
+
 
                     });
 
@@ -265,5 +353,93 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
     @Override
     public void requestTimeout(HttpConn httpConn) {
 
+    }
+
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+        if ( isChecked == true ){
+            _autoLoginSwitch.setText("암호화 키 다운로드 중...");
+            _loginBtn.setEnabled(false);
+            _idInput.setEnabled(false);
+            _pwInput.setEnabled(false);
+
+            HttpConn conn = new HttpConn();
+
+            conn.setUserAgent("GBApp");
+            conn.setCallBackListener(new HttpConn.CallbackListener() {
+                @Override
+                public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+                    try{
+                        JSONObject result = new JSONObject(s);
+                        if ( result.get("result").toString().equals("0") == true ) {
+                            _encryptKey = result.get("skey").toString();
+                        } else {
+
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+
+                    Handler mainHandler = new Handler(getActivity().getMainLooper());
+                    mainHandler.post(()->{
+                        _loginBtn.setEnabled(true);
+                        _autoLoginSwitch.setText("자동 로그인 켜짐");
+                        _idInput.setEnabled(true);
+                        _pwInput.setEnabled(true);
+                    });
+
+                }
+
+                @Override
+                public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+
+                    Handler mainHandler = new Handler(getActivity().getMainLooper());
+                    mainHandler.post(()->{
+                        showAlertView(AlertType.ERROR, "자동 로그인을 사용할 수 없습니다", "암호화키 다운로드를 실패했습니다", "확인", null);
+                        _autoLoginSwitch.setChecked(false);
+                        _autoLoginSwitch.setText("자동 로그인 꺼짐");
+                        _idInput.setEnabled(true);
+                        _pwInput.setEnabled(true);
+                    });
+
+                }
+
+                @Override
+                public void requestTimeout(HttpConn httpConn) {
+                    Handler mainHandler = new Handler(getActivity().getMainLooper());
+                    mainHandler.post(()->{
+                        showAlertView(AlertType.ERROR, "자동 로그인을 사용할 수 없습니다", "암호화키 다운로드를 실패했습니다", "확인", null);
+                        _autoLoginSwitch.setChecked(false);
+                        _autoLoginSwitch.setText("자동 로그인 꺼짐");
+                        _idInput.setEnabled(true);
+                        _pwInput.setEnabled(true);
+                    });
+                }
+            });
+            try {
+                String uuid = Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
+                JSONObject json = new JSONObject();
+                json.put("device_id", uuid);
+                Map<String,String> header = new HashMap<String,String>();
+                header.put("Content-type", "application/json");
+
+                conn.setPrefixHeaderFields(header);
+                conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/adduser"),json.toString());
+            } catch ( Exception e ) {
+                e.printStackTrace();
+            }
+
+        } else if ( isChecked == false ) {
+            UserInfoSafeStorage safe = new UserInfoSafeStorage(getActivity());
+            safe.delete();
+            _autoLoginSwitch.setText("자동 로그인 꺼짐");
+            _loginBtn.setEnabled(true);
+            _idInput.setEnabled(true);
+            _pwInput.setEnabled(true);
+        }
     }
 }

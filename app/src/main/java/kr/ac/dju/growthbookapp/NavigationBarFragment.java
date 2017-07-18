@@ -9,6 +9,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -152,6 +154,11 @@ public class NavigationBarFragment extends Fragment {
         titleView.setText(title);
         titleView.setTextSize(20);
         titleView.setTextColor(Color.WHITE);
+        Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),
+                "fonts/NotoSansKR-Thin-Hestia.otf");
+        titleView.setTypeface(tf);
+        titleView.setLineSpacing(1, 1.0f);
+
         titleView.setBackgroundColor(Color.TRANSPARENT);
         titleView.setGravity(Gravity.CENTER);
 
@@ -159,13 +166,13 @@ public class NavigationBarFragment extends Fragment {
         menuBtn.setImageResource(R.drawable.menu_icon);
         menuBtn.setScaleType(ImageView.ScaleType.FIT_CENTER);
         menuBtn.setBackgroundColor(Color.TRANSPARENT);
-        menuBtn.setPadding(20, 20, 20, 20);
+        menuBtn.setPadding(30, 45, 30, 45);
 
         ImageButton searchBtn = new ImageButton(getActivity());
         searchBtn.setImageResource(R.drawable.search_icon);
         searchBtn.setBackgroundColor(Color.TRANSPARENT);
         searchBtn.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
+        searchBtn.setPadding(30,45,30,45);
         menuBtn.setOnClickListener(menuButtonOnClick);
         searchBtn.setOnClickListener(searchButtonOnClick);
 
@@ -552,5 +559,13 @@ public class NavigationBarFragment extends Fragment {
             @Override
             public void onAnimationRepeat(Animator animation) { }
         }).alpha(0f).withLayer();
+    }
+
+    public void blockScreen() {
+        _blockView.setClickable(true);
+    }
+
+    public void openScreen() {
+        _blockView.setClickable(false);
     }
 }

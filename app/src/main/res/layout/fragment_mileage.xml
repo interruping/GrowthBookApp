@@ -5,24 +5,7 @@
     android:id="@+id/root_constraint"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/mileage_swiperefreshlayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        android:layout_marginTop="0dp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintVertical_bias="0.054">
-
-
-    </android.support.v4.widget.SwipeRefreshLayout>
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -30,23 +13,132 @@
         android:id="@+id/guideline4"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="55dp"
-        />
+        tools:layout_editor_absoluteY="55dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <android.support.constraint.ConstraintLayout
+
+        android:id="@+id/milage_sub_frame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="0dp">
+        <TextView
+            android:id="@+id/book_point_level_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/milage_point_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="milagePoint"
+            android:textColor="@color/colorHighLight"
+            app:layout_constraintBottom_toTopOf="@+id/first_deco_line"
+            app:layout_constraintLeft_toLeftOf="@+id/first_deco_line" />
+
+        <View
+            android:id="@+id/first_deco_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="60dp"
+            android:background="@color/colorHighLight"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp" />
+
+        <TextView
+            android:id="@+id/book_borrow_point_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@+id/first_deco_line"
+            app:layout_constraintTop_toBottomOf="@+id/first_deco_line" />
+
+        <TextView
+            android:id="@+id/book_auth_point_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@+id/first_deco_line"
+            app:layout_constraintTop_toBottomOf="@+id/book_borrow_point_textview" />
+
+        <TextView
+            android:id="@+id/book_seat_point_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@+id/first_deco_line"
+            app:layout_constraintTop_toBottomOf="@+id/book_auth_point_textview" />
+
+        <TextView
+            android:id="@+id/book_event_point_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@+id/first_deco_line"
+            app:layout_constraintTop_toBottomOf="@+id/book_seat_point_textview" />
+
+        <View
+            android:id="@+id/last_deco_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorHighLight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/first_deco_line"
+
+            app:layout_constraintRight_toRightOf="@+id/first_deco_line"
+            app:layout_constraintTop_toBottomOf="@+id/book_event_point_textview" />
+    </android.support.constraint.ConstraintLayout>
+
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/book_level_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/mileage_swiperefreshlayout"
-        app:layout_constraintRight_toRightOf="@+id/mileage_swiperefreshlayout"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.158"
+        android:layout_marginStart="8dp"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/bronze_rank"
-        app:layout_constraintHorizontal_bias="0.166" />
+        app:layout_constraintBottom_toTopOf="@+id/milage_sub_frame"
+        app:layout_constraintTop_toTopOf="@+id/milage_sub_frame" />
+
+    <ListView
+        android:id="@+id/book_level_desc_listview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/milage_sub_frame"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </kr.ac.dju.growthbookapp.NavigationBaseLayout>
