@@ -1,6 +1,7 @@
 package kr.ac.dju.growthbookapp;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +25,16 @@ public class DeviceIdGet implements HttpConn.CallbackListener {
     private Map<String, String> headers;
     private Map<String, String> param = new HashMap<>();
     private String mDeivce;
+    private StarRatingBarDialog mRaiting;
 
-    public DeviceIdGet() {
 
+    public DeviceIdGet(){}
+
+    public void setStarRatingBarDialog(StarRatingBarDialog rating){
+        mRaiting = rating;
     }
+    public void setDeviceIdGet() {
 
-    public String getDeivce() {
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         String cookie = cs.getCookie();
@@ -48,9 +53,15 @@ public class DeviceIdGet implements HttpConn.CallbackListener {
             e.printStackTrace();
             System.out.println("ERROR:" + e.toString());
         }
+    }
 
+    public String getmDeivce() {
         return mDeivce;
     }
+
+
+
+
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
@@ -64,6 +75,22 @@ public class DeviceIdGet implements HttpConn.CallbackListener {
         Element val = value.nextElementSibling();
         String va = val.attr("value");
         mDeivce = va;
+
+
+        Handler mainHandler = new Handler(mRaiting.getContext().getMainLooper());
+        mainHandler.post(() -> {
+
+            settingValue();
+        });
+    }
+
+    private void settingValue() {
+        mRaiting.mRaing_View.setVisibility(View.VISIBLE);
+        mRaiting.mStarBar.setVisibility(View.VISIBLE);
+        mRaiting.mRaing_Text.setVisibility(View.VISIBLE);
+        mRaiting.mRating_Name.setVisibility(View.VISIBLE);
+        mRaiting.mSubmit_Button.setVisibility(View.VISIBLE);
+        mRaiting.mCancle_Button.setVisibility(View.VISIBLE);
     }
 
 

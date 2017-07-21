@@ -29,37 +29,37 @@ import static android.R.attr.data;
  * A simple {@link Fragment} subclass.
  */
 public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment implements HttpConn.CallbackListener {
-    private Map<String,String> headers;
+    private Map<String, String> headers;
     private ArrayList<BookAuthtestSubmitData> apply_Data = new ArrayList<>();
-    private Map<String,String> apply_attr= new HashMap<>();
+    private Map<String, String> apply_attr = new HashMap<>();
     private String mUrl;
-    private BookAuthTestSubmitAdapter adapter;
+    public BookAuthTestSubmitAdapter adapter;
     private String apply_value;
+
     public ApproveBookAuthTestSubmitDetail() {
         // Required empty public constructor
-        super(R.layout.fragment_approve_book_button,R.id.root_constraint);
+        super(R.layout.fragment_approve_book_button, R.id.root_constraint);
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View result =  super.onCreateView(inflater, container, savedInstanceState);
+        View result = super.onCreateView(inflater, container, savedInstanceState);
 
         Bundle args = getArguments();
         String name = args.getString("title");
-        name = name.replace("-","");
-        setWithCommonNavigationBar(name,(View v)->{
+        name = name.replace("-", "");
+        setWithCommonNavigationBar(name, (View v) -> {
 
-            MainActivity ma = (MainActivity)this.getActivity();
+            MainActivity ma = (MainActivity) this.getActivity();
             ma.toggleMenu();
-        }, (View v)->{
+        }, (View v) -> {
 
         });
 
-        setBackButton((View v)->{
+        setBackButton((View v) -> {
 
             getFragmentManager().popBackStack();
         });
@@ -72,29 +72,31 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
         headers = new HashMap<String, String>();
         headers.put("Cookie", cookie);
         con.setPrefixHeaderFields(headers);
-        mUrl ="https://book.dju.ac.kr/ds_pages/ajax_book.php";
+        mUrl = "https://book.dju.ac.kr/ds_pages/ajax_book.php";
 
         ListView listView;
 
         adapter = new BookAuthTestSubmitAdapter(apply_Data);
         adapter.setBookAuthTestSubmitDetail(this);
 
-        apply_attr = (HashMap<String,String>)getArguments().getSerializable("HashMap");
+        apply_attr = (HashMap<String, String>) getArguments().getSerializable("HashMap");
+        try {
+            con.sendRequest(HttpConn.Method.POST, new URL(mUrl), apply_attr);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR:" + e.toString());
+        }
 
-            try {
-                con.sendRequest(HttpConn.Method.POST, new URL(mUrl), apply_attr);
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("ERROR:" + e.toString());
-            }
-
-        listView =(ListView)result.findViewById(R.id.Approve_List_Info);
+        listView = (ListView) result.findViewById(R.id.Approve_List_Info);
         listView.setAdapter(adapter);
 
 
-
-
         return result;
+    }
+
+    public void unprovedBackButton() {
+
+        getFragmentManager().popBackStack();
     }
 
     @Override
@@ -105,8 +107,8 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
         Elements tbodys = body.getElementsByTag("tbody");
         Element tbody = tbodys.first();
         Elements trs = tbody.getElementsByClass("table_tr");
-        for(Element tr : trs){
-            Elements td =  tr.getElementsByTag("td");
+        for (Element tr : trs) {
+            Elements td = tr.getElementsByTag("td");
 
             Element ed_day = td.get(1);
             String d_day = ed_day.text();
@@ -129,7 +131,7 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
 
             Element apply_Buttons = td.get(13);
             String submit_com = apply_Buttons.text();
-            if(submit_com.equals("신청완료")==false) {
+            if (submit_com.equals("신청완료") == false) {
 
                 String apply_day = apply_Buttons.attr("day");
                 String apply_stime1 = apply_Buttons.attr("stime1");
@@ -137,25 +139,25 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
                 String apply_idx = apply_Buttons.attr("idx");
                 String apply_title = apply_Buttons.attr("title");
                 String apply_setting_no = apply_Buttons.attr("setting_no");
-                temp.add(new BookAuthtestSubmitData(d_day, time, weekend, limt_time, content, admite_limt,null, apply_day, apply_stime1,
+                temp.add(new BookAuthtestSubmitData(d_day, time, weekend, limt_time, content, admite_limt, null, apply_day, apply_stime1,
                         apply_stime2, apply_value, apply_idx, apply_title, apply_setting_no));
-            }
-            else {
+            } else {
                 temp.add(new BookAuthtestSubmitData(d_day, time, weekend, limt_time, content, admite_limt,
                         submit_com, null, null, null, null, null, null, null));
             }
         }
         Handler mainHandler = new Handler(getActivity().getMainLooper());
-        mainHandler.post(()-> {
+        mainHandler.post(() -> {
 
             for (BookAuthtestSubmitData data : temp) {
                 apply_Data.add(data);
                 adapter.notifyDataSetChanged();
-        }
+            }
 
-    });
+        });
 
     }
+
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
 

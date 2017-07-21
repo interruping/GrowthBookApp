@@ -37,19 +37,19 @@ import java.util.Map;
  * Created by dodrn on 2017-06-28.
  */
 
-public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implements  HttpConn.CallbackListener{
+public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implements HttpConn.CallbackListener {
     private ArrayList<BookListData> bookListDatas = new ArrayList<BookListData>();
     private Context mContext;
     private String mButton = null;
     private ApplyButtonClickListner _applyButtonClickListener;
     private StarRatingBarDialog dialog;
     private String mDevice;
-    private Map<String,String> headers;
+    private Map<String, String> headers;
+    private Myadpater _self = this;
     private boolean mUnapproved;
-    DeviceIdGet mgetDevice = new DeviceIdGet();
 
 
-    public Myadpater(ArrayList<BookListData> bookdata, Context mcontext){
+    public Myadpater(ArrayList<BookListData> bookdata, Context mcontext) {
         bookListDatas = bookdata;
         mContext = mcontext;
         mUnapproved = false;
@@ -59,11 +59,11 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         this.mDevice = device;
     }
 
-    public void setmButton (String button){
+    public void setmButton(String button) {
         mButton = button;
     }
 
-    public void settingForUnapproved(){
+    public void settingForUnapproved() {
         mUnapproved = true;
     }
 
@@ -71,19 +71,20 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         return mContext;
     }
 
-    public ArrayList<BookListData>  getBookLIstDatas(){
+    public ArrayList<BookListData> getBookLIstDatas() {
         return bookListDatas;
     }
+
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-    {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.unprovedbook_item,parent,false);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.unprovedbook_item, parent, false);
         View container = v.findViewById(R.id.unprovedbook_item_container);
 
         ViewHolder holder = new ViewHolder(container);
         return holder;
     }
 
+    // ViewHolder Setting
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
@@ -94,69 +95,33 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         holder.passpoint2.setText(bookListDatas.get(position).GetPassPoint());
         holder.bookname.setText(bookListDatas.get(position).GetBookSubject());
         holder.bookdays.setText(bookListDatas.get(position).GetBookDday());
-        if(mButton != null && mButton.equals("apply") == true){
 
+        // 사진 출력 함수 Picasso
+        Picasso.with(mContext)
+                .load(bookListDatas.get(position).GetBookSrc())
+                .into(holder.bookImg);
 
-            if ( mUnapproved == true ){
-                  holder.getButton().setOnClickListener(
-                         new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    _applyButtonClickListener.applyButtonOnClicked(position);
-                                          }
+        // UnapprovedBookFragment에서 보여주는 신청버튼 조건식
+        if (mButton != null && mButton.equals("apply") == true) {
+            if (mUnapproved == true) {
+                holder.getButton().setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                _applyButtonClickListener.applyButtonOnClicked(position);
+                            }
 
-                           });
-                       }
-             }
+                        });
+            }
+        }
 
-
-        if(mButton != null && mButton.equals("star") == true) {
+        // ApprovedBookFragment에서 보여주는 난이도 평점 버튼 조건식
+        if (mButton != null && mButton.equals("star") == true) {
             holder.getButton().setText("평점주기");
-
-
-
-
-            View.OnClickListener mSubmitClickListener = new View.OnClickListener()  {
-                @Override
-                public void onClick(View v) {
-
-
-                    float rate =  dialog.getmRate();
-                    String mHashName = dialog.getmHash_Book_Name();
-                    Map<String,String> header = new HashMap<String,String>();
-                    HttpConn conn = new HttpConn();
-                    header.put("Content-type", "application/json");
-                    conn.setPrefixHeaderFields(header);
-                    try {
-
-                        JSONObject json = new JSONObject();
-                        json.put("device_id",mDevice);
-                        json.put("book_id",mHashName);
-                        json.put("rate", rate);
-                        try {
-                            conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/adduser"), json.toString());
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    Toast.makeText(getContext(),"성공",Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            };
-
-            View.OnClickListener mCancleClickListener = new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getContext(),"취소",Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            };
             holder.getButton().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mDevice = mgetDevice.getDeivce();
+
                     String name = bookListDatas.get(position).GetBookSubject();
                     String hash_name = MD5(name);
                     dialog = new StarRatingBarDialog(v.getContext(),
@@ -169,34 +134,50 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
                     dialog.show();
                 }
 
-                private String MD5(String name) {
-                    final  String MD5 = "MD5";
-                    try{
-                        MessageDigest digest = java.security.MessageDigest.getInstance(MD5);
-                        digest.update(name.getBytes());
-                        byte messageDigest[] = digest.digest();
+                // RatingBar submit Button class
+                View.OnClickListener mSubmitClickListener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                        StringBuilder hexString =new StringBuilder();
-                        for(byte aMessageDigest : messageDigest){
-                            String hashname = Integer.toHexString(0xFF & aMessageDigest);
-                            while (hashname.length() <2)
-                                hashname = 0 + hashname;
-                            hexString.append(hashname);
+                        String mDevice = dialog.getmDevice();
+                        float rate = dialog.getmRate();
+                        String mHashName = dialog.getmHash_Book_Name();
+
+                        Map<String, String> header = new HashMap<String, String>();
+                        HttpConn conn = new HttpConn();
+                        conn.setCallBackListener(_self);
+                        header.put("Content-type", "application/json");
+                        conn.setPrefixHeaderFields(header);
+                        try {
+
+                            JSONObject json = new JSONObject();
+                            json.put("device_id", mDevice);
+                            json.put("book_id", mHashName);
+                            json.put("rate", rate);
+                            try {
+                                conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/adduser"), json.toString());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                        return hexString.toString();
-                    } catch (NoSuchAlgorithmException e) {
-                        e.printStackTrace();
+                        Toast.makeText(getContext(), "제출되었습니다.", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
-                    return "";
-                }
+                };
+
+                // RatingBar Cancle Button
+                View.OnClickListener mCancleClickListener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "취소되었습니다.", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                };
+
             });
         }
-
-
-       Picasso.with(mContext)
-               .load(bookListDatas.get(position).GetBookSrc())
-
-               .into(holder.bookImg);
 
 
     }
@@ -206,22 +187,16 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         return bookListDatas.size();
     }
 
-    public void setOnClickListener(ApplyButtonClickListner listener){
-        _applyButtonClickListener = listener;
-    }
 
-
-
-
-
+    // 서버에서 전송하기 위한 HTTPCallbackListener 함수
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-        System.out.print(s);
+        System.out.println(s);
     }
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
+        System.out.print(s);
     }
 
     @Override
@@ -230,8 +205,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     }
 
 
-
-
+    // 인터페이스
     public interface ApplyButtonClickListner {
         public void applyButtonOnClicked(int position);
     }
@@ -239,30 +213,56 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     public static class ViewHolder extends RecyclerView.ViewHolder {
         View _root;
         ImageView bookImg;
-        TextView bookname,author2,company2,booklist2,passpoint2,authpass2,bookdays;
+        TextView bookname, author2, company2, booklist2, passpoint2, authpass2, bookdays;
         Button applyBtn;
+
         public ViewHolder(View view) {
             super(view);
             _root = view;
-            bookImg = (ImageView)view.findViewById(R.id.bookimg);
-            bookname = (TextView)view.findViewById(R.id.book_subject);
-            author2 = (TextView)view.findViewById(R.id.book_author0);
-            company2 = (TextView)view.findViewById(R.id.book_company0);
-            booklist2 = (TextView)view.findViewById(R.id.booklist0);
-            passpoint2 = (TextView)view.findViewById(R.id.pass_point0);
-            authpass2 = (TextView)view.findViewById(R.id.autho_point0);
-            bookdays = (TextView)view.findViewById(R.id.book_day0);
-
+            bookImg = (ImageView) view.findViewById(R.id.bookimg);
+            bookname = (TextView) view.findViewById(R.id.book_subject);
+            author2 = (TextView) view.findViewById(R.id.book_author0);
+            company2 = (TextView) view.findViewById(R.id.book_company0);
+            booklist2 = (TextView) view.findViewById(R.id.booklist0);
+            passpoint2 = (TextView) view.findViewById(R.id.pass_point0);
+            authpass2 = (TextView) view.findViewById(R.id.autho_point0);
+            bookdays = (TextView) view.findViewById(R.id.book_day0);
 
 
         }
 
         public Button getButton() {
-            applyBtn = (Button)_root.findViewById(R.id.apply_button);
+            applyBtn = (Button) _root.findViewById(R.id.apply_button);
             return applyBtn;
         }
 
     }
 
 
+    public void setOnClickListener(ApplyButtonClickListner listener) {
+        _applyButtonClickListener = listener;
     }
+
+    private String MD5(String name) {
+        final String MD5 = "MD5";
+        try {
+            MessageDigest digest = java.security.MessageDigest.getInstance(MD5);
+            digest.update(name.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte aMessageDigest : messageDigest) {
+                String hashname = Integer.toHexString(0xFF & aMessageDigest);
+                while (hashname.length() < 2)
+                    hashname = 0 + hashname;
+                hexString.append(hashname);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
+}

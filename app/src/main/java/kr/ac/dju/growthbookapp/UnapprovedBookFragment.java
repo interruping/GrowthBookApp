@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 
 import com.dju.book.HttpConn;
 import com.dju.book.BookServerDataParser;
+
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -31,20 +32,21 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner{
-    private Map<String,String> headers;
-    private Map<String,String> paramss = new HashMap<String,String>();
-//    private Map<String,String> param = new HashMap<~>();
-    private String url="";
-    private int maxPage =0;
+public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner {
+    private Map<String, String> headers;
+    private Map<String, String> paramss = new HashMap<String, String>();
+    //    private Map<String,String> param = new HashMap<~>();
+    private String url = "";
+    private int maxPage = 0;
     private int nowPage = 2;
-    private boolean pass =true;
+    private boolean pass = true;
     private RecyclerView mRecyclerView;
     private Myadpater mAdapter;
 
-    private ArrayList<BookListData>  bookArrayList = new ArrayList<BookListData>();
+    private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
 
     private DetailBookListFragment _parent;
+
     public UnapprovedBookFragment() {
         // Required empty public constructor
 
@@ -65,78 +67,77 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         headers.put("Cookie", cookie);
         con.setPrefixHeaderFields(headers);
         GetUrl();
-        paramss.put("page","1");
-              try {
-                con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
-             } catch (Exception e) {
-                  e.printStackTrace();
-                  System.out.println("ERROR:" + e.toString());
-             }
+        paramss.put("page", "1");
+        try {
+            con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR:" + e.toString());
+        }
 
-                mRecyclerView = (RecyclerView) result.findViewById(R.id.unproved_recycler_view);
-                mRecyclerView.setHasFixedSize(true);
-                LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
-                mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView = (RecyclerView) result.findViewById(R.id.unproved_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
+        mRecyclerView.setLayoutManager(layoutManager);
 
-                mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                    @Override
-                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                        super.onScrolled(recyclerView, dx, dy);
-                        int visibleItemCount = layoutManager.getChildCount();
-                        int totalItemCount = layoutManager.getItemCount();
-                        int passVisiblesItems = layoutManager.findFirstVisibleItemPosition();
-                        if((visibleItemCount + passVisiblesItems) >=totalItemCount){
-                           if(getPassCard() == true)
-                            if(nowPage <=maxPage) {
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int visibleItemCount = layoutManager.getChildCount();
+                int totalItemCount = layoutManager.getItemCount();
+                int passVisiblesItems = layoutManager.findFirstVisibleItemPosition();
+                if ((visibleItemCount + passVisiblesItems) >= totalItemCount) {
+                    if (getPassCard() == true)
+                        if (nowPage <= maxPage) {
 
 
-                                paramss.put("page", String.valueOf(nowPage));
-                                onRefresh(nowPage);
-                                nowPage++;
-
-                            }
+                            paramss.put("page", String.valueOf(nowPage));
+                            onRefresh(nowPage);
+                            nowPage++;
 
                         }
-                    }
 
-                    private boolean getPassCard() {
-                        return pass;
-                    }
+                }
+            }
 
-                    private void onRefresh(int page)  {
-                        setPassCard(false);
-                        HttpConn con = new HttpConn();
-                        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-                        String cookie = cs.getCookie();
-                        con.setCallBackListener(UnapprovedBookFragment.this);
-                        con.setUserAgent("DJUAPP");
-                        headers = new HashMap<String, String>();
-                        headers.put("Cookie", cookie);
-                        con.setPrefixHeaderFields(headers);
+            private boolean getPassCard() {
+                return pass;
+            }
 
-                        paramss.put("page", String.valueOf(page));
+            private void onRefresh(int page) {
+                setPassCard(false);
+                HttpConn con = new HttpConn();
+                HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+                String cookie = cs.getCookie();
+                con.setCallBackListener(UnapprovedBookFragment.this);
+                con.setUserAgent("DJUAPP");
+                headers = new HashMap<String, String>();
+                headers.put("Cookie", cookie);
+                con.setPrefixHeaderFields(headers);
 
-                        try {
-                            con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            System.out.println("ERROR:" + e.toString());
-                        }
-                    }
-                });
-                mAdapter = new Myadpater(bookArrayList, this.getActivity());
-                mAdapter.setmButton("apply");
-                mAdapter.setOnClickListener(this);
-                mAdapter.settingForUnapproved();
-                mRecyclerView.setAdapter(mAdapter);
-                
-                mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                paramss.put("page", String.valueOf(page));
+
+                try {
+                    con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR:" + e.toString());
+                }
+            }
+        });
+        mAdapter = new Myadpater(bookArrayList, this.getActivity());
+        mAdapter.setmButton("apply");
+        mAdapter.setOnClickListener(this);
+        mAdapter.settingForUnapproved();
+        mRecyclerView.setAdapter(mAdapter);
+
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         return result;
     }
 
-    public void setParentDetailFragment(DetailBookListFragment parent)
-    {
+    public void setParentDetailFragment(DetailBookListFragment parent) {
         _parent = parent;
     }
 
@@ -146,7 +147,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
     public void GetUrl() {
         url = getArguments().getString("url");
-        paramss = (HashMap<String, String>)getArguments().getSerializable("HashMap");
+        paramss = (HashMap<String, String>) getArguments().getSerializable("HashMap");
 
     }
 
@@ -156,17 +157,16 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         Element body = parser.getBody();
         Elements booklists = body.getElementsByClass("menter_ul_contents img_content");
         List<BookListData> temp = new ArrayList<BookListData>();
-        if(maxPage ==0){
+        if (maxPage == 0) {
             Elements pages = body.getElementsByTag("a");
             Element page = pages.last();
             String maxPages = page.text();
-            maxPages = maxPages.replace("[","");
-            maxPages = maxPages.replace("]","");
+            maxPages = maxPages.replace("[", "");
+            maxPages = maxPages.replace("]", "");
             maxPage = Integer.parseInt(maxPages);
         }
 
-        for(Element booklist : booklists)
-        {
+        for (Element booklist : booklists) {
             //책 이름 추출 코드
             Elements lis = booklist.select("li.mentor_li_content");
             Element li = lis.first();
@@ -176,7 +176,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             //책 이미지 추출 코드
             Element img = booklist.getElementsByTag("img").first();
             String booksrc = img.attr("src");
-            if(booksrc.indexOf("http") == -1){
+            if (booksrc.indexOf("http") == -1) {
 
                 booksrc = booksrc.replaceFirst(".", "");
                 booksrc = "https://book.dju.ac.kr" + booksrc;
@@ -188,11 +188,11 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             Elements uls = li.getElementsByTag("ul");
             Element ul = uls.first();
             Elements authors = ul.select("li.menter_li2_content");
-            Element author= authors.first();
+            Element author = authors.first();
             String authorin = author.text();
 
             // 책 출판사 및 출판일 추출 코드
-            ul= uls.get(1);
+            ul = uls.get(1);
             Elements companyAndDay = ul.select("li.menter_li2_content");
             Element company = companyAndDay.first();
             Element day = companyAndDay.last();
@@ -200,7 +200,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             String bookday = day.text();
 
             // 책 합격점수 및 인증포인트 추출 코드
-            ul= uls.get(3);
+            ul = uls.get(3);
             Elements passAndauth = ul.select("li.menter_li2_content");
             Element pass = passAndauth.first();
             Element auth = passAndauth.last();
@@ -208,19 +208,19 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             String authpoint = auth.text();
 
             // 책 도서 분류 추출 코드
-            ul= uls.get(2);
+            ul = uls.get(2);
             Elements booklogs = ul.select("li.menter_li2_content");
             Element booklog = booklogs.first();
             String bookList = booklog.text();
 
             // apply button 코드
             lis = booklist.select("li.mentor_li_content");
-             li = lis.first();
+            li = lis.first();
             Elements applys = li.getElementsByClass("menter_li_div_title");
             Element apply = applys.first();
             Elements buttons = apply.getElementsByTag("img");
             Element button = buttons.first();
-            String idx =button.attr("idx");
+            String idx = button.attr("idx");
             String question = button.attr("question");
             String dnum = button.attr("dnum");
             Elements values = body.getElementsByClass("window2");
@@ -228,16 +228,16 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             Element val = value.nextElementSibling();
             String va = val.attr("value");
 
-            BookListData  data = new BookListData(bookname, booksrc,authorin,bookList,bookcompany, bookday,passpoint,authpoint);
-            data.setApplyAttr(idx,question,dnum,va);
+            BookListData data = new BookListData(bookname, booksrc, authorin, bookList, bookcompany, bookday, passpoint, authpoint);
+            data.setApplyAttr(idx, question, dnum, va);
 
             temp.add(data);
         }
 
         Handler mainHandler = new Handler(getActivity().getMainLooper());
-        mainHandler.post(()->{
+        mainHandler.post(() -> {
 
-            for ( BookListData data : temp ){
+            for (BookListData data : temp) {
                 bookArrayList.add(data);
                 mAdapter.notifyDataSetChanged();
             }
@@ -259,17 +259,17 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     @Override
     public void applyButtonOnClicked(int position) {
         String dnum = bookArrayList.get(position).GetDnum();
-        if(Integer.parseInt(dnum) < 20 ) {
-            _parent.showAlertView(NavigationBarFragment.AlertType.INFO, "신청 할 수 없습니다.", "아직 출제가 되지 않았습니다.", "확인",null);
+        if (Integer.parseInt(dnum) < 20) {
+            _parent.showAlertView(NavigationBarFragment.AlertType.INFO, "신청 할 수 없습니다.", "아직 출제가 되지 않았습니다.", "확인", null);
             return;
         }
 
-            String title = bookArrayList.get(position).GetBookSubject();
-            String idx = bookArrayList.get(position).GetIdx();
-            String question = bookArrayList.get(position).GetQuestion();
-            String value = bookArrayList.get(position).Getvalue();
+        String title = bookArrayList.get(position).GetBookSubject();
+        String idx = bookArrayList.get(position).GetIdx();
+        String question = bookArrayList.get(position).GetQuestion();
+        String value = bookArrayList.get(position).Getvalue();
 
-            _parent.transToTestSubmitDetail(title, idx,value,question);
-        }
+        _parent.transToTestSubmitDetail(title, idx, value, question);
     }
+}
 

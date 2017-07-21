@@ -197,7 +197,15 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
 
         }
 
-        mApprove_Detail.showAlertView(NavigationBarFragment.AlertType.INFO, "알림", mRelut_content, "확인", null );
+        mApprove_Detail.showAlertView(NavigationBarFragment.AlertType.INFO, "알림", mRelut_content, "확인", new NavigationBarFragment.AlertViewConfirmListener() {
+            @Override
+            public void alertViewConfirmed(NavigationBarFragment.AlertType type, String title, String description) {
+
+                if(mRelut_content.equals("신청 되었습니다.") == true)
+                    mApprove_Detail.unprovedBackButton();
+
+            }
+        });
 
     }
 
