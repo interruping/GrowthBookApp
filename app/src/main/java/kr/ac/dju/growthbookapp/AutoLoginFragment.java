@@ -48,14 +48,18 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
                     if ( result.get("result").toString().equals("0") == true ) {
                         skey = result.get("skey").toString();
                     } else {
-
+                        failAutoLogin();
                     }
                 } catch (Exception e) {
-
+                    failAutoLogin();
                 }
 
                 String tmpKey = skey;
-
+                if ( skey == null ) {
+                    failAutoLogin();
+                } else if ( skey.length() == 0 ){
+                    failAutoLogin();
+                }
                 Handler mainHandler = new Handler(getActivity().getMainLooper());
                 mainHandler.post(()->{
                     challengePre(tmpKey);
@@ -100,7 +104,13 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
         UserInfoSafeStorage safe = new UserInfoSafeStorage(getActivity());
         safe.setKey(key);
         UserInfoSafeStorage.UserInfo user = safe.get();
+        if ( user.id == null || user.pw == null ) {
+            failAutoLogin();
+        }
 
+        if ( user.id.length() == 0 || user.pw.length() == 0 ){
+            failAutoLogin();
+        }
         HttpConn con = new HttpConn();
 
         con.setCallBackListener(new HttpConn.CallbackListener() {
@@ -124,18 +134,18 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
                         } //if
                     } //for
                 } else { // else of inputs.size() > 0
-
+                    failAutoLogin();
                 }
             }
 
             @Override
             public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
+                failAutoLogin();
             }
 
             @Override
             public void requestTimeout(HttpConn httpConn) {
-
+                failAutoLogin();
             }
         });
         Map<String, String> headers = new HashMap<String, String>();
@@ -149,8 +159,7 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
         try {
             con.sendRequest(HttpConn.Method.GET, new URL("https://libweb.dju.ac.kr/users/tjul/go/gobtsusercheck.aspx"), params);
         } catch(Exception e) {
-            e.printStackTrace();
-            System.out.println("ERROR:" + e.toString());
+            failAutoLogin();
         }
 
     }
@@ -181,7 +190,8 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
                     cookie += " ";
                     cookie += mtKEY.group(0);
                 } else {
-//                    _loginFailAlarm();
+//
+                    failAutoLogin();
                     return;
                 }
                 HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
@@ -196,7 +206,7 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
                     try{
                         loginCheckRequest.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html"), new HashMap<String,String>());
                     } catch( Exception e) {
-
+                        failAutoLogin();
                     }
 
                     return;
@@ -205,12 +215,12 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
 
             @Override
             public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
+                failAutoLogin();
             }
 
             @Override
             public void requestTimeout(HttpConn httpConn) {
-
+                failAutoLogin();
             }
         });
         Map<String, String> headers = new HashMap<String, String>();
@@ -227,7 +237,7 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
         try {
             con.sendRequest(HttpConn.Method.POST, new URL("https://book.dju.ac.kr/duri/member.php"), params);
         } catch(Exception e) {
-
+            failAutoLogin();
         }
     }
 
@@ -244,27 +254,33 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
                 mainHandler.post(()->{
                     MainActivity ma = (MainActivity)getActivity();
                     ma.loginComplete();
-
-
-
                 });
 
                 return;
             } else {
-
+                failAutoLogin();
             }
         } else {
-
+            failAutoLogin();
         }
     }
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
+        failAutoLogin();
     }
 
     @Override
     public void requestTimeout(HttpConn httpConn) {
+        failAutoLogin();
+    }
 
+    public void failAutoLogin () {
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
+            MainActivity ma = (MainActivity)getActivity();
+            ma.autoLoginFailTask();
+
+        });
     }
 }

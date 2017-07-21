@@ -45,6 +45,9 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
     Button _modifyButton;
     Button _replyButton;
 
+    private final int FUNCTION_FRAGMENT = 0xDADDAD77;
+    private static String REFRESH = "REFRESH";
+
     public OneByOneDetailFragment() {
         super(R.layout.fragment_one_by_one_detail, R.id.root_constraint);
     }
@@ -70,15 +73,14 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
         });
 
 
-        setBackButton((View v)->{
 
-            getFragmentManager().popBackStack();
-        });
         _detailWebView = (WebView)result.findViewById(R.id.detail_webview);
 
         _deleteButton = (Button)result.findViewById(R.id.delete_button);
         _modifyButton = (Button)result.findViewById(R.id.modify_button);
         _replyButton = (Button)result.findViewById(R.id.reply_button);
+
+
 
         _deleteButton.setOnClickListener(this);
         _modifyButton.setOnClickListener(this);
@@ -102,6 +104,19 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
         }
 
         return result;
+    }
+
+    public void showLoading() {
+        _deleteButton.setEnabled(false);
+        _modifyButton.setEnabled(false);
+        _replyButton.setEnabled(false);
+
+    }
+
+    public void hideLoaing() {
+        _deleteButton.setEnabled(true);
+        _modifyButton.setEnabled(true);
+        _replyButton.setEnabled(true);
     }
 
     @Override
@@ -304,7 +319,7 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
                     public void alertViewConfirmed(AlertType type, String title, String description) {
                         Intent intent = new Intent();
 
-                        intent.putExtra(OneByOneFragment.DETAIL_RETURN, OneByOneFragment.DETAIL_RETURN);
+                        intent.putExtra(OneByOneFragment.DETAIL_RETURN, "REFRESH");
                         Fragment fragment = getTargetFragment();
                         fragment.onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
                         getFragmentManager().popBackStack();
@@ -365,6 +380,17 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
             query_pairs.put(URLDecoder.decode(pair.substring(0, idx), "UTF-8"), URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
         }
         return query_pairs;
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == FUNCTION_FRAGMENT && resultCode == Activity.RESULT_OK) {
+            if(data != null) {
+                String value = data.getStringExtra(REFRESH);
+                if(value.equals(REFRESH)) {
+
+                }
+            }
+        }
     }
 }
 

@@ -1,5 +1,7 @@
 package kr.ac.dju.growthbookapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.dju.book.BookServerDataParser;
 import com.dju.book.HttpConn;
@@ -33,6 +36,8 @@ public class OneByOneWriteQuestionFragment extends NavigationBarFragment impleme
     private String _userName;
     private EditText _titleEditText;
     private EditText _contentEditText;
+    private Button _submitButton;
+    private ProgressBar _writeProgressBar;
 
     public OneByOneWriteQuestionFragment () {
         super(R.layout.fragment_one_by_one_write_question, R.id.root_constraint);
@@ -57,10 +62,10 @@ public class OneByOneWriteQuestionFragment extends NavigationBarFragment impleme
 
         _titleEditText = (EditText)result.findViewById(R.id.title_editText);
         _contentEditText = (EditText)result.findViewById(R.id.content_editText);
-
-
-        Button submitButton = (Button)result.findViewById(R.id.submit_button);
-        submitButton.setOnClickListener(this);
+        _writeProgressBar = (ProgressBar)result.findViewById(R.id.write_progressBar);
+        _writeProgressBar.setVisibility(View.INVISIBLE);
+        _submitButton = (Button)result.findViewById(R.id.submit_button);
+        _submitButton.setOnClickListener(this);
         getUserInfo();
         return result;
 
@@ -232,7 +237,10 @@ public class OneByOneWriteQuestionFragment extends NavigationBarFragment impleme
     @Override
     public void onClick(View v) {
         //submit 버튼이 클릭되었을 때
-
+        _submitButton.setEnabled(false);
+        _titleEditText.setEnabled(false);
+        _contentEditText.setEnabled(false);
+        _writeProgressBar.setVisibility(View.VISIBLE);
         HttpConn con = new HttpConn();
 
         con.setCallBackListener(this);
@@ -259,7 +267,13 @@ public class OneByOneWriteQuestionFragment extends NavigationBarFragment impleme
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
+            Intent intent = new Intent();
+            intent.putExtra(OneByOneFragment.DETAIL_RETURN, "REFRESH");
+            getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+            getFragmentManager().popBackStack();
+        });
     }
 
     @Override
