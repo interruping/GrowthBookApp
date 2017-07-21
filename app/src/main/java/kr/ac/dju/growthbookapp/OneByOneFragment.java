@@ -54,7 +54,7 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
     }
 
     private final int DETAIL_FRAGMENT_CODE = 0xDEADBEEF;
-    public static final String DETAIL_RETURN = "DETAIL_RETURL";
+    public static final String DETAIL_RETURN = "DETAIL_RETURN";
 
     private RecyclerView _newsRecyclerView;
 
@@ -77,6 +77,8 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
 
     private List<NewsArticle> _backupStatus;
     private int _backupCurrentPage, _backupMaxPage;
+
+    private OneByOneFragment _self = this;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -141,7 +143,9 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
             @Override
             public void onClick(View v) {
                 v.startAnimation(buttonClick);
-                pushFragmentTo(R.id.front_side_container, new OneByOneWriteQuestionFragment(), new Bundle());
+                Fragment write = new OneByOneWriteQuestionFragment();
+                write.setTargetFragment(_self, DETAIL_FRAGMENT_CODE);
+                pushFragmentTo(R.id.front_side_container, write, new Bundle());
             }
         });
 
@@ -290,7 +294,7 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         if(requestCode == DETAIL_FRAGMENT_CODE && resultCode == Activity.RESULT_OK) {
             if(data != null) {
                 String value = data.getStringExtra(DETAIL_RETURN);
-                if(value != null) {
+                if(value.equals("REFRESH")) {
                     onRefresh();
                 }
             }

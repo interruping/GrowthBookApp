@@ -18,6 +18,7 @@ import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.ParallelExecutorCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
@@ -443,10 +444,18 @@ public class NavigationBarFragment extends Fragment {
 
     public interface AlertViewConfirmListener {
         public void alertViewConfirmed(AlertType type, String title, String description );
+
     }
 
-    public void showAlertView (AlertType type, String title, String description, String buttonString, @Nullable AlertViewConfirmListener listener ) {
-        ConstraintLayout alertView = (ConstraintLayout)getActivity().getLayoutInflater().inflate(R.layout.alert_view, null);
+    public interface AlertViewConfirmCancelListener extends AlertViewConfirmListener {
+        public void alertViewIsCanceled();
+    }
+
+
+
+    public void _makeAlertView ( boolean cancel ,AlertType type, String title, String description, String buttonString, @Nullable AlertViewConfirmListener listener ) {
+        ConstraintLayout alertView = !cancel ? (ConstraintLayout)getActivity().getLayoutInflater().inflate(R.layout.alert_view, null)
+                                            : (ConstraintLayout)getActivity().getLayoutInflater().inflate(R.layout.alert_cancel_view, null) ;
 
         ImageView imageView = (ImageView) alertView.findViewById(R.id.alert_image);
         TextView alertTitleView = (TextView) alertView.findViewById(R.id.alert_title);
@@ -498,6 +507,11 @@ public class NavigationBarFragment extends Fragment {
                 Button confirmButton = (Button)alertView.findViewById(R.id.confirm_button);
                 confirmButton.setText(buttonString);
 
+                if ( cancel ){
+                    Button cancelButton = (Button)alertView.findViewById(R.id.cancel_button);
+                    cancelButton.setText("취소");
+                }
+
                 con.addView(alertView);
                 set.clone(con);
                 set.connect(alertView.getId(), ConstraintSet.TOP, con.getId(), ConstraintSet.TOP );
@@ -517,6 +531,16 @@ public class NavigationBarFragment extends Fragment {
 
                             }
                         });
+
+                        if ( cancel ) {
+                            Button cancelButton = (Button)alertView.findViewById(R.id.cancel_button);
+                            cancelButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    _removeAlerViewWithCancel(alertView,listener,type,title,description);
+
+                                }});
+                        }
                     }
                     @Override
                     public void onAnimationEnd(Animator animation) { }
@@ -532,10 +556,20 @@ public class NavigationBarFragment extends Fragment {
             public void onAnimationRepeat(Animator animation) {}
         }).alpha(0.6f);
 
-        //_blockView.addView(alertView);
+    }
+
+    public void showAlertView (AlertType type, String title, String description, String buttonString, @Nullable AlertViewConfirmListener listener ) {
+
+        _makeAlertView(false, type, title, description, buttonString, listener);
 
 
     }
+
+    public void showAlertCancelView (AlertType type, String title, String description, String buttonString, @Nullable AlertViewConfirmCancelListener listener) {
+        _makeAlertView(true, type, title, description, buttonString, listener);
+    }
+
+
 
     private void _removeAlertView(ConstraintLayout alertView, @Nullable AlertViewConfirmListener listener, AlertType type, String title, String description) {
 
@@ -550,6 +584,31 @@ public class NavigationBarFragment extends Fragment {
                 _blockView.setClickable(false);
                 if (listener != null) {
                     listener.alertViewConfirmed(type, title, description);
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) { }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) { }
+        }).alpha(0f).withLayer();
+    }
+
+    public void _removeAlerViewWithCancel(ConstraintLayout alertView, @Nullable AlertViewConfirmListener listener, AlertType type, String title, String description) {
+
+        ConstraintLayout con = (ConstraintLayout) _rootView.findViewById(_rootConstraintLayoutId);
+        con.removeView(alertView);
+        _blockView.animate().setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) { }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                _blockView.setClickable(false);
+                if (listener != null) {
+                    AlertViewConfirmCancelListener tListener = (AlertViewConfirmCancelListener) listener;
+                    tListener.alertViewIsCanceled();
                 }
             }
 

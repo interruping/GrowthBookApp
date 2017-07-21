@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private int _returnFragment;
     private Map<Integer, Fragment> _fragments;
     private boolean _isNeedAlertLogin;
+    private boolean _isFailAutoLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         _returnFragment = R.layout.fragment_news;
         _isNeedAlertLogin = false;
+        _isFailAutoLogin = false;
         _slideToggle = false;
         _backMenuFragment = (BackMenuFragment)getFragmentManager().findFragmentById(R.id.back_side_fragment);
         _frontSideContainer = (FrameLayout)findViewById(R.id.front_side_container);
@@ -192,6 +194,9 @@ public class MainActivity extends AppCompatActivity {
             case R.layout.fragment_one_by_one:
                 fragmentTransaction.replace(R.id.front_side_container, new OneByOneFragment());
                 break;
+            case R.layout.fragment_recent_pass_book_test:
+                fragmentTransaction.replace(R.id.front_side_container, new RecentPassBookTestFragment());
+                break;
         }
         fragmentTransaction.commit();
         _frontSideContainer.animate().setListener(null).translationX(0).withLayer();
@@ -228,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.layout.fragment_mileage:
                     case R.layout.fragment_one_by_one:
                     case R.layout.fragment_book_list:
+                    case R.layout.fragment_recent_pass_book_test:
                         if ( isLogin == false ){
                             _isNeedAlertLogin = true;
                             _replaceFragment(R.layout.fragment_login);
@@ -266,6 +272,20 @@ public class MainActivity extends AppCompatActivity {
     public void loginComplete() {
         _backMenuFragment.changeToLogout();
         switchFrontFragment(R.layout.fragment_mileage);
+    }
+
+    public boolean isFailAutoLogin () {
+        if ( _isFailAutoLogin == true ) {
+            _isFailAutoLogin = false;
+            return true;
+        }
+        return false;
+    }
+
+    public void autoLoginFailTask() {
+        _isNeedAlertLogin = false;
+        _isFailAutoLogin = true;
+        _replaceFragment(R.layout.fragment_login);
     }
 
 }

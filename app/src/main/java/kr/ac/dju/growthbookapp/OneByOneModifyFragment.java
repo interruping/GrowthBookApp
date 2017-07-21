@@ -1,5 +1,7 @@
 package kr.ac.dju.growthbookapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.dju.book.BookServerDataParser;
 import com.dju.book.HttpConn;
@@ -33,6 +36,10 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
     private String _userName;
     private EditText _titleEditText;
     private EditText _contentEditText;
+    private ProgressBar _progressBar;
+    private Button _submitButton;
+
+
     private String _no;
     private String _page;
     private String _url;
@@ -63,6 +70,7 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
 
         _titleEditText = (EditText)result.findViewById(R.id.title_editText);
         _contentEditText = (EditText)result.findViewById(R.id.content_editText);
+        _progressBar = (ProgressBar)result.findViewById(R.id.write_progressBar);
 
         _titleEditText.setText(args.getString("title"));
         _contentEditText.setText(args.getString("content"));
@@ -78,8 +86,12 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
 
 
 
-        Button submitButton = (Button)result.findViewById(R.id.submit_button);
-        submitButton.setOnClickListener(this);
+        _submitButton = (Button)result.findViewById(R.id.submit_button);
+        _submitButton.setOnClickListener(this);
+        _submitButton.setEnabled(false);
+        _titleEditText.setEnabled(false);
+        _contentEditText.setEnabled(false);
+        _progressBar.setVisibility(View.VISIBLE);
         getUserInfo();
         return result;
 
@@ -102,6 +114,10 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
                 Handler mainHandler = new Handler(getActivity().getMainLooper());
                 mainHandler.post(() -> {
                     _userName = name;
+                    _submitButton.setEnabled(true);
+                    _titleEditText.setEnabled(true);
+                    _contentEditText.setEnabled(true);
+                    _progressBar.setVisibility(View.INVISIBLE);
 
                 });
             }
@@ -284,6 +300,10 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
     @Override
     public void onClick(View v) {
         //submit 버튼이 클릭되었을 때
+        _submitButton.setEnabled(false);
+        _titleEditText.setEnabled(false);
+        _contentEditText.setEnabled(false);
+        _progressBar.setVisibility(View.VISIBLE);
 
         HttpConn con = new HttpConn();
 
@@ -313,7 +333,16 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
+            showAlertView(AlertType.INFO, "수정되었습니다", "", "확인", new AlertViewConfirmListener() {
+                @Override
+                public void alertViewConfirmed(AlertType type, String title, String description) {
+                    getFragmentManager().popBackStack();
+                }
+            });
 
+        });
     }
 
     @Override

@@ -163,6 +163,11 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
             showAlertView(AlertType.WARNING, "로그인이 필요합니다.", "초기 비밀번호 주민번호 뒷자리", "확인", null);
         }
 
+        if ( ma.isFailAutoLogin() == true ) {
+            _autoLoginSwitch.setChecked(false);
+            showAlertView(AlertType.UNKNOWNERROR, "자동 로그인 실패.", "파일이 손상되었습니다. 수동으로 로그인 해 주세요", "확인", null);
+        }
+
         return _rootView;
     }
     public void challengeAuthPre() {
