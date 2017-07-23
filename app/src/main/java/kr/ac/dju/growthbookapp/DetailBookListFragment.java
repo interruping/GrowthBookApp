@@ -1,5 +1,6 @@
 package kr.ac.dju.growthbookapp;
 
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,7 +27,7 @@ import java.util.Map;
  * Created by dodrn on 2017-06-03.
  */
 
-public class DetailBookListFragment extends NavigationBarFragment {
+public class DetailBookListFragment extends NavigationBarFragment{
     private Map<String,String> applyattr = new HashMap<>();
     private Map<String, String> unapproved = new HashMap<String, String>();
     private Map<String, String> approve = new HashMap<String, String>();
@@ -36,12 +37,17 @@ public class DetailBookListFragment extends NavigationBarFragment {
     private  String key="";
     private String device;
     private DetailBookListFragment _self;
+    private ApproveBookAuthTestSubmitDetail submit_self;
+    private boolean mBackState = false;
     public DetailBookListFragment(){
         super(R.layout.fragment_detailbooklist, R.id.root_constraint);
         _self = this;
     }
 
 
+    public void setmBackState(boolean state){
+        mBackState = state;
+    }
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -54,6 +60,7 @@ public class DetailBookListFragment extends NavigationBarFragment {
 
         _rootView = super.onCreateView(inflater, container, savedInstanceState);
         _rootView.setBackgroundColor(Color.WHITE);
+
         Bundle args = getArguments();
         setWithCommonNavigationBar(args.getString("title"),(View v)->{
 
@@ -67,6 +74,7 @@ public class DetailBookListFragment extends NavigationBarFragment {
 
             getFragmentManager().popBackStack();
         });
+
 
         TabLayout tableLayout = (TabLayout)_rootView.findViewById(R.id.tl_tabs);
         tableLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
@@ -83,6 +91,18 @@ public class DetailBookListFragment extends NavigationBarFragment {
         tableLayout.setupWithViewPager(viewPager);
 
 
+        getFragmentManager().addOnBackStackChangedListener(new android.app.FragmentManager.OnBackStackChangedListener() {
+            @Override
+
+            public void onBackStackChanged() {
+
+
+                if(mBackState == true) {
+                    System.out.println("back");
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         //System.out.println("쿠키값입니다. :" +cs.getCookie());
         GetKey();
@@ -182,7 +202,8 @@ public class DetailBookListFragment extends NavigationBarFragment {
     public void transToTestSubmitDetail(String title, String no, String loginId, String question){
         ApproveBookAuthTestSubmitDetail temp = new ApproveBookAuthTestSubmitDetail();
         Bundle params = new Bundle();
-
+        submit_self = temp;
+        submit_self.setmUnapprove_self(this);
         applyattr.put("cmd","search");
         applyattr.put("no", no);
         applyattr.put("id", loginId);
@@ -191,12 +212,14 @@ public class DetailBookListFragment extends NavigationBarFragment {
         params.putString("value", loginId);
         params.putSerializable("HashMap", (Serializable) applyattr);
         temp.setArguments(params);
-        pushFragmentTo(R.id.front_side_container, new ApproveBookAuthTestSubmitDetail(), params);
+        pushFragmentTo(R.id.front_side_container,submit_self, params);
 
     }
     public void showError(String title, String desc){
         showAlertView(AlertType.INFO, title, desc, "확인", null);
     }
+
+
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter{
 
@@ -262,8 +285,10 @@ public class DetailBookListFragment extends NavigationBarFragment {
         }
 
 
+}
 
-    }
+
+
 
 
 

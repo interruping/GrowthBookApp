@@ -1,6 +1,8 @@
 package kr.ac.dju.growthbookapp;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,7 +34,7 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner {
+public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner{
     private Map<String, String> headers;
     private Map<String, String> paramss = new HashMap<String, String>();
     //    private Map<String,String> param = new HashMap<~>();
@@ -51,6 +53,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         // Required empty public constructor
 
     }
+
 
 
     @Override
@@ -137,7 +140,9 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         return result;
     }
 
+    // DetailBookListFragment  자신 가져오기
     public void setParentDetailFragment(DetailBookListFragment parent) {
+
         _parent = parent;
     }
 
@@ -271,5 +276,11 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
         _parent.transToTestSubmitDetail(title, idx, value, question);
     }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPress();
+//
+//    }
+
 }
 

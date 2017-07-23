@@ -1,6 +1,7 @@
 package kr.ac.dju.growthbookapp;
 
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -35,12 +36,41 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
     private String mUrl;
     public BookAuthTestSubmitAdapter adapter;
     private String apply_value;
+    private ApplyCustomDialog mdialog;
+    private DetailBookListFragment mDetail_self;
 
     public ApproveBookAuthTestSubmitDetail() {
         // Required empty public constructor
         super(R.layout.fragment_approve_book_button, R.id.root_constraint);
+
+    }
+    public void setmUnapprove_self(DetailBookListFragment un){
+        mDetail_self = un;
     }
 
+    public void setDialog(ApplyCustomDialog dialog) {
+        mdialog = dialog;
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig){
+        super.onConfigurationChanged(newConfig);
+        if(mdialog !=null) {
+            switch (newConfig.orientation) {
+                case Configuration.ORIENTATION_LANDSCAPE: {
+                    mdialog.setContentView(R.layout.book_auth_landscape);
+                    mdialog.basicSetting();
+                    break;
+                }
+                case Configuration.ORIENTATION_PORTRAIT:
+                    mdialog.setContentView(R.layout.book_auth);
+                    mdialog.basicSetting();
+                    break;
+
+            }
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,6 +126,8 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
 
     public void unprovedBackButton() {
 
+
+        mDetail_self.setmBackState(true);
         getFragmentManager().popBackStack();
     }
 

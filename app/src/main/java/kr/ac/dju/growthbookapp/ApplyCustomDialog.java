@@ -3,6 +3,8 @@ package kr.ac.dju.growthbookapp;
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -36,8 +38,14 @@ public class ApplyCustomDialog extends Dialog {
     private View.OnClickListener mApplyClickListener;
     private View.OnClickListener mCancleClcikListner;
     private ScrollView scrollView;
+    private ApplyCustomDialog _self = this;
+
+
     public int getmAuth_position() {return mAuth_position;}
 
+    public ApplyCustomDialog set_self() {
+        return _self;
+    }
 
 
     public ApplyCustomDialog(Context context, View.OnClickListener mApplyClickListener,
@@ -74,25 +82,31 @@ public class ApplyCustomDialog extends Dialog {
         // Custom Dialog 셋팅
         window.setAttributes(lpWindow);
 
-        // layout 설정
+       // layout 설정
+
         setContentView(R.layout.book_auth);
-        scrollView = (ScrollView)findViewById(R.id.mainCon);
-        scrollView.setScrollbarFadingEnabled(false);
+        basicSetting();
+
+    }
+
+    public void basicSetting() {
+//        scrollView = (ScrollView)findViewById(R.id.mainCon);
+//        scrollView.setScrollbarFadingEnabled(false);
         mApplyTextview = (TextView) findViewById(R.id.textView2);
         mApplyTextview.setScrollbarFadingEnabled(false);
         mApplyTextview.setMovementMethod(ScrollingMovementMethod.getInstance());
-        mApplyTextview.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN){
-                    scrollView.requestDisallowInterceptTouchEvent(true);
-                }
-                if(event.getAction() == MotionEvent.ACTION_UP){
-                    scrollView.requestDisallowInterceptTouchEvent(false);
-                }
-                return false;
-            }
-        });
+//        mApplyTextview.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                if(event.getAction() == MotionEvent.ACTION_DOWN){
+//                    scrollView.requestDisallowInterceptTouchEvent(true);
+//                }
+//                if(event.getAction() == MotionEvent.ACTION_UP){
+//                    scrollView.requestDisallowInterceptTouchEvent(false);
+//                }
+//                return false;
+//            }
+//        });
         mApplyButton = (Button) findViewById(R.id.Apply_Button);
         mCancleButton = (Button) findViewById(R.id.Cancle_Button);
         mCheckBox = (CheckBox) findViewById(R.id.checkBox);
@@ -102,7 +116,7 @@ public class ApplyCustomDialog extends Dialog {
                 if(isChecked == true){
                     mApplyButton.setEnabled(true);
                 }
-                if(isChecked ==false){
+                if(isChecked == false){
                     mApplyButton.setEnabled(false);
                 }
             }
@@ -119,8 +133,5 @@ public class ApplyCustomDialog extends Dialog {
         }
 
     }
-
-
-
 
 }

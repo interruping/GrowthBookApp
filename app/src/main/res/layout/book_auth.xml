@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
     android:layout_gravity="center"
-    android:fillViewport="true"
-    android:visibility="visible"
-    android:id="@+id/mainCon"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-
-<android.support.constraint.ConstraintLayout
-    android:layout_width="320dp"
-    android:layout_height="440dp"
-    >
 
     <TextView
         android:id="@+id/textView"
@@ -20,7 +13,9 @@
         android:layout_height="55dp"
         android:gravity="center"
         android:text="독서인증 시험관련 주의사항"
-        android:textSize="25sp"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,9 +27,10 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="292dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="0dp"
+        android:padding="10dp"
         android:background="@drawable/xml_border"
         android:gravity="left"
         android:scrollbarAlwaysDrawVerticalTrack="true"
@@ -57,27 +53,40 @@
 
     <Button
         android:id="@+id/Apply_Button"
-        android:layout_width="130dp"
-        android:layout_height="46dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/login_button"
         android:enabled="false"
         android:text="신청"
+        android:textColor="#ffffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintRight_toLeftOf="@+id/Cancle_Button"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Cancle_Button"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/alert_button_shape"
         android:text="취소"
+        android:textColor="#ffffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintVertical_bias="0.0" />
     </android.support.constraint.ConstraintLayout>
-    </ScrollView>
+
 

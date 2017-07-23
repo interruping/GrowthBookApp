@@ -1,6 +1,7 @@
 package kr.ac.dju.growthbookapp;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.text.method.ScrollingMovementMethod;
@@ -77,17 +78,13 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
                 System.out.println("ERROR:" + e.toString());
             }
 
-
-            //Toast.makeText(v.getContext().getApplicationContext(),"신청되었습니다.", Toast.LENGTH_SHORT ).show();
-
-
             mCustomDialog.dismiss();
 
         }
     };
     private View.OnClickListener mCancleClickListener = new View.OnClickListener(){
         public void onClick(View v){
-            Toast.makeText(v.getContext().getApplicationContext(),"취소", Toast.LENGTH_SHORT ).show();
+            Toast.makeText(v.getContext().getApplicationContext(),"취소되었습니다.", Toast.LENGTH_SHORT ).show();
             mCustomDialog.dismiss();
         }
     };
@@ -137,6 +134,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
                             mCancleClickListener,
                             positions);
 
+                    mApprove_Detail.setDialog(mCustomDialog);
                     mCustomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     mCustomDialog.setCanceledOnTouchOutside(false);
                     mCustomDialog.show();
@@ -218,4 +216,6 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
     public void requestTimeout(HttpConn httpConn) {
 
     }
+
+
 }
