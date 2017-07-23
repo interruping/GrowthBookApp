@@ -69,21 +69,13 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
 
             @Override
             public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
-
-                Handler mainHandler = new Handler(getActivity().getMainLooper());
-                mainHandler.post(()->{
-
-                });
+                failAutoLogin();
 
             }
 
             @Override
             public void requestTimeout(HttpConn httpConn) {
-                Handler mainHandler = new Handler(getActivity().getMainLooper());
-                mainHandler.post(()->{
-
-                });
+                failAutoLogin();
             }
         });
         try {
