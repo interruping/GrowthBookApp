@@ -8,8 +8,7 @@
             <corners android:bottomLeftRadius="25dp"
                 android:bottomRightRadius="25dp"
                 android:topLeftRadius="25dp"
-                android:topRightRadius="25dp"
-                    />
+                android:topRightRadius="25dp" />
             <solid android:color="@color/colorPrimary" /> <!-- background color -->
         </shape>
     </item>

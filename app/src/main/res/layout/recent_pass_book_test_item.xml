@@ -55,9 +55,15 @@
         android:layout_marginBottom="10dp">
 
         <RatingBar
-            android:id="@+id/ratingBar3"
+            android:id="@+id/book_pass_rating_bar"
+            style="@style/customRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.5"
+            android:max="5"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -85,7 +91,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:text="DIFFICULTY"
+            android:text="아직 평가되지 않았습니다."
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/difficulty_icon_imageview"
             app:layout_constraintLeft_toRightOf="@+id/difficulty_icon_imageview"

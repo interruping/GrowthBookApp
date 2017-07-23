@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import com.dju.book.BookServerDataParser;
 import com.dju.book.HttpConn;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -34,6 +36,8 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
     private RecentPassBookTestRecyclerViewAdapter _adapter;
 
     private SwipeRefreshLayout _swipeRefreshLayout;
+
+
 
     public RecentPassBookTestFragment() {
         super(R.layout.fragment_recent_pass_book_test, R.id.root_constraint);
@@ -114,6 +118,49 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
                     @Override
                     public void alertViewIsCanceled() {
                         //여기가 취소버튼 눌렸을 때
+                        JSONObject json = new JSONObject();
+
+                        try {
+                            json.put("device_id", "20132306");
+                            json.put("book_id", "abc");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+
+                        HttpConn conn = new HttpConn();
+
+                        Map<String,String> header = new HashMap<String,String>();
+                        header.put("Content-type", "application/json");
+                        String timecookie = TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(json.toString().length()));
+                        header.put("Cookie", timecookie);
+                        header.put("Content-Length", String.valueOf(json.toString().length()));
+                        conn.setPrefixHeaderFields(header);
+                        conn.setCallBackListener(new HttpConn.CallbackListener() {
+                            @Override
+                            public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+                            }
+
+                            @Override
+                            public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+                            }
+
+                            @Override
+                            public void requestTimeout(HttpConn httpConn) {
+
+                            }
+                        });
+                        try{
+                            conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/personalrate"), json.toString());
+
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+
                     }
 
                     @Override
