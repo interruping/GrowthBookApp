@@ -3664,6 +3664,10 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f0900a3;
         public static final int Animation_AppCompat_DropDownUp=0x7f0900a4;
         public static final int Animation_Design_BottomSheetDialog=0x7f0900a5;
+        /** <item name="android:textColor">@color/colorPrimary</item>
+<item name="android:textColorHint">@color/colorPrimary</item>
+<item name="android:textColorHighlight">@color/colorPrimary</item>
+         */
         public static final int AppTheme=0x7f0900a6;
         public static final int Base_AlertDialog_AppCompat=0x7f0900a7;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0900a8;
