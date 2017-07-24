@@ -193,7 +193,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
                             conn.setPrefixHeaderFields(header);
 
                             try {
-                                conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/adduser"), json.toString());
+                                conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/addrate"), json.toString());
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
