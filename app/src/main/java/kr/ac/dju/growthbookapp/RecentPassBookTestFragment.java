@@ -70,6 +70,8 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
 
     @Override
     public void onRefresh() {
+        _adapter.clear();
+        _adapter.notifyDataSetChanged();
         HttpConn conn = new HttpConn();
 
         Map<String, String> headers = new HashMap<String,String>();
@@ -77,7 +79,7 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
         conn.setPrefixHeaderFields(headers);
         conn.setCallBackListener(this);
         try {
-            conn.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html?tab=2"), new HashMap<>());
+            conn.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html?tab=2&term=2016_2"), new HashMap<>());
         } catch (Exception e){
 
         }
@@ -114,60 +116,7 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
             for (RecentPassBookTestItem item : toAdd) {
                 _adapter.addItem(item);
                 _adapter.notifyDataSetChanged();
-                showAlertCancelView(AlertType.WARNING, "제목", "내용", "확인", new AlertViewConfirmCancelListener() {
-                    @Override
-                    public void alertViewIsCanceled() {
-                        //여기가 취소버튼 눌렸을 때
-                        JSONObject json = new JSONObject();
-
-                        try {
-                            json.put("device_id", "20132306");
-                            json.put("book_id", "abc");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
-
-                        HttpConn conn = new HttpConn();
-
-                        Map<String,String> header = new HashMap<String,String>();
-                        header.put("Content-type", "application/json");
-                        String timecookie = TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(json.toString().length()));
-                        header.put("Cookie", timecookie);
-                        header.put("Content-Length", String.valueOf(json.toString().length()));
-                        conn.setPrefixHeaderFields(header);
-                        conn.setCallBackListener(new HttpConn.CallbackListener() {
-                            @Override
-                            public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
-                            }
-
-                            @Override
-                            public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
-                            }
-
-                            @Override
-                            public void requestTimeout(HttpConn httpConn) {
-
-                            }
-                        });
-                        try{
-                            conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/personalrate"), json.toString());
-
-                        } catch (Exception e){
-                            e.printStackTrace();
-                        }
-
-
-                    }
-
-                    @Override
-                    public void alertViewConfirmed(AlertType type, String title, String description) {
-                        //여기가 확인버튼 눌렸을 때
-                    }
-                });
+                _swipeRefreshLayout.setRefreshing(false);
             }
         });
     }

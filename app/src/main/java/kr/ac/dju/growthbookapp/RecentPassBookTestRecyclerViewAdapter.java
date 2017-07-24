@@ -13,9 +13,17 @@ import android.widget.TextView;
 
 import com.dju.book.HttpConn;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * Created by geonyounglim on 2017. 7. 19..
@@ -25,6 +33,8 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
     private List<RecentPassBookTestItem> _container;
     private Handler _mainHandler;
     private Map<Integer, Double> _rateCache;
+    private Map<HttpConn, Integer> _httpTasks;
+    private Map<Integer, ViewHolder> _holderTasks;
     private DoRateButtonClickListener _listener;
 
     public interface DoRateButtonClickListener {
@@ -34,6 +44,9 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
     public RecentPassBookTestRecyclerViewAdapter(Context context) {
         _container = new ArrayList<RecentPassBookTestItem>();
         _mainHandler = new Handler(context.getMainLooper());
+        _rateCache = new HashMap<>();
+        _httpTasks = new HashMap<>();
+        _holderTasks = new HashMap<>();
 
     }
 
@@ -48,7 +61,41 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         RecentPassBookTestItem item = _container.get(position);
+        Integer currentId = Integer.valueOf(item.getId());
+        holder.setCurrentHoldItem(currentId.intValue());
 
+        if (_rateCache.containsKey(Integer.valueOf(item.getId())) == false ){
+            HttpConn conn = new HttpConn();
+            _httpTasks.put(conn, currentId);
+            _holderTasks.put(currentId, holder);
+            conn.setUserAgent("GBApp");
+            conn.setCallBackListener(this);
+            String tmpbookName = item.getDescription();
+            int lastIndex = tmpbookName.indexOf("도서");
+            String bookName = "- " + tmpbookName.substring(0, lastIndex);
+            JSONObject json = new JSONObject();
+            try {
+                json.put("book_id", MD5(bookName));
+
+                if ( StudentIDHolder.getInstance().isHold() == false ){
+
+                }
+
+                json.put("device_id", StudentIDHolder.getInstance().getID());
+
+                Map<String,String> header = new HashMap<String, String>();
+                String timecookie = TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(json.toString().length()));
+                header.put("Content-type", "application/json");
+                header.put("Cookie", timecookie);
+                header.put("Content-Length", String.valueOf(json.toString().length()));
+                conn.setPrefixHeaderFields(header);
+                conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/personalrate"), json.toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+
+        }
 
         holder.getDescTextView().setText(item.getDescription());
         holder.getDateTextView().setText(item.getDate());
@@ -81,7 +128,17 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
          _mainHandler.post(()->{
 
+            Integer id = _httpTasks.get(httpConn);
+            ViewHolder viewHolder = _holderTasks.get(id);
+            if (viewHolder == null ){
+                return;
+            }
+             _httpTasks.remove(httpConn);
+             _holderTasks.remove(id);
 
+            if ( viewHolder.getCurrentHoldItem() == id.intValue() ){
+
+            }
          });
     }
 
@@ -101,7 +158,53 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         });
     }
 
+    public String MD5(String str){
+
+        String MD5 = "";
+
+        try{
+
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            md.update(str.getBytes());
+
+            byte byteData[] = md.digest();
+
+            StringBuffer sb = new StringBuffer();
+
+            for(int i = 0 ; i < byteData.length ; i++){
+
+                sb.append(Integer.toString((byteData[i]&0xff) + 0x100, 16).substring(1));
+
+            }
+
+            MD5 = sb.toString();
+
+
+
+        }catch(NoSuchAlgorithmException e){
+
+            e.printStackTrace();
+
+            MD5 = null;
+
+        }
+
+        return MD5;
+
+    }
+
+    public void clear() {
+        _container.clear();
+        _holderTasks.clear();
+        _httpTasks.clear();
+        _rateCache.clear();
+    }
+
+
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private int _currentHoldItem;
+
         private TextView _descriptionTextview;
         private TextView _dateTextview;
         private TextView _pointTextview;
@@ -118,6 +221,14 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
             _doRateButton = (Button)itemView.findViewById(R.id.do_rate_button);
 
         }
+        public void setCurrentHoldItem(int id) {
+            _currentHoldItem = id;
+        }
+
+        public int getCurrentHoldItem() {
+            return _currentHoldItem;
+        }
+
         public TextView getDescTextView() {
             return _descriptionTextview;
         }
