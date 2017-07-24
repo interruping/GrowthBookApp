@@ -271,10 +271,10 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             authpass2 = (TextView) view.findViewById(R.id.autho_point0);
             bookdays = (TextView) view.findViewById(R.id.book_day0);
 
-                rating_avg = (TextView) view.findViewById(R.id.avg_conetext);
-            rating_context = (TextView) view.findViewById(R.id.level_context);
-            rating_icon = (ImageView) view.findViewById(R.id.img_icon);
-            rating_bar = (RatingBar) view.findViewById(R.id.ratingBar2);
+//                rating_avg = (TextView) view.findViewById(R.id.avg_conetext);
+//            rating_context = (TextView) view.findViewById(R.id.level_context);
+//            rating_icon = (ImageView) view.findViewById(R.id.img_icon);
+//            rating_bar = (RatingBar) view.findViewById(R.id.ratingBar2);
 
         }
 
