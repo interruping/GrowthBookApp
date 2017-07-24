@@ -44,15 +44,25 @@ public class BookListFragment extends NavigationBarFragment {
         });
 
         ListView listView = (ListView) _rootView.findViewById(R.id.list_book);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, booklist);
+
+        BookListAdapter adapter = new BookListAdapter();
+
+        for ( int id = 0; id < booklist.length; id++ ) {
+            adapter.addItem(new BookListAdapter.BookGenreItem(id, booklist[id]));
+        }
+
+        //ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, booklist);
+
+
         listView.setAdapter(adapter);
+        listView.setDividerHeight(1); //임근영이 추가 함.
 
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                parent.getItemAtPosition(position);
+                                                //parent.getItemAtPosition(position);
                                                 DetailBookListFragment page1 = new DetailBookListFragment();
 
 

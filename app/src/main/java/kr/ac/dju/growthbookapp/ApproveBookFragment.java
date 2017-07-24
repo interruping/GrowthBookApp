@@ -331,6 +331,16 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                 exHolder.getButtons().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+//                        showAlertCancelView(NavigationBarFragment.AlertType.WARNING, "제목", "내용", "확인", new NavigationBarFragment.AlertViewConfirmCancelListener() {
+//                            @Override
+//                            public void alertViewIsCanceled() {
+//                                //여기가 취소버튼 눌렸을 때
+//                            }
+//
+//                            @Override
+//                            public void alertViewConfirmed(NavigationBarFragment.AlertType type, String title, String description) {
+//                                //여기가 확인버튼 눌렸을 때
+//                            }
                         String idx = ((ApproveBookListData) arrayList.get(position)).get_cancleButton();
                         String cmd = "del";
 

@@ -23,9 +23,10 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:gravity="center_vertical"
+                android:maxLines="2"
                 android:layout_weight="1"
-                android:text="인간은 왜 병에 걸리는가"
-                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
                 />
 
         </LinearLayout>
@@ -59,7 +60,7 @@
                     android:id="@+id/apply_button"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
-                    android:background="#DD61BD6D"
+                    android:background="@drawable/login_button"
                     android:elevation="0dp"
                     android:text="인증시험 신청"
                     app:layout_constraintBottom_toBottomOf="parent"

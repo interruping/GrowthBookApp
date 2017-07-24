@@ -3,7 +3,10 @@ package kr.ac.dju.growthbookapp;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.content.ContextCompat;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -37,6 +40,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
     private ApproveBookAuthTestSubmitDetail mApprove_Detail;
     private int pos;
     private String mRelut_content;
+    private Context _inContext;
     public  BookAuthTestSubmitAdapter(ArrayList<BookAuthtestSubmitData> data){
 
         mData = data;
@@ -104,10 +108,12 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         return position;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         int mposition = position;
         Context context = parent.getContext();
+        _inContext = context;
 
         if(convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -133,7 +139,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
                             mApplyClickListener,
                             mCancleClickListener,
                             positions);
-
+                    mCustomDialog.setDetail_self(mApprove_Detail);
                     mApprove_Detail.setDialog(mCustomDialog);
                     mCustomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     mCustomDialog.setCanceledOnTouchOutside(false);
@@ -154,7 +160,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         String submit = BookAuthtestList.getmSubmit_com();
         if(submit != null && submit.equals("신청완료") ==true){
             applyButton.setText("신청완료");
-            applyButton.setBackgroundColor(Color.RED);
+            applyButton.setBackground(ContextCompat.getDrawable(_inContext, R.drawable.submit_button_small_disable));
             applyButton.setEnabled(false);
         }
 

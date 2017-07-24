@@ -2,10 +2,13 @@ package kr.ac.dju.growthbookapp;
 
 
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
@@ -38,7 +41,7 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
     private String apply_value;
     private ApplyCustomDialog mdialog;
     private DetailBookListFragment mDetail_self;
-
+    private boolean config;
     public ApproveBookAuthTestSubmitDetail() {
         // Required empty public constructor
         super(R.layout.fragment_approve_book_button, R.id.root_constraint);
@@ -56,7 +59,8 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
     @Override
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
-        if(mdialog !=null) {
+
+
             switch (newConfig.orientation) {
                 case Configuration.ORIENTATION_LANDSCAPE: {
                     mdialog.setContentView(R.layout.book_auth_landscape);
@@ -69,8 +73,13 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
                     break;
 
             }
+
+
         }
-    }
+        public boolean getconfig(){
+            return config;
+        }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,6 +102,7 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
 
             getFragmentManager().popBackStack();
         });
+
         apply_value = getArguments().getString("value");
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
@@ -120,13 +130,28 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
         listView = (ListView) result.findViewById(R.id.Approve_List_Info);
         listView.setAdapter(adapter);
 
+        // 화면모드가 가로인지 세로인지를 변수에 저장
+        config = getConfiguration();
 
         return result;
     }
 
+    // 화면모드가 가로인지 세로인지를 알려주는 함수
+    public boolean getConfiguration(){
+        Configuration config = getResources().getConfiguration();
+        boolean temp;
+        if(config.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            temp = false;
+            return temp;
+        }
+        if(config.orientation == Configuration.ORIENTATION_PORTRAIT){
+            temp = true;
+            return temp;
+        }
+        return true;
+    }
+
     public void unprovedBackButton() {
-
-
         mDetail_self.setmBackState(true);
         getFragmentManager().popBackStack();
     }

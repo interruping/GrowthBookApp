@@ -100,6 +100,7 @@ public class DetailBookListFragment extends NavigationBarFragment{
                 if(mBackState == true) {
                     System.out.println("back");
                     adapter.notifyDataSetChanged();
+                    mBackState = false;
                 }
             }
         });
