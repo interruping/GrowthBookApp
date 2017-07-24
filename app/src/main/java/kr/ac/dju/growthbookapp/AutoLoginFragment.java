@@ -123,6 +123,7 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
 
                             if ( isOk.equals("1") ){
                                 challenge(user.id, user.pw);
+
                             } else if ( isOk.equals("0") ) {
 
                             } //if
@@ -228,7 +229,7 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
         params.put("login_check","1");
         params.put("user_id", id);
         params.put("user_pass", pw);
-
+        StudentIDHolder.getInstance().storeID(id);
         try {
             con.sendRequest(HttpConn.Method.POST, new URL("https://book.dju.ac.kr/duri/member.php"), params);
         } catch(Exception e) {
@@ -249,6 +250,7 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
                 mainHandler.post(()->{
                     MainActivity ma = (MainActivity)getActivity();
                     ma.loginComplete();
+
                 });
 
                 return;

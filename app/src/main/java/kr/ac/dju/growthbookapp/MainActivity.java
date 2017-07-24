@@ -15,6 +15,7 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 
 import com.dju.book.*;
@@ -138,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void toggleMenu() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
         if (_slideToggle == false) {
 
 

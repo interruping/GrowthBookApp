@@ -284,6 +284,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
                 if (topNavi.html().contains("로그아웃") == true ){
                     mainHandler.post(()->{
                         _autoLoginCheck();
+                        StudentIDHolder.getInstance().storeID(_idInput.getText().toString());
                         MainActivity ma = (MainActivity)getActivity();
                         //ma.loginComplete();
                         ma.returnPrevLogin();
