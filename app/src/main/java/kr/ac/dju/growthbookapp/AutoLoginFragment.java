@@ -82,8 +82,11 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
             String uuid = Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
             JSONObject json = new JSONObject();
             json.put("device_id", uuid);
+
             Map<String,String> header = new HashMap<String,String>();
             header.put("Content-type", "application/json");
+            header.put("Content-Length", String.valueOf(json.toString().length()));
+            header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(json.toString().length())));
 
             conn.setPrefixHeaderFields(header);
             conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/adduser"),json.toString());
