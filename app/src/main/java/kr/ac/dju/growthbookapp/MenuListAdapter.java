@@ -51,7 +51,6 @@ public class MenuListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.menu_item, parent, false);
 
         }
-
         ImageView menuIcon = (ImageView)convertView.findViewById(R.id.menu_icon);
         TextView menuString = (TextView)convertView.findViewById(R.id.menu_string);
 
