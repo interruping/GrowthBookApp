@@ -59,7 +59,7 @@
                 android:id="@+id/cancle_button"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:background="#DD61BD6D"
+                android:background="@drawable/login_button"
                 android:elevation="0dp"
                 android:text="인증시험 취소"
                 app:layout_constraintBottom_toBottomOf="parent"

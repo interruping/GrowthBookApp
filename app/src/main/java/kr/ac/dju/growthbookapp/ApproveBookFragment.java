@@ -41,6 +41,19 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mdAdapter;
     private ArrayList<BookListData> bookArrayList = new ArrayList<>();
+    private RequestCancelAlertView _requestee;
+    private DetailBookListFragment mDetail_self;
+
+    public void setDetailBookListFragment(DetailBookListFragment dt){
+        mDetail_self = dt;
+    }
+    public interface RequestCancelAlertView {
+        public void showCancelAlertView(Runnable confirmCallback);
+    }
+
+    public void setRequestCancelAlertView(RequestCancelAlertView requestee){
+        _requestee = requestee;
+    }
 
     public ApproveBookFragment() {
         // Required empty public constructor
@@ -229,7 +242,8 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             else{
                 cancle_button = mcancle_button1.attr("idx");
             }
-            temp.add(new ApproveBookListData(bookname, booksrc, authorin, bookList, bookcompany, bookday, passpoint, authpoint,ddays,appdays,context_book, cancle_button));
+            temp.add(new ApproveBookListData(bookname, booksrc, authorin, bookList, bookcompany, bookday, passpoint,
+                    authpoint,ddays,appdays,context_book, cancle_button));
         }
 
         Handler mainHandler = new Handler(getActivity().getMainLooper());
@@ -331,38 +345,31 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                 exHolder.getButtons().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        showAlertCancelView(NavigationBarFragment.AlertType.WARNING, "제목", "내용", "확인", new NavigationBarFragment.AlertViewConfirmCancelListener() {
-//                            @Override
-//                            public void alertViewIsCanceled() {
-//                                //여기가 취소버튼 눌렸을 때
-//                            }
-//
-//                            @Override
-//                            public void alertViewConfirmed(NavigationBarFragment.AlertType type, String title, String description) {
-//                                //여기가 확인버튼 눌렸을 때
-//                            }
-                        String idx = ((ApproveBookListData) arrayList.get(position)).get_cancleButton();
-                        String cmd = "del";
+                        _requestee.showCancelAlertView(()->{
+                            String idx = ((ApproveBookListData) arrayList.get(position)).get_cancleButton();
+                            String cmd = "del";
 
-                        params.put("no",idx);
-                        params.put("cmd",cmd);
+                            params.put("no",idx);
+                            params.put("cmd",cmd);
 
-                        HttpConn con = new HttpConn();
-                        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-                        String cookie = cs.getCookie();
-                        con.setCallBackListener(_self);
-                        con.setUserAgent("DJUAPP");
-                        headers = new HashMap<String, String>();
-                        headers.put("Cookie", cookie);
-                        con.setPrefixHeaderFields(headers);
-                        GetUrl();
+                            HttpConn con = new HttpConn();
+                            HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+                            String cookie = cs.getCookie();
+                            con.setCallBackListener(_self);
+                            con.setUserAgent("DJUAPP");
+                            headers = new HashMap<String, String>();
+                            headers.put("Cookie", cookie);
+                            con.setPrefixHeaderFields(headers);
+                            GetUrl();
 
-                        try {
-                            con.sendRequest(HttpConn.Method.GET, new URL(url), params);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            System.out.println("ERROR:" + e.toString());
-                        }
+                            try {
+                                con.sendRequest(HttpConn.Method.GET, new URL(url), params);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                System.out.println("ERROR:" + e.toString());
+                            }
+                        });
+
 
 
                     }
@@ -378,6 +385,10 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
         @Override
         public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
 
+            Handler mainHandler = new Handler(getActivity().getMainLooper());
+            mainHandler.post(() -> {
+                         mDetail_self.notifystateData();
+            });
         }
 
         @Override

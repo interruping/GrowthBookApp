@@ -35,6 +35,7 @@
         android:numStars="5"
         android:rating="0"
         android:soundEffectsEnabled="true"
+
         android:stepSize="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

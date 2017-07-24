@@ -17,7 +17,7 @@ public class BookListData{
     private String mquestion;
     private String mdnum;
     private String mvalue;
-
+    private int mavg;
     public BookListData(String name, String src, String bookauthor, String list, String company, String day, String pass, String autho)
     {
         book_name = name;
@@ -35,6 +35,9 @@ public class BookListData{
         mdnum = dnum;
         mvalue = value;
 
+    }
+    public void setbook_Avg(int avg){
+        mavg = avg;
     }
 
     public String GetIdx () { return midx;}
@@ -62,6 +65,6 @@ public class BookListData{
     public String GetAuthPoint(){
         return auth_point;
     }
-
+    public int GetAvg(){return mavg;}
 
 }

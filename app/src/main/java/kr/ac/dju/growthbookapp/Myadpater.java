@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ import java.util.Map;
 
 public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implements HttpConn.CallbackListener {
     private ArrayList<BookListData> bookListDatas = new ArrayList<BookListData>();
+
     private Context mContext;
     private String mButton = null;
     private ApplyButtonClickListner _applyButtonClickListener;
@@ -113,6 +115,34 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
 
                         });
             }
+
+            String bookname =bookListDatas.get(position).GetBookSubject();
+            String hash_name = MD5(bookname);
+            HttpConn conn = new HttpConn();
+            conn.setCallBackListener(_self);
+
+
+            try {
+
+                JSONObject json = new JSONObject();
+                json.put("book_id", hash_name);
+                int contentLength = json.toString().length();
+                Map<String, String> header = new HashMap<String, String>();
+                header.put("Content-type", "application/json");
+                header.put("Content-Length", String.valueOf(contentLength));
+                header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
+
+                conn.setPrefixHeaderFields(header);
+
+                try {
+                    conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/loadrate"), json.toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
         }
 
         // ApprovedBookFragment에서 보여주는 난이도 평점 버튼 조건식
@@ -143,17 +173,25 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
                         float rate = dialog.getmRate();
                         String mHashName = dialog.getmHash_Book_Name();
 
-                        Map<String, String> header = new HashMap<String, String>();
+
                         HttpConn conn = new HttpConn();
                         conn.setCallBackListener(_self);
-                        header.put("Content-type", "application/json");
-                        conn.setPrefixHeaderFields(header);
+
+
                         try {
 
                             JSONObject json = new JSONObject();
                             json.put("device_id", mDevice);
                             json.put("book_id", mHashName);
                             json.put("rate", rate);
+                            int contentLength = json.toString().length();
+                            Map<String, String> header = new HashMap<String, String>();
+                            header.put("Content-type", "application/json");
+                            header.put("Content-Length", String.valueOf(contentLength));
+                            header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
+
+                            conn.setPrefixHeaderFields(header);
+
                             try {
                                 conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/adduser"), json.toString());
                             } catch (Exception e) {
@@ -192,6 +230,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
         System.out.println(s);
+
     }
 
     @Override
@@ -215,6 +254,10 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         ImageView bookImg;
         TextView bookname, author2, company2, booklist2, passpoint2, authpass2, bookdays;
         Button applyBtn;
+        ImageView rating_icon;
+        TextView rating_avg,rating_context;
+        RatingBar rating_bar;
+
 
         public ViewHolder(View view) {
             super(view);
@@ -228,6 +271,10 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             authpass2 = (TextView) view.findViewById(R.id.autho_point0);
             bookdays = (TextView) view.findViewById(R.id.book_day0);
 
+//                rating_avg = (TextView) view.findViewById(R.id.avg_conetext);
+//            rating_context = (TextView) view.findViewById(R.id.level_context);
+//            rating_icon = (ImageView) view.findViewById(R.id.img_icon);
+//            rating_bar = (RatingBar) view.findViewById(R.id.ratingBar2);
 
         }
 

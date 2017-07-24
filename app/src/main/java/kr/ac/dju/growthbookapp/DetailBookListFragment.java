@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 
 import com.dju.book.HttpConn;
 
+import org.jsoup.Connection;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +29,7 @@ import java.util.Map;
  * Created by dodrn on 2017-06-03.
  */
 
-public class DetailBookListFragment extends NavigationBarFragment{
+public class DetailBookListFragment extends NavigationBarFragment implements ApproveBookFragment.RequestCancelAlertView {
     private Map<String,String> applyattr = new HashMap<>();
     private Map<String, String> unapproved = new HashMap<String, String>();
     private Map<String, String> approve = new HashMap<String, String>();
@@ -38,7 +40,27 @@ public class DetailBookListFragment extends NavigationBarFragment{
     private String device;
     private DetailBookListFragment _self;
     private ApproveBookAuthTestSubmitDetail submit_self;
+    private  DetailBookListFragment.MyPagerAdapter adapter;
     private boolean mBackState = false;
+
+
+
+    @Override
+    public void showCancelAlertView(Runnable confirmCallback) {
+        showAlertCancelView(AlertType.WARNING, "취소하시겠습니까?", "취소 시 5점 감점", "신청", new AlertViewConfirmCancelListener() {
+            @Override
+            public void alertViewIsCanceled() {
+
+            }
+
+            @Override
+            public void alertViewConfirmed(AlertType type, String title, String description) {
+                confirmCallback.run();
+            }
+        });
+
+    }
+
     public DetailBookListFragment(){
         super(R.layout.fragment_detailbooklist, R.id.root_constraint);
         _self = this;
@@ -84,11 +106,12 @@ public class DetailBookListFragment extends NavigationBarFragment{
         Fragment[] arrFragments = new Fragment[3];
 
         AppCompatActivity pa = (AppCompatActivity)getActivity();
-        DetailBookListFragment.MyPagerAdapter adapter = new DetailBookListFragment.MyPagerAdapter(pa.getSupportFragmentManager(), arrFragments);
+        adapter = new DetailBookListFragment.MyPagerAdapter(pa.getSupportFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(2);
         adapter.notifyDataSetChanged();
         tableLayout.setupWithViewPager(viewPager);
+
 
 
         getFragmentManager().addOnBackStackChangedListener(new android.app.FragmentManager.OnBackStackChangedListener() {
@@ -96,7 +119,7 @@ public class DetailBookListFragment extends NavigationBarFragment{
 
             public void onBackStackChanged() {
 
-
+                System.out.print("인시개할 시바");
                 if(mBackState == true) {
                     System.out.println("back");
                     adapter.notifyDataSetChanged();
@@ -112,6 +135,12 @@ public class DetailBookListFragment extends NavigationBarFragment{
 
         return _rootView;
     }
+
+
+    public void notifystateData(){
+        adapter.notifyDataSetChanged();
+    }
+
 
     public void GetKey() {
         if(getArguments() != null){
@@ -260,6 +289,8 @@ public class DetailBookListFragment extends NavigationBarFragment{
             }
         }
 
+
+
         @Override
         public Fragment getItem(int position) {
             switch (position){
@@ -272,6 +303,9 @@ public class DetailBookListFragment extends NavigationBarFragment{
                     return arrFragments[0];}
                 case 1:{
                     arrFragments[1] = new ApproveBookFragment();
+                    ApproveBookFragment fragment = (ApproveBookFragment)arrFragments[1];
+                    fragment.setRequestCancelAlertView(_self);
+                    fragment.setDetailBookListFragment(_self);
                     GetDataApprove( arrFragments[1]);
                     return  arrFragments[1];}
                 case 2:{
