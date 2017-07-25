@@ -45,8 +45,13 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
     Button _modifyButton;
     Button _replyButton;
 
-    private final int FUNCTION_FRAGMENT = 0xDADDAD77;
-    private static String REFRESH = "REFRESH";
+    public final int FUNCTION_FRAGMENT = 0xDADDAD77;
+    public static String REFRESH = "REFRESH";
+
+    public final int RETURN_TO_ROOT = 0xDEADDAD2;
+    public static String RETURN2ROOT = "RETURN2ROOT";
+
+    private OneByOneDetailFragment _self = this;
 
     public OneByOneDetailFragment() {
         super(R.layout.fragment_one_by_one_detail, R.id.root_constraint);
@@ -72,7 +77,7 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
             getFragmentManager().popBackStack();
         });
 
-
+        hideRightAcc();
 
         _detailWebView = (WebView)result.findViewById(R.id.detail_webview);
 
@@ -88,6 +93,12 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
 
         _contentURL = args.getString("url");
 
+
+        loadContent();
+        return result;
+    }
+
+    private void loadContent() {
         HttpConn conn = new HttpConn();
         Map<String,String> headers = new HashMap<String,String>();
         headers.put("Cookie", HttpConn.CookieStorage.sharedStorage().getCookie());
@@ -102,8 +113,6 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
         } catch (Exception e){
             e.printStackTrace();
         }
-
-        return result;
     }
 
     public void showLoading() {
@@ -161,7 +170,7 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
         Handler mainHandler = new Handler(getActivity().getMainLooper());
 
         mainHandler.post(()->{
-            String resultHTML = "<table style=\"display:inline;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">" + rawHTML + "</table>";
+            String resultHTML =  rawHTML;
             _detailWebView.loadData(resultHTML, "text/html; charset=UTF-8", null);
         });
 
@@ -227,6 +236,7 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
                 args.putString("url", _replyURL);
 
                 Fragment modifyFragment = new OneByOneReplyFragment();
+                modifyFragment.setTargetFragment(_self, RETURN_TO_ROOT);
                 pushFragmentTo(R.id.front_side_container,modifyFragment,args);
 
             }
@@ -271,6 +281,8 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
                 args.putString("url", _modifyURL);
 
                 Fragment modifyFragment = new OneByOneModifyFragment();
+                modifyFragment.setTargetFragment(_self, FUNCTION_FRAGMENT);
+
                 pushFragmentTo(R.id.front_side_container,modifyFragment,args);
 
             }
@@ -387,10 +399,24 @@ public class OneByOneDetailFragment extends NavigationBarFragment implements Htt
             if(data != null) {
                 String value = data.getStringExtra(REFRESH);
                 if(value.equals(REFRESH)) {
+                    loadContent();
+                }
+            }
+        } else if ( requestCode == RETURN_TO_ROOT && resultCode == Activity.RESULT_OK ) {
+            if (data != null) {
+                String value = data.getStringExtra(RETURN2ROOT);
+                if (value.equals(RETURN2ROOT)) {
+                    Intent intent = new Intent();
 
+                    intent.putExtra(OneByOneFragment.DETAIL_RETURN, "REFRESH");
+                    Fragment fragment = getTargetFragment();
+                    fragment.onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+                    getFragmentManager().popBackStack();
                 }
             }
         }
+
+
     }
 }
 

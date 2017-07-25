@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.dju.book.*;
 import com.tsengvn.typekit.Typekit;
@@ -144,6 +145,11 @@ public class MainActivity extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+
+        if ( getFragmentManager().getBackStackEntryCount() > 1 ) {
+            getFragmentManager().popBackStack();
+        }
+
         if (_slideToggle == false) {
 
 
@@ -292,6 +298,21 @@ public class MainActivity extends AppCompatActivity {
         _isNeedAlertLogin = false;
         _isFailAutoLogin = true;
         _replaceFragment(R.layout.fragment_login);
+    }
+
+    public boolean isMenuToggled() {
+        return _slideToggle;
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() == 0){
+            toggleMenu();
+        } else {
+
+            super.onBackPressed();
+        }
     }
 
 }

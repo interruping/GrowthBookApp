@@ -20,6 +20,7 @@ import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.ParallelExecutorCompat;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -37,6 +38,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import static android.view.View.INVISIBLE;
 import static kr.ac.dju.growthbookapp.R.drawable.ripple_effect;
 
 /**
@@ -155,6 +157,8 @@ public class NavigationBarFragment extends Fragment {
         titleView.setText(title);
         titleView.setTextSize(20);
         titleView.setTextColor(Color.WHITE);
+        titleView.setMaxLines(2);
+        titleView.setEllipsize(TextUtils.TruncateAt.END);
         Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),
                 "fonts/NotoSansKR-Thin-Hestia.otf");
         titleView.setTypeface(tf);
@@ -193,6 +197,14 @@ public class NavigationBarFragment extends Fragment {
     }
 
     public void pushFragmentTo(int srcFrame, Fragment target , Bundle args) {
+        MainActivity ma = (MainActivity)getActivity();
+        if (ma.isMenuToggled() == true ){
+
+            ma.toggleMenu();
+            return;
+        }
+
+
         _blockView.setClickable(true);
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -207,7 +219,14 @@ public class NavigationBarFragment extends Fragment {
         ft.commit();
 
     }
+    public void hideRightAcc(){
+        _rightAcc.setVisibility(INVISIBLE);
 
+    }
+
+    public void showRightAcc() {
+        _rightAcc.setVisibility(INVISIBLE);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
@@ -354,6 +373,7 @@ public class NavigationBarFragment extends Fragment {
 
     public void activeSearch() {
         if(_searchBarEventListener != null) _searchBarEventListener.searchBarWillActive();
+        _searchInput.setVisibility(View.VISIBLE);
         _searchInput.setX(1000);
         _leftAcc.animate().setListener(null).translationX(-_navigationBar.getWidth()).withLayer();
         _rightAcc.animate().setListener(null).translationX(-_navigationBar.getWidth()).withLayer();
@@ -408,6 +428,7 @@ public class NavigationBarFragment extends Fragment {
             public void onAnimationEnd(Animator animation) {
                 _navigationBar.setElevation(5f);
                 _searchBar.setElevation(0f);
+                _searchInput.setVisibility(INVISIBLE);
                 _leftAcc.animate().setListener(null).translationX(0).withLayer();
                 _midAcc.animate().setListener(null).translationX(0).withLayer();
                 _rightAcc.animate().setListener(null).translationX(0).withLayer();
@@ -501,7 +522,7 @@ public class NavigationBarFragment extends Fragment {
 
                 ConstraintLayout con = (ConstraintLayout)_rootView.findViewById(_rootConstraintLayoutId);
                 ConstraintSet set = new ConstraintSet();
-                alertView.setVisibility(View.INVISIBLE);
+                alertView.setVisibility(INVISIBLE);
                 alertView.setElevation(200.0f);
 
                 Button confirmButton = (Button)alertView.findViewById(R.id.confirm_button);

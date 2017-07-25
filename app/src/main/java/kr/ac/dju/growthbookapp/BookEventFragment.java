@@ -84,6 +84,7 @@ public class BookEventFragment extends NavigationBarFragment implements View.OnC
             activeSearch();
         });
 
+        hideRightAcc();
 
         _maxPage = 0;
         _currentPage = 1;

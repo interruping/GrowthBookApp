@@ -1,5 +1,8 @@
 package kr.ac.dju.growthbookapp;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.dju.book.BookServerDataParser;
 import com.dju.book.HttpConn;
@@ -37,8 +41,8 @@ public class OneByOneReplyFragment extends NavigationBarFragment implements View
     private String _no;
     private String _page;
     private String _url;
-
-
+    private Button _submitButton;
+    private ProgressBar _progressBar;
 
     public OneByOneReplyFragment () {
         super(R.layout.fragment_one_by_one_write_question, R.id.root_constraint);
@@ -60,13 +64,21 @@ public class OneByOneReplyFragment extends NavigationBarFragment implements View
             getFragmentManager().popBackStack();
         });
 
+        hideRightAcc();
         Bundle args = getArguments();
 
         _titleEditText = (EditText)result.findViewById(R.id.title_editText);
         _contentEditText = (EditText)result.findViewById(R.id.content_editText);
+        _submitButton = (Button)result.findViewById(R.id.submit_button);
+        _progressBar = (ProgressBar) result.findViewById(R.id.write_progressBar);
 
         _titleEditText.setText(args.getString("title"));
         _contentEditText.setText(args.getString("content"));
+
+        _titleEditText.setEnabled(false);
+        _contentEditText.setEnabled(false);
+        _submitButton.setEnabled(false);
+
         _url = "https://book.dju.ac.kr" + args.getString("url");
         try {
 
@@ -79,8 +91,7 @@ public class OneByOneReplyFragment extends NavigationBarFragment implements View
 
 
 
-        Button submitButton = (Button)result.findViewById(R.id.submit_button);
-        submitButton.setOnClickListener(this);
+        _submitButton.setOnClickListener(this);
         getUserInfo();
         return result;
 
@@ -114,7 +125,10 @@ public class OneByOneReplyFragment extends NavigationBarFragment implements View
                 Handler mainHandler = new Handler(getActivity().getMainLooper());
                 mainHandler.post(() -> {
                     _userName = tt;
-
+                    _titleEditText.setEnabled(true);
+                    _contentEditText.setEnabled(true);
+                    _submitButton.setEnabled(true);
+                    _progressBar.setVisibility(View.INVISIBLE);
                 });
             }
 
@@ -305,8 +319,6 @@ public class OneByOneReplyFragment extends NavigationBarFragment implements View
 
         String content = bindContent().toString();
 
-        //https://book.dju.ac.kr/ds6_3.html?db=ds6_3&c=modify&no=276&page=1&kind3=&SK=&SN=&idx=
-
         Map<String, String> headers = new HashMap<String, String>();
         headers.put("Content-Type", "multipart/form-data; boundary=" + getBoundary());
         headers.put("Content-Length", String.valueOf(content.length()));
@@ -325,16 +337,36 @@ public class OneByOneReplyFragment extends NavigationBarFragment implements View
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
+            showAlertView(AlertType.INFO, "답글이 작성되었습니다", "게시판으로 돌아갑니다", "확인", new AlertViewConfirmListener() {
+                @Override
+                public void alertViewConfirmed(AlertType type, String title, String description) {
+                    Intent intent = new Intent();
+                    intent.putExtra(OneByOneDetailFragment.RETURN2ROOT, OneByOneDetailFragment.RETURN2ROOT);
+                    Fragment fragment = getTargetFragment();
+                    fragment.onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+                    getFragmentManager().popBackStack();
+                }
+            });
+
+        });
 
     }
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
 
+        });
     }
 
     @Override
     public void requestTimeout(HttpConn httpConn) {
+        Handler mainHandler = new Handler(getActivity().getMainLooper());
+        mainHandler.post(()->{
 
+        });
     }
 }

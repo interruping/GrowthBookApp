@@ -2,17 +2,18 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/book_pass_date_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="YYYY MM DD"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/book_pass_description_textview"
         android:layout_marginTop="10dp"
+        android:text="YYYY MM DD"
+        app:layout_constraintLeft_toLeftOf="@+id/book_pass_description_textview"
         app:layout_constraintTop_toBottomOf="@+id/book_pass_description_textview" />
 
     <TextView
@@ -23,7 +24,9 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:text="BOOK PASS DESCRIPTION"
-        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:maxLines="3"
+        android:textSize="18sp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="BOOK POINT"
         app:layout_constraintRight_toRightOf="@+id/book_pass_description_textview"
         app:layout_constraintTop_toBottomOf="@+id/book_pass_description_textview" />
@@ -42,32 +45,30 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:background="@color/colorPrimary"
+        android:layout_marginLeft="0dp"
+
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="10dp"
         android:elevation="2dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_pass_date_textview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="10dp">
+        app:layout_constraintTop_toBottomOf="@+id/book_pass_date_textview">
 
         <RatingBar
             android:id="@+id/book_pass_rating_bar"
             style="@style/customRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:isIndicator="true"
-            android:numStars="5"
-            android:rating="0"
-            android:stepSize="0.5"
-            android:max="5"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
+            android:isIndicator="true"
+            android:max="5"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -79,8 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/do_rate_button_shape"
+            android:background="@drawable/login_button"
             android:text="평가하기"
+            android:textColor="#FFFFFF"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -92,7 +94,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:text="아직 평가되지 않았습니다."
-            android:textColor="#FFFFFF"
+
             app:layout_constraintBottom_toBottomOf="@+id/difficulty_icon_imageview"
             app:layout_constraintLeft_toRightOf="@+id/difficulty_icon_imageview"
             app:layout_constraintTop_toTopOf="@+id/difficulty_icon_imageview" />
@@ -121,7 +123,28 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/rating_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:text="0.0"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/book_pass_rating_bar"
+            app:layout_constraintLeft_toRightOf="@+id/book_pass_rating_bar"
+            app:layout_constraintTop_toTopOf="@+id/book_pass_rating_bar" />
+
 
     </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:background="@color/colorForLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ import java.util.Queue;
 public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<RecentPassBookTestRecyclerViewAdapter.ViewHolder> implements HttpConn.CallbackListener {
     private List<RecentPassBookTestItem> _container;
     private Handler _mainHandler;
-    private Map<Integer, Double> _rateCache;
+    private Map<Integer, Float> _rateCache;
     private Map<HttpConn, Integer> _httpTasks;
     private Map<Integer, ViewHolder> _holderTasks;
     private DoRateButtonClickListener _listener;
@@ -60,6 +61,8 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
+        holder.setRateStatus(0);
         RecentPassBookTestItem item = _container.get(position);
         Integer currentId = Integer.valueOf(item.getId());
         holder.setCurrentHoldItem(currentId.intValue());
@@ -94,7 +97,9 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
                 e.printStackTrace();
             }
         } else {
+           Float rate = _rateCache.get(Integer.valueOf(item.getId()));
 
+            holder.setRateStatus(rate);
         }
 
         holder.getDescTextView().setText(item.getDescription());
@@ -126,9 +131,22 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-         _mainHandler.post(()->{
+        float rate = 0;
+        try{
+            JSONObject result = new JSONObject(s);
+            if ( result.get("result").toString().equals("0") == true ) {
+               rate = Float.valueOf(result.get("rate").toString());
+            } else {
+
+            }
+        } catch (Exception e) {
+
+        }
+        float finalRate = rate;
+        _mainHandler.post(()->{
 
             Integer id = _httpTasks.get(httpConn);
+            _rateCache.put(id, finalRate);
             ViewHolder viewHolder = _holderTasks.get(id);
             if (viewHolder == null ){
                 return;
@@ -137,7 +155,7 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
              _holderTasks.remove(id);
 
             if ( viewHolder.getCurrentHoldItem() == id.intValue() ){
-
+                viewHolder.setRateStatus(finalRate);
             }
          });
     }
@@ -210,7 +228,10 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         private TextView _pointTextview;
         private Button _doRateButton;
 
+        private ImageView _ratingIcon;
+        private TextView _ratingText;
         private RatingBar _ratingBar;
+        private TextView  _ratingNum;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -219,6 +240,10 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
             _pointTextview = (TextView)itemView.findViewById(R.id.book_pass_point_textview);
             _ratingBar = (RatingBar)itemView.findViewById(R.id.book_pass_rating_bar);
             _doRateButton = (Button)itemView.findViewById(R.id.do_rate_button);
+
+            _ratingIcon = (ImageView)itemView.findViewById(R.id.difficulty_icon_imageview);
+            _ratingText = (TextView)itemView.findViewById(R.id.difficulty_string_text);
+            _ratingNum = (TextView)itemView.findViewById(R.id.rating_num);
 
         }
         public void setCurrentHoldItem(int id) {
@@ -244,5 +269,50 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         public RatingBar getRatingBar() { return _ratingBar; }
 
         public Button getDoRateButton() { return _doRateButton; }
+
+        public void setRateStatus(float rate){
+            int intRate = (int)Math.ceil(rate);
+            System.out.println("Intrate :" + intRate);
+            _ratingBar.setRating(rate);
+            _ratingNum.setText(String.valueOf(rate));
+            switch( intRate ){
+                case 0:
+                    _ratingIcon.setVisibility(View.INVISIBLE);
+                    _ratingText.setText("아직 평가되지 않았습니다");
+                    _doRateButton.setVisibility(View.VISIBLE);
+                    break;
+                case 1:
+                    _ratingIcon.setVisibility(View.VISIBLE);
+                    _ratingIcon.setImageResource(R.drawable.star1);
+                    _ratingText.setText("너무 쉬워요");
+                    _doRateButton.setVisibility(View.INVISIBLE);
+
+                    break;
+                case 2:
+                    _ratingIcon.setVisibility(View.VISIBLE);
+                    _ratingIcon.setImageResource(R.drawable.star2);
+                    _ratingText.setText("쉬워요");
+                    _doRateButton.setVisibility(View.INVISIBLE);
+                    break;
+                case 3:
+                    _ratingIcon.setVisibility(View.VISIBLE);
+                    _ratingIcon.setImageResource(R.drawable.star3);
+                    _ratingText.setText("보통이에요");
+                    _doRateButton.setVisibility(View.INVISIBLE);
+                    break;
+                case 4:
+                    _ratingIcon.setVisibility(View.VISIBLE);
+                    _ratingIcon.setImageResource(R.drawable.star4);
+                    _ratingText.setText("어려워요");
+                    _doRateButton.setVisibility(View.INVISIBLE);
+                    break;
+                case 5:
+                    _ratingIcon.setVisibility(View.VISIBLE);
+                    _ratingIcon.setImageResource(R.drawable.star5);
+                    _ratingText.setText("너무 어려워요");
+                    _doRateButton.setVisibility(View.INVISIBLE);
+                    break;
+            }
+        }
     }
 }

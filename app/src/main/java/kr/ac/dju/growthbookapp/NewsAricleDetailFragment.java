@@ -46,6 +46,9 @@ public class NewsAricleDetailFragment extends NavigationBarFragment implements H
 
             getFragmentManager().popBackStack();
         });
+
+        hideRightAcc();
+
         _detailWebView = (WebView)result.findViewById(R.id.detail_webview);
         _contentURL = args.getString("url");
         HttpConn conn = new HttpConn();
@@ -75,7 +78,8 @@ public class NewsAricleDetailFragment extends NavigationBarFragment implements H
         Handler mainHandler = new Handler(getActivity().getMainLooper());
 
         mainHandler.post(()->{
-            String resultHTML = "<table style=\"display:inline;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">" + rawHTML + "</table>";
+//            String resultHTML = "<table style=\"display:inline;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">" + rawHTML + "</table>";
+            String resultHTML =  rawHTML;
             _detailWebView.loadData(resultHTML, "text/html; charset=UTF-8", null);
         });
 
