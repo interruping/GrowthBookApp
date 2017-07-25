@@ -17,9 +17,14 @@ public class BookListData{
     private String mquestion;
     private String mdnum;
     private String mvalue;
-    private int mavg;
+    private String mavg;
+    private int _id;
+    private static int _autoIncId = 0;
     public BookListData(String name, String src, String bookauthor, String list, String company, String day, String pass, String autho)
     {
+        _id = 0;
+        _autoIncId ++;
+
         book_name = name;
         book_src = src;
         book_author = bookauthor;
@@ -29,6 +34,11 @@ public class BookListData{
         pass_point = pass;
         auth_point = autho;
     }
+
+    public int getId() {
+        return _id;
+    }
+
     public void setApplyAttr(String idx, String question, String dnum, String value){
         midx = idx;
         mquestion = question;
@@ -36,7 +46,7 @@ public class BookListData{
         mvalue = value;
 
     }
-    public void setbook_Avg(int avg){
+    public void setbook_Avg(String avg){
         mavg = avg;
     }
 
@@ -65,6 +75,6 @@ public class BookListData{
     public String GetAuthPoint(){
         return auth_point;
     }
-    public int GetAvg(){return mavg;}
+    public String GetAvg(){return mavg;}
 
 }

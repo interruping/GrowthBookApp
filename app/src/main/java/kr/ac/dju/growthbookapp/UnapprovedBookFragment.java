@@ -20,6 +20,8 @@ import android.widget.ProgressBar;
 import com.dju.book.HttpConn;
 import com.dju.book.BookServerDataParser;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -45,7 +47,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     private RecyclerView mRecyclerView;
     private Myadpater mAdapter;
 
-    private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
+           private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
 
     private DetailBookListFragment _parent;
 
@@ -53,7 +55,6 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         // Required empty public constructor
 
     }
-
 
 
     @Override
@@ -130,7 +131,9 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             }
         });
         mAdapter = new Myadpater(bookArrayList, this.getActivity());
-        mAdapter.setmButton("apply");
+
+
+
         mAdapter.setOnClickListener(this);
         mAdapter.settingForUnapproved();
         mRecyclerView.setAdapter(mAdapter);
@@ -158,6 +161,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
         BookServerDataParser parser = new BookServerDataParser(s);
         Element body = parser.getBody();
         Elements booklists = body.getElementsByClass("menter_ul_contents img_content");
@@ -242,14 +246,17 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         Handler mainHandler = new Handler(getActivity().getMainLooper());
         mainHandler.post(() -> {
 
-            for (BookListData data : temp) {
-                bookArrayList.add(data);
-                mAdapter.notifyDataSetChanged();
-            }
-            setPassCard(true);
-        });
+                for (BookListData data : temp) {
+                    bookArrayList.add(data);
+                    mAdapter.notifyDataSetChanged();
+                }
+                setPassCard(true);
 
+
+        });
     }
+
+
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {

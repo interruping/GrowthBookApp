@@ -1,151 +1,31 @@
 [
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\diamond_rank.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\diamond_rank.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\write_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\write_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\event_icon.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\event_icon.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\close_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\close_icon.png"
-    },
-    {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star1.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star1.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\detail_arrow.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\detail_arrow.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\half_black_and_half_white_star_shape.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\half_black_and_half_white_star_shape.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\gold_rank.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\gold_rank.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\unknown_error_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\unknown_error_icon.png"
-    },
-    {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star_filled_ivepointed_shape.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star_filled_ivepointed_shape.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\recent_pass.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\recent_pass.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\search_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\search_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\info_icon.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\info_icon.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star4.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star4.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\silver_rank.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\silver_rank.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\titanium_rank.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\titanium_rank.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\one_by_one_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\one_by_one_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star_of_favorite_outline.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star_of_favorite_outline.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\back_button.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\back_button.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\unknown_error_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\unknown_error_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\login_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\half_black_and_half_white_star_shape.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\half_black_and_half_white_star_shape.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\news_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\news_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\gold_rank.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\gold_rank.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menu_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\menu_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bronze_rank.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\bronze_rank.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bronze_rank.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\bronze_rank.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\write_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\write_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star3.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star3.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\close_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\close_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\login_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\mileage_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\mileage_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\fail_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\fail_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star5.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star5.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star2.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star2.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\detail_arrow.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\detail_arrow.png"
-    },
-    {
-        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\write_icon.png",
-        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\write_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\doorkey.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\doorkey.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\search_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\search_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star4.png",
@@ -156,28 +36,20 @@
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\doorkey.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\fail_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\fail_icon.png"
-    },
-    {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\back_button.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\back_button.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star1.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star1.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menu_icon.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\menu_icon.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\warning.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\warning.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star_of_favorite_outline.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star_of_favorite_outline.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star_of_favorite_outline.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star_of_favorite_outline.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\one_by_one_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\one_by_one_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\booklist_icon.png",
@@ -188,16 +60,12 @@
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\recent_pass.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\search_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\search_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\unknown_error_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\unknown_error_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\mileage_icon.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\mileage_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\one_by_one_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\one_by_one_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\silver_rank.png",
@@ -206,6 +74,10 @@
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star5.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star5.png"
+    },
+    {
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\news_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\news_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\titanium_rank.png",
@@ -220,39 +92,39 @@
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\error_icon.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star3.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star3.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\gold_rank.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\gold_rank.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\diamond_rank.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\diamond_rank.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\news_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\news_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bronze_rank.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\bronze_rank.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\event_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\event_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star3.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star3.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\star_filled_ivepointed_shape.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\star_filled_ivepointed_shape.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\close_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\close_icon.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\booklist_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\booklist_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\login_icon.png"
     },
     {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\error_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\error_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\info_icon.png",
-        "source": "C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\info_icon.png"
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\fail_icon.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\fail_icon.png"
     },
     {
         "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\warning.png",
         "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\warning.png"
+    },
+    {
+        "merged": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\detail_arrow.png",
+        "source": "C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\detail_arrow.png"
     }
 ]

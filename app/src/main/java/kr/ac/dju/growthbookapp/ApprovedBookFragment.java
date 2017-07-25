@@ -36,7 +36,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
     private int nowPage = 2;
     private boolean pass =true;
     private RecyclerView mRecyclerView;
-    private Myadpater mAdapter;
+    private ApprovedMyadpater mAdapter;
     private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
 
     public ApprovedBookFragment() {
@@ -117,8 +117,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
 
             }
         });
-        mAdapter = new Myadpater(bookArrayList, this.getActivity());
-        mAdapter.setmButton("star");
+        mAdapter = new ApprovedMyadpater(bookArrayList, this.getActivity());
         mAdapter.setdevice(getArguments().getString("device"));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
