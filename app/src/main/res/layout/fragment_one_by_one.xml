@@ -46,7 +46,7 @@
         android:id="@+id/write_button"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/write_button_shape"
+        android:background="@drawable/write_button_icon"
         android:elevation="2dp"
 
         app:srcCompat="@drawable/write_icon"

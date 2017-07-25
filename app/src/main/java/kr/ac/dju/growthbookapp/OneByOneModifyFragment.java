@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.app.Activity.RESULT_OK;
+
 /**
  * Created by geonyounglim on 2017. 7. 7..
  */
@@ -61,6 +63,7 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
         },(View view) ->{
 
         });
+        hideRightAcc();
 
         setBackButton((View v)->{
             getFragmentManager().popBackStack();
@@ -338,6 +341,9 @@ public class OneByOneModifyFragment extends NavigationBarFragment implements Vie
             showAlertView(AlertType.INFO, "수정되었습니다", "", "확인", new AlertViewConfirmListener() {
                 @Override
                 public void alertViewConfirmed(AlertType type, String title, String description) {
+                    Intent intent = new Intent();
+                    intent.putExtra(OneByOneDetailFragment.REFRESH, OneByOneDetailFragment.REFRESH);
+                    getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
                     getFragmentManager().popBackStack();
                 }
             });

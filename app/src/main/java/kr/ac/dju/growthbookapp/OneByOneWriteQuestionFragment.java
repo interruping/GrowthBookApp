@@ -59,7 +59,7 @@ public class OneByOneWriteQuestionFragment extends NavigationBarFragment impleme
             getFragmentManager().popBackStack();
         });
 
-
+        hideRightAcc();
         _titleEditText = (EditText)result.findViewById(R.id.title_editText);
         _contentEditText = (EditText)result.findViewById(R.id.content_editText);
         _writeProgressBar = (ProgressBar)result.findViewById(R.id.write_progressBar);

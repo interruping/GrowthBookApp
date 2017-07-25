@@ -56,6 +56,8 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
             activeSearch();
         });
 
+        hideRightAcc();
+
         _recyclerView = (RecyclerView)result.findViewById(R.id.recent_pass_book_test_recyclerview);
         _adapter = new RecentPassBookTestRecyclerViewAdapter(getActivity());
         _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.recent_pass_book_test_swiperefreshlayout);

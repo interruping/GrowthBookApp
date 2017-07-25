@@ -92,6 +92,7 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
             activeSearch();
         });
 
+        hideRightAcc();
         _maxPage = 0;
         _currentPage = 1;
         _isLoading = false;
@@ -172,7 +173,7 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         }
 
 
-
+        _newsRecyclerView.setAdapter(_adapter);
         _isLoading = true;
         HttpConn conn = new HttpConn();
         conn.setUserAgent("GBApp");
@@ -260,8 +261,14 @@ public class OneByOneFragment extends NavigationBarFragment implements SwipeRefr
         mainHandler.post(()->{
             _adapter.removeLoadingProgressItem();
             _adapter.notifyDataSetChanged();
+
+
             for( NewsArticle article : toAdds){
                 _adapter.addItem(article);
+            }
+
+            if ( toAdds.size() == 0 ){
+                _newsRecyclerView.setAdapter(new EmptyRecyclerViewAdapter());
             }
 
             if ( _maxPage  > _currentPage  ){

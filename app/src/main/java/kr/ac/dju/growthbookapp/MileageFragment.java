@@ -51,6 +51,7 @@ public class MileageFragment extends NavigationBarFragment implements HttpConn.C
 
         });
 
+        hideRightAcc();
         ListView descList = (ListView)result.findViewById(R.id.book_level_desc_listview);
 
         LevelDescriptionListAdapter adapter = new LevelDescriptionListAdapter();

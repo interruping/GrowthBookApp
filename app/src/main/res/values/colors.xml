@@ -8,4 +8,5 @@
     <color name="colorHighLight">#F39C12</color>
     <color name="colorStrongHighLight">#C0392B</color>
     <color name="colorForLine">#BDC3C7</color>
+    <color name="colorFlatWhite">#E5E8EC</color>
 </resources>
