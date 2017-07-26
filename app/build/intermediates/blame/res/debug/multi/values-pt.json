@@ -404,6 +404,410 @@
         ]
     },
     {
+        "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 119,
+                    "endOffset": 170
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 119,
+                        "endOffset": 170
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 175,
+                    "endColumn": 107,
+                    "endOffset": 278
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 175,
+                        "endColumn": 107,
+                        "endOffset": 278
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 283,
+                    "endColumn": 122,
+                    "endOffset": 401
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 122,
+                        "endOffset": 401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 406,
+                    "endColumn": 105,
+                    "endOffset": 507
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 406,
+                        "endColumn": 105,
+                        "endOffset": 507
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 512,
+                    "endColumn": 106,
+                    "endOffset": 614
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 512,
+                        "endColumn": 106,
+                        "endOffset": 614
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 619,
+                    "endColumn": 88,
+                    "endOffset": 703
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 619,
+                        "endColumn": 88,
+                        "endOffset": 703
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 708,
+                    "endColumn": 100,
+                    "endOffset": 804
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 708,
+                        "endColumn": 100,
+                        "endOffset": 804
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 809,
+                    "endColumn": 117,
+                    "endOffset": 922
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 809,
+                        "endColumn": 117,
+                        "endOffset": 922
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 927,
+                    "endColumn": 82,
+                    "endOffset": 1005
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 927,
+                        "endColumn": 82,
+                        "endOffset": 1005
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1010,
+                    "endColumn": 79,
+                    "endOffset": 1085
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1010,
+                        "endColumn": 79,
+                        "endOffset": 1085
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1090,
+                    "endColumn": 86,
+                    "endOffset": 1172
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1090,
+                        "endColumn": 86,
+                        "endOffset": 1172
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1177,
+                    "endColumn": 106,
+                    "endOffset": 1279
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1177,
+                        "endColumn": 106,
+                        "endOffset": 1279
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1284,
+                    "endColumn": 111,
+                    "endOffset": 1391
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1284,
+                        "endColumn": 111,
+                        "endOffset": 1391
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1396,
+                    "endColumn": 101,
+                    "endOffset": 1493
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1396,
+                        "endColumn": 101,
+                        "endOffset": 1493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1498,
+                    "endColumn": 107,
+                    "endOffset": 1601
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1498,
+                        "endColumn": 107,
+                        "endOffset": 1601
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1606,
+                    "endColumn": 106,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1606,
+                        "endColumn": 106,
+                        "endOffset": 1708
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 109,
+                    "endOffset": 1818
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1713,
+                        "endColumn": 109,
+                        "endOffset": 1818
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1823,
+                    "endColumn": 124,
+                    "endOffset": 1943
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1823,
+                        "endColumn": 124,
+                        "endOffset": 1943
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1948,
+                    "endColumn": 99,
+                    "endOffset": 2043
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1948,
+                        "endColumn": 99,
+                        "endOffset": 2043
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2048,
+                    "endColumn": 84,
+                    "endOffset": 2128
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2048,
+                        "endColumn": 84,
+                        "endOffset": 2128
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2133,
+                    "endColumn": 100,
+                    "endOffset": 2229
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2133,
+                        "endColumn": 100,
+                        "endOffset": 2229
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
         "map": [
             {
@@ -1212,410 +1616,6 @@
         ]
     },
     {
-        "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 119,
-                    "endOffset": 170
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 119,
-                        "endOffset": 170
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 175,
-                    "endColumn": 107,
-                    "endOffset": 278
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 175,
-                        "endColumn": 107,
-                        "endOffset": 278
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 283,
-                    "endColumn": 122,
-                    "endOffset": 401
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 283,
-                        "endColumn": 122,
-                        "endOffset": 401
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 406,
-                    "endColumn": 105,
-                    "endOffset": 507
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 406,
-                        "endColumn": 105,
-                        "endOffset": 507
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 512,
-                    "endColumn": 106,
-                    "endOffset": 614
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 512,
-                        "endColumn": 106,
-                        "endOffset": 614
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 619,
-                    "endColumn": 88,
-                    "endOffset": 703
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 619,
-                        "endColumn": 88,
-                        "endOffset": 703
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 708,
-                    "endColumn": 100,
-                    "endOffset": 804
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 708,
-                        "endColumn": 100,
-                        "endOffset": 804
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 809,
-                    "endColumn": 117,
-                    "endOffset": 922
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 809,
-                        "endColumn": 117,
-                        "endOffset": 922
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 927,
-                    "endColumn": 82,
-                    "endOffset": 1005
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 927,
-                        "endColumn": 82,
-                        "endOffset": 1005
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1010,
-                    "endColumn": 79,
-                    "endOffset": 1085
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1010,
-                        "endColumn": 79,
-                        "endOffset": 1085
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1090,
-                    "endColumn": 86,
-                    "endOffset": 1172
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1090,
-                        "endColumn": 86,
-                        "endOffset": 1172
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1177,
-                    "endColumn": 106,
-                    "endOffset": 1279
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1177,
-                        "endColumn": 106,
-                        "endOffset": 1279
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1284,
-                    "endColumn": 111,
-                    "endOffset": 1391
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1284,
-                        "endColumn": 111,
-                        "endOffset": 1391
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1396,
-                    "endColumn": 101,
-                    "endOffset": 1493
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1396,
-                        "endColumn": 101,
-                        "endOffset": 1493
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1498,
-                    "endColumn": 107,
-                    "endOffset": 1601
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1498,
-                        "endColumn": 107,
-                        "endOffset": 1601
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1606,
-                    "endColumn": 106,
-                    "endOffset": 1708
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1606,
-                        "endColumn": 106,
-                        "endOffset": 1708
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1713,
-                    "endColumn": 109,
-                    "endOffset": 1818
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1713,
-                        "endColumn": 109,
-                        "endOffset": 1818
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1823,
-                    "endColumn": 124,
-                    "endOffset": 1943
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1823,
-                        "endColumn": 124,
-                        "endOffset": 1943
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1948,
-                    "endColumn": 99,
-                    "endOffset": 2043
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1948,
-                        "endColumn": 99,
-                        "endOffset": 2043
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2048,
-                    "endColumn": 84,
-                    "endOffset": 2128
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2048,
-                        "endColumn": 84,
-                        "endOffset": 2128
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 2133,
-                    "endColumn": 100,
-                    "endOffset": 2229
-                },
-                "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2133,
-                        "endColumn": 100,
-                        "endOffset": 2229
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
         "map": [
             {
@@ -2020,7 +2020,7 @@
         ]
     },
     {
-        "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
+        "outputFile": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
         "map": [
             {
                 "to": {
@@ -2031,7 +2031,7 @@
                     "endOffset": 170
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2050,7 +2050,7 @@
                     "endOffset": 278
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2069,7 +2069,7 @@
                     "endOffset": 401
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2088,7 +2088,7 @@
                     "endOffset": 507
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2107,7 +2107,7 @@
                     "endOffset": 614
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -2126,7 +2126,7 @@
                     "endOffset": 703
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -2145,7 +2145,7 @@
                     "endOffset": 804
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -2164,7 +2164,7 @@
                     "endOffset": 922
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -2183,7 +2183,7 @@
                     "endOffset": 1005
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -2202,7 +2202,7 @@
                     "endOffset": 1085
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -2221,7 +2221,7 @@
                     "endOffset": 1172
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -2240,7 +2240,7 @@
                     "endOffset": 1279
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -2259,7 +2259,7 @@
                     "endOffset": 1391
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -2278,7 +2278,7 @@
                     "endOffset": 1493
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -2297,7 +2297,7 @@
                     "endOffset": 1601
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -2316,7 +2316,7 @@
                     "endOffset": 1708
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -2335,7 +2335,7 @@
                     "endOffset": 1818
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -2354,7 +2354,7 @@
                     "endOffset": 1943
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -2373,7 +2373,7 @@
                     "endOffset": 2043
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -2392,7 +2392,7 @@
                     "endOffset": 2128
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -2411,7 +2411,7 @@
                     "endOffset": 2229
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,

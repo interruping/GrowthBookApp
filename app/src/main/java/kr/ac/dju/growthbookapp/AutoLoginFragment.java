@@ -101,10 +101,12 @@ public class AutoLoginFragment extends Fragment implements HttpConn.CallbackList
         UserInfoSafeStorage.UserInfo user = safe.get();
         if ( user.id == null || user.pw == null ) {
             failAutoLogin();
+            return;
         }
 
         if ( user.id.length() == 0 || user.pw.length() == 0 ){
             failAutoLogin();
+            return;
         }
         HttpConn con = new HttpConn();
 

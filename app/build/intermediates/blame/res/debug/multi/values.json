@@ -893,14 +893,7 @@
                     "endOffset": 6324
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/colors.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 462,
-                        "endColumn": 48,
-                        "endOffset": 506
-                    }
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/colors.xml"
                 }
             },
             {
@@ -4332,20 +4325,28 @@
                     "startOffset": 62519,
                     "endLine": 741,
                     "endColumn": 12,
-                    "endOffset": 63040
+                    "endOffset": 63280
                 },
                 "from": {
-                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/styles.xml"
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 54,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 815
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 742,
                     "startColumn": 4,
-                    "startOffset": 63045,
+                    "startOffset": 63285,
                     "endLine": 748,
                     "endColumn": 12,
-                    "endOffset": 63541
+                    "endOffset": 63781
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4355,9 +4356,9 @@
                 "to": {
                     "startLine": 749,
                     "startColumn": 4,
-                    "startOffset": 63546,
+                    "startOffset": 63786,
                     "endColumn": 88,
-                    "endOffset": 63630
+                    "endOffset": 63870
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4367,10 +4368,10 @@
                 "to": {
                     "startLine": 750,
                     "startColumn": 4,
-                    "startOffset": 63635,
+                    "startOffset": 63875,
                     "endLine": 753,
                     "endColumn": 12,
-                    "endOffset": 63877
+                    "endOffset": 64117
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4380,10 +4381,10 @@
                 "to": {
                     "startLine": 754,
                     "startColumn": 4,
-                    "startOffset": 63882,
+                    "startOffset": 64122,
                     "endLine": 757,
                     "endColumn": 12,
-                    "endOffset": 64158
+                    "endOffset": 64398
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4393,10 +4394,10 @@
                 "to": {
                     "startLine": 758,
                     "startColumn": 4,
-                    "startOffset": 64163,
+                    "startOffset": 64403,
                     "endLine": 762,
                     "endColumn": 12,
-                    "endOffset": 64443
+                    "endOffset": 64683
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4406,10 +4407,10 @@
                 "to": {
                     "startLine": 763,
                     "startColumn": 4,
-                    "startOffset": 64448,
+                    "startOffset": 64688,
                     "endLine": 768,
                     "endColumn": 12,
-                    "endOffset": 64836
+                    "endOffset": 65076
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4419,10 +4420,10 @@
                 "to": {
                     "startLine": 769,
                     "startColumn": 4,
-                    "startOffset": 64841,
+                    "startOffset": 65081,
                     "endLine": 775,
                     "endColumn": 12,
-                    "endOffset": 65313
+                    "endOffset": 65553
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4432,10 +4433,10 @@
                 "to": {
                     "startLine": 776,
                     "startColumn": 4,
-                    "startOffset": 65318,
+                    "startOffset": 65558,
                     "endLine": 779,
                     "endColumn": 12,
-                    "endOffset": 65535
+                    "endOffset": 65775
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4445,10 +4446,10 @@
                 "to": {
                     "startLine": 780,
                     "startColumn": 4,
-                    "startOffset": 65540,
+                    "startOffset": 65780,
                     "endLine": 783,
                     "endColumn": 12,
-                    "endOffset": 65757
+                    "endOffset": 65997
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4458,10 +4459,10 @@
                 "to": {
                     "startLine": 784,
                     "startColumn": 4,
-                    "startOffset": 65762,
+                    "startOffset": 66002,
                     "endLine": 788,
                     "endColumn": 12,
-                    "endOffset": 66025
+                    "endOffset": 66265
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4471,10 +4472,10 @@
                 "to": {
                     "startLine": 789,
                     "startColumn": 4,
-                    "startOffset": 66030,
+                    "startOffset": 66270,
                     "endLine": 792,
                     "endColumn": 12,
-                    "endOffset": 66252
+                    "endOffset": 66492
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4484,10 +4485,10 @@
                 "to": {
                     "startLine": 793,
                     "startColumn": 4,
-                    "startOffset": 66257,
+                    "startOffset": 66497,
                     "endLine": 796,
                     "endColumn": 12,
-                    "endOffset": 66482
+                    "endOffset": 66722
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4497,10 +4498,10 @@
                 "to": {
                     "startLine": 797,
                     "startColumn": 4,
-                    "startOffset": 66487,
+                    "startOffset": 66727,
                     "endLine": 800,
                     "endColumn": 12,
-                    "endOffset": 66712
+                    "endOffset": 66952
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4510,10 +4511,10 @@
                 "to": {
                     "startLine": 801,
                     "startColumn": 4,
-                    "startOffset": 66717,
+                    "startOffset": 66957,
                     "endLine": 804,
                     "endColumn": 12,
-                    "endOffset": 66942
+                    "endOffset": 67182
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4523,10 +4524,10 @@
                 "to": {
                     "startLine": 805,
                     "startColumn": 4,
-                    "startOffset": 66947,
+                    "startOffset": 67187,
                     "endLine": 808,
                     "endColumn": 12,
-                    "endOffset": 67172
+                    "endOffset": 67412
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4536,10 +4537,10 @@
                 "to": {
                     "startLine": 809,
                     "startColumn": 4,
-                    "startOffset": 67177,
+                    "startOffset": 67417,
                     "endLine": 812,
                     "endColumn": 12,
-                    "endOffset": 67399
+                    "endOffset": 67639
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4549,10 +4550,10 @@
                 "to": {
                     "startLine": 813,
                     "startColumn": 4,
-                    "startOffset": 67404,
+                    "startOffset": 67644,
                     "endLine": 816,
                     "endColumn": 12,
-                    "endOffset": 67638
+                    "endOffset": 67878
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4562,10 +4563,10 @@
                 "to": {
                     "startLine": 817,
                     "startColumn": 4,
-                    "startOffset": 67643,
+                    "startOffset": 67883,
                     "endLine": 820,
                     "endColumn": 12,
-                    "endOffset": 67864
+                    "endOffset": 68104
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4575,10 +4576,10 @@
                 "to": {
                     "startLine": 821,
                     "startColumn": 4,
-                    "startOffset": 67869,
+                    "startOffset": 68109,
                     "endLine": 824,
                     "endColumn": 12,
-                    "endOffset": 68109
+                    "endOffset": 68349
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4588,10 +4589,10 @@
                 "to": {
                     "startLine": 825,
                     "startColumn": 4,
-                    "startOffset": 68114,
+                    "startOffset": 68354,
                     "endLine": 828,
                     "endColumn": 12,
-                    "endOffset": 68339
+                    "endOffset": 68579
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4601,10 +4602,10 @@
                 "to": {
                     "startLine": 829,
                     "startColumn": 4,
-                    "startOffset": 68344,
+                    "startOffset": 68584,
                     "endLine": 832,
                     "endColumn": 12,
-                    "endOffset": 68587
+                    "endOffset": 68827
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4614,10 +4615,10 @@
                 "to": {
                     "startLine": 833,
                     "startColumn": 4,
-                    "startOffset": 68592,
+                    "startOffset": 68832,
                     "endLine": 836,
                     "endColumn": 12,
-                    "endOffset": 68806
+                    "endOffset": 69046
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4627,10 +4628,10 @@
                 "to": {
                     "startLine": 837,
                     "startColumn": 4,
-                    "startOffset": 68811,
+                    "startOffset": 69051,
                     "endLine": 841,
                     "endColumn": 12,
-                    "endOffset": 69089
+                    "endOffset": 69329
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4640,10 +4641,10 @@
                 "to": {
                     "startLine": 842,
                     "startColumn": 4,
-                    "startOffset": 69094,
+                    "startOffset": 69334,
                     "endLine": 845,
                     "endColumn": 12,
-                    "endOffset": 69297
+                    "endOffset": 69537
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4653,10 +4654,10 @@
                 "to": {
                     "startLine": 846,
                     "startColumn": 4,
-                    "startOffset": 69302,
+                    "startOffset": 69542,
                     "endLine": 848,
                     "endColumn": 12,
-                    "endOffset": 69428
+                    "endOffset": 69668
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4666,10 +4667,10 @@
                 "to": {
                     "startLine": 849,
                     "startColumn": 4,
-                    "startOffset": 69433,
+                    "startOffset": 69673,
                     "endLine": 852,
                     "endColumn": 12,
-                    "endOffset": 69655
+                    "endOffset": 69895
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4679,10 +4680,10 @@
                 "to": {
                     "startLine": 853,
                     "startColumn": 4,
-                    "startOffset": 69660,
+                    "startOffset": 69900,
                     "endLine": 856,
                     "endColumn": 12,
-                    "endOffset": 69901
+                    "endOffset": 70141
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4692,10 +4693,10 @@
                 "to": {
                     "startLine": 857,
                     "startColumn": 4,
-                    "startOffset": 69906,
+                    "startOffset": 70146,
                     "endLine": 860,
                     "endColumn": 12,
-                    "endOffset": 70126
+                    "endOffset": 70366
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4705,10 +4706,10 @@
                 "to": {
                     "startLine": 861,
                     "startColumn": 4,
-                    "startOffset": 70131,
+                    "startOffset": 70371,
                     "endLine": 864,
                     "endColumn": 12,
-                    "endOffset": 70373
+                    "endOffset": 70613
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4718,10 +4719,10 @@
                 "to": {
                     "startLine": 865,
                     "startColumn": 4,
-                    "startOffset": 70378,
+                    "startOffset": 70618,
                     "endLine": 868,
                     "endColumn": 12,
-                    "endOffset": 70594
+                    "endOffset": 70834
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4731,10 +4732,10 @@
                 "to": {
                     "startLine": 869,
                     "startColumn": 4,
-                    "startOffset": 70599,
+                    "startOffset": 70839,
                     "endLine": 872,
                     "endColumn": 12,
-                    "endOffset": 70839
+                    "endOffset": 71079
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4744,10 +4745,10 @@
                 "to": {
                     "startLine": 873,
                     "startColumn": 4,
-                    "startOffset": 70844,
+                    "startOffset": 71084,
                     "endLine": 876,
                     "endColumn": 12,
-                    "endOffset": 71115
+                    "endOffset": 71355
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4757,10 +4758,10 @@
                 "to": {
                     "startLine": 877,
                     "startColumn": 4,
-                    "startOffset": 71120,
+                    "startOffset": 71360,
                     "endLine": 880,
                     "endColumn": 12,
-                    "endOffset": 71416
+                    "endOffset": 71656
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4770,10 +4771,10 @@
                 "to": {
                     "startLine": 881,
                     "startColumn": 4,
-                    "startOffset": 71421,
+                    "startOffset": 71661,
                     "endLine": 884,
                     "endColumn": 12,
-                    "endOffset": 71740
+                    "endOffset": 71980
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4783,10 +4784,10 @@
                 "to": {
                     "startLine": 885,
                     "startColumn": 4,
-                    "startOffset": 71745,
+                    "startOffset": 71985,
                     "endLine": 888,
                     "endColumn": 12,
-                    "endOffset": 72031
+                    "endOffset": 72271
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4796,10 +4797,10 @@
                 "to": {
                     "startLine": 889,
                     "startColumn": 4,
-                    "startOffset": 72036,
+                    "startOffset": 72276,
                     "endLine": 892,
                     "endColumn": 12,
-                    "endOffset": 72345
+                    "endOffset": 72585
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4809,9 +4810,9 @@
                 "to": {
                     "startLine": 893,
                     "startColumn": 4,
-                    "startOffset": 72350,
+                    "startOffset": 72590,
                     "endColumn": 136,
-                    "endOffset": 72482
+                    "endOffset": 72722
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4821,9 +4822,9 @@
                 "to": {
                     "startLine": 894,
                     "startColumn": 4,
-                    "startOffset": 72487,
+                    "startOffset": 72727,
                     "endColumn": 130,
-                    "endOffset": 72613
+                    "endOffset": 72853
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4833,9 +4834,9 @@
                 "to": {
                     "startLine": 895,
                     "startColumn": 4,
-                    "startOffset": 72618,
+                    "startOffset": 72858,
                     "endColumn": 104,
-                    "endOffset": 72718
+                    "endOffset": 72958
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4845,10 +4846,10 @@
                 "to": {
                     "startLine": 896,
                     "startColumn": 4,
-                    "startOffset": 72723,
+                    "startOffset": 72963,
                     "endLine": 898,
                     "endColumn": 12,
-                    "endOffset": 72960
+                    "endOffset": 73200
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4858,10 +4859,10 @@
                 "to": {
                     "startLine": 899,
                     "startColumn": 4,
-                    "startOffset": 72965,
+                    "startOffset": 73205,
                     "endLine": 901,
                     "endColumn": 12,
-                    "endOffset": 73127
+                    "endOffset": 73367
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4871,10 +4872,10 @@
                 "to": {
                     "startLine": 902,
                     "startColumn": 4,
-                    "startOffset": 73132,
+                    "startOffset": 73372,
                     "endLine": 904,
                     "endColumn": 12,
-                    "endOffset": 73331
+                    "endOffset": 73571
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4884,10 +4885,10 @@
                 "to": {
                     "startLine": 905,
                     "startColumn": 4,
-                    "startOffset": 73336,
+                    "startOffset": 73576,
                     "endLine": 907,
                     "endColumn": 12,
-                    "endOffset": 73539
+                    "endOffset": 73779
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4897,10 +4898,10 @@
                 "to": {
                     "startLine": 908,
                     "startColumn": 4,
-                    "startOffset": 73544,
+                    "startOffset": 73784,
                     "endLine": 911,
                     "endColumn": 12,
-                    "endOffset": 73810
+                    "endOffset": 74050
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4910,9 +4911,9 @@
                 "to": {
                     "startLine": 912,
                     "startColumn": 4,
-                    "startOffset": 73815,
+                    "startOffset": 74055,
                     "endColumn": 111,
-                    "endOffset": 73922
+                    "endOffset": 74162
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4922,9 +4923,9 @@
                 "to": {
                     "startLine": 913,
                     "startColumn": 4,
-                    "startOffset": 73927,
+                    "startOffset": 74167,
                     "endColumn": 111,
-                    "endOffset": 74034
+                    "endOffset": 74274
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4934,9 +4935,9 @@
                 "to": {
                     "startLine": 914,
                     "startColumn": 4,
-                    "startOffset": 74039,
+                    "startOffset": 74279,
                     "endColumn": 104,
-                    "endOffset": 74139
+                    "endOffset": 74379
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4946,9 +4947,9 @@
                 "to": {
                     "startLine": 915,
                     "startColumn": 4,
-                    "startOffset": 74144,
+                    "startOffset": 74384,
                     "endColumn": 116,
-                    "endOffset": 74256
+                    "endOffset": 74496
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4958,10 +4959,10 @@
                 "to": {
                     "startLine": 916,
                     "startColumn": 4,
-                    "startOffset": 74261,
+                    "startOffset": 74501,
                     "endLine": 918,
                     "endColumn": 12,
-                    "endOffset": 74470
+                    "endOffset": 74710
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4971,10 +4972,10 @@
                 "to": {
                     "startLine": 919,
                     "startColumn": 4,
-                    "startOffset": 74475,
+                    "startOffset": 74715,
                     "endLine": 920,
                     "endColumn": 12,
-                    "endOffset": 74616
+                    "endOffset": 74856
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4984,10 +4985,10 @@
                 "to": {
                     "startLine": 921,
                     "startColumn": 4,
-                    "startOffset": 74621,
+                    "startOffset": 74861,
                     "endLine": 922,
                     "endColumn": 12,
-                    "endOffset": 74756
+                    "endOffset": 74996
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -4997,10 +4998,10 @@
                 "to": {
                     "startLine": 923,
                     "startColumn": 4,
-                    "startOffset": 74761,
+                    "startOffset": 75001,
                     "endLine": 924,
                     "endColumn": 12,
-                    "endOffset": 74842
+                    "endOffset": 75082
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5010,10 +5011,10 @@
                 "to": {
                     "startLine": 925,
                     "startColumn": 4,
-                    "startOffset": 74847,
+                    "startOffset": 75087,
                     "endLine": 929,
                     "endColumn": 12,
-                    "endOffset": 75190
+                    "endOffset": 75430
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5023,9 +5024,9 @@
                 "to": {
                     "startLine": 930,
                     "startColumn": 4,
-                    "startOffset": 75195,
+                    "startOffset": 75435,
                     "endColumn": 87,
-                    "endOffset": 75278
+                    "endOffset": 75518
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5035,10 +5036,10 @@
                 "to": {
                     "startLine": 931,
                     "startColumn": 4,
-                    "startOffset": 75283,
+                    "startOffset": 75523,
                     "endLine": 934,
                     "endColumn": 12,
-                    "endOffset": 75508
+                    "endOffset": 75748
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5048,10 +5049,10 @@
                 "to": {
                     "startLine": 935,
                     "startColumn": 4,
-                    "startOffset": 75513,
+                    "startOffset": 75753,
                     "endLine": 940,
                     "endColumn": 12,
-                    "endOffset": 75926
+                    "endOffset": 76166
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5061,10 +5062,10 @@
                 "to": {
                     "startLine": 941,
                     "startColumn": 4,
-                    "startOffset": 75931,
+                    "startOffset": 76171,
                     "endLine": 944,
                     "endColumn": 12,
-                    "endOffset": 76159
+                    "endOffset": 76399
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5074,9 +5075,9 @@
                 "to": {
                     "startLine": 945,
                     "startColumn": 4,
-                    "startOffset": 76164,
+                    "startOffset": 76404,
                     "endColumn": 81,
-                    "endOffset": 76241
+                    "endOffset": 76481
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5086,10 +5087,10 @@
                 "to": {
                     "startLine": 946,
                     "startColumn": 4,
-                    "startOffset": 76246,
+                    "startOffset": 76486,
                     "endLine": 947,
                     "endColumn": 12,
-                    "endOffset": 76339
+                    "endOffset": 76579
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5099,10 +5100,10 @@
                 "to": {
                     "startLine": 948,
                     "startColumn": 4,
-                    "startOffset": 76344,
+                    "startOffset": 76584,
                     "endLine": 958,
                     "endColumn": 12,
-                    "endOffset": 76931
+                    "endOffset": 77171
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5112,9 +5113,9 @@
                 "to": {
                     "startLine": 959,
                     "startColumn": 4,
-                    "startOffset": 76936,
+                    "startOffset": 77176,
                     "endColumn": 99,
-                    "endOffset": 77031
+                    "endOffset": 77271
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5124,10 +5125,10 @@
                 "to": {
                     "startLine": 960,
                     "startColumn": 4,
-                    "startOffset": 77036,
+                    "startOffset": 77276,
                     "endLine": 963,
                     "endColumn": 12,
-                    "endOffset": 77267
+                    "endOffset": 77507
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5137,10 +5138,10 @@
                 "to": {
                     "startLine": 964,
                     "startColumn": 4,
-                    "startOffset": 77272,
+                    "startOffset": 77512,
                     "endLine": 969,
                     "endColumn": 12,
-                    "endOffset": 77691
+                    "endOffset": 77931
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5150,10 +5151,10 @@
                 "to": {
                     "startLine": 970,
                     "startColumn": 4,
-                    "startOffset": 77696,
+                    "startOffset": 77936,
                     "endLine": 973,
                     "endColumn": 12,
-                    "endOffset": 77930
+                    "endOffset": 78170
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5163,9 +5164,9 @@
                 "to": {
                     "startLine": 974,
                     "startColumn": 4,
-                    "startOffset": 77935,
+                    "startOffset": 78175,
                     "endColumn": 93,
-                    "endOffset": 78024
+                    "endOffset": 78264
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5175,9 +5176,9 @@
                 "to": {
                     "startLine": 975,
                     "startColumn": 4,
-                    "startOffset": 78029,
+                    "startOffset": 78269,
                     "endColumn": 88,
-                    "endOffset": 78113
+                    "endOffset": 78353
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5187,10 +5188,10 @@
                 "to": {
                     "startLine": 976,
                     "startColumn": 4,
-                    "startOffset": 78118,
+                    "startOffset": 78358,
                     "endLine": 979,
                     "endColumn": 12,
-                    "endOffset": 78350
+                    "endOffset": 78590
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5200,10 +5201,10 @@
                 "to": {
                     "startLine": 980,
                     "startColumn": 4,
-                    "startOffset": 78355,
+                    "startOffset": 78595,
                     "endLine": 1006,
                     "endColumn": 12,
-                    "endOffset": 80374
+                    "endOffset": 80614
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5213,10 +5214,10 @@
                 "to": {
                     "startLine": 1007,
                     "startColumn": 4,
-                    "startOffset": 80379,
+                    "startOffset": 80619,
                     "endLine": 1010,
                     "endColumn": 12,
-                    "endOffset": 80616
+                    "endOffset": 80856
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5226,9 +5227,9 @@
                 "to": {
                     "startLine": 1011,
                     "startColumn": 4,
-                    "startOffset": 80621,
+                    "startOffset": 80861,
                     "endColumn": 101,
-                    "endOffset": 80718
+                    "endOffset": 80958
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5238,10 +5239,10 @@
                 "to": {
                     "startLine": 1012,
                     "startColumn": 4,
-                    "startOffset": 80723,
+                    "startOffset": 80963,
                     "endLine": 1015,
                     "endColumn": 12,
-                    "endOffset": 80955
+                    "endOffset": 81195
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5251,10 +5252,10 @@
                 "to": {
                     "startLine": 1016,
                     "startColumn": 4,
-                    "startOffset": 80960,
+                    "startOffset": 81200,
                     "endLine": 1043,
                     "endColumn": 12,
-                    "endOffset": 83111
+                    "endOffset": 83351
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5264,10 +5265,10 @@
                 "to": {
                     "startLine": 1044,
                     "startColumn": 4,
-                    "startOffset": 83116,
+                    "startOffset": 83356,
                     "endLine": 1201,
                     "endColumn": 12,
-                    "endOffset": 92715
+                    "endOffset": 92955
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5277,10 +5278,10 @@
                 "to": {
                     "startLine": 1202,
                     "startColumn": 4,
-                    "startOffset": 92720,
+                    "startOffset": 92960,
                     "endLine": 1223,
                     "endColumn": 12,
-                    "endOffset": 93966
+                    "endOffset": 94206
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5290,10 +5291,10 @@
                 "to": {
                     "startLine": 1224,
                     "startColumn": 4,
-                    "startOffset": 93971,
+                    "startOffset": 94211,
                     "endLine": 1381,
                     "endColumn": 12,
-                    "endOffset": 103669
+                    "endOffset": 103909
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5303,10 +5304,10 @@
                 "to": {
                     "startLine": 1382,
                     "startColumn": 4,
-                    "startOffset": 103674,
+                    "startOffset": 103914,
                     "endLine": 1403,
                     "endColumn": 12,
-                    "endOffset": 104932
+                    "endOffset": 105172
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5316,10 +5317,10 @@
                 "to": {
                     "startLine": 1404,
                     "startColumn": 4,
-                    "startOffset": 104937,
+                    "startOffset": 105177,
                     "endLine": 1430,
                     "endColumn": 12,
-                    "endOffset": 106424
+                    "endOffset": 106664
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5329,10 +5330,10 @@
                 "to": {
                     "startLine": 1431,
                     "startColumn": 4,
-                    "startOffset": 106429,
+                    "startOffset": 106669,
                     "endLine": 1437,
                     "endColumn": 12,
-                    "endOffset": 106960
+                    "endOffset": 107200
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5342,10 +5343,10 @@
                 "to": {
                     "startLine": 1438,
                     "startColumn": 4,
-                    "startOffset": 106965,
+                    "startOffset": 107205,
                     "endLine": 1442,
                     "endColumn": 12,
-                    "endOffset": 107290
+                    "endOffset": 107530
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5355,10 +5356,10 @@
                 "to": {
                     "startLine": 1443,
                     "startColumn": 4,
-                    "startOffset": 107295,
+                    "startOffset": 107535,
                     "endLine": 1464,
                     "endColumn": 12,
-                    "endOffset": 108555
+                    "endOffset": 108795
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5368,10 +5369,10 @@
                 "to": {
                     "startLine": 1465,
                     "startColumn": 4,
-                    "startOffset": 108560,
+                    "startOffset": 108800,
                     "endLine": 1469,
                     "endColumn": 12,
-                    "endOffset": 108811
+                    "endOffset": 109051
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5381,10 +5382,10 @@
                 "to": {
                     "startLine": 1470,
                     "startColumn": 4,
-                    "startOffset": 108816,
+                    "startOffset": 109056,
                     "endLine": 1474,
                     "endColumn": 12,
-                    "endOffset": 109047
+                    "endOffset": 109287
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5394,10 +5395,10 @@
                 "to": {
                     "startLine": 1475,
                     "startColumn": 4,
-                    "startOffset": 109052,
+                    "startOffset": 109292,
                     "endLine": 1484,
                     "endColumn": 12,
-                    "endOffset": 109594
+                    "endOffset": 109834
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5407,10 +5408,10 @@
                 "to": {
                     "startLine": 1485,
                     "startColumn": 4,
-                    "startOffset": 109599,
+                    "startOffset": 109839,
                     "endLine": 1493,
                     "endColumn": 12,
-                    "endOffset": 110088
+                    "endOffset": 110328
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5420,10 +5421,10 @@
                 "to": {
                     "startLine": 1494,
                     "startColumn": 4,
-                    "startOffset": 110093,
+                    "startOffset": 110333,
                     "endLine": 1502,
                     "endColumn": 12,
-                    "endOffset": 110693
+                    "endOffset": 110933
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5433,10 +5434,10 @@
                 "to": {
                     "startLine": 1503,
                     "startColumn": 4,
-                    "startOffset": 110698,
+                    "startOffset": 110938,
                     "endLine": 1506,
                     "endColumn": 12,
-                    "endOffset": 110891
+                    "endOffset": 111131
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5446,10 +5447,10 @@
                 "to": {
                     "startLine": 1507,
                     "startColumn": 4,
-                    "startOffset": 110896,
+                    "startOffset": 111136,
                     "endLine": 1513,
                     "endColumn": 12,
-                    "endOffset": 111471
+                    "endOffset": 111711
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5459,10 +5460,10 @@
                 "to": {
                     "startLine": 1514,
                     "startColumn": 4,
-                    "startOffset": 111476,
+                    "startOffset": 111716,
                     "endLine": 1521,
                     "endColumn": 12,
-                    "endOffset": 112035
+                    "endOffset": 112275
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5472,10 +5473,10 @@
                 "to": {
                     "startLine": 1522,
                     "startColumn": 4,
-                    "startOffset": 112040,
+                    "startOffset": 112280,
                     "endLine": 1528,
                     "endColumn": 12,
-                    "endOffset": 112410
+                    "endOffset": 112650
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5485,9 +5486,9 @@
                 "to": {
                     "startLine": 1529,
                     "startColumn": 4,
-                    "startOffset": 112415,
+                    "startOffset": 112655,
                     "endColumn": 117,
-                    "endOffset": 112528
+                    "endOffset": 112768
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5497,10 +5498,10 @@
                 "to": {
                     "startLine": 1530,
                     "startColumn": 4,
-                    "startOffset": 112533,
+                    "startOffset": 112773,
                     "endLine": 1538,
                     "endColumn": 12,
-                    "endOffset": 113066
+                    "endOffset": 113306
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5510,10 +5511,10 @@
                 "to": {
                     "startLine": 1539,
                     "startColumn": 4,
-                    "startOffset": 113071,
+                    "startOffset": 113311,
                     "endLine": 1541,
                     "endColumn": 12,
-                    "endOffset": 113223
+                    "endOffset": 113463
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5523,10 +5524,10 @@
                 "to": {
                     "startLine": 1542,
                     "startColumn": 4,
-                    "startOffset": 113228,
+                    "startOffset": 113468,
                     "endLine": 1544,
                     "endColumn": 12,
-                    "endOffset": 113419
+                    "endOffset": 113659
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5536,10 +5537,10 @@
                 "to": {
                     "startLine": 1545,
                     "startColumn": 4,
-                    "startOffset": 113424,
+                    "startOffset": 113664,
                     "endLine": 1548,
                     "endColumn": 12,
-                    "endOffset": 113692
+                    "endOffset": 113932
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5549,10 +5550,10 @@
                 "to": {
                     "startLine": 1549,
                     "startColumn": 4,
-                    "startOffset": 113697,
+                    "startOffset": 113937,
                     "endLine": 1552,
                     "endColumn": 12,
-                    "endOffset": 113948
+                    "endOffset": 114188
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5562,10 +5563,10 @@
                 "to": {
                     "startLine": 1553,
                     "startColumn": 4,
-                    "startOffset": 113953,
+                    "startOffset": 114193,
                     "endLine": 1556,
                     "endColumn": 12,
-                    "endOffset": 114118
+                    "endOffset": 114358
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5575,10 +5576,10 @@
                 "to": {
                     "startLine": 1557,
                     "startColumn": 4,
-                    "startOffset": 114123,
+                    "startOffset": 114363,
                     "endLine": 1559,
                     "endColumn": 12,
-                    "endOffset": 114259
+                    "endOffset": 114499
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5588,9 +5589,9 @@
                 "to": {
                     "startLine": 1560,
                     "startColumn": 4,
-                    "startOffset": 114264,
+                    "startOffset": 114504,
                     "endColumn": 63,
-                    "endOffset": 114323
+                    "endOffset": 114563
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5600,10 +5601,10 @@
                 "to": {
                     "startLine": 1561,
                     "startColumn": 4,
-                    "startOffset": 114328,
+                    "startOffset": 114568,
                     "endLine": 1564,
                     "endColumn": 12,
-                    "endOffset": 114605
+                    "endOffset": 114845
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5613,10 +5614,10 @@
                 "to": {
                     "startLine": 1565,
                     "startColumn": 4,
-                    "startOffset": 114610,
+                    "startOffset": 114850,
                     "endLine": 1568,
                     "endColumn": 12,
-                    "endOffset": 114891
+                    "endOffset": 115131
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5626,10 +5627,10 @@
                 "to": {
                     "startLine": 1569,
                     "startColumn": 4,
-                    "startOffset": 114896,
+                    "startOffset": 115136,
                     "endLine": 1578,
                     "endColumn": 12,
-                    "endOffset": 115567
+                    "endOffset": 115807
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5639,10 +5640,10 @@
                 "to": {
                     "startLine": 1579,
                     "startColumn": 4,
-                    "startOffset": 115572,
+                    "startOffset": 115812,
                     "endLine": 1583,
                     "endColumn": 12,
-                    "endOffset": 115831
+                    "endOffset": 116071
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5652,10 +5653,10 @@
                 "to": {
                     "startLine": 1584,
                     "startColumn": 4,
-                    "startOffset": 115836,
+                    "startOffset": 116076,
                     "endLine": 1590,
                     "endColumn": 12,
-                    "endOffset": 116169
+                    "endOffset": 116409
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5665,10 +5666,10 @@
                 "to": {
                     "startLine": 1591,
                     "startColumn": 4,
-                    "startOffset": 116174,
+                    "startOffset": 116414,
                     "endLine": 1596,
                     "endColumn": 12,
-                    "endOffset": 116522
+                    "endOffset": 116762
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5678,9 +5679,9 @@
                 "to": {
                     "startLine": 1597,
                     "startColumn": 4,
-                    "startOffset": 116527,
+                    "startOffset": 116767,
                     "endColumn": 93,
-                    "endOffset": 116616
+                    "endOffset": 116856
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5690,10 +5691,10 @@
                 "to": {
                     "startLine": 1598,
                     "startColumn": 4,
-                    "startOffset": 116621,
+                    "startOffset": 116861,
                     "endLine": 1600,
                     "endColumn": 12,
-                    "endOffset": 116802
+                    "endOffset": 117042
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5703,10 +5704,10 @@
                 "to": {
                     "startLine": 1601,
                     "startColumn": 4,
-                    "startOffset": 116807,
+                    "startOffset": 117047,
                     "endLine": 1604,
                     "endColumn": 12,
-                    "endOffset": 117108
+                    "endOffset": 117348
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5716,10 +5717,10 @@
                 "to": {
                     "startLine": 1605,
                     "startColumn": 4,
-                    "startOffset": 117113,
+                    "startOffset": 117353,
                     "endLine": 1609,
                     "endColumn": 12,
-                    "endOffset": 117370
+                    "endOffset": 117610
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5729,10 +5730,10 @@
                 "to": {
                     "startLine": 1610,
                     "startColumn": 4,
-                    "startOffset": 117375,
+                    "startOffset": 117615,
                     "endLine": 1611,
                     "endColumn": 12,
-                    "endOffset": 117495
+                    "endOffset": 117735
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5742,10 +5743,10 @@
                 "to": {
                     "startLine": 1612,
                     "startColumn": 4,
-                    "startOffset": 117500,
+                    "startOffset": 117740,
                     "endLine": 1613,
                     "endColumn": 12,
-                    "endOffset": 117622
+                    "endOffset": 117862
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5755,10 +5756,10 @@
                 "to": {
                     "startLine": 1614,
                     "startColumn": 4,
-                    "startOffset": 117627,
+                    "startOffset": 117867,
                     "endLine": 1616,
                     "endColumn": 12,
-                    "endOffset": 117861
+                    "endOffset": 118101
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5768,10 +5769,10 @@
                 "to": {
                     "startLine": 1617,
                     "startColumn": 4,
-                    "startOffset": 117866,
+                    "startOffset": 118106,
                     "endLine": 1619,
                     "endColumn": 12,
-                    "endOffset": 118072
+                    "endOffset": 118312
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5781,10 +5782,10 @@
                 "to": {
                     "startLine": 1620,
                     "startColumn": 4,
-                    "startOffset": 118077,
+                    "startOffset": 118317,
                     "endLine": 1621,
                     "endColumn": 12,
-                    "endOffset": 118191
+                    "endOffset": 118431
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5794,10 +5795,10 @@
                 "to": {
                     "startLine": 1622,
                     "startColumn": 4,
-                    "startOffset": 118196,
+                    "startOffset": 118436,
                     "endLine": 1625,
                     "endColumn": 12,
-                    "endOffset": 118384
+                    "endOffset": 118624
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5807,10 +5808,10 @@
                 "to": {
                     "startLine": 1626,
                     "startColumn": 4,
-                    "startOffset": 118389,
+                    "startOffset": 118629,
                     "endLine": 1628,
                     "endColumn": 12,
-                    "endOffset": 118561
+                    "endOffset": 118801
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5820,10 +5821,10 @@
                 "to": {
                     "startLine": 1629,
                     "startColumn": 4,
-                    "startOffset": 118566,
+                    "startOffset": 118806,
                     "endLine": 1635,
                     "endColumn": 12,
-                    "endOffset": 119016
+                    "endOffset": 119256
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5833,10 +5834,10 @@
                 "to": {
                     "startLine": 1636,
                     "startColumn": 4,
-                    "startOffset": 119021,
+                    "startOffset": 119261,
                     "endLine": 1638,
                     "endColumn": 12,
-                    "endOffset": 119197
+                    "endOffset": 119437
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5846,10 +5847,10 @@
                 "to": {
                     "startLine": 1639,
                     "startColumn": 4,
-                    "startOffset": 119202,
+                    "startOffset": 119442,
                     "endLine": 1641,
                     "endColumn": 12,
-                    "endOffset": 119319
+                    "endOffset": 119559
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5859,10 +5860,10 @@
                 "to": {
                     "startLine": 1642,
                     "startColumn": 4,
-                    "startOffset": 119324,
+                    "startOffset": 119564,
                     "endLine": 1645,
                     "endColumn": 12,
-                    "endOffset": 119578
+                    "endOffset": 119818
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5872,10 +5873,10 @@
                 "to": {
                     "startLine": 1646,
                     "startColumn": 4,
-                    "startOffset": 119583,
+                    "startOffset": 119823,
                     "endLine": 1647,
                     "endColumn": 12,
-                    "endOffset": 119691
+                    "endOffset": 119931
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5885,10 +5886,10 @@
                 "to": {
                     "startLine": 1648,
                     "startColumn": 4,
-                    "startOffset": 119696,
+                    "startOffset": 119936,
                     "endLine": 1651,
                     "endColumn": 12,
-                    "endOffset": 119878
+                    "endOffset": 120118
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5898,10 +5899,10 @@
                 "to": {
                     "startLine": 1652,
                     "startColumn": 4,
-                    "startOffset": 119883,
+                    "startOffset": 120123,
                     "endLine": 1653,
                     "endColumn": 12,
-                    "endOffset": 119980
+                    "endOffset": 120220
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5911,10 +5912,10 @@
                 "to": {
                     "startLine": 1654,
                     "startColumn": 4,
-                    "startOffset": 119985,
+                    "startOffset": 120225,
                     "endLine": 1659,
                     "endColumn": 12,
-                    "endOffset": 120424
+                    "endOffset": 120664
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5924,10 +5925,10 @@
                 "to": {
                     "startLine": 1660,
                     "startColumn": 4,
-                    "startOffset": 120429,
+                    "startOffset": 120669,
                     "endLine": 1661,
                     "endColumn": 12,
-                    "endOffset": 120548
+                    "endOffset": 120788
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5937,10 +5938,10 @@
                 "to": {
                     "startLine": 1662,
                     "startColumn": 4,
-                    "startOffset": 120553,
+                    "startOffset": 120793,
                     "endLine": 1665,
                     "endColumn": 12,
-                    "endOffset": 120823
+                    "endOffset": 121063
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5950,10 +5951,10 @@
                 "to": {
                     "startLine": 1666,
                     "startColumn": 4,
-                    "startOffset": 120828,
+                    "startOffset": 121068,
                     "endLine": 1673,
                     "endColumn": 12,
-                    "endOffset": 121331
+                    "endOffset": 121571
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5963,10 +5964,10 @@
                 "to": {
                     "startLine": 1674,
                     "startColumn": 4,
-                    "startOffset": 121336,
+                    "startOffset": 121576,
                     "endLine": 1681,
                     "endColumn": 12,
-                    "endOffset": 121827
+                    "endOffset": 122067
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5976,10 +5977,10 @@
                 "to": {
                     "startLine": 1682,
                     "startColumn": 4,
-                    "startOffset": 121832,
+                    "startOffset": 122072,
                     "endLine": 1693,
                     "endColumn": 12,
-                    "endOffset": 122704
+                    "endOffset": 122944
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -5989,10 +5990,10 @@
                 "to": {
                     "startLine": 1694,
                     "startColumn": 4,
-                    "startOffset": 122709,
+                    "startOffset": 122949,
                     "endLine": 1699,
                     "endColumn": 12,
-                    "endOffset": 122998
+                    "endOffset": 123238
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6002,10 +6003,10 @@
                 "to": {
                     "startLine": 1700,
                     "startColumn": 4,
-                    "startOffset": 123003,
+                    "startOffset": 123243,
                     "endLine": 1708,
                     "endColumn": 12,
-                    "endOffset": 123568
+                    "endOffset": 123808
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6015,10 +6016,10 @@
                 "to": {
                     "startLine": 1709,
                     "startColumn": 4,
-                    "startOffset": 123573,
+                    "startOffset": 123813,
                     "endLine": 1711,
                     "endColumn": 12,
-                    "endOffset": 123717
+                    "endOffset": 123957
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6028,10 +6029,10 @@
                 "to": {
                     "startLine": 1712,
                     "startColumn": 4,
-                    "startOffset": 123722,
+                    "startOffset": 123962,
                     "endLine": 1722,
                     "endColumn": 12,
-                    "endOffset": 124449
+                    "endOffset": 124689
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6041,10 +6042,10 @@
                 "to": {
                     "startLine": 1723,
                     "startColumn": 4,
-                    "startOffset": 124454,
+                    "startOffset": 124694,
                     "endLine": 1725,
                     "endColumn": 12,
-                    "endOffset": 124621
+                    "endOffset": 124861
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6054,10 +6055,10 @@
                 "to": {
                     "startLine": 1726,
                     "startColumn": 4,
-                    "startOffset": 124626,
+                    "startOffset": 124866,
                     "endLine": 1730,
                     "endColumn": 12,
-                    "endOffset": 124957
+                    "endOffset": 125197
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6067,10 +6068,10 @@
                 "to": {
                     "startLine": 1731,
                     "startColumn": 4,
-                    "startOffset": 124962,
+                    "startOffset": 125202,
                     "endLine": 1744,
                     "endColumn": 12,
-                    "endOffset": 126015
+                    "endOffset": 126255
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6080,10 +6081,10 @@
                 "to": {
                     "startLine": 1745,
                     "startColumn": 4,
-                    "startOffset": 126020,
+                    "startOffset": 126260,
                     "endLine": 1749,
                     "endColumn": 12,
-                    "endOffset": 126293
+                    "endOffset": 126533
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6093,10 +6094,10 @@
                 "to": {
                     "startLine": 1750,
                     "startColumn": 4,
-                    "startOffset": 126298,
+                    "startOffset": 126538,
                     "endLine": 1752,
                     "endColumn": 12,
-                    "endOffset": 126447
+                    "endOffset": 126687
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -6106,10 +6107,10 @@
                 "to": {
                     "startLine": 1753,
                     "startColumn": 4,
-                    "startOffset": 126452,
+                    "startOffset": 126692,
                     "endLine": 1762,
                     "endColumn": 12,
-                    "endOffset": 127038
+                    "endOffset": 127278
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -6119,10 +6120,10 @@
                 "to": {
                     "startLine": 1763,
                     "startColumn": 4,
-                    "startOffset": 127043,
+                    "startOffset": 127283,
                     "endLine": 1765,
                     "endColumn": 12,
-                    "endOffset": 127206
+                    "endOffset": 127446
                 },
                 "from": {
                     "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/dialogstyles.xml"
@@ -6132,10 +6133,10 @@
                 "to": {
                     "startLine": 1766,
                     "startColumn": 4,
-                    "startOffset": 127211,
+                    "startOffset": 127451,
                     "endLine": 1769,
                     "endColumn": 12,
-                    "endOffset": 127412
+                    "endOffset": 127652
                 },
                 "from": {
                     "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/dialogstyles.xml"
@@ -6145,10 +6146,10 @@
                 "to": {
                     "startLine": 1770,
                     "startColumn": 4,
-                    "startOffset": 127417,
+                    "startOffset": 127657,
                     "endLine": 1811,
                     "endColumn": 12,
-                    "endOffset": 130536
+                    "endOffset": 130776
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6158,10 +6159,10 @@
                 "to": {
                     "startLine": 1812,
                     "startColumn": 4,
-                    "startOffset": 130541,
+                    "startOffset": 130781,
                     "endLine": 1854,
                     "endColumn": 12,
-                    "endOffset": 133803
+                    "endOffset": 134043
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6171,9 +6172,9 @@
                 "to": {
                     "startLine": 1855,
                     "startColumn": 4,
-                    "startOffset": 133808,
+                    "startOffset": 134048,
                     "endColumn": 61,
-                    "endOffset": 133865
+                    "endOffset": 134105
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6183,10 +6184,10 @@
                 "to": {
                     "startLine": 1856,
                     "startColumn": 4,
-                    "startOffset": 133870,
+                    "startOffset": 134110,
                     "endLine": 1865,
                     "endColumn": 12,
-                    "endOffset": 134443
+                    "endOffset": 134683
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6196,10 +6197,10 @@
                 "to": {
                     "startLine": 1866,
                     "startColumn": 4,
-                    "startOffset": 134448,
+                    "startOffset": 134688,
                     "endLine": 1874,
                     "endColumn": 12,
-                    "endOffset": 135027
+                    "endOffset": 135267
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6209,9 +6210,9 @@
                 "to": {
                     "startLine": 1875,
                     "startColumn": 4,
-                    "startOffset": 135032,
+                    "startOffset": 135272,
                     "endColumn": 85,
-                    "endOffset": 135113
+                    "endOffset": 135353
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6221,10 +6222,10 @@
                 "to": {
                     "startLine": 1876,
                     "startColumn": 4,
-                    "startOffset": 135118,
+                    "startOffset": 135358,
                     "endLine": 1877,
                     "endColumn": 12,
-                    "endOffset": 135226
+                    "endOffset": 135466
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6234,10 +6235,10 @@
                 "to": {
                     "startLine": 1878,
                     "startColumn": 4,
-                    "startOffset": 135231,
+                    "startOffset": 135471,
                     "endLine": 1881,
                     "endColumn": 12,
-                    "endOffset": 135455
+                    "endOffset": 135695
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6247,10 +6248,10 @@
                 "to": {
                     "startLine": 1882,
                     "startColumn": 4,
-                    "startOffset": 135460,
+                    "startOffset": 135700,
                     "endLine": 1884,
                     "endColumn": 12,
-                    "endOffset": 135615
+                    "endOffset": 135855
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6260,10 +6261,10 @@
                 "to": {
                     "startLine": 1885,
                     "startColumn": 4,
-                    "startOffset": 135620,
+                    "startOffset": 135860,
                     "endLine": 1887,
                     "endColumn": 12,
-                    "endOffset": 135767
+                    "endOffset": 136007
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6273,10 +6274,10 @@
                 "to": {
                     "startLine": 1888,
                     "startColumn": 4,
-                    "startOffset": 135772,
+                    "startOffset": 136012,
                     "endLine": 1890,
                     "endColumn": 12,
-                    "endOffset": 135938
+                    "endOffset": 136178
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6286,10 +6287,10 @@
                 "to": {
                     "startLine": 1891,
                     "startColumn": 4,
-                    "startOffset": 135943,
+                    "startOffset": 136183,
                     "endLine": 1893,
                     "endColumn": 12,
-                    "endOffset": 136105
+                    "endOffset": 136345
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6299,10 +6300,10 @@
                 "to": {
                     "startLine": 1894,
                     "startColumn": 4,
-                    "startOffset": 136110,
+                    "startOffset": 136350,
                     "endLine": 1897,
                     "endColumn": 12,
-                    "endOffset": 136348
+                    "endOffset": 136588
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6312,10 +6313,10 @@
                 "to": {
                     "startLine": 1898,
                     "startColumn": 4,
-                    "startOffset": 136353,
+                    "startOffset": 136593,
                     "endLine": 1900,
                     "endColumn": 12,
-                    "endOffset": 136518
+                    "endOffset": 136758
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6325,10 +6326,10 @@
                 "to": {
                     "startLine": 1901,
                     "startColumn": 4,
-                    "startOffset": 136523,
+                    "startOffset": 136763,
                     "endLine": 1903,
                     "endColumn": 12,
-                    "endOffset": 136691
+                    "endOffset": 136931
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6338,10 +6339,10 @@
                 "to": {
                     "startLine": 1904,
                     "startColumn": 4,
-                    "startOffset": 136696,
+                    "startOffset": 136936,
                     "endLine": 1906,
                     "endColumn": 12,
-                    "endOffset": 136862
+                    "endOffset": 137102
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6351,10 +6352,10 @@
                 "to": {
                     "startLine": 1907,
                     "startColumn": 4,
-                    "startOffset": 136867,
+                    "startOffset": 137107,
                     "endLine": 1910,
                     "endColumn": 12,
-                    "endOffset": 137136
+                    "endOffset": 137376
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6364,10 +6365,10 @@
                 "to": {
                     "startLine": 1911,
                     "startColumn": 4,
-                    "startOffset": 137141,
+                    "startOffset": 137381,
                     "endLine": 1913,
                     "endColumn": 12,
-                    "endOffset": 137335
+                    "endOffset": 137575
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6377,10 +6378,10 @@
                 "to": {
                     "startLine": 1914,
                     "startColumn": 4,
-                    "startOffset": 137340,
+                    "startOffset": 137580,
                     "endLine": 1917,
                     "endColumn": 12,
-                    "endOffset": 137540
+                    "endOffset": 137780
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6390,10 +6391,10 @@
                 "to": {
                     "startLine": 1918,
                     "startColumn": 4,
-                    "startOffset": 137545,
+                    "startOffset": 137785,
                     "endLine": 1921,
                     "endColumn": 12,
-                    "endOffset": 137870
+                    "endOffset": 138110
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6403,9 +6404,9 @@
                 "to": {
                     "startLine": 1922,
                     "startColumn": 4,
-                    "startOffset": 137875,
+                    "startOffset": 138115,
                     "endColumn": 83,
-                    "endOffset": 137954
+                    "endOffset": 138194
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6415,9 +6416,9 @@
                 "to": {
                     "startLine": 1923,
                     "startColumn": 4,
-                    "startOffset": 137959,
+                    "startOffset": 138199,
                     "endColumn": 95,
-                    "endOffset": 138050
+                    "endOffset": 138290
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6427,9 +6428,9 @@
                 "to": {
                     "startLine": 1924,
                     "startColumn": 4,
-                    "startOffset": 138055,
+                    "startOffset": 138295,
                     "endColumn": 95,
-                    "endOffset": 138146
+                    "endOffset": 138386
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6439,9 +6440,9 @@
                 "to": {
                     "startLine": 1925,
                     "startColumn": 4,
-                    "startOffset": 138151,
+                    "startOffset": 138391,
                     "endColumn": 97,
-                    "endOffset": 138244
+                    "endOffset": 138484
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6451,9 +6452,9 @@
                 "to": {
                     "startLine": 1926,
                     "startColumn": 4,
-                    "startOffset": 138249,
+                    "startOffset": 138489,
                     "endColumn": 99,
-                    "endOffset": 138344
+                    "endOffset": 138584
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6463,9 +6464,9 @@
                 "to": {
                     "startLine": 1927,
                     "startColumn": 4,
-                    "startOffset": 138349,
+                    "startOffset": 138589,
                     "endColumn": 101,
-                    "endOffset": 138446
+                    "endOffset": 138686
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6475,9 +6476,9 @@
                 "to": {
                     "startLine": 1928,
                     "startColumn": 4,
-                    "startOffset": 138451,
+                    "startOffset": 138691,
                     "endColumn": 101,
-                    "endOffset": 138548
+                    "endOffset": 138788
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6487,9 +6488,9 @@
                 "to": {
                     "startLine": 1929,
                     "startColumn": 4,
-                    "startOffset": 138553,
+                    "startOffset": 138793,
                     "endColumn": 101,
-                    "endOffset": 138650
+                    "endOffset": 138890
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6499,9 +6500,9 @@
                 "to": {
                     "startLine": 1930,
                     "startColumn": 4,
-                    "startOffset": 138655,
+                    "startOffset": 138895,
                     "endColumn": 101,
-                    "endOffset": 138752
+                    "endOffset": 138992
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6511,9 +6512,9 @@
                 "to": {
                     "startLine": 1931,
                     "startColumn": 4,
-                    "startOffset": 138757,
+                    "startOffset": 138997,
                     "endColumn": 101,
-                    "endOffset": 138854
+                    "endOffset": 139094
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6523,9 +6524,9 @@
                 "to": {
                     "startLine": 1932,
                     "startColumn": 4,
-                    "startOffset": 138859,
+                    "startOffset": 139099,
                     "endColumn": 99,
-                    "endOffset": 138954
+                    "endOffset": 139194
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6535,9 +6536,9 @@
                 "to": {
                     "startLine": 1933,
                     "startColumn": 4,
-                    "startOffset": 138959,
+                    "startOffset": 139199,
                     "endColumn": 95,
-                    "endOffset": 139050
+                    "endOffset": 139290
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6547,9 +6548,9 @@
                 "to": {
                     "startLine": 1934,
                     "startColumn": 4,
-                    "startOffset": 139055,
+                    "startOffset": 139295,
                     "endColumn": 111,
-                    "endOffset": 139162
+                    "endOffset": 139402
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6559,9 +6560,9 @@
                 "to": {
                     "startLine": 1935,
                     "startColumn": 4,
-                    "startOffset": 139167,
+                    "startOffset": 139407,
                     "endColumn": 128,
-                    "endOffset": 139291
+                    "endOffset": 139531
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6571,9 +6572,9 @@
                 "to": {
                     "startLine": 1936,
                     "startColumn": 4,
-                    "startOffset": 139296,
+                    "startOffset": 139536,
                     "endColumn": 122,
-                    "endOffset": 139414
+                    "endOffset": 139654
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6583,9 +6584,9 @@
                 "to": {
                     "startLine": 1937,
                     "startColumn": 4,
-                    "startOffset": 139419,
+                    "startOffset": 139659,
                     "endColumn": 130,
-                    "endOffset": 139545
+                    "endOffset": 139785
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6595,9 +6596,9 @@
                 "to": {
                     "startLine": 1938,
                     "startColumn": 4,
-                    "startOffset": 139550,
+                    "startOffset": 139790,
                     "endColumn": 130,
-                    "endOffset": 139676
+                    "endOffset": 139916
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6607,9 +6608,9 @@
                 "to": {
                     "startLine": 1939,
                     "startColumn": 4,
-                    "startOffset": 139681,
+                    "startOffset": 139921,
                     "endColumn": 97,
-                    "endOffset": 139774
+                    "endOffset": 140014
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6619,9 +6620,9 @@
                 "to": {
                     "startLine": 1940,
                     "startColumn": 4,
-                    "startOffset": 139779,
+                    "startOffset": 140019,
                     "endColumn": 113,
-                    "endOffset": 139888
+                    "endOffset": 140128
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6631,9 +6632,9 @@
                 "to": {
                     "startLine": 1941,
                     "startColumn": 4,
-                    "startOffset": 139893,
+                    "startOffset": 140133,
                     "endColumn": 93,
-                    "endOffset": 139982
+                    "endOffset": 140222
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6643,10 +6644,10 @@
                 "to": {
                     "startLine": 1942,
                     "startColumn": 4,
-                    "startOffset": 139987,
+                    "startOffset": 140227,
                     "endLine": 1945,
                     "endColumn": 12,
-                    "endOffset": 140181
+                    "endOffset": 140421
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6656,10 +6657,10 @@
                 "to": {
                     "startLine": 1946,
                     "startColumn": 4,
-                    "startOffset": 140186,
+                    "startOffset": 140426,
                     "endLine": 1949,
                     "endColumn": 12,
-                    "endOffset": 140385
+                    "endOffset": 140625
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6669,9 +6670,9 @@
                 "to": {
                     "startLine": 1950,
                     "startColumn": 4,
-                    "startOffset": 140390,
+                    "startOffset": 140630,
                     "endColumn": 68,
-                    "endOffset": 140454
+                    "endOffset": 140694
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6681,9 +6682,9 @@
                 "to": {
                     "startLine": 1951,
                     "startColumn": 4,
-                    "startOffset": 140459,
+                    "startOffset": 140699,
                     "endColumn": 115,
-                    "endOffset": 140570
+                    "endOffset": 140810
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6693,9 +6694,9 @@
                 "to": {
                     "startLine": 1952,
                     "startColumn": 4,
-                    "startOffset": 140575,
+                    "startOffset": 140815,
                     "endColumn": 127,
-                    "endOffset": 140698
+                    "endOffset": 140938
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6705,9 +6706,9 @@
                 "to": {
                     "startLine": 1953,
                     "startColumn": 4,
-                    "startOffset": 140703,
+                    "startOffset": 140943,
                     "endColumn": 63,
-                    "endOffset": 140762
+                    "endOffset": 141002
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6717,10 +6718,10 @@
                 "to": {
                     "startLine": 1954,
                     "startColumn": 4,
-                    "startOffset": 140767,
+                    "startOffset": 141007,
                     "endLine": 1957,
                     "endColumn": 12,
-                    "endOffset": 140966
+                    "endOffset": 141206
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6730,9 +6731,9 @@
                 "to": {
                     "startLine": 1958,
                     "startColumn": 4,
-                    "startOffset": 140971,
+                    "startOffset": 141211,
                     "endColumn": 68,
-                    "endOffset": 141035
+                    "endOffset": 141275
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6742,10 +6743,10 @@
                 "to": {
                     "startLine": 1959,
                     "startColumn": 4,
-                    "startOffset": 141040,
+                    "startOffset": 141280,
                     "endLine": 1962,
                     "endColumn": 12,
-                    "endOffset": 141238
+                    "endOffset": 141478
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6755,9 +6756,9 @@
                 "to": {
                     "startLine": 1963,
                     "startColumn": 4,
-                    "startOffset": 141243,
+                    "startOffset": 141483,
                     "endColumn": 69,
-                    "endOffset": 141308
+                    "endOffset": 141548
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6767,10 +6768,10 @@
                 "to": {
                     "startLine": 1964,
                     "startColumn": 4,
-                    "startOffset": 141313,
+                    "startOffset": 141553,
                     "endLine": 1965,
                     "endColumn": 12,
-                    "endOffset": 141448
+                    "endOffset": 141688
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6780,10 +6781,10 @@
                 "to": {
                     "startLine": 1966,
                     "startColumn": 4,
-                    "startOffset": 141453,
+                    "startOffset": 141693,
                     "endLine": 1967,
                     "endColumn": 12,
-                    "endOffset": 141582
+                    "endOffset": 141822
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6793,9 +6794,9 @@
                 "to": {
                     "startLine": 1968,
                     "startColumn": 4,
-                    "startOffset": 141587,
+                    "startOffset": 141827,
                     "endColumn": 95,
-                    "endOffset": 141678
+                    "endOffset": 141918
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6805,9 +6806,9 @@
                 "to": {
                     "startLine": 1969,
                     "startColumn": 4,
-                    "startOffset": 141683,
+                    "startOffset": 141923,
                     "endColumn": 111,
-                    "endOffset": 141790
+                    "endOffset": 142030
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6817,9 +6818,9 @@
                 "to": {
                     "startLine": 1970,
                     "startColumn": 4,
-                    "startOffset": 141795,
+                    "startOffset": 142035,
                     "endColumn": 99,
-                    "endOffset": 141890
+                    "endOffset": 142130
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6829,9 +6830,9 @@
                 "to": {
                     "startLine": 1971,
                     "startColumn": 4,
-                    "startOffset": 141895,
+                    "startOffset": 142135,
                     "endColumn": 115,
-                    "endOffset": 142006
+                    "endOffset": 142246
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6841,9 +6842,9 @@
                 "to": {
                     "startLine": 1972,
                     "startColumn": 4,
-                    "startOffset": 142011,
+                    "startOffset": 142251,
                     "endColumn": 95,
-                    "endOffset": 142102
+                    "endOffset": 142342
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6853,9 +6854,9 @@
                 "to": {
                     "startLine": 1973,
                     "startColumn": 4,
-                    "startOffset": 142107,
+                    "startOffset": 142347,
                     "endColumn": 111,
-                    "endOffset": 142214
+                    "endOffset": 142454
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6865,10 +6866,10 @@
                 "to": {
                     "startLine": 1974,
                     "startColumn": 4,
-                    "startOffset": 142219,
+                    "startOffset": 142459,
                     "endLine": 1975,
                     "endColumn": 12,
-                    "endOffset": 142354
+                    "endOffset": 142594
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6878,9 +6879,9 @@
                 "to": {
                     "startLine": 1976,
                     "startColumn": 4,
-                    "startOffset": 142359,
+                    "startOffset": 142599,
                     "endColumn": 135,
-                    "endOffset": 142490
+                    "endOffset": 142730
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6890,10 +6891,10 @@
                 "to": {
                     "startLine": 1977,
                     "startColumn": 4,
-                    "startOffset": 142495,
+                    "startOffset": 142735,
                     "endLine": 1978,
                     "endColumn": 12,
-                    "endOffset": 142654
+                    "endOffset": 142894
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6903,9 +6904,9 @@
                 "to": {
                     "startLine": 1979,
                     "startColumn": 4,
-                    "startOffset": 142659,
+                    "startOffset": 142899,
                     "endColumn": 129,
-                    "endOffset": 142784
+                    "endOffset": 143024
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6915,10 +6916,10 @@
                 "to": {
                     "startLine": 1980,
                     "startColumn": 4,
-                    "startOffset": 142789,
+                    "startOffset": 143029,
                     "endLine": 1981,
                     "endColumn": 12,
-                    "endOffset": 142942
+                    "endOffset": 143182
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6928,10 +6929,10 @@
                 "to": {
                     "startLine": 1982,
                     "startColumn": 4,
-                    "startOffset": 142947,
+                    "startOffset": 143187,
                     "endLine": 1983,
                     "endColumn": 12,
-                    "endOffset": 143092
+                    "endOffset": 143332
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6941,9 +6942,9 @@
                 "to": {
                     "startLine": 1984,
                     "startColumn": 4,
-                    "startOffset": 143097,
+                    "startOffset": 143337,
                     "endColumn": 140,
-                    "endOffset": 143233
+                    "endOffset": 143473
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6953,10 +6954,10 @@
                 "to": {
                     "startLine": 1985,
                     "startColumn": 4,
-                    "startOffset": 143238,
+                    "startOffset": 143478,
                     "endLine": 1986,
                     "endColumn": 12,
-                    "endOffset": 143377
+                    "endOffset": 143617
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6966,9 +6967,9 @@
                 "to": {
                     "startLine": 1987,
                     "startColumn": 4,
-                    "startOffset": 143382,
+                    "startOffset": 143622,
                     "endColumn": 134,
-                    "endOffset": 143512
+                    "endOffset": 143752
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6978,9 +6979,9 @@
                 "to": {
                     "startLine": 1988,
                     "startColumn": 4,
-                    "startOffset": 143517,
+                    "startOffset": 143757,
                     "endColumn": 111,
-                    "endOffset": 143624
+                    "endOffset": 143864
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -6990,9 +6991,9 @@
                 "to": {
                     "startLine": 1989,
                     "startColumn": 4,
-                    "startOffset": 143629,
+                    "startOffset": 143869,
                     "endColumn": 149,
-                    "endOffset": 143774
+                    "endOffset": 144014
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7002,9 +7003,9 @@
                 "to": {
                     "startLine": 1990,
                     "startColumn": 4,
-                    "startOffset": 143779,
+                    "startOffset": 144019,
                     "endColumn": 127,
-                    "endOffset": 143902
+                    "endOffset": 144142
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7014,9 +7015,9 @@
                 "to": {
                     "startLine": 1991,
                     "startColumn": 4,
-                    "startOffset": 143907,
+                    "startOffset": 144147,
                     "endColumn": 127,
-                    "endOffset": 144030
+                    "endOffset": 144270
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7026,10 +7027,10 @@
                 "to": {
                     "startLine": 1992,
                     "startColumn": 4,
-                    "startOffset": 144035,
+                    "startOffset": 144275,
                     "endLine": 1993,
                     "endColumn": 12,
-                    "endOffset": 144166
+                    "endOffset": 144406
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7039,9 +7040,9 @@
                 "to": {
                     "startLine": 1994,
                     "startColumn": 4,
-                    "startOffset": 144171,
+                    "startOffset": 144411,
                     "endColumn": 131,
-                    "endOffset": 144298
+                    "endOffset": 144538
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7051,9 +7052,9 @@
                 "to": {
                     "startLine": 1995,
                     "startColumn": 4,
-                    "startOffset": 144303,
+                    "startOffset": 144543,
                     "endColumn": 129,
-                    "endOffset": 144428
+                    "endOffset": 144668
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7063,9 +7064,9 @@
                 "to": {
                     "startLine": 1996,
                     "startColumn": 4,
-                    "startOffset": 144433,
+                    "startOffset": 144673,
                     "endColumn": 129,
-                    "endOffset": 144558
+                    "endOffset": 144798
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7075,9 +7076,9 @@
                 "to": {
                     "startLine": 1997,
                     "startColumn": 4,
-                    "startOffset": 144563,
+                    "startOffset": 144803,
                     "endColumn": 111,
-                    "endOffset": 144670
+                    "endOffset": 144910
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7087,9 +7088,9 @@
                 "to": {
                     "startLine": 1998,
                     "startColumn": 4,
-                    "startOffset": 144675,
+                    "startOffset": 144915,
                     "endColumn": 139,
-                    "endOffset": 144810
+                    "endOffset": 145050
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7099,10 +7100,10 @@
                 "to": {
                     "startLine": 1999,
                     "startColumn": 4,
-                    "startOffset": 144815,
+                    "startOffset": 145055,
                     "endLine": 2001,
                     "endColumn": 12,
-                    "endOffset": 145011
+                    "endOffset": 145251
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7112,9 +7113,9 @@
                 "to": {
                     "startLine": 2002,
                     "startColumn": 4,
-                    "startOffset": 145016,
+                    "startOffset": 145256,
                     "endColumn": 91,
-                    "endOffset": 145103
+                    "endOffset": 145343
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7124,10 +7125,10 @@
                 "to": {
                     "startLine": 2003,
                     "startColumn": 4,
-                    "startOffset": 145108,
+                    "startOffset": 145348,
                     "endLine": 2005,
                     "endColumn": 12,
-                    "endOffset": 145282
+                    "endOffset": 145522
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7137,10 +7138,10 @@
                 "to": {
                     "startLine": 2006,
                     "startColumn": 4,
-                    "startOffset": 145287,
+                    "startOffset": 145527,
                     "endLine": 2008,
                     "endColumn": 12,
-                    "endOffset": 145450
+                    "endOffset": 145690
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7150,10 +7151,10 @@
                 "to": {
                     "startLine": 2009,
                     "startColumn": 4,
-                    "startOffset": 145455,
+                    "startOffset": 145695,
                     "endLine": 2011,
                     "endColumn": 12,
-                    "endOffset": 145625
+                    "endOffset": 145865
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7163,10 +7164,10 @@
                 "to": {
                     "startLine": 2012,
                     "startColumn": 4,
-                    "startOffset": 145630,
+                    "startOffset": 145870,
                     "endLine": 2015,
                     "endColumn": 12,
-                    "endOffset": 145878
+                    "endOffset": 146118
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7176,10 +7177,10 @@
                 "to": {
                     "startLine": 2016,
                     "startColumn": 4,
-                    "startOffset": 145883,
+                    "startOffset": 146123,
                     "endLine": 2020,
                     "endColumn": 12,
-                    "endOffset": 146169
+                    "endOffset": 146409
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7189,9 +7190,9 @@
                 "to": {
                     "startLine": 2021,
                     "startColumn": 4,
-                    "startOffset": 146174,
+                    "startOffset": 146414,
                     "endColumn": 67,
-                    "endOffset": 146237
+                    "endOffset": 146477
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7201,9 +7202,9 @@
                 "to": {
                     "startLine": 2022,
                     "startColumn": 4,
-                    "startOffset": 146242,
+                    "startOffset": 146482,
                     "endColumn": 72,
-                    "endOffset": 146310
+                    "endOffset": 146550
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7213,9 +7214,9 @@
                 "to": {
                     "startLine": 2023,
                     "startColumn": 4,
-                    "startOffset": 146315,
+                    "startOffset": 146555,
                     "endColumn": 73,
-                    "endOffset": 146384
+                    "endOffset": 146624
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7225,9 +7226,9 @@
                 "to": {
                     "startLine": 2024,
                     "startColumn": 4,
-                    "startOffset": 146389,
+                    "startOffset": 146629,
                     "endColumn": 72,
-                    "endOffset": 146457
+                    "endOffset": 146697
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7237,9 +7238,9 @@
                 "to": {
                     "startLine": 2025,
                     "startColumn": 4,
-                    "startOffset": 146462,
+                    "startOffset": 146702,
                     "endColumn": 73,
-                    "endOffset": 146531
+                    "endOffset": 146771
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7249,10 +7250,10 @@
                 "to": {
                     "startLine": 2026,
                     "startColumn": 4,
-                    "startOffset": 146536,
+                    "startOffset": 146776,
                     "endLine": 2027,
                     "endColumn": 12,
-                    "endOffset": 146677
+                    "endOffset": 146917
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7262,10 +7263,10 @@
                 "to": {
                     "startLine": 2028,
                     "startColumn": 4,
-                    "startOffset": 146682,
+                    "startOffset": 146922,
                     "endLine": 2029,
                     "endColumn": 12,
-                    "endOffset": 146821
+                    "endOffset": 147061
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7275,10 +7276,10 @@
                 "to": {
                     "startLine": 2030,
                     "startColumn": 4,
-                    "startOffset": 146826,
+                    "startOffset": 147066,
                     "endLine": 2031,
                     "endColumn": 12,
-                    "endOffset": 146959
+                    "endOffset": 147199
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7288,9 +7289,9 @@
                 "to": {
                     "startLine": 2032,
                     "startColumn": 4,
-                    "startOffset": 146964,
+                    "startOffset": 147204,
                     "endColumn": 65,
-                    "endOffset": 147025
+                    "endOffset": 147265
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7300,9 +7301,9 @@
                 "to": {
                     "startLine": 2033,
                     "startColumn": 4,
-                    "startOffset": 147030,
+                    "startOffset": 147270,
                     "endColumn": 89,
-                    "endOffset": 147115
+                    "endOffset": 147355
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7312,9 +7313,9 @@
                 "to": {
                     "startLine": 2034,
                     "startColumn": 4,
-                    "startOffset": 147120,
+                    "startOffset": 147360,
                     "endColumn": 75,
-                    "endOffset": 147191
+                    "endOffset": 147431
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7324,9 +7325,9 @@
                 "to": {
                     "startLine": 2035,
                     "startColumn": 4,
-                    "startOffset": 147196,
+                    "startOffset": 147436,
                     "endColumn": 103,
-                    "endOffset": 147295
+                    "endOffset": 147535
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7336,9 +7337,9 @@
                 "to": {
                     "startLine": 2036,
                     "startColumn": 4,
-                    "startOffset": 147300,
+                    "startOffset": 147540,
                     "endColumn": 89,
-                    "endOffset": 147385
+                    "endOffset": 147625
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7348,9 +7349,9 @@
                 "to": {
                     "startLine": 2037,
                     "startColumn": 4,
-                    "startOffset": 147390,
+                    "startOffset": 147630,
                     "endColumn": 101,
-                    "endOffset": 147487
+                    "endOffset": 147727
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7360,9 +7361,9 @@
                 "to": {
                     "startLine": 2038,
                     "startColumn": 4,
-                    "startOffset": 147492,
+                    "startOffset": 147732,
                     "endColumn": 107,
-                    "endOffset": 147595
+                    "endOffset": 147835
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7372,9 +7373,9 @@
                 "to": {
                     "startLine": 2039,
                     "startColumn": 4,
-                    "startOffset": 147600,
+                    "startOffset": 147840,
                     "endColumn": 107,
-                    "endOffset": 147703
+                    "endOffset": 147943
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7384,9 +7385,9 @@
                 "to": {
                     "startLine": 2040,
                     "startColumn": 4,
-                    "startOffset": 147708,
+                    "startOffset": 147948,
                     "endColumn": 99,
-                    "endOffset": 147803
+                    "endOffset": 148043
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7396,9 +7397,9 @@
                 "to": {
                     "startLine": 2041,
                     "startColumn": 4,
-                    "startOffset": 147808,
+                    "startOffset": 148048,
                     "endColumn": 79,
-                    "endOffset": 147883
+                    "endOffset": 148123
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7408,9 +7409,9 @@
                 "to": {
                     "startLine": 2042,
                     "startColumn": 4,
-                    "startOffset": 147888,
+                    "startOffset": 148128,
                     "endColumn": 91,
-                    "endOffset": 147975
+                    "endOffset": 148215
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7420,9 +7421,9 @@
                 "to": {
                     "startLine": 2043,
                     "startColumn": 4,
-                    "startOffset": 147980,
+                    "startOffset": 148220,
                     "endColumn": 97,
-                    "endOffset": 148073
+                    "endOffset": 148313
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7432,10 +7433,10 @@
                 "to": {
                     "startLine": 2044,
                     "startColumn": 4,
-                    "startOffset": 148078,
+                    "startOffset": 148318,
                     "endLine": 2045,
                     "endColumn": 12,
-                    "endOffset": 148183
+                    "endOffset": 148423
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7445,9 +7446,9 @@
                 "to": {
                     "startLine": 2046,
                     "startColumn": 4,
-                    "startOffset": 148188,
+                    "startOffset": 148428,
                     "endColumn": 77,
-                    "endOffset": 148261
+                    "endOffset": 148501
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7457,9 +7458,9 @@
                 "to": {
                     "startLine": 2047,
                     "startColumn": 4,
-                    "startOffset": 148266,
+                    "startOffset": 148506,
                     "endColumn": 105,
-                    "endOffset": 148367
+                    "endOffset": 148607
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7469,9 +7470,9 @@
                 "to": {
                     "startLine": 2048,
                     "startColumn": 4,
-                    "startOffset": 148372,
+                    "startOffset": 148612,
                     "endColumn": 91,
-                    "endOffset": 148459
+                    "endOffset": 148699
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7481,9 +7482,9 @@
                 "to": {
                     "startLine": 2049,
                     "startColumn": 4,
-                    "startOffset": 148464,
+                    "startOffset": 148704,
                     "endColumn": 103,
-                    "endOffset": 148563
+                    "endOffset": 148803
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7493,9 +7494,9 @@
                 "to": {
                     "startLine": 2050,
                     "startColumn": 4,
-                    "startOffset": 148568,
+                    "startOffset": 148808,
                     "endColumn": 109,
-                    "endOffset": 148673
+                    "endOffset": 148913
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7505,10 +7506,10 @@
                 "to": {
                     "startLine": 2051,
                     "startColumn": 4,
-                    "startOffset": 148678,
+                    "startOffset": 148918,
                     "endLine": 2052,
                     "endColumn": 12,
-                    "endOffset": 148795
+                    "endOffset": 149035
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7518,10 +7519,10 @@
                 "to": {
                     "startLine": 2053,
                     "startColumn": 4,
-                    "startOffset": 148800,
+                    "startOffset": 149040,
                     "endLine": 2056,
                     "endColumn": 12,
-                    "endOffset": 148958
+                    "endOffset": 149198
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7531,10 +7532,10 @@
                 "to": {
                     "startLine": 2057,
                     "startColumn": 4,
-                    "startOffset": 148963,
+                    "startOffset": 149203,
                     "endLine": 2060,
                     "endColumn": 12,
-                    "endOffset": 149115
+                    "endOffset": 149355
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7544,10 +7545,10 @@
                 "to": {
                     "startLine": 2061,
                     "startColumn": 4,
-                    "startOffset": 149120,
+                    "startOffset": 149360,
                     "endLine": 2063,
                     "endColumn": 12,
-                    "endOffset": 149269
+                    "endOffset": 149509
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7557,10 +7558,10 @@
                 "to": {
                     "startLine": 2064,
                     "startColumn": 4,
-                    "startOffset": 149274,
+                    "startOffset": 149514,
                     "endLine": 2068,
                     "endColumn": 12,
-                    "endOffset": 149627
+                    "endOffset": 149867
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7570,10 +7571,10 @@
                 "to": {
                     "startLine": 2069,
                     "startColumn": 4,
-                    "startOffset": 149632,
+                    "startOffset": 149872,
                     "endLine": 2071,
                     "endColumn": 12,
-                    "endOffset": 149794
+                    "endOffset": 150034
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7583,10 +7584,10 @@
                 "to": {
                     "startLine": 2072,
                     "startColumn": 4,
-                    "startOffset": 149799,
+                    "startOffset": 150039,
                     "endLine": 2076,
                     "endColumn": 12,
-                    "endOffset": 150164
+                    "endOffset": 150404
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7596,10 +7597,10 @@
                 "to": {
                     "startLine": 2077,
                     "startColumn": 4,
-                    "startOffset": 150169,
+                    "startOffset": 150409,
                     "endLine": 2080,
                     "endColumn": 12,
-                    "endOffset": 150324
+                    "endOffset": 150564
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7609,10 +7610,10 @@
                 "to": {
                     "startLine": 2081,
                     "startColumn": 4,
-                    "startOffset": 150329,
+                    "startOffset": 150569,
                     "endLine": 2084,
                     "endColumn": 12,
-                    "endOffset": 150478
+                    "endOffset": 150718
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -7622,9 +7623,9 @@
                 "to": {
                     "startLine": 2085,
                     "startColumn": 4,
-                    "startOffset": 150483,
+                    "startOffset": 150723,
                     "endColumn": 79,
-                    "endOffset": 150558
+                    "endOffset": 150798
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7634,9 +7635,9 @@
                 "to": {
                     "startLine": 2086,
                     "startColumn": 4,
-                    "startOffset": 150563,
+                    "startOffset": 150803,
                     "endColumn": 99,
-                    "endOffset": 150658
+                    "endOffset": 150898
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7646,9 +7647,9 @@
                 "to": {
                     "startLine": 2087,
                     "startColumn": 4,
-                    "startOffset": 150663,
+                    "startOffset": 150903,
                     "endColumn": 89,
-                    "endOffset": 150748
+                    "endOffset": 150988
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7658,9 +7659,9 @@
                 "to": {
                     "startLine": 2088,
                     "startColumn": 4,
-                    "startOffset": 150753,
+                    "startOffset": 150993,
                     "endColumn": 109,
-                    "endOffset": 150858
+                    "endOffset": 151098
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7670,9 +7671,9 @@
                 "to": {
                     "startLine": 2089,
                     "startColumn": 4,
-                    "startOffset": 150863,
+                    "startOffset": 151103,
                     "endColumn": 93,
-                    "endOffset": 150952
+                    "endOffset": 151192
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7682,9 +7683,9 @@
                 "to": {
                     "startLine": 2090,
                     "startColumn": 4,
-                    "startOffset": 150957,
+                    "startOffset": 151197,
                     "endColumn": 105,
-                    "endOffset": 151058
+                    "endOffset": 151298
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7694,9 +7695,9 @@
                 "to": {
                     "startLine": 2091,
                     "startColumn": 4,
-                    "startOffset": 151063,
+                    "startOffset": 151303,
                     "endColumn": 91,
-                    "endOffset": 151150
+                    "endOffset": 151390
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7706,10 +7707,10 @@
                 "to": {
                     "startLine": 2092,
                     "startColumn": 4,
-                    "startOffset": 151155,
+                    "startOffset": 151395,
                     "endLine": 2093,
                     "endColumn": 12,
-                    "endOffset": 151250
+                    "endOffset": 151490
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7719,10 +7720,10 @@
                 "to": {
                     "startLine": 2094,
                     "startColumn": 4,
-                    "startOffset": 151255,
+                    "startOffset": 151495,
                     "endLine": 2095,
                     "endColumn": 12,
-                    "endOffset": 151362
+                    "endOffset": 151602
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7732,10 +7733,10 @@
                 "to": {
                     "startLine": 2096,
                     "startColumn": 4,
-                    "startOffset": 151367,
+                    "startOffset": 151607,
                     "endLine": 2097,
                     "endColumn": 12,
-                    "endOffset": 151476
+                    "endOffset": 151716
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7745,10 +7746,10 @@
                 "to": {
                     "startLine": 2098,
                     "startColumn": 4,
-                    "startOffset": 151481,
+                    "startOffset": 151721,
                     "endLine": 2099,
                     "endColumn": 12,
-                    "endOffset": 151592
+                    "endOffset": 151832
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7758,10 +7759,10 @@
                 "to": {
                     "startLine": 2100,
                     "startColumn": 4,
-                    "startOffset": 151597,
+                    "startOffset": 151837,
                     "endLine": 2101,
                     "endColumn": 12,
-                    "endOffset": 151708
+                    "endOffset": 151948
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7771,9 +7772,9 @@
                 "to": {
                     "startLine": 2102,
                     "startColumn": 4,
-                    "startOffset": 151713,
+                    "startOffset": 151953,
                     "endColumn": 93,
-                    "endOffset": 151802
+                    "endOffset": 152042
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7783,9 +7784,9 @@
                 "to": {
                     "startLine": 2103,
                     "startColumn": 4,
-                    "startOffset": 151807,
+                    "startOffset": 152047,
                     "endColumn": 113,
-                    "endOffset": 151916
+                    "endOffset": 152156
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7795,9 +7796,9 @@
                 "to": {
                     "startLine": 2104,
                     "startColumn": 4,
-                    "startOffset": 151921,
+                    "startOffset": 152161,
                     "endColumn": 111,
-                    "endOffset": 152028
+                    "endOffset": 152268
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7807,10 +7808,10 @@
                 "to": {
                     "startLine": 2105,
                     "startColumn": 4,
-                    "startOffset": 152033,
+                    "startOffset": 152273,
                     "endLine": 2106,
                     "endColumn": 12,
-                    "endOffset": 152130
+                    "endOffset": 152370
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7820,10 +7821,10 @@
                 "to": {
                     "startLine": 2107,
                     "startColumn": 4,
-                    "startOffset": 152135,
+                    "startOffset": 152375,
                     "endLine": 2108,
                     "endColumn": 12,
-                    "endOffset": 152250
+                    "endOffset": 152490
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7833,10 +7834,10 @@
                 "to": {
                     "startLine": 2109,
                     "startColumn": 4,
-                    "startOffset": 152255,
+                    "startOffset": 152495,
                     "endLine": 2110,
                     "endColumn": 12,
-                    "endOffset": 152372
+                    "endOffset": 152612
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7846,9 +7847,9 @@
                 "to": {
                     "startLine": 2111,
                     "startColumn": 4,
-                    "startOffset": 152377,
+                    "startOffset": 152617,
                     "endColumn": 81,
-                    "endOffset": 152454
+                    "endOffset": 152694
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7858,9 +7859,9 @@
                 "to": {
                     "startLine": 2112,
                     "startColumn": 4,
-                    "startOffset": 152459,
+                    "startOffset": 152699,
                     "endColumn": 103,
-                    "endOffset": 152558
+                    "endOffset": 152798
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7870,9 +7871,9 @@
                 "to": {
                     "startLine": 2113,
                     "startColumn": 4,
-                    "startOffset": 152563,
+                    "startOffset": 152803,
                     "endColumn": 119,
-                    "endOffset": 152678
+                    "endOffset": 152918
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7882,9 +7883,9 @@
                 "to": {
                     "startLine": 2114,
                     "startColumn": 4,
-                    "startOffset": 152683,
+                    "startOffset": 152923,
                     "endColumn": 125,
-                    "endOffset": 152804
+                    "endOffset": 153044
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7894,9 +7895,9 @@
                 "to": {
                     "startLine": 2115,
                     "startColumn": 4,
-                    "startOffset": 152809,
+                    "startOffset": 153049,
                     "endColumn": 97,
-                    "endOffset": 152902
+                    "endOffset": 153142
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7906,9 +7907,9 @@
                 "to": {
                     "startLine": 2116,
                     "startColumn": 4,
-                    "startOffset": 152907,
+                    "startOffset": 153147,
                     "endColumn": 93,
-                    "endOffset": 152996
+                    "endOffset": 153236
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7918,9 +7919,9 @@
                 "to": {
                     "startLine": 2117,
                     "startColumn": 4,
-                    "startOffset": 153001,
+                    "startOffset": 153241,
                     "endColumn": 87,
-                    "endOffset": 153084
+                    "endOffset": 153324
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7930,9 +7931,9 @@
                 "to": {
                     "startLine": 2118,
                     "startColumn": 4,
-                    "startOffset": 153089,
+                    "startOffset": 153329,
                     "endColumn": 111,
-                    "endOffset": 153196
+                    "endOffset": 153436
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7942,9 +7943,9 @@
                 "to": {
                     "startLine": 2119,
                     "startColumn": 4,
-                    "startOffset": 153201,
+                    "startOffset": 153441,
                     "endColumn": 115,
-                    "endOffset": 153312
+                    "endOffset": 153552
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7954,9 +7955,9 @@
                 "to": {
                     "startLine": 2120,
                     "startColumn": 4,
-                    "startOffset": 153317,
+                    "startOffset": 153557,
                     "endColumn": 121,
-                    "endOffset": 153434
+                    "endOffset": 153674
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7966,9 +7967,9 @@
                 "to": {
                     "startLine": 2121,
                     "startColumn": 4,
-                    "startOffset": 153439,
+                    "startOffset": 153679,
                     "endColumn": 111,
-                    "endOffset": 153546
+                    "endOffset": 153786
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7978,10 +7979,10 @@
                 "to": {
                     "startLine": 2122,
                     "startColumn": 4,
-                    "startOffset": 153551,
+                    "startOffset": 153791,
                     "endLine": 2124,
                     "endColumn": 12,
-                    "endOffset": 153721
+                    "endOffset": 153961
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -7991,9 +7992,9 @@
                 "to": {
                     "startLine": 2125,
                     "startColumn": 4,
-                    "startOffset": 153726,
+                    "startOffset": 153966,
                     "endColumn": 115,
-                    "endOffset": 153837
+                    "endOffset": 154077
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8003,9 +8004,9 @@
                 "to": {
                     "startLine": 2126,
                     "startColumn": 4,
-                    "startOffset": 153842,
+                    "startOffset": 154082,
                     "endColumn": 85,
-                    "endOffset": 153923
+                    "endOffset": 154163
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8015,9 +8016,9 @@
                 "to": {
                     "startLine": 2127,
                     "startColumn": 4,
-                    "startOffset": 153928,
+                    "startOffset": 154168,
                     "endColumn": 91,
-                    "endOffset": 154015
+                    "endOffset": 154255
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8027,10 +8028,10 @@
                 "to": {
                     "startLine": 2128,
                     "startColumn": 4,
-                    "startOffset": 154020,
+                    "startOffset": 154260,
                     "endLine": 2129,
                     "endColumn": 12,
-                    "endOffset": 154127
+                    "endOffset": 154367
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8040,10 +8041,10 @@
                 "to": {
                     "startLine": 2130,
                     "startColumn": 4,
-                    "startOffset": 154132,
+                    "startOffset": 154372,
                     "endLine": 2131,
                     "endColumn": 12,
-                    "endOffset": 154251
+                    "endOffset": 154491
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8053,9 +8054,9 @@
                 "to": {
                     "startLine": 2132,
                     "startColumn": 4,
-                    "startOffset": 154256,
+                    "startOffset": 154496,
                     "endColumn": 66,
-                    "endOffset": 154318
+                    "endOffset": 154558
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8065,10 +8066,10 @@
                 "to": {
                     "startLine": 2133,
                     "startColumn": 4,
-                    "startOffset": 154323,
+                    "startOffset": 154563,
                     "endLine": 2134,
                     "endColumn": 12,
-                    "endOffset": 154444
+                    "endOffset": 154684
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8078,9 +8079,9 @@
                 "to": {
                     "startLine": 2135,
                     "startColumn": 4,
-                    "startOffset": 154449,
+                    "startOffset": 154689,
                     "endColumn": 67,
-                    "endOffset": 154512
+                    "endOffset": 154752
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8090,10 +8091,10 @@
                 "to": {
                     "startLine": 2136,
                     "startColumn": 4,
-                    "startOffset": 154517,
+                    "startOffset": 154757,
                     "endLine": 2137,
                     "endColumn": 12,
-                    "endOffset": 154640
+                    "endOffset": 154880
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8103,10 +8104,10 @@
                 "to": {
                     "startLine": 2138,
                     "startColumn": 4,
-                    "startOffset": 154645,
+                    "startOffset": 154885,
                     "endLine": 2139,
                     "endColumn": 12,
-                    "endOffset": 154784
+                    "endOffset": 155024
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8116,10 +8117,10 @@
                 "to": {
                     "startLine": 2140,
                     "startColumn": 4,
-                    "startOffset": 154789,
+                    "startOffset": 155029,
                     "endLine": 2141,
                     "endColumn": 12,
-                    "endOffset": 154912
+                    "endOffset": 155152
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8129,9 +8130,9 @@
                 "to": {
                     "startLine": 2142,
                     "startColumn": 4,
-                    "startOffset": 154917,
+                    "startOffset": 155157,
                     "endColumn": 68,
-                    "endOffset": 154981
+                    "endOffset": 155221
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8141,9 +8142,9 @@
                 "to": {
                     "startLine": 2143,
                     "startColumn": 4,
-                    "startOffset": 154986,
+                    "startOffset": 155226,
                     "endColumn": 94,
-                    "endOffset": 155076
+                    "endOffset": 155316
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8153,9 +8154,9 @@
                 "to": {
                     "startLine": 2144,
                     "startColumn": 4,
-                    "startOffset": 155081,
+                    "startOffset": 155321,
                     "endColumn": 114,
-                    "endOffset": 155191
+                    "endOffset": 155431
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8165,9 +8166,9 @@
                 "to": {
                     "startLine": 2145,
                     "startColumn": 4,
-                    "startOffset": 155196,
+                    "startOffset": 155436,
                     "endColumn": 112,
-                    "endOffset": 155304
+                    "endOffset": 155544
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8177,9 +8178,9 @@
                 "to": {
                     "startLine": 2146,
                     "startColumn": 4,
-                    "startOffset": 155309,
+                    "startOffset": 155549,
                     "endColumn": 98,
-                    "endOffset": 155403
+                    "endOffset": 155643
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8189,9 +8190,9 @@
                 "to": {
                     "startLine": 2147,
                     "startColumn": 4,
-                    "startOffset": 155408,
+                    "startOffset": 155648,
                     "endColumn": 108,
-                    "endOffset": 155512
+                    "endOffset": 155752
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8201,9 +8202,9 @@
                 "to": {
                     "startLine": 2148,
                     "startColumn": 4,
-                    "startOffset": 155517,
+                    "startOffset": 155757,
                     "endColumn": 110,
-                    "endOffset": 155623
+                    "endOffset": 155863
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8213,9 +8214,9 @@
                 "to": {
                     "startLine": 2149,
                     "startColumn": 4,
-                    "startOffset": 155628,
+                    "startOffset": 155868,
                     "endColumn": 110,
-                    "endOffset": 155734
+                    "endOffset": 155974
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8225,9 +8226,9 @@
                 "to": {
                     "startLine": 2150,
                     "startColumn": 4,
-                    "startOffset": 155739,
+                    "startOffset": 155979,
                     "endColumn": 100,
-                    "endOffset": 155835
+                    "endOffset": 156075
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8237,9 +8238,9 @@
                 "to": {
                     "startLine": 2151,
                     "startColumn": 4,
-                    "startOffset": 155840,
+                    "startOffset": 156080,
                     "endColumn": 104,
-                    "endOffset": 155940
+                    "endOffset": 156180
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8249,9 +8250,9 @@
                 "to": {
                     "startLine": 2152,
                     "startColumn": 4,
-                    "startOffset": 155945,
+                    "startOffset": 156185,
                     "endColumn": 99,
-                    "endOffset": 156040
+                    "endOffset": 156280
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8261,10 +8262,10 @@
                 "to": {
                     "startLine": 2153,
                     "startColumn": 4,
-                    "startOffset": 156045,
+                    "startOffset": 156285,
                     "endLine": 2154,
                     "endColumn": 12,
-                    "endOffset": 156170
+                    "endOffset": 156410
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8274,9 +8275,9 @@
                 "to": {
                     "startLine": 2155,
                     "startColumn": 4,
-                    "startOffset": 156175,
+                    "startOffset": 156415,
                     "endColumn": 90,
-                    "endOffset": 156261
+                    "endOffset": 156501
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8286,9 +8287,9 @@
                 "to": {
                     "startLine": 2156,
                     "startColumn": 4,
-                    "startOffset": 156266,
+                    "startOffset": 156506,
                     "endColumn": 122,
-                    "endOffset": 156384
+                    "endOffset": 156624
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8298,9 +8299,9 @@
                 "to": {
                     "startLine": 2157,
                     "startColumn": 4,
-                    "startOffset": 156389,
+                    "startOffset": 156629,
                     "endColumn": 93,
-                    "endOffset": 156478
+                    "endOffset": 156718
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8310,10 +8311,10 @@
                 "to": {
                     "startLine": 2158,
                     "startColumn": 4,
-                    "startOffset": 156483,
+                    "startOffset": 156723,
                     "endLine": 2159,
                     "endColumn": 12,
-                    "endOffset": 156590
+                    "endOffset": 156830
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8323,9 +8324,9 @@
                 "to": {
                     "startLine": 2160,
                     "startColumn": 4,
-                    "startOffset": 156595,
+                    "startOffset": 156835,
                     "endColumn": 85,
-                    "endOffset": 156676
+                    "endOffset": 156916
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8335,9 +8336,9 @@
                 "to": {
                     "startLine": 2161,
                     "startColumn": 4,
-                    "startOffset": 156681,
+                    "startOffset": 156921,
                     "endColumn": 103,
-                    "endOffset": 156780
+                    "endOffset": 157020
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8347,9 +8348,9 @@
                 "to": {
                     "startLine": 2162,
                     "startColumn": 4,
-                    "startOffset": 156785,
+                    "startOffset": 157025,
                     "endColumn": 95,
-                    "endOffset": 156876
+                    "endOffset": 157116
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8359,9 +8360,9 @@
                 "to": {
                     "startLine": 2163,
                     "startColumn": 4,
-                    "startOffset": 156881,
+                    "startOffset": 157121,
                     "endColumn": 74,
-                    "endOffset": 156951
+                    "endOffset": 157191
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8371,9 +8372,9 @@
                 "to": {
                     "startLine": 2164,
                     "startColumn": 4,
-                    "startOffset": 156956,
+                    "startOffset": 157196,
                     "endColumn": 69,
-                    "endOffset": 157021
+                    "endOffset": 157261
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8383,9 +8384,9 @@
                 "to": {
                     "startLine": 2165,
                     "startColumn": 4,
-                    "startOffset": 157026,
+                    "startOffset": 157266,
                     "endColumn": 87,
-                    "endOffset": 157109
+                    "endOffset": 157349
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8395,10 +8396,10 @@
                 "to": {
                     "startLine": 2166,
                     "startColumn": 4,
-                    "startOffset": 157114,
+                    "startOffset": 157354,
                     "endLine": 2167,
                     "endColumn": 12,
-                    "endOffset": 157227
+                    "endOffset": 157467
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8408,10 +8409,10 @@
                 "to": {
                     "startLine": 2168,
                     "startColumn": 4,
-                    "startOffset": 157232,
+                    "startOffset": 157472,
                     "endLine": 2169,
                     "endColumn": 12,
-                    "endOffset": 157331
+                    "endOffset": 157571
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8421,10 +8422,10 @@
                 "to": {
                     "startLine": 2170,
                     "startColumn": 4,
-                    "startOffset": 157336,
+                    "startOffset": 157576,
                     "endLine": 2171,
                     "endColumn": 12,
-                    "endOffset": 157435
+                    "endOffset": 157675
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8434,10 +8435,10 @@
                 "to": {
                     "startLine": 2172,
                     "startColumn": 4,
-                    "startOffset": 157440,
+                    "startOffset": 157680,
                     "endLine": 2173,
                     "endColumn": 12,
-                    "endOffset": 157561
+                    "endOffset": 157801
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8447,9 +8448,9 @@
                 "to": {
                     "startLine": 2174,
                     "startColumn": 4,
-                    "startOffset": 157566,
+                    "startOffset": 157806,
                     "endColumn": 87,
-                    "endOffset": 157649
+                    "endOffset": 157889
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8459,9 +8460,9 @@
                 "to": {
                     "startLine": 2175,
                     "startColumn": 4,
-                    "startOffset": 157654,
+                    "startOffset": 157894,
                     "endColumn": 107,
-                    "endOffset": 157757
+                    "endOffset": 157997
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8471,9 +8472,9 @@
                 "to": {
                     "startLine": 2176,
                     "startColumn": 4,
-                    "startOffset": 157762,
+                    "startOffset": 158002,
                     "endColumn": 99,
-                    "endOffset": 157857
+                    "endOffset": 158097
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8483,9 +8484,9 @@
                 "to": {
                     "startLine": 2177,
                     "startColumn": 4,
-                    "startOffset": 157862,
+                    "startOffset": 158102,
                     "endColumn": 89,
-                    "endOffset": 157947
+                    "endOffset": 158187
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8495,9 +8496,9 @@
                 "to": {
                     "startLine": 2178,
                     "startColumn": 4,
-                    "startOffset": 157952,
+                    "startOffset": 158192,
                     "endColumn": 109,
-                    "endOffset": 158057
+                    "endOffset": 158297
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8507,9 +8508,9 @@
                 "to": {
                     "startLine": 2179,
                     "startColumn": 4,
-                    "startOffset": 158062,
+                    "startOffset": 158302,
                     "endColumn": 83,
-                    "endOffset": 158141
+                    "endOffset": 158381
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8519,9 +8520,9 @@
                 "to": {
                     "startLine": 2180,
                     "startColumn": 4,
-                    "startOffset": 158146,
+                    "startOffset": 158386,
                     "endColumn": 101,
-                    "endOffset": 158243
+                    "endOffset": 158483
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8531,9 +8532,9 @@
                 "to": {
                     "startLine": 2181,
                     "startColumn": 4,
-                    "startOffset": 158248,
+                    "startOffset": 158488,
                     "endColumn": 83,
-                    "endOffset": 158327
+                    "endOffset": 158567
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8543,9 +8544,9 @@
                 "to": {
                     "startLine": 2182,
                     "startColumn": 4,
-                    "startOffset": 158332,
+                    "startOffset": 158572,
                     "endColumn": 53,
-                    "endOffset": 158381
+                    "endOffset": 158621
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8555,9 +8556,9 @@
                 "to": {
                     "startLine": 2183,
                     "startColumn": 4,
-                    "startOffset": 158386,
+                    "startOffset": 158626,
                     "endColumn": 63,
-                    "endOffset": 158445
+                    "endOffset": 158685
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8567,9 +8568,9 @@
                 "to": {
                     "startLine": 2184,
                     "startColumn": 4,
-                    "startOffset": 158450,
+                    "startOffset": 158690,
                     "endColumn": 105,
-                    "endOffset": 158551
+                    "endOffset": 158791
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8579,9 +8580,9 @@
                 "to": {
                     "startLine": 2185,
                     "startColumn": 4,
-                    "startOffset": 158556,
+                    "startOffset": 158796,
                     "endColumn": 109,
-                    "endOffset": 158661
+                    "endOffset": 158901
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8591,9 +8592,9 @@
                 "to": {
                     "startLine": 2186,
                     "startColumn": 4,
-                    "startOffset": 158666,
+                    "startOffset": 158906,
                     "endColumn": 83,
-                    "endOffset": 158745
+                    "endOffset": 158985
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8603,9 +8604,9 @@
                 "to": {
                     "startLine": 2187,
                     "startColumn": 4,
-                    "startOffset": 158750,
+                    "startOffset": 158990,
                     "endColumn": 119,
-                    "endOffset": 158865
+                    "endOffset": 159105
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/values/values.xml"
@@ -8615,10 +8616,10 @@
                 "to": {
                     "startLine": 2188,
                     "startColumn": 4,
-                    "startOffset": 158870,
+                    "startOffset": 159110,
                     "endLine": 2189,
                     "endColumn": 12,
-                    "endOffset": 158965
+                    "endOffset": 159205
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8628,10 +8629,10 @@
                 "to": {
                     "startLine": 2190,
                     "startColumn": 4,
-                    "startOffset": 158970,
+                    "startOffset": 159210,
                     "endLine": 2193,
                     "endColumn": 12,
-                    "endOffset": 159206
+                    "endOffset": 159446
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8641,10 +8642,10 @@
                 "to": {
                     "startLine": 2194,
                     "startColumn": 4,
-                    "startOffset": 159211,
+                    "startOffset": 159451,
                     "endLine": 2200,
                     "endColumn": 12,
-                    "endOffset": 159641
+                    "endOffset": 159881
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8654,10 +8655,10 @@
                 "to": {
                     "startLine": 2201,
                     "startColumn": 4,
-                    "startOffset": 159646,
+                    "startOffset": 159886,
                     "endLine": 2204,
                     "endColumn": 12,
-                    "endOffset": 159848
+                    "endOffset": 160088
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8667,10 +8668,10 @@
                 "to": {
                     "startLine": 2205,
                     "startColumn": 4,
-                    "startOffset": 159853,
+                    "startOffset": 160093,
                     "endLine": 2207,
                     "endColumn": 12,
-                    "endOffset": 160007
+                    "endOffset": 160247
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8680,10 +8681,10 @@
                 "to": {
                     "startLine": 2208,
                     "startColumn": 4,
-                    "startOffset": 160012,
+                    "startOffset": 160252,
                     "endLine": 2216,
                     "endColumn": 12,
-                    "endOffset": 160572
+                    "endOffset": 160812
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8693,10 +8694,10 @@
                 "to": {
                     "startLine": 2217,
                     "startColumn": 4,
-                    "startOffset": 160577,
+                    "startOffset": 160817,
                     "endLine": 2222,
                     "endColumn": 12,
-                    "endOffset": 160933
+                    "endOffset": 161173
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8706,10 +8707,10 @@
                 "to": {
                     "startLine": 2223,
                     "startColumn": 4,
-                    "startOffset": 160938,
+                    "startOffset": 161178,
                     "endLine": 2225,
                     "endColumn": 12,
-                    "endOffset": 161062
+                    "endOffset": 161302
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8719,10 +8720,10 @@
                 "to": {
                     "startLine": 2226,
                     "startColumn": 4,
-                    "startOffset": 161067,
+                    "startOffset": 161307,
                     "endLine": 2234,
                     "endColumn": 12,
-                    "endOffset": 161729
+                    "endOffset": 161969
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8732,10 +8733,10 @@
                 "to": {
                     "startLine": 2235,
                     "startColumn": 4,
-                    "startOffset": 161734,
+                    "startOffset": 161974,
                     "endLine": 2238,
                     "endColumn": 12,
-                    "endOffset": 161909
+                    "endOffset": 162149
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8745,10 +8746,10 @@
                 "to": {
                     "startLine": 2239,
                     "startColumn": 4,
-                    "startOffset": 161914,
+                    "startOffset": 162154,
                     "endLine": 2247,
                     "endColumn": 12,
-                    "endOffset": 162618
+                    "endOffset": 162858
                 },
                 "from": {
                     "file": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/values/values.xml"
@@ -8758,10 +8759,31 @@
                 "to": {
                     "startLine": 2248,
                     "startColumn": 4,
-                    "startOffset": 162623,
-                    "endLine": 2252,
+                    "startOffset": 162863,
+                    "endLine": 2251,
+                    "endColumn": 12,
+                    "endOffset": 162986
+                },
+                "from": {
+                    "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 820,
+                        "endLine": 18,
+                        "endColumn": 12,
+                        "endOffset": 943
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 2252,
+                    "startColumn": 4,
+                    "startOffset": 162991,
+                    "endLine": 2258,
                     "endColumn": 8,
-                    "endOffset": 162895
+                    "endOffset": 163250
                 },
                 "from": {
                     "file": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/values/custom_star.xml"

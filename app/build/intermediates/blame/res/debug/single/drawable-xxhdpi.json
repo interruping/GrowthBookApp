@@ -8,20 +8,20 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-xxhdpi/star_filled_ivepointed_shape.png"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/back_button.png",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-xxhdpi/back_button.png"
-    },
-    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\news_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xxhdpi\\news_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\one_by_one_icon.png",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xxhdpi\\one_by_one_icon.png"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/back_button.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-xxhdpi/back_button.png"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\star5.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\geonyounglim\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xxhdpi\\star5.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\one_by_one_icon.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-xxhdpi\\one_by_one_icon.png"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/star_of_favorite_outline.png",

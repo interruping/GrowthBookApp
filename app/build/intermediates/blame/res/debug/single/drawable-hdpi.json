@@ -96,10 +96,6 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\drawable-hdpi\\news_icon.png"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/star_filled_ivepointed_shape.png",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/star_filled_ivepointed_shape.png"
-    },
-    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/drawable-hdpi/menu_icon.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/drawable-hdpi/menu_icon.png"
     },

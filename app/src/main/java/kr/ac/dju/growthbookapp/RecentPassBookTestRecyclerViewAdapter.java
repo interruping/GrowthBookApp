@@ -2,6 +2,7 @@ package kr.ac.dju.growthbookapp;
 
 import android.content.Context;
 import android.os.Handler;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +62,7 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        holder.closeRate();
         holder.setRateStatus(0);
         RecentPassBookTestItem item = _container.get(position);
         Integer currentId = Integer.valueOf(item.getId());
@@ -100,6 +101,7 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
            Float rate = _rateCache.get(Integer.valueOf(item.getId()));
 
             holder.setRateStatus(rate);
+            holder.openRate();
         }
 
         holder.getDescTextView().setText(item.getDescription());
@@ -125,8 +127,8 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         _container.add(item);
     }
 
-    public void getItem(int position){
-        _container.get(position);
+    public RecentPassBookTestItem getItem(int position){
+        return _container.get(position);
     }
 
     @Override
@@ -156,6 +158,7 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
 
             if ( viewHolder.getCurrentHoldItem() == id.intValue() ){
                 viewHolder.setRateStatus(finalRate);
+                viewHolder.openRate();
             }
          });
     }
@@ -176,7 +179,7 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         });
     }
 
-    public String MD5(String str){
+    public static String MD5(String str){
 
         String MD5 = "";
 
@@ -219,6 +222,10 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         _rateCache.clear();
     }
 
+    public void setDoRateButtonClickListener( DoRateButtonClickListener listener){
+        _listener = listener;
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private int _currentHoldItem;
@@ -233,6 +240,8 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         private RatingBar _ratingBar;
         private TextView  _ratingNum;
 
+        private ConstraintLayout _rateBlock;
+
         public ViewHolder(View itemView) {
             super(itemView);
             _descriptionTextview = (TextView)itemView.findViewById(R.id.book_pass_description_textview);
@@ -245,7 +254,11 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
             _ratingText = (TextView)itemView.findViewById(R.id.difficulty_string_text);
             _ratingNum = (TextView)itemView.findViewById(R.id.rating_num);
 
+            _rateBlock = (ConstraintLayout)itemView.findViewById(R.id.difficulty_rate_block);
+
         }
+
+
         public void setCurrentHoldItem(int id) {
             _currentHoldItem = id;
         }
@@ -271,6 +284,7 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
         public Button getDoRateButton() { return _doRateButton; }
 
         public void setRateStatus(float rate){
+
             int intRate = (int)Math.ceil(rate);
             System.out.println("Intrate :" + intRate);
             _ratingBar.setRating(rate);
@@ -313,6 +327,12 @@ public class RecentPassBookTestRecyclerViewAdapter extends RecyclerView.Adapter<
                     _doRateButton.setVisibility(View.INVISIBLE);
                     break;
             }
+        }
+        public void closeRate() {
+            _rateBlock.setVisibility(View.VISIBLE);
+        }
+        public void openRate() {
+            _rateBlock.setVisibility(View.INVISIBLE);
         }
     }
 }
