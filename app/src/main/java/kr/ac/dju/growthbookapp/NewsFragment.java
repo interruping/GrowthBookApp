@@ -229,11 +229,7 @@ public class NewsFragment extends NavigationBarFragment implements View.OnClickL
             }
 
         }
-        try {
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         Handler mainHandler = new Handler(getActivity().getMainLooper());
         mainHandler.post(()->{
             _adapter.removeLoadingProgressItem();

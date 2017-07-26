@@ -29,7 +29,7 @@ import java.util.Map;
  * Created by dodrn on 2017-06-03.
  */
 
-public class DetailBookListFragment extends NavigationBarFragment implements ApproveBookFragment.RequestCancelAlertView {
+public class DetailBookListFragment extends NavigationBarFragment implements ApproveBookFragment.RequestCancelAlertView, NavigationBarFragment.SearchBarEventListener, ViewPager.OnPageChangeListener{
     private Map<String,String> applyattr = new HashMap<>();
     private Map<String, String> unapproved = new HashMap<String, String>();
     private Map<String, String> approve = new HashMap<String, String>();
@@ -42,8 +42,10 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
     private ApproveBookAuthTestSubmitDetail submit_self;
     private  DetailBookListFragment.MyPagerAdapter adapter;
     private boolean mBackState = false;
+    private boolean _enterPage0Flag = false;
 
 
+    private SearchBarEventListener _searchListener;
 
     @Override
     public void showCancelAlertView(Runnable confirmCallback) {
@@ -73,12 +75,6 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        System.out.println(">>>>>>>>>>>>>>디테일");
-        System.out.println(">>>>>>>>>>>>>>디테일");
-        System.out.println(">>>>>>>>>>>>>>디테일");
-        System.out.println(">>>>>>>>>>>>>>디테일");
-        System.out.println(">>>>>>>>>>>>>>디테일");
-        System.out.println(">>>>>>>>>>>>>>디테일");
 
         _rootView = super.onCreateView(inflater, container, savedInstanceState);
         _rootView.setBackgroundColor(Color.WHITE);
@@ -89,7 +85,7 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
             MainActivity ma = (MainActivity)this.getActivity();
             ma.toggleMenu();
         }, (View v)->{
-
+            activeSearch();
         });
 
         setBackButton((View v)->{
@@ -109,6 +105,7 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
         adapter = new DetailBookListFragment.MyPagerAdapter(pa.getSupportFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(2);
+        viewPager.addOnPageChangeListener(this);
         adapter.notifyDataSetChanged();
         tableLayout.setupWithViewPager(viewPager);
 
@@ -127,8 +124,8 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
                 }
             }
         });
-        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-        //System.out.println("쿠키값입니다. :" +cs.getCookie());
+        setSearchBarEventListener(this);
+
         GetKey();
         GetUrl();
 
@@ -136,6 +133,58 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
         return _rootView;
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        if( position == 0 && positionOffset == 0.0){
+            _enterPage0Flag = true;
+            showRightAcc();
+        }
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if ( position == 0 ){
+            showRightAcc();
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        if ( _enterPage0Flag == true ){
+            _enterPage0Flag = false;
+            return;
+        }
+        if ( isSearchBarActive() == true ){
+            inactiveSearch();
+        }
+
+        hideRightAcc();
+    }
+
+    @Override
+    public void searchBarWillActive() {
+        _searchListener.searchBarWillActive();
+    }
+
+    @Override
+    public void searchBarWillInactive() {
+        _searchListener.searchBarWillInactive();
+    }
+
+    @Override
+    public void searchBarKeyInput(String input, int count) {
+        _searchListener.searchBarKeyInput(input, count);
+    }
+
+    @Override
+    public void searchBarFocused() {
+        _searchListener.searchBarFocused();
+    }
+
+    @Override
+    public void searchBarUnfocesed() {
+        _searchListener.searchBarUnfocesed();
+    }
 
     public void notifystateData(){
         adapter.notifyDataSetChanged();
@@ -298,6 +347,7 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
                     arrFragments[0] = new UnapprovedBookFragment();
 
                     UnapprovedBookFragment tmp = (UnapprovedBookFragment)arrFragments[0];
+                    _searchListener = tmp;
                     tmp.setParentDetailFragment(_self);
                     GetDataUnapprove(arrFragments[0]);
                     return arrFragments[0];}

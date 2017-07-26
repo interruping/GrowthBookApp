@@ -73,7 +73,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         _rootView = super.onCreateView(inflater, container, savedInstanceState);
 
         _loginBtn = (Button)_rootView.findViewById(R.id.login_button);
-        //_loginBtn.setEnabled(false);
+
         _loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +86,8 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
                 challengeAuthPre();
             }
         });
+
+
 
         _idInput =(EditText) _rootView.findViewById(R.id.id_input);
         _pwInput =(EditText) _rootView.findViewById(R.id.pw_input);
@@ -164,6 +166,8 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         }, (View v)->{
 
         });
+
+        hideRightAcc();
 
         MainActivity ma = (MainActivity)this.getActivity();
         if ( ma.isNeedAlertLogin() == true ){
