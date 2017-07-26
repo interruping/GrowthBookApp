@@ -101,7 +101,13 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         return "";
     }
 
+    public void addItem(BookListData newData){
+        bookListDatas.add(newData);
+    }
 
+    public BookListData getItem(int position){
+        return bookListDatas.get(position);
+    }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.unprovedbook_item, parent, false);

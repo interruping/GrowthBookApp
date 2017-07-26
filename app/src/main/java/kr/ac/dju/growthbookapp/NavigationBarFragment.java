@@ -39,6 +39,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+import static kr.ac.dju.growthbookapp.R.drawable.abc_ic_search_api_material;
 import static kr.ac.dju.growthbookapp.R.drawable.ripple_effect;
 
 /**
@@ -64,6 +66,7 @@ public class NavigationBarFragment extends Fragment {
     private View _rightAcc;
 
     private SearchBarEventListener _searchBarEventListener;
+    private boolean _searchBarActive = false;
 
     public NavigationBarFragment( int layoutFileId, int rootConstraintLayoutId){
         super();
@@ -225,7 +228,7 @@ public class NavigationBarFragment extends Fragment {
     }
 
     public void showRightAcc() {
-        _rightAcc.setVisibility(INVISIBLE);
+        _rightAcc.setVisibility(VISIBLE);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -275,6 +278,7 @@ public class NavigationBarFragment extends Fragment {
         _searchInput.setBackground(gd);
         _searchInput.setPadding(30,0,0,0);
         _searchInput.setHint("검색");
+        _searchInput.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(),R.color.colorHighLight));
         _searchInput.setFocusable(false);
         _searchInput.setFocusableInTouchMode(false);
         _searchInput.setCompoundDrawablesWithIntrinsicBounds(R.drawable.search_icon, 0, R.drawable.close_icon, 0);
@@ -372,8 +376,9 @@ public class NavigationBarFragment extends Fragment {
 
 
     public void activeSearch() {
+        _searchBarActive = true;
         if(_searchBarEventListener != null) _searchBarEventListener.searchBarWillActive();
-        _searchInput.setVisibility(View.VISIBLE);
+        _searchInput.setVisibility(VISIBLE);
         _searchInput.setX(1000);
         _leftAcc.animate().setListener(null).translationX(-_navigationBar.getWidth()).withLayer();
         _rightAcc.animate().setListener(null).translationX(-_navigationBar.getWidth()).withLayer();
@@ -394,7 +399,7 @@ public class NavigationBarFragment extends Fragment {
 
                 InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.showSoftInput(_searchInput, InputMethodManager.SHOW_IMPLICIT);
-
+                _searchBarActive = true;
             }
 
             @Override
@@ -409,6 +414,7 @@ public class NavigationBarFragment extends Fragment {
         }).translationX(-_navigationBar.getWidth()).withLayer();
 ;    }
     public void inactiveSearch() {
+        _searchBarActive = false;
         if( _searchBarEventListener != null) _searchBarEventListener.searchBarWillInactive();
 
         _searchInput.setFocusable(false);
@@ -435,7 +441,7 @@ public class NavigationBarFragment extends Fragment {
                 _leftAcc.animate().setListener(null).translationX(0).withLayer();
                 _midAcc.animate().setListener(null).translationX(0).withLayer();
                 _rightAcc.animate().setListener(null).translationX(0).withLayer();
-
+                _searchBarActive = false;
             }
 
             @Override
@@ -448,6 +454,10 @@ public class NavigationBarFragment extends Fragment {
 
             }
         });
+    }
+
+    public boolean isSearchBarActive() {
+        return _searchBarActive;
     }
 
     public void setSearchBarEventListener( SearchBarEventListener listener ){
@@ -547,7 +557,7 @@ public class NavigationBarFragment extends Fragment {
                 alertView.animate().setListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
-                        alertView.setVisibility(View.VISIBLE);
+                        alertView.setVisibility(VISIBLE);
                         confirmBotton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
