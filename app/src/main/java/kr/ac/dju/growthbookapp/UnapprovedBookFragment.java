@@ -40,7 +40,6 @@ import java.util.Map;
 public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner {
     private Map<String, String> headers;
     private Map<String, String> paramss = new HashMap<String, String>();
-    //    private Map<String,String> param = new HashMap<~>();
     private String url = "";
     private int maxPage = 0;
     private int nowPage = 2;
@@ -55,6 +54,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     private SwipeRefreshLayout _swipeRefreshLayout;
 
     private UnapprovedBookFragment _self = this;
+
     public UnapprovedBookFragment() {
         // Required empty public constructor
 
@@ -66,7 +66,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                              Bundle savedInstanceState) {
         View result = inflater.inflate(R.layout.fragment_unapproved_book, container, false);
 
-        _swipeRefreshLayout = (SwipeRefreshLayout)result.findViewById(R.id.unproved_swipeRefreshLayout);
+        _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.unproved_swipeRefreshLayout);
         _swipeRefreshLayout.setRefreshing(true);
         _swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -137,6 +137,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
         return result;
     }
+
     public void onRefresh(int page) {
         setPassCard(false);
         HttpConn con = new HttpConn();
@@ -157,6 +158,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
             System.out.println("ERROR:" + e.toString());
         }
     }
+
     // DetailBookListFragment  자신 가져오기
     public void setParentDetailFragment(DetailBookListFragment parent) {
 

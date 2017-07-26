@@ -1,6 +1,7 @@
 package kr.ac.dju.growthbookapp;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,13 +35,12 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
     private ArrayList<BookListData> bookListDatas = new ArrayList<BookListData>();
 
     private Context mContext;
-
+    String mresult;
     private StarRatingBarDialog dialog;
     private String mDevice;
     private Map<String, String> headers;
     private ApprovedMyadpater _self = this;
     private boolean mUnapproved;
-
 
 
     public ApprovedMyadpater(ArrayList<BookListData> bookdata, Context mcontext) {
@@ -90,7 +90,7 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.approvedbook_item, parent, false);
         View container = v.findViewById(R.id.apporved_item_container);
 
-       ViewHolder holder = new ViewHolder(container);
+        ViewHolder holder = new ViewHolder(container);
 
         return holder;
     }
@@ -113,77 +113,76 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
                 .into(holder.bookImg);
 
 
-
         // ApprovedBookFragment에서 보여주는 난이도 평점 버튼 조건식
-            holder.getButton().setText("평점주기");
-            holder.getButton().setOnClickListener(new View.OnClickListener() {
+        holder.getButton().setText("평점주기");
+        holder.getButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String name = bookListDatas.get(position).GetBookSubject();
+                String hash_name = MD5(name);
+                dialog = new StarRatingBarDialog(v.getContext(),
+                        hash_name,
+                        mSubmitClickListener,
+                        mCancleClickListener);
+
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
+            }
+
+            // RatingBar submit Button class
+            View.OnClickListener mSubmitClickListener = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    String name = bookListDatas.get(position).GetBookSubject();
-                    String hash_name = MD5(name);
-                    dialog = new StarRatingBarDialog(v.getContext(),
-                            hash_name,
-                            mSubmitClickListener,
-                            mCancleClickListener);
-
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.setCanceledOnTouchOutside(false);
-                    dialog.show();
-                }
-
-                // RatingBar submit Button class
-                View.OnClickListener mSubmitClickListener = new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        String mDevice = dialog.getmDevice();
-                        float rate = dialog.getmRate();
-                        String mHashName = dialog.getmHash_Book_Name();
+                    String mDevice = dialog.getmDevice();
+                    float rate = dialog.getmRate();
+                    String mHashName = dialog.getmHash_Book_Name();
 
 
-                        HttpConn conn = new HttpConn();
-                        conn.setCallBackListener(_self);
+                    HttpConn conn = new HttpConn();
+                    conn.setCallBackListener(_self);
 
+
+                    try {
+
+                        JSONObject json = new JSONObject();
+                        json.put("device_id", mDevice);
+                        json.put("book_id", mHashName);
+                        json.put("rate", rate);
+                        int contentLength = json.toString().length();
+                        Map<String, String> header = new HashMap<String, String>();
+                        header.put("Content-type", "application/json");
+                        header.put("Content-Length", String.valueOf(contentLength));
+                        header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
+
+                        conn.setPrefixHeaderFields(header);
 
                         try {
-
-                            JSONObject json = new JSONObject();
-                            json.put("device_id", mDevice);
-                            json.put("book_id", mHashName);
-                            json.put("rate", rate);
-                            int contentLength = json.toString().length();
-                            Map<String, String> header = new HashMap<String, String>();
-                            header.put("Content-type", "application/json");
-                            header.put("Content-Length", String.valueOf(contentLength));
-                            header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
-
-                            conn.setPrefixHeaderFields(header);
-
-                            try {
-                                conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/addrate"), json.toString());
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        } catch (JSONException e) {
+                            conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/addrate"), json.toString());
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        Toast.makeText(getContext(), "제출되었습니다.", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                };
 
-                // RatingBar Cancle Button
-                View.OnClickListener mCancleClickListener = new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(getContext(), "취소되었습니다.", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
-                    }
-                };
 
-            });
-        }
+                }
+            };
+
+            // RatingBar Cancle Button
+            View.OnClickListener mCancleClickListener = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getContext(), "취소되었습니다.", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            };
+
+        });
+    }
 
     public void clear() {
         bookListDatas.clear();
@@ -199,7 +198,35 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
     // 서버에서 전송하기 위한 HTTPCallbackListener 함수
     @Override
     public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-        System.out.println(s);
+
+        JSONObject result = null;
+        try {
+            result = new JSONObject(s);
+
+            if (result.get("result").toString().equals("0") == true) {
+                mresult = result.get("result").toString();
+            } else if (result.get("result").toString().equals("2") == true) {
+                mresult = result.get("result").toString();
+            } else {
+                mresult = result.get("result").toString();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        Handler mainHandler = new Handler(getContext().getMainLooper());
+        mainHandler.post(() -> {
+              dialog.dismiss();
+
+            if (mresult.equals("0") == true) {
+                Toast.makeText(getContext(), "제출되었습니다.", Toast.LENGTH_SHORT).show();
+            } else if (mresult.equals("2") == true) {
+                Toast.makeText(getContext(), "이미 제출하셨습니다..", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "평가제출 실패하셨습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
@@ -212,7 +239,6 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
     public void requestTimeout(HttpConn httpConn) {
 
     }
-
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -243,8 +269,6 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
         }
 
     }
-
-
 
 
 }

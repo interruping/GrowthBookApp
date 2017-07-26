@@ -32,13 +32,13 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ApproveBookFragment extends Fragment implements HttpConn.CallbackListener{
-    private Map<String,String> headers;
-    private Map<String,String> params = new HashMap<String,String>();
-    private String url="";
-    private int maxPage =0;
+public class ApproveBookFragment extends Fragment implements HttpConn.CallbackListener {
+    private Map<String, String> headers;
+    private Map<String, String> params = new HashMap<String, String>();
+    private String url = "";
+    private int maxPage = 0;
     private int nowPage = 2;
-    private boolean pass =true;
+    private boolean pass = true;
     private RecyclerView mRecyclerView;
     private ApproveMyadapter mdAdapter;
     private ArrayList<BookListData> bookArrayList = new ArrayList<>();
@@ -47,14 +47,15 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
     private ApproveBookFragment _self = this;
     private SwipeRefreshLayout _swipeRefreshLayout;
 
-    public void setDetailBookListFragment(DetailBookListFragment dt){
+    public void setDetailBookListFragment(DetailBookListFragment dt) {
         mDetail_self = dt;
     }
+
     public interface RequestCancelAlertView {
         public void showCancelAlertView(Runnable confirmCallback);
     }
 
-    public void setRequestCancelAlertView(RequestCancelAlertView requestee){
+    public void setRequestCancelAlertView(RequestCancelAlertView requestee) {
         _requestee = requestee;
     }
 
@@ -178,12 +179,14 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
 
         return result;
     }
+
     private void setPassCard(boolean ok) {
         pass = ok;
     }
+
     public void GetUrl() {
         url = getArguments().getString("url");
-        params= (HashMap<String, String>) getArguments().getSerializable("HashMap");
+        params = (HashMap<String, String>) getArguments().getSerializable("HashMap");
 
     }
 
@@ -193,18 +196,18 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
         Element body = parser.getBody();
         Elements booklists = body.getElementsByClass("menter_ul_contents img_content");
         List<ApproveBookListData> temp = new ArrayList<ApproveBookListData>();
-        if(maxPage ==0){
+        if (maxPage == 0) {
             Elements pages = body.getElementsByTag("a");
             Element page = pages.last();
             String maxPages = page.text();
-            if(maxPages.equals("") == false ) {
+            if (maxPages.equals("") == false) {
                 maxPages = maxPages.replace("[", "");
                 maxPages = maxPages.replace("]", "");
                 maxPage = Integer.parseInt(maxPages);
             }
         }
 
-        for(Element booklist : booklists) {
+        for (Element booklist : booklists) {
             //책 이름 추출 코드
             Elements lis = booklist.select("li.mentor_li_content");
             Element li = lis.first();
@@ -224,7 +227,6 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             lis = booklist.select("li.mentor_li_content");
             li = lis.first();
             Elements uls = li.getElementsByTag("ul");
-
 
 
             // 책 출판사 및 저자 추출 코드
@@ -274,31 +276,30 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             Element mcancle_button1 = mcancle_button.first();
             String cancle_button;
 
-            if(mcancle_button1 == null){
+            if (mcancle_button1 == null) {
                 cancle_button = null;
-            }
-            else{
+            } else {
                 cancle_button = mcancle_button1.attr("idx");
             }
             temp.add(new ApproveBookListData(bookname, booksrc, authorin, bookList, bookcompany, bookday, passpoint,
-                    authpoint,ddays,appdays,context_book, cancle_button));
+                    authpoint, ddays, appdays, context_book, cancle_button));
         }
 
         Handler mainHandler = new Handler(getActivity().getMainLooper());
-        mainHandler.post(()->{
+        mainHandler.post(() -> {
 
-            for ( ApproveBookListData data : temp ){
+            for (ApproveBookListData data : temp) {
                 bookArrayList.add(data);
                 mdAdapter.notifyDataSetChanged();
             }
 
-            if (temp.size() == 0){
+            if (temp.size() == 0) {
                 mRecyclerView.setAdapter(new EmptyRecyclerViewAdapter());
             }
             _swipeRefreshLayout.setRefreshing(false);
             setPassCard(true);
         });
-        }
+    }
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
@@ -324,39 +325,38 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             _additionalContent = additionalContent;
             _cancleButton = cancle;
         }
+
         public String get_cancleButton() {
             return _cancleButton;
         }
 
-        public String Get_dDay(){
+        public String Get_dDay() {
             return _dDay;
 
         }
 
-        public String Get_requestDate(){
+        public String Get_requestDate() {
             return _requestDate;
 
         }
 
-        public String Get_additionalContent(){
+        public String Get_additionalContent() {
             return _additionalContent;
         }
     }
 
 
+    public class ApproveMyadapter extends Myadpater implements HttpConn.CallbackListener {
 
+        private ApproveMyadapter _self = this;
 
-    public class ApproveMyadapter extends Myadpater implements HttpConn.CallbackListener{
-
-        private  ApproveMyadapter _self = this;
         public ApproveMyadapter(ArrayList<BookListData> bookdata, Context mcontext) {
             super(bookdata, mcontext);
         }
 
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-        {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_approve_book,parent,false);
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_approve_book, parent, false);
             View container = v.findViewById(R.id.approvebook_item_container);
             ViewHolder holder = new ApproveViewHolder(container);
             return holder;
@@ -384,19 +384,18 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                     .load(arrayList.get(position).GetBookSrc())
                     .into(holder.bookImg);
 
-            if(((ApproveBookListData) arrayList.get(position)).get_cancleButton() == null){
+            if (((ApproveBookListData) arrayList.get(position)).get_cancleButton() == null) {
                 exHolder.getButtons().setVisibility(View.GONE);
-            }
-            else {
+            } else {
                 exHolder.getButtons().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        _requestee.showCancelAlertView(()->{
+                        _requestee.showCancelAlertView(() -> {
                             String idx = ((ApproveBookListData) arrayList.get(position)).get_cancleButton();
                             String cmd = "del";
 
-                            params.put("no",idx);
-                            params.put("cmd",cmd);
+                            params.put("no", idx);
+                            params.put("cmd", cmd);
 
                             HttpConn con = new HttpConn();
                             HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
@@ -417,7 +416,6 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                         });
 
 
-
                     }
                 });
             }
@@ -433,8 +431,8 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
 
             Handler mainHandler = new Handler(getActivity().getMainLooper());
             mainHandler.post(() -> {
-                         mDetail_self.notifystateData();
-                        _swipeRefreshLayout.setRefreshing(false);
+                mDetail_self.notifystateData();
+                _swipeRefreshLayout.setRefreshing(false);
             });
         }
 
@@ -449,21 +447,23 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
         }
     }
 
-    public static class ApproveViewHolder extends Myadpater.ViewHolder{
+    public static class ApproveViewHolder extends Myadpater.ViewHolder {
         View _root;
         TextView D_day, approve_day, context;
         Button cancle_Button;
+
         public ApproveViewHolder(View view) {
             super(view);
             _root = view;
-            D_day = (TextView)view.findViewById(R.id.D_dayInfo);
-            approve_day = (TextView)view.findViewById(R.id.Approve_dayInfo);
-            context = (TextView)view.findViewById(R.id.Context_Info);
+            D_day = (TextView) view.findViewById(R.id.D_dayInfo);
+            approve_day = (TextView) view.findViewById(R.id.Approve_dayInfo);
+            context = (TextView) view.findViewById(R.id.Context_Info);
 
 
         }
-        public Button getButtons () {
-            cancle_Button = (Button)_root.findViewById(R.id.cancle_button);
+
+        public Button getButtons() {
+            cancle_Button = (Button) _root.findViewById(R.id.cancle_button);
             return cancle_Button;
         }
 

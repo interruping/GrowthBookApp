@@ -212,7 +212,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         android:isIndicator="true"
         android:max="5"
         android:numStars="5"
@@ -221,7 +221,8 @@
         app:layout_constraintLeft_toLeftOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/textView11" />
+        app:layout_constraintRight_toRightOf="@+id/textView11"
+        app:layout_constraintHorizontal_bias="0.229" />
 
     <TextView
         android:id="@+id/textView11"
@@ -251,27 +252,27 @@
 
     <TextView
         android:id="@+id/level_context"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="47dp"
-        android:text="난이도 내용"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="난이도 내용"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/avg_conetext"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:gravity="center"
         android:text="0.0"
@@ -306,7 +307,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        ><ProgressBar
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="0dp"><ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
