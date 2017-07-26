@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,10 +40,12 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
     private int nowPage = 2;
     private boolean pass =true;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mdAdapter;
+    private ApproveMyadapter mdAdapter;
     private ArrayList<BookListData> bookArrayList = new ArrayList<>();
     private RequestCancelAlertView _requestee;
     private DetailBookListFragment mDetail_self;
+    private ApproveBookFragment _self = this;
+    private SwipeRefreshLayout _swipeRefreshLayout;
 
     public void setDetailBookListFragment(DetailBookListFragment dt){
         mDetail_self = dt;
@@ -66,6 +69,41 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
 
         // Inflate the layout for this fragment
         View result = inflater.inflate(R.layout.fragment_unapproved_book, container, false);
+        mdAdapter = new ApproveMyadapter(bookArrayList, this.getActivity());
+
+        _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.unproved_swipeRefreshLayout);
+        _swipeRefreshLayout.setRefreshing(true);
+        _swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                maxPage = 0;
+                nowPage = 2;
+                mdAdapter.clear();
+                mdAdapter.notifyDataSetChanged();
+                mRecyclerView.setAdapter(mdAdapter);
+
+                HttpConn con = new HttpConn();
+                HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+                String cookie = cs.getCookie();
+                con.setCallBackListener(_self);
+                con.setUserAgent("DJUAPP");
+                headers = new HashMap<String, String>();
+                headers.put("Cookie", cookie);
+
+
+                con.setPrefixHeaderFields(headers);
+                GetUrl();
+                params.put("page", "1");
+                try {
+                    con.sendRequest(HttpConn.Method.GET, new URL(url), params);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR:" + e.toString());
+                }
+            }
+        });
+
+
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         String cookie = cs.getCookie();
@@ -114,6 +152,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
 
             private void onRefresh(int page) {
                 setPassCard(false);
+                mRecyclerView.setAdapter(mdAdapter);
                 HttpConn con = new HttpConn();
                 HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
                 String cookie = cs.getCookie();
@@ -134,7 +173,6 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
 
             }
         });
-        mdAdapter = new ApproveMyadapter(bookArrayList, this.getActivity());
         mRecyclerView.setAdapter(mdAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -253,6 +291,11 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                 bookArrayList.add(data);
                 mdAdapter.notifyDataSetChanged();
             }
+
+            if (temp.size() == 0){
+                mRecyclerView.setAdapter(new EmptyRecyclerViewAdapter());
+            }
+            _swipeRefreshLayout.setRefreshing(false);
             setPassCard(true);
         });
         }
@@ -299,6 +342,9 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             return _additionalContent;
         }
     }
+
+
+
 
     public class ApproveMyadapter extends Myadpater implements HttpConn.CallbackListener{
 
@@ -388,6 +434,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             Handler mainHandler = new Handler(getActivity().getMainLooper());
             mainHandler.post(() -> {
                          mDetail_self.notifystateData();
+                        _swipeRefreshLayout.setRefreshing(false);
             });
         }
 

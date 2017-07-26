@@ -185,7 +185,9 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
             });
         }
 
-
+    public void clear() {
+        bookListDatas.clear();
+    }
 
 
     @Override

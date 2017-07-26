@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,7 +37,7 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner{
+public class UnapprovedBookFragment extends Fragment implements HttpConn.CallbackListener, Myadpater.ApplyButtonClickListner {
     private Map<String, String> headers;
     private Map<String, String> paramss = new HashMap<String, String>();
     //    private Map<String,String> param = new HashMap<~>();
@@ -47,10 +48,13 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
     private RecyclerView mRecyclerView;
     private Myadpater mAdapter;
 
-           private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
+    private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
 
     private DetailBookListFragment _parent;
 
+    private SwipeRefreshLayout _swipeRefreshLayout;
+
+    private UnapprovedBookFragment _self = this;
     public UnapprovedBookFragment() {
         // Required empty public constructor
 
@@ -62,6 +66,18 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                              Bundle savedInstanceState) {
         View result = inflater.inflate(R.layout.fragment_unapproved_book, container, false);
 
+        _swipeRefreshLayout = (SwipeRefreshLayout)result.findViewById(R.id.unproved_swipeRefreshLayout);
+        _swipeRefreshLayout.setRefreshing(true);
+        _swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                maxPage = 0;
+                nowPage = 2;
+                mAdapter.clear();
+                mAdapter.notifyDataSetChanged();
+                _self.onRefresh(1);
+            }
+        });
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         String cookie = cs.getCookie();
@@ -95,7 +111,6 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                     if (getPassCard() == true)
                         if (nowPage <= maxPage) {
 
-
                             paramss.put("page", String.valueOf(nowPage));
                             onRefresh(nowPage);
                             nowPage++;
@@ -109,29 +124,9 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
                 return pass;
             }
 
-            private void onRefresh(int page) {
-                setPassCard(false);
-                HttpConn con = new HttpConn();
-                HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
-                String cookie = cs.getCookie();
-                con.setCallBackListener(UnapprovedBookFragment.this);
-                con.setUserAgent("DJUAPP");
-                headers = new HashMap<String, String>();
-                headers.put("Cookie", cookie);
-                con.setPrefixHeaderFields(headers);
 
-                paramss.put("page", String.valueOf(page));
-
-                try {
-                    con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.out.println("ERROR:" + e.toString());
-                }
-            }
         });
         mAdapter = new Myadpater(bookArrayList, this.getActivity());
-
 
 
         mAdapter.setOnClickListener(this);
@@ -142,7 +137,26 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
         return result;
     }
+    public void onRefresh(int page) {
+        setPassCard(false);
+        HttpConn con = new HttpConn();
+        HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
+        String cookie = cs.getCookie();
+        con.setCallBackListener(this);
+        con.setUserAgent("DJUAPP");
+        headers = new HashMap<String, String>();
+        headers.put("Cookie", cookie);
+        con.setPrefixHeaderFields(headers);
 
+        paramss.put("page", String.valueOf(page));
+
+        try {
+            con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR:" + e.toString());
+        }
+    }
     // DetailBookListFragment  자신 가져오기
     public void setParentDetailFragment(DetailBookListFragment parent) {
 
@@ -245,17 +259,23 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
 
         Handler mainHandler = new Handler(getActivity().getMainLooper());
         mainHandler.post(() -> {
+            mAdapter.removeLoadingDummy();
+            mAdapter.notifyDataSetChanged();
+            for (BookListData data : temp) {
+                bookArrayList.add(data);
+                mAdapter.notifyDataSetChanged();
+            }
+            if (maxPage > nowPage) {
+                mAdapter.addLoadingDummy();
+                mRecyclerView.scrollToPosition(mAdapter.getItemCount() + 1);
+            }
 
-                for (BookListData data : temp) {
-                    bookArrayList.add(data);
-                    mAdapter.notifyDataSetChanged();
-                }
-                setPassCard(true);
+            _swipeRefreshLayout.setRefreshing(false);
+            setPassCard(true);
 
 
         });
     }
-
 
 
     @Override

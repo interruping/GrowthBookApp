@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,6 +49,8 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     private Context mContext;
     private ApplyButtonClickListner _applyButtonClickListener;
 
+    static private String LOADING_DUMMY_TAG = "LOADING_DUMMY_TAG";
+    static private BookListData LOADING_DUMMY= new BookListData(LOADING_DUMMY_TAG, "", "", "", "", "","","");
 
     private boolean mUnapproved;
 
@@ -112,6 +115,14 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     // ViewHolder Setting
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
+        BookListData dummyCheck = bookListDatas.get(position);
+        holder.transToNormalItem();
+        if ( dummyCheck.GetBookSubject().equals(LOADING_DUMMY_TAG) ){
+            holder.transToLoadingDummy();
+            return;
+        }
+
         BookListData item = bookListDatas.get(position);
         Integer currentId = Integer.valueOf(item.getId());
         holder.setCurrentHoldItem(currentId.intValue());
@@ -235,6 +246,17 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         return bookListDatas.size();
     }
 
+    public void addLoadingDummy() {
+
+        if (bookListDatas.contains(LOADING_DUMMY) == false){
+            bookListDatas.add(LOADING_DUMMY);
+        }
+
+    }
+
+    public void removeLoadingDummy() {
+        bookListDatas.remove(LOADING_DUMMY);
+    }
 
     // 서버에서 전송하기 위한 HTTPCallbackListener 함수
     @Override
@@ -263,6 +285,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         _holderTasks.clear();
         _httpTasks.clear();
         _rateCache.clear();
+        bookListDatas.clear();
         _numofpersonCache.clear();
     }
 
@@ -276,6 +299,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         ImageView rating_icon;
         TextView rating_avg, rating_context, textview11, mNumOfperson;
         RatingBar rating_bar;
+        ConstraintLayout _loadingBlock;
 
         public ViewHolder(View view) {
             super(view);
@@ -294,6 +318,14 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             rating_icon = (ImageView) view.findViewById(R.id.img_icon);
             rating_bar = (RatingBar) view.findViewById(R.id.ratingBar2);
             mNumOfperson = (TextView) view.findViewById(R.id.numOfPerson);
+            _loadingBlock = (ConstraintLayout)view.findViewById(R.id.loading_dummy_item);
+        }
+        public void transToLoadingDummy() {
+            _loadingBlock.setVisibility(View.VISIBLE);
+        }
+
+        public void transToNormalItem() {
+            _loadingBlock.setVisibility(View.INVISIBLE);
         }
 
         public void setCurrentHoldItem(int id) {
