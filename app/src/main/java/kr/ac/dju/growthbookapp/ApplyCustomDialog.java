@@ -84,15 +84,11 @@ public class ApplyCustomDialog extends Dialog {
         lpWindow.copyFrom(window.getAttributes());
         lpWindow.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lpWindow.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        // Custom Dialog 셋팅
+        window.setAttributes(lpWindow);
 
         //Custom Dialog Animation 효과
-//        OrientationEventListener orientEventListener = new OrientationEventListener(context, SensorManager.SENSOR_DELAY_NORMAL) {
-//            @Override
-//            public void onOrientationChanged(int orientation) {
-//                System.out.print("Test" + orientation);
-//             _self.setOrientation(orientation);
-//            }
-//        };
+
 
         // layout 설정
         if (setOrientation() == true) {
@@ -107,8 +103,7 @@ public class ApplyCustomDialog extends Dialog {
 
         basicSetting();
 
-        // Custom Dialog 셋팅
-        window.setAttributes(lpWindow);
+
 
 
     }

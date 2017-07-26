@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.dju.book.BookServerDataParser;
 import com.dju.book.HttpConn;
@@ -41,6 +42,7 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
     private String apply_value;
     private ApplyCustomDialog mdialog;
     private DetailBookListFragment mDetail_self;
+
     private boolean config;
     public ApproveBookAuthTestSubmitDetail() {
         // Required empty public constructor
@@ -60,21 +62,37 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
 
-
+        if(mdialog == null){
+            boolean temp;
             switch (newConfig.orientation) {
                 case Configuration.ORIENTATION_LANDSCAPE: {
-                    mdialog.setContentView(R.layout.book_auth_landscape);
-                    mdialog.basicSetting();
+                    temp = false;
+                    config = temp;
                     break;
                 }
                 case Configuration.ORIENTATION_PORTRAIT:
-                    mdialog.setContentView(R.layout.book_auth);
-                    mdialog.basicSetting();
+                   temp = true;
+                    config = temp;
                     break;
 
             }
 
+        }
+            if(mdialog != null) {
+                switch (newConfig.orientation) {
+                    case Configuration.ORIENTATION_LANDSCAPE: {
+                        mdialog.setContentView(R.layout.book_auth_landscape);
+                        mdialog.basicSetting();
+                        break;
+                    }
+                    case Configuration.ORIENTATION_PORTRAIT:
+                        mdialog.setContentView(R.layout.book_auth);
+                        mdialog.basicSetting();
+                        break;
 
+                }
+
+            }
         }
         public boolean getconfig(){
             return config;
@@ -151,6 +169,7 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
         return true;
     }
 
+    // 인증 시험 신청 제출시 다시 DetailFragment로 전환
     public void unprovedBackButton() {
         mDetail_self.setmBackState(true);
         getFragmentManager().popBackStack();

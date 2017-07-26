@@ -87,53 +87,53 @@
         android:id="@+id/D_days"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="2"
         android:gravity="center"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/textView4"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="@+id/textView4"
 
-        android:layout_marginTop="0dp"
+        app:layout_constraintRight_toRightOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/D_time"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/textView5"
-        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="@+id/textView5"
-        android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/D_weekend"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/textView6"
-        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="@+id/textView6"
-        android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/Time_limit"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/textView8"
-        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="@+id/textView8"
-        android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
     <!--</LinearLayout>-->
     <!--</LinearLayout>-->
@@ -152,48 +152,34 @@
     <!--android:orientation="horizontal">-->
 
     <TextView
+        android:id="@+id/textView10"
         android:layout_width="0dp"
-        android:layout_height="30dp"
 
+        android:layout_height="30dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
         android:gravity="center"
         android:text="유의사항"
+
         android:textColor="@color/colorPrimaryDark"
-        android:id="@+id/textView10"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
 
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/D_days"
-
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toLeftOf="@+id/textView9" />
+        app:layout_constraintRight_toLeftOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/D_days" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="80dp"
         android:layout_height="30dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="접수인원"
         android:textColor="@color/colorPrimaryDark"
-
-        app:layout_constraintTop_toTopOf="@+id/textView10"
-        app:layout_constraintRight_toLeftOf="@+id/Button_Acc"
-        android:layout_marginRight="0dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="신청"
-        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/Time_limit" />
 
 
     <!--</LinearLayout>-->
@@ -205,20 +191,19 @@
     <!--android:weightSum="5"-->
     <!--android:orientation="horizontal">-->
 
-    <TextView
+    <kr.ac.dju.growthbookapp.MarqueeTextView
         android:id="@+id/Note"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_weight="3"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:maxLines="1"
-        android:scrollHorizontally="true"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/textView10"
         android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="@+id/textView10"
         android:layout_marginTop="0dp"
+        android:layout_weight="3"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textView10"
+        app:layout_constraintRight_toRightOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
@@ -238,17 +223,20 @@
         android:id="@+id/Button_Acc"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:background="@drawable/submit_button_small"
         android:text="신청하기"
         android:textColor="#FFFFFFFF"
-        app:layout_constraintLeft_toLeftOf="@+id/textView3"
-        app:layout_constraintRight_toRightOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Accept"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <!--</LinearLayout>-->

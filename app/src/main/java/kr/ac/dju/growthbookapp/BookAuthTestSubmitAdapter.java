@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.support.v4.view.PagerAdapter.POSITION_NONE;
 
 /**
  * Created by dodrn on 2017-07-12.
@@ -109,6 +112,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         int mposition = position;
@@ -126,8 +130,10 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         TextView mWeekend = (TextView) convertView.findViewById(R.id.D_weekend);
         TextView mLimt_Time = (TextView) convertView.findViewById(R.id.Time_limit);
         TextView mContent = (TextView) convertView.findViewById(R.id.Note);
-        mContent.setSelected(true);
-        mContent.setSingleLine(true);
+
+
+
+
         TextView mAdmit_Limit = (TextView) convertView.findViewById(R.id.Accept);
         Button applyButton = (Button) convertView.findViewById(R.id.Button_Acc);
 
@@ -163,6 +169,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
             applyButton.setBackground(ContextCompat.getDrawable(_inContext, R.drawable.submit_button_small_disable));
             applyButton.setEnabled(false);
         }
+
 
         return convertView;
     }
