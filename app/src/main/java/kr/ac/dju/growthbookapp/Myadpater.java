@@ -31,6 +31,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.R.attr.rating;
+
 
 /**
  * Created by dodrn on 2017-06-28.
@@ -39,16 +41,14 @@ import java.util.Map;
 public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implements HttpConn.CallbackListener {
     private ArrayList<BookListData> bookListDatas = new ArrayList<BookListData>();
     private Handler _mainHandler;
-    private Map<Integer, Double> _rateCache;
+    private Map<Integer, Float> _rateCache;
+    private Map<Integer, String>_numofpersonCache;
     private Map<HttpConn, Integer> _httpTasks;
-    private Map<Integer, RecentPassBookTestRecyclerViewAdapter.ViewHolder> _holderTasks;
+    private Map<Integer,ViewHolder> _holderTasks;
     private Context mContext;
-    private String mButton = null;
     private ApplyButtonClickListner _applyButtonClickListener;
-    private StarRatingBarDialog dialog;
-    private String mDevice;
-    private Map<String, String> headers;
-    private Myadpater _self = this;
+
+
     private boolean mUnapproved;
 
 
@@ -57,15 +57,13 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         bookListDatas = bookdata;
         mContext = mcontext;
         mUnapproved = false;
+        _mainHandler = new Handler(mcontext.getMainLooper());
+        _rateCache = new HashMap<>();
+        _numofpersonCache = new HashMap<>();
+        _httpTasks = new HashMap<>();
+        _holderTasks = new HashMap<>();
     }
 
-    public void setdevice(String device) {
-        this.mDevice = device;
-    }
-
-    public void setmButton(String button) {
-        mButton = button;
-    }
 
     public void settingForUnapproved() {
         mUnapproved = true;
@@ -142,89 +140,94 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
 
                         });
             }
+        if (_rateCache.containsKey(Integer.valueOf(item.getId())) == false ) {
+            String bookname = bookListDatas.get(position).GetBookSubject();
+            String hash_name = MD5(bookname);
+            HttpConn conn = new HttpConn();
+            _httpTasks.put(conn, currentId);
+            _holderTasks.put(currentId, holder);
+            conn.setCallBackListener(new HttpConn.CallbackListener() {
+                @Override
+                public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+                    float rate = 0;
+                    String numOfper = null;
+                    try {
+                        JSONObject result = new JSONObject(s);
+                        if (result.get("result").toString().equals("0") == true) {
+                            rate = result.get("AVG(rate)").toString().equals("null") ? 0 : Float.valueOf(result.get("AVG(rate)").toString());
+
+                            numOfper = result.get("COUNT(rate)").toString();
 
 
-
-
-
-
-
-
-                String bookname = bookListDatas.get(position).GetBookSubject();
-                String hash_name = MD5(bookname);
-                HttpConn conn = new HttpConn();
-                conn.setCallBackListener(new HttpConn.CallbackListener() {
-                    @Override
-                    public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
-                        float finalfloat = 0;
-                        try{
-                            JSONObject result = new JSONObject(s);
-                            if ( result.get("result").toString().equals("0") == true ) {
-                                 float rate = result.get("AVG(rate)").toString().equals("null") ? 0 : Float.valueOf(result.get("AVG(rate)").toString());
-                                finalfloat = rate;
-                            } else {
-                                    //result가 0이 아닐 때 적절한 오류 조치
-                            }
-                        } catch (Exception e) {
+                        } else {
 
                         }
-
-
-                        _mainHandler.post(()->{
-
-                            Integer id = _httpTasks.get(httpConn);
-                            RecentPassBookTestRecyclerViewAdapter.ViewHolder viewHolder = _holderTasks.get(id);
-                            if (viewHolder == null ){
-                                return;
-
-                            }
-                            _httpTasks.remove(httpConn);
-                            _holderTasks.remove(id);
-
-                            if ( viewHolder.getCurrentHoldItem() == id.intValue() ){
-//                                float rating;
-//                                    if(rating == 0 )
-//                                    {
-//                                }
-//                                holder.rating_bar.setRating(0);
-//                                holder.rating_avg.setText("sks");
-//                                holder.rating_icon.setImageDrawable(null);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+                    } catch (Exception e) {
 
                     }
+                    float finalfloats = rate;
+                    String numOfPerson = numOfper;
+                    _mainHandler.post(() -> {
 
-                    @Override
-                    public void requestTimeout(HttpConn httpConn) {
+                        Integer id = _httpTasks.get(httpConn);
+                        _rateCache.put(id, finalfloats);
+                        _numofpersonCache.put(id, numOfPerson);
+                        ViewHolder viewHolder = _holderTasks.get(id);
+                        if (viewHolder == null) {
+                            return;
 
-                    }
-                });
+                        }
+                        _httpTasks.remove(httpConn);
+                        _holderTasks.remove(id);
 
+                        if (viewHolder.getCurrentHoldItem() == id.intValue()) {
+
+                            viewHolder.setRateStatus(finalfloats, numOfPerson);
+                            notifyDataSetChanged();
+                        }
+                    });
+                }
+
+                @Override
+                public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+                }
+
+                @Override
+                public void requestTimeout(HttpConn httpConn) {
+
+                }
+            });
+
+
+            try {
+
+                JSONObject json = new JSONObject();
+                json.put("book_id", hash_name);
+                int contentLength = json.toString().length();
+                Map<String, String> header = new HashMap<String, String>();
+                header.put("Content-type", "application/json");
+                header.put("Content-Length", String.valueOf(contentLength));
+                header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
+
+                conn.setPrefixHeaderFields(header);
 
                 try {
-
-                    JSONObject json = new JSONObject();
-                    json.put("book_id", hash_name);
-                    int contentLength = json.toString().length();
-                    Map<String, String> header = new HashMap<String, String>();
-                    header.put("Content-type", "application/json");
-                    header.put("Content-Length", String.valueOf(contentLength));
-                    header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
-
-                    conn.setPrefixHeaderFields(header);
-
-                    try {
-                        conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/loadrate"), json.toString());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                } catch (JSONException e) {
+                    conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/loadrate"), json.toString());
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+
+            Float rate = _rateCache.get(Integer.valueOf(item.getId()));
+            String num = _numofpersonCache.get(String.valueOf(item.getId()));
+
+            holder.setRateStatus(rate, num);
+        }
             }
 
 
@@ -259,6 +262,12 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         public void applyButtonOnClicked(int position);
     }
 
+    public void clear() {
+        _holderTasks.clear();
+        _httpTasks.clear();
+        _rateCache.clear();
+        _numofpersonCache.clear();
+    }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private int _currentHoldItem;
 
@@ -267,7 +276,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         TextView bookname, author2, company2, booklist2, passpoint2, authpass2, bookdays;
         Button applyBtn;
         ImageView rating_icon;
-        TextView rating_avg,rating_context,textview11;
+        TextView rating_avg, rating_context, textview11, numOfperson;
         RatingBar rating_bar;
 
         public ViewHolder(View view) {
@@ -286,7 +295,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             rating_context = (TextView) view.findViewById(R.id.level_context);
             rating_icon = (ImageView) view.findViewById(R.id.img_icon);
             rating_bar = (RatingBar) view.findViewById(R.id.ratingBar2);
-
+            numOfperson = (TextView) view.findViewById(R.id.numOfPerson);
         }
 
         public void setCurrentHoldItem(int id) {
@@ -302,9 +311,47 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             return applyBtn;
         }
 
+        public void setRateStatus(float rate, String numofperson) {
+            int intRate = (int) Math.ceil(rate);
+            System.out.println("Intrate :" + intRate);
+            rating_bar.setRating(rate);
+            rating_avg.setText(String.valueOf(rate));
+            numOfperson.setText(numofperson + "명 평가함");
+            switch (intRate) {
+                case 0:
+                    rating_icon.setVisibility(View.INVISIBLE);
+                    rating_context.setText("아직 평가되지 않았습니다");
+                    break;
+                case 1:
+                    rating_icon.setVisibility(View.VISIBLE);
+                    rating_icon.setImageResource(R.drawable.star1);
+                    rating_context.setText("너무 쉬워요");
+                    break;
+                case 2:
+                    rating_icon.setVisibility(View.VISIBLE);
+                    rating_icon.setImageResource(R.drawable.star2);
+                    rating_context.setText("쉬워요");
+                    break;
+                case 3:
+                    rating_icon.setVisibility(View.VISIBLE);
+                    rating_icon.setImageResource(R.drawable.star3);
+                    rating_context.setText("보통이에요");
+                    break;
+                case 4:
+                    rating_icon.setVisibility(View.VISIBLE);
+                    rating_icon.setImageResource(R.drawable.star4);
+                    rating_context.setText("어려워요");
+                    break;
+                case 5:
+                    rating_icon.setVisibility(View.VISIBLE);
+                    rating_icon.setImageResource(R.drawable.star5);
+                    rating_context.setText("너무 어려워요");
+                    break;
+            }
+
+        }
+
     }
-
-
     public void setOnClickListener(ApplyButtonClickListner listener) {
         _applyButtonClickListener = listener;
     }
