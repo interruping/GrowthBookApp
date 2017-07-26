@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import com.dju.book.BookServerDataParser;
 import com.dju.book.HttpConn;
@@ -30,13 +31,15 @@ import java.util.Map;
  * Created by geonyounglim on 2017. 7. 19..
  */
 
-public class RecentPassBookTestFragment extends NavigationBarFragment implements SwipeRefreshLayout.OnRefreshListener, HttpConn.CallbackListener{
+public class RecentPassBookTestFragment extends NavigationBarFragment implements SwipeRefreshLayout.OnRefreshListener, HttpConn.CallbackListener, RecentPassBookTestRecyclerViewAdapter.DoRateButtonClickListener, View.OnClickListener{
 
     private RecyclerView _recyclerView;
     private RecentPassBookTestRecyclerViewAdapter _adapter;
 
     private SwipeRefreshLayout _swipeRefreshLayout;
 
+    private RecentPassBookTestFragment _self = this;
+    private StarRatingBarDialog _dialog;
 
 
     public RecentPassBookTestFragment() {
@@ -66,6 +69,8 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
         _recyclerView.setAdapter(_adapter);
         _swipeRefreshLayout.setOnRefreshListener(this);
 
+        _adapter.setDoRateButtonClickListener(this);
+
         onRefresh();
         return result;
     }
@@ -81,7 +86,7 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
         conn.setPrefixHeaderFields(headers);
         conn.setCallBackListener(this);
         try {
-            conn.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html?tab=2&term=2016_2"), new HashMap<>());
+            conn.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html?tab=2"), new HashMap<>());
         } catch (Exception e){
 
         }
@@ -132,4 +137,79 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
     public void requestTimeout(HttpConn httpConn) {
 
     }
+
+    @Override
+    public void doRateButtonClicked(int position) {
+        RecentPassBookTestItem item = _adapter.getItem(position);
+        String tmpbookName = item.getDescription();
+        int lastIndex = tmpbookName.indexOf("도서");
+        String bookName = "- " + tmpbookName.substring(0, lastIndex);
+
+        _dialog = new StarRatingBarDialog(getActivity(),
+                RecentPassBookTestRecyclerViewAdapter.MD5(bookName),
+                this,
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //취소
+
+                    }
+                });
+
+        _dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        _dialog.setCanceledOnTouchOutside(false);
+        _dialog.show();
+    }
+
+    @Override
+    public void onClick(View v) {
+            String mDevice = _dialog.getmDevice();
+            float rate = _dialog.getmRate();
+            String mHashName = _dialog.getmHash_Book_Name();
+
+
+            HttpConn conn = new HttpConn();
+            conn.setCallBackListener(new HttpConn.CallbackListener() {
+                @Override
+                public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+                }
+
+                @Override
+                public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+                }
+
+                @Override
+                public void requestTimeout(HttpConn httpConn) {
+
+                }
+            });
+
+
+            try {
+
+                JSONObject json = new JSONObject();
+                json.put("device_id", mDevice);
+                json.put("book_id", mHashName);
+                json.put("rate", rate);
+                int contentLength = json.toString().length();
+                Map<String, String> header = new HashMap<String, String>();
+                header.put("Content-type", "application/json");
+                header.put("Content-Length", String.valueOf(contentLength));
+                header.put("Cookie", TimeCookieGenarator.OneTimeInstance().gen(String.valueOf(contentLength)));
+
+                conn.setPrefixHeaderFields(header);
+
+                try {
+                    conn.sendPOSTRequest(new URL("https://growthbookapp-api.net/addrate"), json.toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            _dialog.dismiss();
+        }
+
 }

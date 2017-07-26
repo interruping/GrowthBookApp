@@ -3239,7 +3239,7 @@ containing a value of this type.
         public static final int author_textview=0x7f0d010a;
         public static final int auto=0x7f0d0031;
         public static final int auto_login=0x7f0d00e4;
-        public static final int avg_conetext=0x7f0d0137;
+        public static final int avg_conetext=0x7f0d0139;
         public static final int back_side_fragment=0x7f0d0088;
         public static final int basic=0x7f0d0019;
         public static final int beginning=0x7f0d0043;
@@ -3272,7 +3272,7 @@ containing a value of this type.
         public static final int button_container=0x7f0d00f7;
         public static final int cancel_action=0x7f0d0110;
         public static final int cancel_button=0x7f0d008e;
-        public static final int cancle=0x7f0d0130;
+        public static final int cancle=0x7f0d0132;
         public static final int cancle_button=0x7f0d00c7;
         public static final int center=0x7f0d0033;
         public static final int center_horizontal=0x7f0d0034;
@@ -3315,10 +3315,11 @@ containing a value of this type.
         public static final int detail_arrow=0x7f0d00b8;
         public static final int detail_webview=0x7f0d00f3;
         public static final int difficulty_icon_imageview=0x7f0d0127;
-        public static final int difficulty_string_text=0x7f0d012a;
+        public static final int difficulty_rate_block=0x7f0d012c;
+        public static final int difficulty_string_text=0x7f0d0128;
         public static final int disableHome=0x7f0d001f;
         public static final int distribute_line=0x7f0d0106;
-        public static final int do_rate_button=0x7f0d0128;
+        public static final int do_rate_button=0x7f0d012a;
         public static final int edit_query=0x7f0d007a;
         public static final int end=0x7f0d0036;
         public static final int end_padder=0x7f0d0122;
@@ -3351,13 +3352,13 @@ containing a value of this type.
         public static final int imageView=0x7f0d00d6;
         public static final int imageView2=0x7f0d00d4;
         public static final int imageView3=0x7f0d00c5;
-        public static final int img_icon=0x7f0d0135;
+        public static final int img_icon=0x7f0d0137;
         public static final int info=0x7f0d0119;
         public static final int item_touch_helper_previous_elevation=0x7f0d0005;
         public static final int largeLabel=0x7f0d00ba;
         public static final int last_deco_line=0x7f0d00ed;
         public static final int left=0x7f0d0038;
-        public static final int level_context=0x7f0d0136;
+        public static final int level_context=0x7f0d0138;
         public static final int line1=0x7f0d011e;
         public static final int line3=0x7f0d0120;
         public static final int listMode=0x7f0d001c;
@@ -3366,7 +3367,7 @@ containing a value of this type.
         public static final int login_button=0x7f0d00e3;
         public static final int loginout_btn=0x7f0d00d7;
         public static final int main_activity_root=0x7f0d0087;
-        public static final int masked=0x7f0d013a;
+        public static final int masked=0x7f0d013b;
         public static final int media_actions=0x7f0d0112;
         public static final int menu_icon=0x7f0d0102;
         public static final int menu_list_view=0x7f0d00d8;
@@ -3391,7 +3392,6 @@ containing a value of this type.
         public static final int notification_background=0x7f0d011b;
         public static final int notification_main_column=0x7f0d0115;
         public static final int notification_main_column_container=0x7f0d0114;
-        public static final int numOfPerson=0x7f0d0138;
         public static final int one_by_one_recyclerview=0x7f0d00f5;
         public static final int one_by_one_swiperefreshlayout=0x7f0d00f4;
         public static final int packed=0x7f0d0016;
@@ -3406,12 +3406,13 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f0d000b;
         public static final int pw_input=0x7f0d00e2;
         public static final int radio=0x7f0d0071;
-        public static final int ratingBar=0x7f0d012d;
-        public static final int ratingBar2=0x7f0d0133;
+        public static final int rate_progressbar=0x7f0d012d;
+        public static final int ratingBar=0x7f0d012f;
+        public static final int ratingBar2=0x7f0d0135;
         public static final int rating_num=0x7f0d012b;
-        public static final int rating_text=0x7f0d012e;
-        public static final int ratingimg=0x7f0d0131;
-        public static final int ratingname=0x7f0d012c;
+        public static final int rating_text=0x7f0d0130;
+        public static final int ratingimg=0x7f0d0133;
+        public static final int ratingname=0x7f0d012e;
         public static final int recent_pass_book_test_recyclerview=0x7f0d0100;
         public static final int recent_pass_book_test_swiperefreshlayout=0x7f0d00ff;
         public static final int reply_button=0x7f0d00f9;
@@ -3454,7 +3455,7 @@ containing a value of this type.
         public static final int start=0x7f0d003a;
         public static final int status_bar_latest_event_content=0x7f0d0111;
         public static final int submenuarrow=0x7f0d0072;
-        public static final int submit=0x7f0d012f;
+        public static final int submit=0x7f0d0131;
         public static final int submit_area=0x7f0d0083;
         public static final int submit_button=0x7f0d00fc;
         public static final int tabMode=0x7f0d001e;
@@ -3464,7 +3465,7 @@ containing a value of this type.
         public static final int textSpacerNoTitle=0x7f0d0065;
         public static final int textView=0x7f0d00b2;
         public static final int textView10=0x7f0d0097;
-        public static final int textView11=0x7f0d0134;
+        public static final int textView11=0x7f0d0136;
         public static final int textView2=0x7f0d00b3;
         public static final int textView3=0x7f0d009a;
         public static final int textView4=0x7f0d008f;
@@ -3490,12 +3491,12 @@ containing a value of this type.
         public static final int transition_current_scene=0x7f0d000f;
         public static final int transition_scene_layoutid_cache=0x7f0d0010;
         public static final int unproved_recycler_view=0x7f0d0101;
-        public static final int unprovedbook_item_container=0x7f0d0132;
+        public static final int unprovedbook_item_container=0x7f0d0134;
         public static final int up=0x7f0d0011;
         public static final int useLogo=0x7f0d0024;
         public static final int view=0x7f0d009e;
         public static final int view_offset_helper=0x7f0d0012;
-        public static final int visible=0x7f0d0139;
+        public static final int visible=0x7f0d013a;
         public static final int vp_pager=0x7f0d00e0;
         public static final int withText=0x7f0d0049;
         public static final int wrap=0x7f0d0015;
@@ -3673,6 +3674,10 @@ containing a value of this type.
         public static final int Animation_AppCompat_Dialog=0x7f0900a3;
         public static final int Animation_AppCompat_DropDownUp=0x7f0900a4;
         public static final int Animation_Design_BottomSheetDialog=0x7f0900a5;
+        /** <item name="android:textColor">@color/colorPrimary</item>
+<item name="android:textColorHint">@color/colorPrimary</item>
+<item name="android:textColorHighlight">@color/colorPrimary</item>
+         */
         public static final int AppTheme=0x7f0900a6;
         public static final int Base_AlertDialog_AppCompat=0x7f0900a7;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0900a8;
@@ -4049,7 +4054,8 @@ containing a value of this type.
         public static final int Widget_Design_Snackbar=0x7f09017b;
         public static final int Widget_Design_TabLayout=0x7f090001;
         public static final int Widget_Design_TextInputLayout=0x7f09017c;
-        public static final int customRatingBar=0x7f09017d;
+        public static final int YellowRatingBar=0x7f09017d;
+        public static final int customRatingBar=0x7f09017e;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

@@ -841,7 +841,7 @@ int id autho_point0 0x7f0d00b1
 int id author_textview 0x7f0d010a
 int id auto 0x7f0d0031
 int id auto_login 0x7f0d00e4
-int id avg_conetext 0x7f0d0137
+int id avg_conetext 0x7f0d0139
 int id back_side_fragment 0x7f0d0088
 int id basic 0x7f0d0019
 int id beginning 0x7f0d0043
@@ -874,7 +874,7 @@ int id buttonPanel 0x7f0d005f
 int id button_container 0x7f0d00f7
 int id cancel_action 0x7f0d0110
 int id cancel_button 0x7f0d008e
-int id cancle 0x7f0d0130
+int id cancle 0x7f0d0132
 int id cancle_button 0x7f0d00c7
 int id center 0x7f0d0033
 int id center_horizontal 0x7f0d0034
@@ -917,10 +917,11 @@ int id design_navigation_view 0x7f0d00c0
 int id detail_arrow 0x7f0d00b8
 int id detail_webview 0x7f0d00f3
 int id difficulty_icon_imageview 0x7f0d0127
-int id difficulty_string_text 0x7f0d012a
+int id difficulty_rate_block 0x7f0d012c
+int id difficulty_string_text 0x7f0d0128
 int id disableHome 0x7f0d001f
 int id distribute_line 0x7f0d0106
-int id do_rate_button 0x7f0d0128
+int id do_rate_button 0x7f0d012a
 int id edit_query 0x7f0d007a
 int id end 0x7f0d0036
 int id end_padder 0x7f0d0122
@@ -953,13 +954,13 @@ int id image 0x7f0d005a
 int id imageView 0x7f0d00d6
 int id imageView2 0x7f0d00d4
 int id imageView3 0x7f0d00c5
-int id img_icon 0x7f0d0135
+int id img_icon 0x7f0d0137
 int id info 0x7f0d0119
 int id item_touch_helper_previous_elevation 0x7f0d0005
 int id largeLabel 0x7f0d00ba
 int id last_deco_line 0x7f0d00ed
 int id left 0x7f0d0038
-int id level_context 0x7f0d0136
+int id level_context 0x7f0d0138
 int id line1 0x7f0d011e
 int id line3 0x7f0d0120
 int id listMode 0x7f0d001c
@@ -968,7 +969,7 @@ int id list_item 0x7f0d005c
 int id login_button 0x7f0d00e3
 int id loginout_btn 0x7f0d00d7
 int id main_activity_root 0x7f0d0087
-int id masked 0x7f0d013a
+int id masked 0x7f0d013b
 int id media_actions 0x7f0d0112
 int id menu_icon 0x7f0d0102
 int id menu_list_view 0x7f0d00d8
@@ -993,7 +994,6 @@ int id normal 0x7f0d001d
 int id notification_background 0x7f0d011b
 int id notification_main_column 0x7f0d0115
 int id notification_main_column_container 0x7f0d0114
-int id numOfPerson 0x7f0d0138
 int id one_by_one_recyclerview 0x7f0d00f5
 int id one_by_one_swiperefreshlayout 0x7f0d00f4
 int id packed 0x7f0d0016
@@ -1008,12 +1008,13 @@ int id progress_circular 0x7f0d000a
 int id progress_horizontal 0x7f0d000b
 int id pw_input 0x7f0d00e2
 int id radio 0x7f0d0071
-int id ratingBar 0x7f0d012d
-int id ratingBar2 0x7f0d0133
+int id rate_progressbar 0x7f0d012d
+int id ratingBar 0x7f0d012f
+int id ratingBar2 0x7f0d0135
 int id rating_num 0x7f0d012b
-int id rating_text 0x7f0d012e
-int id ratingimg 0x7f0d0131
-int id ratingname 0x7f0d012c
+int id rating_text 0x7f0d0130
+int id ratingimg 0x7f0d0133
+int id ratingname 0x7f0d012e
 int id recent_pass_book_test_recyclerview 0x7f0d0100
 int id recent_pass_book_test_swiperefreshlayout 0x7f0d00ff
 int id reply_button 0x7f0d00f9
@@ -1056,7 +1057,7 @@ int id src_over 0x7f0d002f
 int id start 0x7f0d003a
 int id status_bar_latest_event_content 0x7f0d0111
 int id submenuarrow 0x7f0d0072
-int id submit 0x7f0d012f
+int id submit 0x7f0d0131
 int id submit_area 0x7f0d0083
 int id submit_button 0x7f0d00fc
 int id tabMode 0x7f0d001e
@@ -1066,7 +1067,7 @@ int id textSpacerNoButtons 0x7f0d0066
 int id textSpacerNoTitle 0x7f0d0065
 int id textView 0x7f0d00b2
 int id textView10 0x7f0d0097
-int id textView11 0x7f0d0134
+int id textView11 0x7f0d0136
 int id textView2 0x7f0d00b3
 int id textView3 0x7f0d009a
 int id textView4 0x7f0d008f
@@ -1092,12 +1093,12 @@ int id touch_outside 0x7f0d00bb
 int id transition_current_scene 0x7f0d000f
 int id transition_scene_layoutid_cache 0x7f0d0010
 int id unproved_recycler_view 0x7f0d0101
-int id unprovedbook_item_container 0x7f0d0132
+int id unprovedbook_item_container 0x7f0d0134
 int id up 0x7f0d0011
 int id useLogo 0x7f0d0024
 int id view 0x7f0d009e
 int id view_offset_helper 0x7f0d0012
-int id visible 0x7f0d0139
+int id visible 0x7f0d013a
 int id vp_pager 0x7f0d00e0
 int id withText 0x7f0d0049
 int id wrap 0x7f0d0015
@@ -1641,7 +1642,8 @@ int style Widget_Design_ScrimInsetsFrameLayout 0x7f09017a
 int style Widget_Design_Snackbar 0x7f09017b
 int style Widget_Design_TabLayout 0x7f090001
 int style Widget_Design_TextInputLayout 0x7f09017c
-int style customRatingBar 0x7f09017d
+int style YellowRatingBar 0x7f09017d
+int style customRatingBar 0x7f09017e
 int[] styleable ActionBar { 0x7f010002, 0x7f01002f, 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035, 0x7f010036, 0x7f010037, 0x7f010038, 0x7f010039, 0x7f01003a, 0x7f01003b, 0x7f01003c, 0x7f01003d, 0x7f01003e, 0x7f01003f, 0x7f010040, 0x7f010041, 0x7f010042, 0x7f010043, 0x7f010044, 0x7f010045, 0x7f010046, 0x7f010047, 0x7f010048, 0x7f010049, 0x7f01008c }
 int styleable ActionBar_background 10
 int styleable ActionBar_backgroundSplit 12

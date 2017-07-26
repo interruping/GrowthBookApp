@@ -13,5 +13,9 @@
         <!--<item name="android:textColorHint">@color/colorPrimary</item>-->
         <!--<item name="android:textColorHighlight">@color/colorPrimary</item>-->
     </style>
+    <style name="YellowRatingBar" parent="">
+        <item name="colorControlNormal">@color/colorHighLight</item>
+
+    </style>
 
 </resources>

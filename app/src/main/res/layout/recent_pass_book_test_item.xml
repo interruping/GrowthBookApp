@@ -57,7 +57,10 @@
 
         <RatingBar
             android:id="@+id/book_pass_rating_bar"
-            style="@style/customRatingBar"
+            android:theme="@style/YellowRatingBar"
+            android:progressTint="@color/colorHighLight"
+            android:progressBackgroundTint="@color/colorForLine"
+            android:secondaryProgressTint="@color/colorForLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -72,19 +75,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/difficulty_icon_imageview" />
-
-        <Button
-            android:id="@+id/do_rate_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/login_button"
-            android:text="평가하기"
-            android:textColor="#FFFFFF"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/difficulty_icon_imageview"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/difficulty_string_text"
@@ -101,8 +93,8 @@
 
         <ImageView
             android:id="@+id/difficulty_icon_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -123,6 +115,20 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/do_rate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button"
+            android:elevation="0dp"
+            android:text="평가하기"
+
+            android:textColor="#FFFFFF"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
         <TextView
             android:id="@+id/rating_num"
             android:layout_width="wrap_content"
@@ -136,6 +142,38 @@
             app:layout_constraintLeft_toRightOf="@+id/book_pass_rating_bar"
             app:layout_constraintTop_toTopOf="@+id/book_pass_rating_bar" />
 
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/difficulty_rate_block"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="난이도 평가 정보 불러오는 중"
+                app:layout_constraintBottom_toTopOf="@+id/rate_progressbar"
+                app:layout_constraintLeft_toLeftOf="@+id/rate_progressbar"
+                app:layout_constraintRight_toRightOf="@+id/rate_progressbar" />
+
+            <ProgressBar
+                android:id="@+id/rate_progressbar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
 
