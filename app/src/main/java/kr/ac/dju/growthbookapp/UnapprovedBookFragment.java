@@ -1,13 +1,12 @@
 package kr.ac.dju.growthbookapp;
 
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
+
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.constraint.ConstraintLayout;
+
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,15 +14,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+
 
 
 import com.dju.book.HttpConn;
 import com.dju.book.BookServerDataParser;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.jsoup.nodes.Document;
+
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -92,6 +89,7 @@ public class UnapprovedBookFragment extends Fragment implements HttpConn.Callbac
         };
 
         _swipeRefreshLayout.setOnRefreshListener(_refreshListener);
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
         String cookie = cs.getCookie();

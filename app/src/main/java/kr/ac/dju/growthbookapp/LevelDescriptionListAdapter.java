@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
+
 
 /**
  * Created by geonyounglim on 2017. 7. 17..

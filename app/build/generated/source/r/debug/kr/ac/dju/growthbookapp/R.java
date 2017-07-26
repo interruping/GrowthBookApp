@@ -3229,7 +3229,7 @@ containing a value of this type.
         public static final int action_mode_bar_stub=0x7f0d0074;
         public static final int action_mode_close_button=0x7f0d0057;
         public static final int action_text=0x7f0d011a;
-        public static final int actions=0x7f0d0128;
+        public static final int actions=0x7f0d0127;
         public static final int activity_chooser_view_content=0x7f0d0058;
         public static final int add=0x7f0d002a;
         public static final int alertTitle=0x7f0d006c;
@@ -3352,7 +3352,7 @@ containing a value of this type.
         public static final int home=0x7f0d0004;
         public static final int homeAsUp=0x7f0d0020;
         public static final int icon=0x7f0d005d;
-        public static final int icon_group=0x7f0d0129;
+        public static final int icon_group=0x7f0d0128;
         public static final int id_input=0x7f0d00e1;
         public static final int id_textview=0x7f0d0114;
         public static final int ifRoom=0x7f0d0047;
@@ -3402,7 +3402,7 @@ containing a value of this type.
         public static final int news_swiperefreshlayout=0x7f0d00f2;
         public static final int none=0x7f0d001b;
         public static final int normal=0x7f0d001d;
-        public static final int notification_background=0x7f0d0127;
+        public static final int notification_background=0x7f0d0126;
         public static final int notification_main_column=0x7f0d0121;
         public static final int notification_main_column_container=0x7f0d0120;
         public static final int numOfPerson=0x7f0d0146;
@@ -3433,7 +3433,7 @@ containing a value of this type.
         public static final int recent_request_swiperefreshlayout=0x7f0d0103;
         public static final int reply_button=0x7f0d00fb;
         public static final int right=0x7f0d0039;
-        public static final int right_icon=0x7f0d0126;
+        public static final int right_icon=0x7f0d0129;
         public static final int right_side=0x7f0d0122;
         public static final int root_constraint=0x7f0d00cf;
         public static final int screen=0x7f0d002c;

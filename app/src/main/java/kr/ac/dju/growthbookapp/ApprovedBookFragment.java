@@ -4,6 +4,7 @@ package kr.ac.dju.growthbookapp;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -55,6 +56,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
         mAdapter.setdevice(getArguments().getString("device"));
         _swipeRefreshLayout = (SwipeRefreshLayout)result.findViewById(R.id.unproved_swipeRefreshLayout);
         _swipeRefreshLayout.setRefreshing(true);
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         _swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -77,7 +79,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
                     con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("ERROR:" + e.toString());
+
                 }
             }
         });
@@ -96,7 +98,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
             con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("ERROR:" + e.toString());
+
         }
 
         mRecyclerView = (RecyclerView) result.findViewById(R.id.unproved_recycler_view);
@@ -144,7 +146,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
                     con.sendRequest(HttpConn.Method.GET, new URL(url), paramss);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("ERROR:" + e.toString());
+
                 }
 
             }

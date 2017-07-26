@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]

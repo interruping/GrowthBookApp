@@ -2,13 +2,13 @@ package kr.ac.dju.growthbookapp;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.media.Rating;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.view.DragEvent;
+
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;

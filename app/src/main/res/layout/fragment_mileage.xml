@@ -27,6 +27,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="0dp">
+
         <TextView
             android:id="@+id/book_point_level_textview"
             android:layout_width="wrap_content"
@@ -112,18 +113,14 @@
 
     <ImageView
         android:id="@+id/book_level_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/bronze_rank"
+        android:layout_marginRight="10dp"
         app:layout_constraintBottom_toTopOf="@+id/milage_sub_frame"
-        app:layout_constraintTop_toTopOf="@+id/milage_sub_frame" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/milage_sub_frame"
+        app:srcCompat="@drawable/bronze_rank" />
 
     <ListView
         android:id="@+id/book_level_desc_listview"

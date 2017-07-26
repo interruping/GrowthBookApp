@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RatingBar;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -232,7 +232,7 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-        System.out.print(s);
+
     }
 
     @Override

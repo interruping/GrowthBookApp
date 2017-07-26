@@ -556,7 +556,7 @@ public final class R {
         public static final int action_mode_bar_stub = 0x7f0d0074;
         public static final int action_mode_close_button = 0x7f0d0057;
         public static final int action_text = 0x7f0d011a;
-        public static final int actions = 0x7f0d0128;
+        public static final int actions = 0x7f0d0127;
         public static final int activity_chooser_view_content = 0x7f0d0058;
         public static final int add = 0x7f0d002a;
         public static final int alertTitle = 0x7f0d006c;
@@ -582,7 +582,7 @@ public final class R {
         public static final int home = 0x7f0d0004;
         public static final int homeAsUp = 0x7f0d0020;
         public static final int icon = 0x7f0d005d;
-        public static final int icon_group = 0x7f0d0129;
+        public static final int icon_group = 0x7f0d0128;
         public static final int ifRoom = 0x7f0d0047;
         public static final int image = 0x7f0d005a;
         public static final int info = 0x7f0d0125;
@@ -596,14 +596,14 @@ public final class R {
         public static final int never = 0x7f0d0048;
         public static final int none = 0x7f0d001b;
         public static final int normal = 0x7f0d001d;
-        public static final int notification_background = 0x7f0d0127;
+        public static final int notification_background = 0x7f0d0126;
         public static final int notification_main_column = 0x7f0d0121;
         public static final int notification_main_column_container = 0x7f0d0120;
         public static final int parentPanel = 0x7f0d0061;
         public static final int progress_circular = 0x7f0d000a;
         public static final int progress_horizontal = 0x7f0d000b;
         public static final int radio = 0x7f0d0071;
-        public static final int right_icon = 0x7f0d0126;
+        public static final int right_icon = 0x7f0d0129;
         public static final int right_side = 0x7f0d0122;
         public static final int screen = 0x7f0d002c;
         public static final int scrollIndicatorDown = 0x7f0d0067;

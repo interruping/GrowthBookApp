@@ -14,10 +14,10 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
+
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
-import android.widget.Toast;
+
 
 import com.dju.book.*;
 import com.tsengvn.typekit.Typekit;

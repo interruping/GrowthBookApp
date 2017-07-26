@@ -35,17 +35,9 @@ import org.json.JSONObject;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.sql.BatchUpdateException;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

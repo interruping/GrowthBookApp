@@ -831,7 +831,7 @@ int id action_mode_bar 0x7f0d0075
 int id action_mode_bar_stub 0x7f0d0074
 int id action_mode_close_button 0x7f0d0057
 int id action_text 0x7f0d011a
-int id actions 0x7f0d0128
+int id actions 0x7f0d0127
 int id activity_chooser_view_content 0x7f0d0058
 int id add 0x7f0d002a
 int id alertTitle 0x7f0d006c
@@ -954,7 +954,7 @@ int id highlight_line 0x7f0d0110
 int id home 0x7f0d0004
 int id homeAsUp 0x7f0d0020
 int id icon 0x7f0d005d
-int id icon_group 0x7f0d0129
+int id icon_group 0x7f0d0128
 int id id_input 0x7f0d00e1
 int id id_textview 0x7f0d0114
 int id ifRoom 0x7f0d0047
@@ -1004,7 +1004,7 @@ int id news_recyclerview 0x7f0d00f3
 int id news_swiperefreshlayout 0x7f0d00f2
 int id none 0x7f0d001b
 int id normal 0x7f0d001d
-int id notification_background 0x7f0d0127
+int id notification_background 0x7f0d0126
 int id notification_main_column 0x7f0d0121
 int id notification_main_column_container 0x7f0d0120
 int id numOfPerson 0x7f0d0146
@@ -1035,7 +1035,7 @@ int id recent_request_recyclerview 0x7f0d0104
 int id recent_request_swiperefreshlayout 0x7f0d0103
 int id reply_button 0x7f0d00fb
 int id right 0x7f0d0039
-int id right_icon 0x7f0d0126
+int id right_icon 0x7f0d0129
 int id right_side 0x7f0d0122
 int id root_constraint 0x7f0d00cf
 int id screen 0x7f0d002c

@@ -1,25 +1,21 @@
 package kr.ac.dju.growthbookapp;
 
-import android.app.FragmentTransaction;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
+
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.dju.book.HttpConn;
-
-import org.jsoup.Connection;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -116,9 +112,8 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
 
             public void onBackStackChanged() {
 
-                System.out.print("인시개할 시바");
                 if(mBackState == true) {
-                    System.out.println("back");
+
                     adapter.notifyDataSetChanged();
                     mBackState = false;
                 }

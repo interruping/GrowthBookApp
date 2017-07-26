@@ -3,7 +3,7 @@
     package="kr.ac.dju.growthbookapp.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="21"
         android:targetSdkVersion="25" />
 
     <instrumentation

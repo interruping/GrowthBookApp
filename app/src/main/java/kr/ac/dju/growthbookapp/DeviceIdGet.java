@@ -51,7 +51,7 @@ public class DeviceIdGet implements HttpConn.CallbackListener {
             con.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_2.html"), param);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("ERROR:" + e.toString());
+
         }
     }
 

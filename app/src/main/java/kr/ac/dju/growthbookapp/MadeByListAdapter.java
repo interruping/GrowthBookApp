@@ -2,17 +2,17 @@ package kr.ac.dju.growthbookapp;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.util.TypedValue;
-import android.view.Gravity;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
+
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+
 
 import java.util.ArrayList;
 

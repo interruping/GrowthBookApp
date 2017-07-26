@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -74,6 +75,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
 
         _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.unproved_swipeRefreshLayout);
         _swipeRefreshLayout.setRefreshing(true);
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         _swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -99,7 +101,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                     con.sendRequest(HttpConn.Method.GET, new URL(url), params);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("ERROR:" + e.toString());
+
                 }
             }
         });
@@ -121,7 +123,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
             con.sendRequest(HttpConn.Method.GET, new URL(url), params);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("ERROR:" + e.toString());
+
         }
 
         mRecyclerView = (RecyclerView) result.findViewById(R.id.unproved_recycler_view);
@@ -169,7 +171,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                     con.sendRequest(HttpConn.Method.GET, new URL(url), params);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("ERROR:" + e.toString());
+
                 }
 
             }
@@ -411,7 +413,7 @@ public class ApproveBookFragment extends Fragment implements HttpConn.CallbackLi
                                 con.sendRequest(HttpConn.Method.GET, new URL(url), params);
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                System.out.println("ERROR:" + e.toString());
+
                             }
                         });
 

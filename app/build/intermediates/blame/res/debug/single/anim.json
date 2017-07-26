@@ -1,67 +1,55 @@
 [
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\enter_from_left.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\enter_from_left.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\enter_from_right.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\enter_from_right.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\hide_menu.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\hide_menu.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
         "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_snackbar_out.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/enter_from_left.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/enter_from_left.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_fab_in.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\exit_to_right.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\exit_to_right.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
-        "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_snackbar_in.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/enter_from_left.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/enter_from_left.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_snackbar_in.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/reveal_menu.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/reveal_menu.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
-        "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/slide_out_down.xml",
@@ -72,6 +60,14 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/enter_from_right.xml"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\enter_from_right.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\enter_from_right.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\enter_from_left.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\enter_from_left.xml"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/exit_to_left.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/exit_to_left.xml"
     },
@@ -80,56 +76,28 @@
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/slide_in_up.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/slide_in_up.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_down.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\slide_out_down.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\reveal_menu.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\reveal_menu.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\exit_to_left.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\exit_to_left.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/geonyounglim/.android/build-cache/ebb7e51d0a577102d054b6af639604935ad42616/output/res/anim/design_bottom_sheet_slide_in.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\reveal_menu.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\reveal_menu.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/slide_in_up.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/slide_in_up.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
@@ -140,28 +108,32 @@
         "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_slide_in_top.xml"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
         "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\exit_to_right.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\exit_to_right.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
         "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_fade_out.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/exit_to_right.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/exit_to_right.xml"
-    },
-    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_up.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\slide_in_up.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/exit_to_right.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/exit_to_right.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
@@ -172,16 +144,36 @@
         "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\hide_menu.xml",
-        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\hide_menu.xml"
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/hide_menu.xml",
         "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/src/main/res/anim/hide_menu.xml"
     },
     {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\26ae83c6ea3eca93c70b53590e367e10e6e6e573\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_down.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\src\\main\\res\\anim\\slide_out_down.xml"
+    },
+    {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
         "source": "/Users/geonyounglim/.android/build-cache/c4aef7e0ac3640e15c0bbe4fad4ef50a991fc9e1/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\AndroidStudioProjects\\GrowthBookApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/C:\\Users\\dodrn\\.android\\build-cache\\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "/Users/geonyounglim/AndroidStudioProjects/GrowthBookApp/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",

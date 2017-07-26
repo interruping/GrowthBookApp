@@ -7,11 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.telecom.Call;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -21,13 +21,11 @@ import com.dju.book.HttpConn;
 
 import org.jsoup.nodes.Element;
 
-import java.io.UnsupportedEncodingException;
+
 import java.net.URL;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by geonyounglim on 2017. 7. 7..

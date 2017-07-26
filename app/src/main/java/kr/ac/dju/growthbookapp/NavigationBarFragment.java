@@ -1,9 +1,8 @@
 package kr.ac.dju.growthbookapp;
 
 import android.animation.Animator;
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.StateListAnimator;
+
+
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -18,18 +17,18 @@ import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.ParallelExecutorCompat;
+
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.TypedValue;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.animation.Animation;
+
+
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,8 +39,7 @@ import android.widget.TextView;
 
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
-import static kr.ac.dju.growthbookapp.R.drawable.abc_ic_search_api_material;
-import static kr.ac.dju.growthbookapp.R.drawable.ripple_effect;
+
 
 /**
  * Created by geonyounglim on 2017. 5. 28..

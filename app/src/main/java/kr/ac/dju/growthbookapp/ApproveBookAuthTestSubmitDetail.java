@@ -121,6 +121,8 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
             getFragmentManager().popBackStack();
         });
 
+        hideRightAcc();
+
         apply_value = getArguments().getString("value");
         HttpConn con = new HttpConn();
         HttpConn.CookieStorage cs = HttpConn.CookieStorage.sharedStorage();
@@ -142,7 +144,6 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
             con.sendRequest(HttpConn.Method.POST, new URL(mUrl), apply_attr);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("ERROR:" + e.toString());
         }
 
         listView = (ListView) result.findViewById(R.id.Approve_List_Info);

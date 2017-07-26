@@ -1,23 +1,19 @@
 package kr.ac.dju.growthbookapp;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Color;
+
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
-import android.text.method.ScrollingMovementMethod;
-import android.view.Gravity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
+
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,7 +78,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
                 con.sendRequest(HttpConn.Method.POST, new URL(apply_url), param);
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println("ERROR:" + e.toString());
+
             }
 
             mCustomDialog.dismiss();
