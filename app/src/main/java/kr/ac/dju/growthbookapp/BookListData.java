@@ -22,7 +22,7 @@ public class BookListData{
     private static int _autoIncId = 0;
     public BookListData(String name, String src, String bookauthor, String list, String company, String day, String pass, String autho)
     {
-        _id = 0;
+        _id = _autoIncId;
         _autoIncId ++;
 
         book_name = name;

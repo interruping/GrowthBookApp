@@ -3367,7 +3367,7 @@ containing a value of this type.
         public static final int login_button=0x7f0d00e3;
         public static final int loginout_btn=0x7f0d00d7;
         public static final int main_activity_root=0x7f0d0087;
-        public static final int masked=0x7f0d013b;
+        public static final int masked=0x7f0d013c;
         public static final int media_actions=0x7f0d0112;
         public static final int menu_icon=0x7f0d0102;
         public static final int menu_list_view=0x7f0d00d8;
@@ -3392,6 +3392,7 @@ containing a value of this type.
         public static final int notification_background=0x7f0d011b;
         public static final int notification_main_column=0x7f0d0115;
         public static final int notification_main_column_container=0x7f0d0114;
+        public static final int numOfPerson=0x7f0d013a;
         public static final int one_by_one_recyclerview=0x7f0d00f5;
         public static final int one_by_one_swiperefreshlayout=0x7f0d00f4;
         public static final int packed=0x7f0d0016;
@@ -3496,7 +3497,7 @@ containing a value of this type.
         public static final int useLogo=0x7f0d0024;
         public static final int view=0x7f0d009e;
         public static final int view_offset_helper=0x7f0d0012;
-        public static final int visible=0x7f0d013a;
+        public static final int visible=0x7f0d013b;
         public static final int vp_pager=0x7f0d00e0;
         public static final int withText=0x7f0d0049;
         public static final int wrap=0x7f0d0015;

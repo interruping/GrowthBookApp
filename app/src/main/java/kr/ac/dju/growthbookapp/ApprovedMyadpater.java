@@ -88,7 +88,7 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.approvedbook_item, parent, false);
-        View container = v.findViewById(R.id.approvebook_item_container);
+        View container = v.findViewById(R.id.apporved_item_container);
 
        ViewHolder holder = new ViewHolder(container);
 

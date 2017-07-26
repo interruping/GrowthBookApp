@@ -42,15 +42,14 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     private ArrayList<BookListData> bookListDatas = new ArrayList<BookListData>();
     private Handler _mainHandler;
     private Map<Integer, Float> _rateCache;
-    private Map<Integer, String>_numofpersonCache;
+    private Map<Integer, String> _numofpersonCache;
     private Map<HttpConn, Integer> _httpTasks;
-    private Map<Integer,ViewHolder> _holderTasks;
+    private Map<Integer, ViewHolder> _holderTasks;
     private Context mContext;
     private ApplyButtonClickListner _applyButtonClickListener;
 
 
     private boolean mUnapproved;
-
 
 
     public Myadpater(ArrayList<BookListData> bookdata, Context mcontext) {
@@ -105,7 +104,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.unprovedbook_item, parent, false);
         View container = v.findViewById(R.id.unprovedbook_item_container);
 
-       ViewHolder holder = new ViewHolder(container);
+        ViewHolder holder = new ViewHolder(container);
 
         return holder;
     }
@@ -113,7 +112,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
     // ViewHolder Setting
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        BookListData item =  bookListDatas.get(position);
+        BookListData item = bookListDatas.get(position);
         Integer currentId = Integer.valueOf(item.getId());
         holder.setCurrentHoldItem(currentId.intValue());
 
@@ -130,17 +129,18 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
                 .into(holder.bookImg);
 
 
-            if (mUnapproved == true) {
-                holder.getButton().setOnClickListener(
-                        new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                _applyButtonClickListener.applyButtonOnClicked(position);
-                            }
+        if (mUnapproved == true) {
+            holder.getButton().setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            _applyButtonClickListener.applyButtonOnClicked(position);
+                        }
 
-                        });
-            }
-        if (_rateCache.containsKey(Integer.valueOf(item.getId())) == false ) {
+                    });
+        }
+
+        if (_rateCache.containsKey(Integer.valueOf(item.getId())) == false) {
             String bookname = bookListDatas.get(position).GetBookSubject();
             String hash_name = MD5(bookname);
             HttpConn conn = new HttpConn();
@@ -220,17 +220,14 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
-        else{
+        } else {
 
             Float rate = _rateCache.get(Integer.valueOf(item.getId()));
-            String num = _numofpersonCache.get(String.valueOf(item.getId()));
+            String num = _numofpersonCache.get(Integer.valueOf(item.getId()));
 
             holder.setRateStatus(rate, num);
         }
-            }
-
-
+    }
 
 
     @Override
@@ -268,6 +265,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         _rateCache.clear();
         _numofpersonCache.clear();
     }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private int _currentHoldItem;
 
@@ -276,7 +274,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         TextView bookname, author2, company2, booklist2, passpoint2, authpass2, bookdays;
         Button applyBtn;
         ImageView rating_icon;
-        TextView rating_avg, rating_context, textview11, numOfperson;
+        TextView rating_avg, rating_context, textview11, mNumOfperson;
         RatingBar rating_bar;
 
         public ViewHolder(View view) {
@@ -295,7 +293,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             rating_context = (TextView) view.findViewById(R.id.level_context);
             rating_icon = (ImageView) view.findViewById(R.id.img_icon);
             rating_bar = (RatingBar) view.findViewById(R.id.ratingBar2);
-            numOfperson = (TextView) view.findViewById(R.id.numOfPerson);
+            mNumOfperson = (TextView) view.findViewById(R.id.numOfPerson);
         }
 
         public void setCurrentHoldItem(int id) {
@@ -316,7 +314,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
             System.out.println("Intrate :" + intRate);
             rating_bar.setRating(rate);
             rating_avg.setText(String.valueOf(rate));
-            numOfperson.setText(numofperson + "명 평가함");
+            mNumOfperson.setText(numofperson + "명 평가함");
             switch (intRate) {
                 case 0:
                     rating_icon.setVisibility(View.INVISIBLE);
@@ -352,6 +350,7 @@ public class Myadpater extends RecyclerView.Adapter<Myadpater.ViewHolder> implem
         }
 
     }
+
     public void setOnClickListener(ApplyButtonClickListner listener) {
         _applyButtonClickListener = listener;
     }

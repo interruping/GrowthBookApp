@@ -969,7 +969,7 @@ int id list_item 0x7f0d005c
 int id login_button 0x7f0d00e3
 int id loginout_btn 0x7f0d00d7
 int id main_activity_root 0x7f0d0087
-int id masked 0x7f0d013b
+int id masked 0x7f0d013c
 int id media_actions 0x7f0d0112
 int id menu_icon 0x7f0d0102
 int id menu_list_view 0x7f0d00d8
@@ -994,6 +994,7 @@ int id normal 0x7f0d001d
 int id notification_background 0x7f0d011b
 int id notification_main_column 0x7f0d0115
 int id notification_main_column_container 0x7f0d0114
+int id numOfPerson 0x7f0d013a
 int id one_by_one_recyclerview 0x7f0d00f5
 int id one_by_one_swiperefreshlayout 0x7f0d00f4
 int id packed 0x7f0d0016
@@ -1098,7 +1099,7 @@ int id up 0x7f0d0011
 int id useLogo 0x7f0d0024
 int id view 0x7f0d009e
 int id view_offset_helper 0x7f0d0012
-int id visible 0x7f0d013a
+int id visible 0x7f0d013b
 int id vp_pager 0x7f0d00e0
 int id withText 0x7f0d0049
 int id wrap 0x7f0d0015

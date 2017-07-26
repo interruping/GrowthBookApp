@@ -204,7 +204,10 @@
     <RatingBar
 
         android:id="@+id/ratingBar2"
-        style="@style/customRatingBar"
+        android:theme="@style/YellowRatingBar"
+        android:progressTint="@color/colorHighLight"
+        android:progressBackgroundTint="@color/colorForLine"
+        android:secondaryProgressTint="@color/colorForLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
