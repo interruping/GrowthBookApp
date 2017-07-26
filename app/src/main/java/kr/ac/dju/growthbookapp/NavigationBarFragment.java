@@ -169,15 +169,15 @@ public class NavigationBarFragment extends Fragment {
 
         ImageButton menuBtn = new ImageButton(getActivity());
         menuBtn.setImageResource(R.drawable.menu_icon);
-        menuBtn.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        menuBtn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         menuBtn.setBackgroundColor(Color.TRANSPARENT);
-        menuBtn.setPadding(30, 45, 30, 45);
+//        menuBtn.setPadding(10, 20, 10, 20);
 
         ImageButton searchBtn = new ImageButton(getActivity());
         searchBtn.setImageResource(R.drawable.search_icon);
         searchBtn.setBackgroundColor(Color.TRANSPARENT);
-        searchBtn.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        searchBtn.setPadding(30,45,30,45);
+        searchBtn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+//        searchBtn.setPadding(10,20,10,20);
         menuBtn.setOnClickListener(menuButtonOnClick);
         searchBtn.setOnClickListener(searchButtonOnClick);
 
@@ -415,8 +415,11 @@ public class NavigationBarFragment extends Fragment {
         _searchInput.setFocusableInTouchMode(false);
         _searchInput.clearFocus();
         _searchInput.getText().clear();
-        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+        View view = getActivity().getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
 
         _searchInput.animate().translationX(1000).setListener(new Animator.AnimatorListener() {
             @Override

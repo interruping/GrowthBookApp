@@ -31,6 +31,7 @@
 
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"
         android:paddingTop="10dp"
         android:orientation="horizontal"
         android:weightSum="10"
