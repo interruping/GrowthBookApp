@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 
 public class RecentRequestTestFragment extends NavigationBarFragment {
     public RecentRequestTestFragment () {
-        super(R.layout.fragment_news, R.id.root_constraint);
+        super(R.layout.fragment_recent_request_test, R.id.root_constraint);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

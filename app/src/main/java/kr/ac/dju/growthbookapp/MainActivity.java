@@ -209,6 +209,13 @@ public class MainActivity extends AppCompatActivity {
             case R.layout.fragment_recent_pass_book_test:
                 fragmentTransaction.replace(R.id.front_side_container, new RecentPassBookTestFragment());
                 break;
+            case R.layout.fragment_recent_request_test:
+                fragmentTransaction.replace(R.id.front_side_container, new RecentRequestTestFragment());
+                break;
+            case R.layout.fragment_made_by:
+                fragmentTransaction.replace(R.id.front_side_container, new MadeByFragment());
+                break;
+
         }
         fragmentTransaction.commit();
         _frontSideContainer.animate().setListener(null).translationX(0).withLayer();
@@ -246,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.layout.fragment_one_by_one:
                     case R.layout.fragment_book_list:
                     case R.layout.fragment_recent_pass_book_test:
+                    case R.layout.fragment_recent_request_test:
                         if ( isLogin == false ){
                             _isNeedAlertLogin = true;
                             _replaceFragment(R.layout.fragment_login);
