@@ -57,12 +57,15 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
         mdialog = dialog;
     }
 
-
     @Override
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
+           ApplyCustomDialog _Dialog = null;
+        if(adapter !=null) {
+            _Dialog = adapter.getDialog();
+        }
 
-        if(mdialog == null){
+        if(_Dialog == null){
             boolean temp;
             switch (newConfig.orientation) {
                 case Configuration.ORIENTATION_LANDSCAPE: {
@@ -78,16 +81,21 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
             }
 
         }
-            if(mdialog != null) {
+            if(_Dialog != null) {
+                boolean temp;
                 switch (newConfig.orientation) {
                     case Configuration.ORIENTATION_LANDSCAPE: {
                         mdialog.setContentView(R.layout.book_auth_landscape);
                         mdialog.basicSetting();
+                        temp = false;
+                        config = temp;
                         break;
                     }
                     case Configuration.ORIENTATION_PORTRAIT:
                         mdialog.setContentView(R.layout.book_auth);
                         mdialog.basicSetting();
+                        temp = true;
+                        config = temp;
                         break;
 
                 }

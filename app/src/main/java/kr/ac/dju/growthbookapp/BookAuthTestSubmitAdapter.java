@@ -45,6 +45,11 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         mData = data;
     }
 
+    public ApplyCustomDialog getDialog(){
+        return mCustomDialog;
+    }
+
+
     public void setBookAuthTestSubmitDetail(ApproveBookAuthTestSubmitDetail self){
 
         mApprove_Detail = self;
@@ -88,7 +93,10 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
     private View.OnClickListener mCancleClickListener = new View.OnClickListener(){
         public void onClick(View v){
             Toast.makeText(v.getContext().getApplicationContext(),"취소되었습니다.", Toast.LENGTH_SHORT ).show();
+
             mCustomDialog.dismiss();
+            mCustomDialog = null;
+
         }
     };
 

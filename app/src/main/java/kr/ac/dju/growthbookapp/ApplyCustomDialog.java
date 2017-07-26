@@ -108,6 +108,7 @@ public class ApplyCustomDialog extends Dialog {
 
     }
 
+
     public void basicSetting() {
 //        scrollView = (ScrollView)findViewById(R.id.mainCon);
 //        scrollView.setScrollbarFadingEnabled(false);
