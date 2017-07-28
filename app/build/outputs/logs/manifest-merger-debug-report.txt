@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:3:5-38
 		INJECTED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:6:22-72
 application
-ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:7:5-22:19
+ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:8:5-23:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dodrn\.android\build-cache\bf5866c149859e1f8bf11c2b988b110ed2325d44\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] C:\Users\dodrn\.android\build-cache\26ae83c6ea3eca93c70b53590e367e10e6e6e573\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dodrn\.android\build-cache\6dfb871b97c063d2610d0f8cdbef0eb86a705c98\output\AndroidManifest.xml:29:5-20
@@ -41,33 +41,33 @@ MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dodrn\.android
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dodrn\.android\build-cache\a05018ede025ccd6aa99971b7bbce933fa134bd7\output\AndroidManifest.xml:29:5-20
 MERGED from [com.tsengvn:Typekit:1.0.0] C:\Users\dodrn\.android\build-cache\3b8f64638a7a0ee06c6a267acff0bb9916467c5b\output\AndroidManifest.xml:11:5-14:19
 	android:label
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:11:9-41
 	android:supportsRtl
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:13:9-35
 	android:roundIcon
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:12:9-54
 	android:allowBackup
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:10:9-43
 	android:theme
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:14:9-40
 activity#kr.ac.dju.growthbookapp.MainActivity
-ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:14:9-21:20
+ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:15:9-22:20
 	android:configChanges
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:15:19-65
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:16:19-65
 	android:name
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:14:19-47
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:15:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml:20:27-74
 uses-sdk
 INJECTED from C:\Users\dodrn\AndroidStudioProjects\GrowthBookApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dodrn\.android\build-cache\bf5866c149859e1f8bf11c2b988b110ed2325d44\output\AndroidManifest.xml:5:5-7:41

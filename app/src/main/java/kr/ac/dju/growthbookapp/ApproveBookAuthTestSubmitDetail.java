@@ -236,9 +236,9 @@ public class ApproveBookAuthTestSubmitDetail extends NavigationBarFragment imple
 
             for (BookAuthtestSubmitData data : temp) {
                 apply_Data.add(data);
-                adapter.notifyDataSetChanged();
-            }
 
+            }
+            adapter.notifyDataSetChanged();
         });
 
     }

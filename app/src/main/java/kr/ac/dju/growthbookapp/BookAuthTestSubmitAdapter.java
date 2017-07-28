@@ -30,33 +30,34 @@ import static android.support.v4.view.PagerAdapter.POSITION_NONE;
  * Created by dodrn on 2017-07-12.
  */
 
-public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.CallbackListener{
+public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.CallbackListener {
     private ArrayList<BookAuthtestSubmitData> mData = new ArrayList<>();
     private ApplyCustomDialog mCustomDialog;
-    private Map<String,String> headers;
+    private Map<String, String> headers;
     private BookAuthTestSubmitAdapter _self = this;
-    private Map<String,String> param = new HashMap<String,String>();
+    private Map<String, String> param = new HashMap<String, String>();
     private ApproveBookAuthTestSubmitDetail mApprove_Detail;
     private int pos;
     private String mRelut_content;
     private Context _inContext;
-    public  BookAuthTestSubmitAdapter(ArrayList<BookAuthtestSubmitData> data){
+
+    public BookAuthTestSubmitAdapter(ArrayList<BookAuthtestSubmitData> data) {
 
         mData = data;
     }
 
-    public ApplyCustomDialog getDialog(){
+    public ApplyCustomDialog getDialog() {
         return mCustomDialog;
     }
 
 
-    public void setBookAuthTestSubmitDetail(ApproveBookAuthTestSubmitDetail self){
+    public void setBookAuthTestSubmitDetail(ApproveBookAuthTestSubmitDetail self) {
 
         mApprove_Detail = self;
     }
 
-    private View.OnClickListener mApplyClickListener = new View.OnClickListener(){
-        public void onClick(View v){
+    private View.OnClickListener mApplyClickListener = new View.OnClickListener() {
+        public void onClick(View v) {
 
 
             HttpConn con = new HttpConn();
@@ -66,10 +67,10 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
             con.setUserAgent("DJUAPP");
             headers = new HashMap<String, String>();
             headers.put("Cookie", cookie);
-            headers.put("Referer","https://book.dju.ac.kr/ds2_2.html?tab=1&litem=3");
+            headers.put("Referer", "https://book.dju.ac.kr/ds2_2.html?tab=1&litem=3");
             con.setPrefixHeaderFields(headers);
             pos = mCustomDialog.getmAuth_position();
-            param.put("cmd","save");
+            param.put("cmd", "save");
             param.put("day", mData.get(pos).getmApply_day());
             param.put("stime1", mData.get(pos).getmApply_stime1());
             param.put("stime2", mData.get(pos).getmApply_stime2());
@@ -90,9 +91,9 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
 
         }
     };
-    private View.OnClickListener mCancleClickListener = new View.OnClickListener(){
-        public void onClick(View v){
-            Toast.makeText(v.getContext().getApplicationContext(),"취소되었습니다.", Toast.LENGTH_SHORT ).show();
+    private View.OnClickListener mCancleClickListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            Toast.makeText(v.getContext().getApplicationContext(), "취소되었습니다.", Toast.LENGTH_SHORT).show();
 
             mCustomDialog.dismiss();
             mCustomDialog = null;
@@ -123,7 +124,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         Context context = parent.getContext();
         _inContext = context;
 
-        if(convertView == null) {
+        if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.approve_book_item_button, parent, false);
         }
@@ -136,28 +137,26 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         TextView mContent = (TextView) convertView.findViewById(R.id.Note);
 
 
-
-
         TextView mAdmit_Limit = (TextView) convertView.findViewById(R.id.Accept);
         Button applyButton = (Button) convertView.findViewById(R.id.Button_Acc);
 
-            applyButton.setOnClickListener(new Button.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int positions = position;
-                    mCustomDialog = new ApplyCustomDialog(v.getContext(),
-                            mApplyClickListener,
-                            mCancleClickListener,
-                            positions);
-                    mCustomDialog.setDetail_self(mApprove_Detail);
-                    mApprove_Detail.setDialog(mCustomDialog);
-                    mCustomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    mCustomDialog.setCanceledOnTouchOutside(false);
-                    mCustomDialog.show();
+        applyButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int positions = position;
+                mCustomDialog = new ApplyCustomDialog(v.getContext(),
+                        mApplyClickListener,
+                        mCancleClickListener,
+                        positions);
+                mCustomDialog.setDetail_self(mApprove_Detail);
+                mApprove_Detail.setDialog(mCustomDialog);
+                mCustomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                mCustomDialog.setCanceledOnTouchOutside(false);
+                mCustomDialog.show();
 
 
-                }
-            });
+            }
+        });
 
 
         BookAuthtestSubmitData BookAuthtestList = mData.get(position);
@@ -168,21 +167,27 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         mContent.setText(BookAuthtestList.getmContent());
         mAdmit_Limit.setText(BookAuthtestList.getmAdmit_Limit());
         String submit = BookAuthtestList.getmSubmit_com();
-        if(submit != null && submit.equals("신청완료") ==true){
-            applyButton.setText("신청완료");
-            applyButton.setBackground(ContextCompat.getDrawable(_inContext, R.drawable.submit_button_small_disable));
-            applyButton.setEnabled(false);
+        if (submit != null) {
+            if (submit.equals("신청완료") == true) {
+                applyButton.setText("신청완료");
+                applyButton.setBackground(ContextCompat.getDrawable(_inContext, R.drawable.submit_button_small_disable));
+                applyButton.setEnabled(false);
+            }
         }
 
+        else {
+            applyButton.setBackground(ContextCompat.getDrawable(_inContext, R.drawable.submit_button_small));
+            applyButton.setEnabled(true);
+        }
 
         return convertView;
     }
 
 
     @Override
-    public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map,String s) {
+    public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
         int select = Integer.parseInt(s);
-        switch (select){
+        switch (select) {
             case 1:
                 mRelut_content = "신청 되었습니다.";
                 break;
@@ -216,7 +221,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
             @Override
             public void alertViewConfirmed(NavigationBarFragment.AlertType type, String title, String description) {
 
-                if(mRelut_content.equals("신청 되었습니다.") == true)
+                if (mRelut_content.equals("신청 되었습니다.") == true)
                     mApprove_Detail.unprovedBackButton();
 
             }
