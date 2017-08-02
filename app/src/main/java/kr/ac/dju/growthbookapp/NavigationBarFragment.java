@@ -417,6 +417,8 @@ public class NavigationBarFragment extends Fragment {
 
         _searchInput.setFocusable(false);
         _searchInput.setFocusableInTouchMode(false);
+        _searchInput.setFocusable(true);
+        _searchInput.setFocusableInTouchMode(true);
         _searchInput.clearFocus();
         _searchInput.getText().clear();
         View view = getActivity().getCurrentFocus();

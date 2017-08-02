@@ -67,10 +67,13 @@ public class BackMenuFragment extends Fragment implements AdapterView.OnItemClic
             @Override
             public void onClick(View v) {
                 _isLogin = false;
+                _loginBtn.setOnClickListener(null);
                 HttpConn.CookieStorage.sharedStorage().setCookie("");
                 _loginBtn.setText("로그인이 필요합니다");
-                _loginBtn.setOnClickListener(_loginOnClickListener);
+
+                //_loginBtn.setOnClickListener(_loginOnClickListener);
                 MainActivity ma = (MainActivity) getActivity();
+                ma.setLogOutFlag();
                 ma.switchFrontFragment(R.layout.fragment_login);
 
             }
@@ -78,6 +81,10 @@ public class BackMenuFragment extends Fragment implements AdapterView.OnItemClic
         _loginBtn.setOnClickListener(_loginOnClickListener);
 
         return rootView;
+    }
+
+    public void completeLogout() {
+        _loginBtn.setOnClickListener(_loginOnClickListener);
     }
 
     public void activeItemClick() {
@@ -105,7 +112,7 @@ public class BackMenuFragment extends Fragment implements AdapterView.OnItemClic
 
     public void changeToLogout() {
         _isLogin = true;
-        _loginBtn.setText("로그아웃");
+        _loginBtn.setText("로그아웃" + System.getProperty("line.separator") + "학번: " + StudentIDHolder.getInstance().getID());
 
         _loginBtn.setOnClickListener(
 

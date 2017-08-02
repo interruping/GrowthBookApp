@@ -55,6 +55,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
     private boolean _loginRequested;
     private Switch _autoLoginSwitch;
     private String _encryptKey;
+    private LoginFragment _self = this;
     public LoginFragment() {
         super(R.layout.fragment_login, R.id.root_constraint);
         _loginRequested = false;
@@ -75,6 +76,12 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
                     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 }
 
+                MainActivity ma = (MainActivity)_self.getActivity();
+                if ( ma.isMenuToggled() == true ){
+                    ma.toggleMenu();
+                    return;
+                }
+
                 challengeAuthPre();
             }
         });
@@ -88,14 +95,55 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
         _loginBtn.setEnabled(false);
         UserInfoSafeStorage safe = new UserInfoSafeStorage(getActivity());
         if (safe.isSafeUsed() == true) {
-            _autoLoginSwitch.setOnCheckedChangeListener(null);
+            _autoLoginSwitch.setOnCheckedChangeListener(this);
+            //_autoLoginSwitch.setOnCheckedChangeListener(null);
             _autoLoginSwitch.setChecked(true);
             _autoLoginSwitch.setText("자동 로그인 켜짐");
-            _autoLoginSwitch.setOnCheckedChangeListener(this);
+
         } else if ( safe.isSafeUsed() == false ){
             _autoLoginSwitch.setChecked(false);
             _autoLoginSwitch.setText("자동 로그인 꺼짐");
         }
+
+
+        _idInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity ma = (MainActivity)_self.getActivity();
+                if (ma.isMenuToggled() == true ){
+                    ma.toggleMenu();
+                }
+            }
+        });
+
+        _pwInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity ma = (MainActivity)_self.getActivity();
+                if (ma.isMenuToggled() == true ){
+                    ma.toggleMenu();
+                }
+            }
+        });
+        _idInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                MainActivity ma = (MainActivity)_self.getActivity();
+                if (ma.isMenuToggled() == true ){
+                    ma.toggleMenu();
+                }
+            }
+        });
+
+        _pwInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                MainActivity ma = (MainActivity)_self.getActivity();
+                if (ma.isMenuToggled() == true ){
+                    ma.toggleMenu();
+                }
+            }
+        });
 
 
         _idInput.addTextChangedListener(new TextWatcher() {
@@ -154,14 +202,18 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         setWithCommonNavigationBar(getResources().getString(R.string.login),(View v)->{
             MainActivity ma = (MainActivity)this.getActivity();
+
             ma.toggleMenu();
         }, (View v)->{
 
         });
 
+
         hideRightAcc();
 
         MainActivity ma = (MainActivity)this.getActivity();
+
+
         if ( ma.isNeedAlertLogin() == true ){
             showAlertView(AlertType.WARNING, "로그인이 필요합니다.", "초기 비밀번호 주민번호 뒷자리", "확인", null);
         }
@@ -394,7 +446,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
                     Handler mainHandler = new Handler(getActivity().getMainLooper());
                     mainHandler.post(()->{
-                        _loginBtn.setEnabled(true);
+
                         _autoLoginSwitch.setText("자동 로그인 켜짐");
                         _idInput.setEnabled(true);
                         _pwInput.setEnabled(true);
@@ -448,7 +500,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
             UserInfoSafeStorage safe = new UserInfoSafeStorage(getActivity());
             safe.delete();
             _autoLoginSwitch.setText("자동 로그인 꺼짐");
-            _loginBtn.setEnabled(true);
+
             _idInput.setEnabled(true);
             _pwInput.setEnabled(true);
         }

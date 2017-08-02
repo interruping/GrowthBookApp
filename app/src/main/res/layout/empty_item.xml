@@ -26,11 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
+        android:text="표시할 내용이 없습니다."
         android:textSize="18sp"
-        android:text="게시물이 하나도 없습니다."
         app:layout_constraintLeft_toLeftOf="@+id/imageView3"
         app:layout_constraintRight_toRightOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:text="게시물이 하나도 없습니다" />
+        tools:text="표시할 내용이 없습니다."
+        app:layout_constraintHorizontal_bias="0.494" />
 </android.support.constraint.ConstraintLayout>

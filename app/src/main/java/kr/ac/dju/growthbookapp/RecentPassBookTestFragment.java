@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -64,7 +65,7 @@ public class RecentPassBookTestFragment extends NavigationBarFragment implements
         _recyclerView = (RecyclerView)result.findViewById(R.id.recent_pass_book_test_recyclerview);
         _adapter = new RecentPassBookTestRecyclerViewAdapter(getActivity());
         _swipeRefreshLayout = (SwipeRefreshLayout) result.findViewById(R.id.recent_pass_book_test_swiperefreshlayout);
-
+        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
         _recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         _recyclerView.setAdapter(_adapter);
         _swipeRefreshLayout.setOnRefreshListener(this);

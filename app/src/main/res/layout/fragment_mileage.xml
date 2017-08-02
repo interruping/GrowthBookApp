@@ -13,8 +13,9 @@
         android:id="@+id/guideline4"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="55dp"
-        tools:layout_editor_absoluteY="55dp"
+        tools:layout_editor_absoluteY="54dp"
         tools:layout_editor_absoluteX="0dp" />
+
 
     <android.support.constraint.ConstraintLayout
 
@@ -32,19 +33,20 @@
             android:id="@+id/book_point_level_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:text="로딩 중.."
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/milage_point_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="milagePoint"
+            android:text="..."
             android:textColor="@color/colorHighLight"
             app:layout_constraintBottom_toTopOf="@+id/first_deco_line"
             app:layout_constraintLeft_toLeftOf="@+id/first_deco_line" />
@@ -116,14 +118,14 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toTopOf="@+id/milage_sub_frame"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/milage_sub_frame"
         app:srcCompat="@drawable/bronze_rank" />
 
-    <ListView
-        android:id="@+id/book_level_desc_listview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mileage_user_record_recyclelistview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
@@ -131,11 +133,10 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         app:layout_constraintBottom_toTopOf="@+id/milage_sub_frame"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
 
 </kr.ac.dju.growthbookapp.NavigationBaseLayout>

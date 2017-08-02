@@ -6,9 +6,13 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,7 +24,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,6 +41,11 @@ public class MileageFragment extends NavigationBarFragment implements HttpConn.C
     private TextView _bookSeatPointTextView;
     private TextView _bookEventPointTextView;
     private ImageView _levelImageView;
+//    private SwipeRefreshLayout _swipeRefreshLayout;
+
+    private RecyclerView _recyclerView;
+    private MileageUserRecordRecyclerViewAdapter _adapter;
+
     public MileageFragment (){
         super(R.layout.fragment_mileage, R.id.root_constraint);
     }
@@ -51,18 +62,20 @@ public class MileageFragment extends NavigationBarFragment implements HttpConn.C
 
         });
 
-        hideRightAcc();
-        ListView descList = (ListView)result.findViewById(R.id.book_level_desc_listview);
+        ImageButton detailInfoBtn = new ImageButton(getActivity());
+        detailInfoBtn.setImageResource(R.drawable.detail_info_icon);
+        detailInfoBtn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        detailInfoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushFragmentTo(R.id.front_side_container, new MilageDetailFragment(), new Bundle());
+            }
+        });
 
-        LevelDescriptionListAdapter adapter = new LevelDescriptionListAdapter();
-        descList.setAdapter(adapter);
+        addRightAccessoryToNavigatonBar(detailInfoBtn);
 
 
-        adapter.addItem(ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.diamond_rank), "다이아몬드 (1위 ~ 30위)");
-        adapter.addItem(ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.titanium_rank), "티타늄 (31위 ~ 100위)");
-        adapter.addItem(ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.gold_rank), "골드 (101위 ~ 200위)");
-        adapter.addItem(ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.silver_rank), "실버 (201위 ~ 500위)");
-        adapter.addItem(ContextCompat.getDrawable(getActivity().getApplicationContext(),R.drawable.bronze_rank), "브론즈 (501위 ~ 1000위)");
+
         _bookPointLevelTextView = (TextView)result.findViewById(R.id.book_point_level_textview);
         _mileagePointTextView = (TextView)result.findViewById(R.id.milage_point_textview);
         _bookBorrowPointTextView = (TextView)result.findViewById(R.id.book_borrow_point_textview);
@@ -70,6 +83,15 @@ public class MileageFragment extends NavigationBarFragment implements HttpConn.C
         _bookSeatPointTextView = (TextView)result.findViewById(R.id.book_seat_point_textview);
         _bookEventPointTextView = (TextView)result.findViewById(R.id.book_event_point_textview);
         _levelImageView = (ImageView)result.findViewById(R.id.book_level_image);
+//        _swipeRefreshLayout = (SwipeRefreshLayout)result.findViewById(R.id.milage_swipe_fresh_layout);
+//        _swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.colorHighLight), ContextCompat.getColor(getActivity(),R.color.colorStrongHighLight));
+//        _swipeRefreshLayout.setEnabled(true);
+//        _swipeRefreshLayout.setOnRefreshListener(this);
+
+        _recyclerView = (RecyclerView)result.findViewById(R.id.mileage_user_record_recyclelistview);
+        _recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        _recyclerView.setAdapter(new LoadingRecyclerViewAdapter());
+
 
 
         HttpConn conn = new HttpConn();
@@ -86,8 +108,71 @@ public class MileageFragment extends NavigationBarFragment implements HttpConn.C
         } catch (Exception e) {
 
         }
-
+        onRefresh();
         return result;
+    }
+
+    public void onRefresh() {
+
+
+        HttpConn conn = new HttpConn();
+
+        Map<String, String> headers = new HashMap<String,String>();
+        headers.put("Cookie", HttpConn.CookieStorage.sharedStorage().getCookie());
+        conn.setPrefixHeaderFields(headers);
+        conn.setCallBackListener(new HttpConn.CallbackListener() {
+            @Override
+            public void requestSuccess(HttpConn httpConn, int i, Map<String, String> map, String s) {
+                BookServerDataParser parser = new BookServerDataParser(s);
+                Element body = parser.getBody();
+                Element tbody = body.getElementById("mileage_body");
+                Elements trs = tbody.getElementsByTag("tr");
+                List<RecentPassBookTestItem> toAdd = new ArrayList<RecentPassBookTestItem>();
+
+                for ( Element tr : trs ){
+                    Elements tds = tr.getElementsByTag("td");
+                    String date = tds.get(0).text();
+                    String desc = tds.get(1).text();
+                    String point = tds.get(2).text();
+
+                    RecentPassBookTestItem item = new RecentPassBookTestItem(desc, date, point);
+                    toAdd.add(item);
+                }
+
+                Handler mainHandler = new Handler(getActivity().getMainLooper());
+                mainHandler.post(()->{
+                    _adapter = new MileageUserRecordRecyclerViewAdapter();
+                    _recyclerView.setAdapter(_adapter);
+                    _adapter.clear();
+                    _adapter.notifyDataSetChanged();
+
+                    if ( toAdd.size() == 0 ){
+                        _recyclerView.setAdapter(new EmptyRecyclerViewAdapter());
+                    }
+
+                    for (RecentPassBookTestItem item : toAdd) {
+                        _adapter.addItem(item);
+                        _adapter.notifyDataSetChanged();
+//                        _swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+            }
+
+            @Override
+            public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
+
+            }
+
+            @Override
+            public void requestTimeout(HttpConn httpConn) {
+
+            }
+        });
+        try {
+            conn.sendRequest(HttpConn.Method.GET, new URL("https://book.dju.ac.kr/ds2_3.html?tab=2"), new HashMap<>());
+        } catch (Exception e){
+
+        }
     }
 
     @Override

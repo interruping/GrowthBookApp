@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private Map<Integer, Fragment> _fragments;
     private boolean _isNeedAlertLogin;
     private boolean _isFailAutoLogin;
-
+    private boolean _isLogOut;
+    private BackPressCloseSystem _backPressCloseSystem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         _isNeedAlertLogin = false;
         _isFailAutoLogin = false;
         _slideToggle = false;
+        _isLogOut = false;
+        _backPressCloseSystem = new BackPressCloseSystem(this);
         _backMenuFragment = (BackMenuFragment)getFragmentManager().findFragmentById(R.id.back_side_fragment);
         _frontSideContainer = (FrameLayout)findViewById(R.id.front_side_container);
         _frontSideContainer.setClipToPadding(false);
@@ -94,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
         public float height;
     }
 
+    public void setLogOutFlag(){
+
+    }
     public LayoutSize getMainActivityLayoutSize(){
 
         LayoutSize result = new LayoutSize();
@@ -265,6 +271,11 @@ public class MainActivity extends AppCompatActivity {
                         _replaceFragment(targetId);
                         break;
                 }
+
+                if ( _isLogOut) {
+                    _isLogOut = false;
+                    _backMenuFragment.completeLogout();
+                }
             }
 
             @Override
@@ -316,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() == 0){
-            toggleMenu();
+            _backPressCloseSystem.onBackPressed();
         } else {
 
             super.onBackPressed();
