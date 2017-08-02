@@ -42,17 +42,22 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
     private ArrayList<BookListData> bookArrayList = new ArrayList<BookListData>();
     private ApprovedBookFragment _self = this;
     private SwipeRefreshLayout _swipeRefreshLayout;
-
+    private NavigationBarFragment _parentFragment;
     public ApprovedBookFragment() {
         // Required empty public constructor
     }
 
+
+    public void setParentFragment (NavigationBarFragment parentFragment){
+        _parentFragment = parentFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View result = inflater.inflate(R.layout.fragment_unapproved_book, container, false);
         mAdapter = new ApprovedMyadpater(bookArrayList, this.getActivity());
+        mAdapter.setFragment(_parentFragment);
         mAdapter.setdevice(getArguments().getString("device"));
         _swipeRefreshLayout = (SwipeRefreshLayout)result.findViewById(R.id.unproved_swipeRefreshLayout);
         _swipeRefreshLayout.setRefreshing(true);
@@ -154,7 +159,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
 
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        mAdapter.setFragment(_parentFragment);
 
         return result;
     }

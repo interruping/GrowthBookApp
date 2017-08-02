@@ -15,7 +15,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
         android:gravity="center"
-        android:text="난이도 주세요"
+        android:text="시험 난이도를 평가해주세요"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

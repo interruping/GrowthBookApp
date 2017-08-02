@@ -40,6 +40,7 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
     private String mDevice;
     private Map<String, String> headers;
     private ApprovedMyadpater _self = this;
+    private NavigationBarFragment _fragment;
     private boolean mUnapproved;
 
 
@@ -53,6 +54,10 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
         this.mDevice = device;
     }
 
+    public void setFragment(NavigationBarFragment fragment) {
+        _fragment = fragment;
+
+    }
 
     public Context getContext() {
         return mContext;
@@ -219,11 +224,12 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
               dialog.dismiss();
 
             if (mresult.equals("0") == true) {
-                Toast.makeText(getContext(), "제출되었습니다.", Toast.LENGTH_SHORT).show();
+
+                _fragment.showAlertView(NavigationBarFragment.AlertType.INFO, "평가 완료", "평가해주셔서 감사합니다.", "확인", null);
             } else if (mresult.equals("2") == true) {
-                Toast.makeText(getContext(), "이미 제출하셨습니다..", Toast.LENGTH_SHORT).show();
+                _fragment.showAlertView(NavigationBarFragment.AlertType.WARNING, "평가 거부됨", "이미 평가하셨습니다.", "확인", null);
             } else {
-                Toast.makeText(getContext(), "평가제출 실패하셨습니다.", Toast.LENGTH_SHORT).show();
+                _fragment.showAlertView(NavigationBarFragment.AlertType.ERROR, "평가 실패", "잠시 후 다시 시도해 주세요.", "확인", null);
             }
         });
 
@@ -232,7 +238,7 @@ public class ApprovedMyadpater extends RecyclerView.Adapter<ApprovedMyadpater.Vi
 
     @Override
     public void requestError(HttpConn httpConn, int i, Map<String, String> map, String s) {
-
+        dialog.dismiss();
     }
 
     @Override

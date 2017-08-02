@@ -355,6 +355,8 @@ public class DetailBookListFragment extends NavigationBarFragment implements App
                     return  arrFragments[1];}
                 case 2:{
                     arrFragments[2] = new ApprovedBookFragment();
+                    ApprovedBookFragment _tmp = (ApprovedBookFragment)arrFragments[2];
+                    _tmp.setParentFragment(_self);
                     GetDataApproved(arrFragments[2]);
                     return arrFragments[2];}
                 default:
