@@ -176,6 +176,7 @@ public class BookAuthTestSubmitAdapter extends BaseAdapter implements HttpConn.C
         }
 
         else {
+            applyButton.setText("신청하기");
             applyButton.setBackground(ContextCompat.getDrawable(_inContext, R.drawable.submit_button_small));
             applyButton.setEnabled(true);
         }

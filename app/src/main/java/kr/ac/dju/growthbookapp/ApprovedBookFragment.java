@@ -159,7 +159,7 @@ public class ApprovedBookFragment extends Fragment implements HttpConn.CallbackL
 
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mAdapter.setFragment(this);
+        mAdapter.setFragment(_parentFragment);
 
         return result;
     }
