@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GrowthBookApp</string>
+    <string name="app_name">대전대 독서역량강화</string>
     <string name="menu">메뉴</string>
     <string name="login">사용자 인증</string>
     <string name="login_desc">로그인이 필요합니다</string>
