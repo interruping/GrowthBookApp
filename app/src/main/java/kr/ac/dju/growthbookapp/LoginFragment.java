@@ -55,6 +55,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
     private boolean _loginRequested;
     private Switch _autoLoginSwitch;
     private String _encryptKey;
+    private ProgressBar _autoLoginProgressBar;
     private LoginFragment _self = this;
     public LoginFragment() {
         super(R.layout.fragment_login, R.id.root_constraint);
@@ -90,6 +91,8 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         _idInput =(EditText) _rootView.findViewById(R.id.id_input);
         _pwInput =(EditText) _rootView.findViewById(R.id.pw_input);
+        _autoLoginProgressBar = (ProgressBar)_rootView.findViewById(R.id.auto_login_progressbar);
+
         _autoLoginSwitch = (Switch) _rootView.findViewById(R.id.auto_login);
         _autoLoginSwitch.setOnCheckedChangeListener(this);
         _loginBtn.setEnabled(false);
@@ -422,6 +425,7 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
         if ( isChecked == true ){
             _autoLoginSwitch.setText("암호화 키 다운로드 중...");
+            _autoLoginProgressBar.setVisibility(View.VISIBLE);
             _loginBtn.setEnabled(false);
             _idInput.setEnabled(false);
             _pwInput.setEnabled(false);
@@ -446,8 +450,13 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
 
                     Handler mainHandler = new Handler(getActivity().getMainLooper());
                     mainHandler.post(()->{
-
+                        _autoLoginProgressBar.setVisibility(View.INVISIBLE);
                         _autoLoginSwitch.setText("자동 로그인 켜짐");
+                        int idlen = _idInput.getText().toString().length();
+                        int pwlen = _pwInput.getText().toString().length();
+                        if ( idlen != 0 && pwlen != 0 ){
+                            _loginBtn.setEnabled(true);
+                        }
                         _idInput.setEnabled(true);
                         _pwInput.setEnabled(true);
                     });
@@ -461,8 +470,14 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
                     Handler mainHandler = new Handler(getActivity().getMainLooper());
                     mainHandler.post(()->{
                         showAlertView(AlertType.ERROR, "자동 로그인을 사용할 수 없습니다", "암호화키 다운로드를 실패했습니다", "확인", null);
+                        _autoLoginProgressBar.setVisibility(View.INVISIBLE);
                         _autoLoginSwitch.setChecked(false);
                         _autoLoginSwitch.setText("자동 로그인 꺼짐");
+                        int idlen = _idInput.getText().toString().length();
+                        int pwlen = _pwInput.getText().toString().length();
+                        if ( idlen != 0 && pwlen != 0 ){
+                            _loginBtn.setEnabled(true);
+                        }
                         _idInput.setEnabled(true);
                         _pwInput.setEnabled(true);
                     });
@@ -474,8 +489,14 @@ public class LoginFragment extends NavigationBarFragment implements HttpConn.Cal
                     Handler mainHandler = new Handler(getActivity().getMainLooper());
                     mainHandler.post(()->{
                         showAlertView(AlertType.ERROR, "자동 로그인을 사용할 수 없습니다", "암호화키 다운로드를 실패했습니다", "확인", null);
+                        _autoLoginProgressBar.setVisibility(View.INVISIBLE);
                         _autoLoginSwitch.setChecked(false);
                         _autoLoginSwitch.setText("자동 로그인 꺼짐");
+                        int idlen = _idInput.getText().toString().length();
+                        int pwlen = _pwInput.getText().toString().length();
+                        if ( idlen != 0 && pwlen != 0 ){
+                            _loginBtn.setEnabled(true);
+                        }
                         _idInput.setEnabled(true);
                         _pwInput.setEnabled(true);
                     });
