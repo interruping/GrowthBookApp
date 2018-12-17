@@ -17,5 +17,5 @@
 
 ## License
 
-이 프로젝트는 MIT 라이센스를 따릅니다. 자세한 사항은  [LICENSE]()파일을 참조하세요.
+이 프로젝트는 MIT 라이센스를 따릅니다. 자세한 사항은  [LICENSE](https://github.com/interruping/GrowthBookApp/raw/geun_young_lim/LICENSE.txt)파일을 참조하세요.
 
